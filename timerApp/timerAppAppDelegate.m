@@ -1,14 +1,14 @@
 //
-//  timerAppAppDelegate.m
-//  timerApp
+//  TestTimer_7AppDelegate.m
+//  TestTimer_7
 //
-//  Created by Peter Carnesciali on 12/26/13.
+//  Created by Peter Carnesciali on 10/16/13.
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
 //
 
 #import "timerAppAppDelegate.h"
 
-@implementation timerAppAppDelegate
+@implementation TimerAppAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

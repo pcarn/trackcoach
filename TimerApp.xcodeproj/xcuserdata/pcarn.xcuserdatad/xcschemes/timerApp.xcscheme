@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17E788CF186CD5A400AE6FED"
-               BuildableName = "timerApp.app"
-               BlueprintName = "timerApp"
-               ReferencedContainer = "container:timerApp.xcodeproj">
+               BuildableName = "TimerApp.app"
+               BlueprintName = "TimerApp"
+               ReferencedContainer = "container:TimerApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17E788F0186CD5A500AE6FED"
-               BuildableName = "timerAppTests.xctest"
-               BlueprintName = "timerAppTests"
-               ReferencedContainer = "container:timerApp.xcodeproj">
+               BuildableName = "TimerAppTests.xctest"
+               BlueprintName = "TimerAppTests"
+               ReferencedContainer = "container:TimerApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17E788CF186CD5A400AE6FED"
-            BuildableName = "timerApp.app"
-            BlueprintName = "timerApp"
-            ReferencedContainer = "container:timerApp.xcodeproj">
+            BuildableName = "TimerApp.app"
+            BlueprintName = "TimerApp"
+            ReferencedContainer = "container:TimerApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17E788CF186CD5A400AE6FED"
-            BuildableName = "timerApp.app"
-            BlueprintName = "timerApp"
-            ReferencedContainer = "container:timerApp.xcodeproj">
+            BuildableName = "TimerApp.app"
+            BlueprintName = "TimerApp"
+            ReferencedContainer = "container:TimerApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17E788CF186CD5A400AE6FED"
-            BuildableName = "timerApp.app"
-            BlueprintName = "timerApp"
-            ReferencedContainer = "container:timerApp.xcodeproj">
+            BuildableName = "TimerApp.app"
+            BlueprintName = "TimerApp"
+            ReferencedContainer = "container:TimerApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

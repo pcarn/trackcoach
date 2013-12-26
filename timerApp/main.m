@@ -1,8 +1,8 @@
 //
 //  main.m
-//  timerApp
+//  timerapp
 //
-//  Created by Peter Carnesciali on 12/26/13.
+//  Created by Peter Carnesciali on 10/16/13.
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
 //
 
@@ -13,6 +13,6 @@
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([timerAppAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TimerAppAppDelegate class]));
     }
 }

@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface timerAppTests : XCTestCase
+@interface TimerAppTests : XCTestCase
 
 @end
 
-@implementation timerAppTests
+@implementation TimerAppTests
 
 - (void)setUp
 {
