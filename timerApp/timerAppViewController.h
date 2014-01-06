@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "VolumeButtons.h"
 
-@interface TimerAppViewController : UIViewController
+@interface TimerAppViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate>
 
 //@property (nonatomic) BOOL timerRunning;
 //@property (nonatomic) NSTimeInterval lapStartTime;
 //@property (nonatomic) NSTimeInterval elapsedTime;
 @property (nonatomic) NSTimeInterval secondsAlreadyRun; //If != 0, timer not reset
-@property (strong, nonatomic) NSMutableArray *lapTimes;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
@@ -29,5 +28,8 @@
 @property (strong, nonatomic) NSDate *startDate;
 //@property (strong, nonatomic) NSDate *currentLapStartDate;
 @property (strong, nonatomic) NSTimer *timer;
+
+@property (strong, nonatomic) NSMutableArray *lapTimes;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

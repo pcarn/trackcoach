@@ -19,12 +19,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "timerApp/timerAppViewController.m"
-            timestampString = "410041597.410559"
+            filePath = "timerApp/TimerAppViewController.m"
+            timestampString = "410733303.776847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-lap"
             landmarkType = "5">
          </BreakpointContent>
