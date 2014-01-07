@@ -14,22 +14,22 @@
 //@property (nonatomic) BOOL timerRunning;
 //@property (nonatomic) NSTimeInterval lapStartTime;
 //@property (nonatomic) NSTimeInterval elapsedTime;
-@property (nonatomic) NSTimeInterval secondsAlreadyRun; //If != 0, timer not reset
+//@property (nonatomic) NSTimeInterval secondsAlreadyRun; //If != 0, timer not reset
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
-- (IBAction)startStopButtonAction:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
-- (IBAction)lapResetButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSMutableArray *lapTimes;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (assign) BOOL alertIsDisplayed;
+
+- (IBAction)lapResetButtonAction:(id)sender;
+- (IBAction)startStopButtonAction:(UIButton *)sender;
 - (void)updateTime;
 - (NSString *)timeToString:(NSTimeInterval)elapsed;
 - (NSTimeInterval)totalOfLaps;
-@property (strong, nonatomic) NSDate *startDate;
-//@property (strong, nonatomic) NSDate *currentLapStartDate;
-@property (strong, nonatomic) NSTimer *timer;
-
-@property (strong, nonatomic) NSMutableArray *lapTimes;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
