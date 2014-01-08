@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
 		17828B98187A1C130063535E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B92187A1C130063535E /* libTestFlight.a */; };
 		17828B99187A1C130063535E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17828B93187A1C130063535E /* README.md */; };
@@ -17,15 +18,14 @@
 		17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788DC186CD5A500AE6FED /* InfoPlist.strings */; };
 		17E788E0186CD5A500AE6FED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788DF186CD5A500AE6FED /* main.m */; };
-		17E788E4186CD5A500AE6FED /* TimerAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E3186CD5A500AE6FED /* TimerAppAppDelegate.m */; };
+		17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */; };
 		17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E788E5186CD5A500AE6FED /* Main.storyboard */; };
-		17E788EA186CD5A500AE6FED /* TimerAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E9186CD5A500AE6FED /* TimerAppViewController.m */; };
+		17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */; };
 		17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E788EB186CD5A500AE6FED /* Images.xcassets */; };
 		17E788F3186CD5A500AE6FED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788F2186CD5A500AE6FED /* XCTest.framework */; };
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
-		17E788FF186CD5A500AE6FED /* timerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788FE186CD5A500AE6FED /* timerAppTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +34,13 @@
 			containerPortal = 17E788C8186CD5A400AE6FED /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 17E788CF186CD5A400AE6FED;
-			remoteInfo = timerApp;
+			remoteInfo = TrackCoach;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
+		1705E463187D22260012C537 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		172FB47F186CD60B00DD134A /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		172FB480186CD60B00DD134A /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
 		17828B92187A1C130063535E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
@@ -46,27 +48,25 @@
 		17828B94187A1C130063535E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		17828B95187A1C130063535E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		17828B96187A1C130063535E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		17828B97187A1C130063535E /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		17E788D0186CD5A400AE6FED /* TimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17E788D0186CD5A400AE6FED /* TrackCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E788D3186CD5A400AE6FED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17E788D5186CD5A500AE6FED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		17E788D7186CD5A500AE6FED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		17E788DB186CD5A500AE6FED /* TimerApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerApp-Info.plist"; sourceTree = "<group>"; };
+		17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoach-Info.plist"; sourceTree = "<group>"; };
 		17E788DD186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17E788DF186CD5A500AE6FED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17E788E1186CD5A500AE6FED /* TimerApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimerApp-Prefix.pch"; sourceTree = "<group>"; };
-		17E788E2186CD5A500AE6FED /* TimerAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerAppAppDelegate.h; sourceTree = "<group>"; };
-		17E788E3186CD5A500AE6FED /* TimerAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerAppAppDelegate.m; sourceTree = "<group>"; };
+		17E788E1186CD5A500AE6FED /* TrackCoach-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrackCoach-Prefix.pch"; sourceTree = "<group>"; };
+		17E788E2186CD5A500AE6FED /* TrackCoachAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackCoachAppDelegate.h; sourceTree = "<group>"; };
+		17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackCoachAppDelegate.m; sourceTree = "<group>"; };
 		17E788E6186CD5A500AE6FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17E788E8186CD5A500AE6FED /* TimerAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerAppViewController.h; sourceTree = "<group>"; };
-		17E788E9186CD5A500AE6FED /* TimerAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerAppViewController.m; sourceTree = "<group>"; };
+		17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackCoachViewController.h; sourceTree = "<group>"; };
+		17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewController.m; sourceTree = "<group>"; };
 		17E788EB186CD5A500AE6FED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		17E788F1186CD5A500AE6FED /* TimerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17E788F1186CD5A500AE6FED /* TrackCoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackCoachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		17E788FA186CD5A500AE6FED /* TimerAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerAppTests-Info.plist"; sourceTree = "<group>"; };
+		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		17E788FE186CD5A500AE6FED /* timerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timerAppTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 				17828B94187A1C130063535E /* release_notes.md */,
 				17828B95187A1C130063535E /* TestFlight.h */,
 				17828B96187A1C130063535E /* TestFlight+AsyncLogging.h */,
-				17828B97187A1C130063535E /* TestFlight+ManualSessions.h */,
+				1705E463187D22260012C537 /* TestFlight+ManualSessions.h */,
 			);
 			name = TestFlight;
 			sourceTree = "<group>";
@@ -111,8 +111,8 @@
 		17E788C7186CD5A400AE6FED = {
 			isa = PBXGroup;
 			children = (
-				17E788D9186CD5A500AE6FED /* timerApp */,
-				17E788F8186CD5A500AE6FED /* timerAppTests */,
+				17E788D9186CD5A500AE6FED /* TrackCoach */,
+				17E788F8186CD5A500AE6FED /* TrackCoachTests */,
 				17E788D2186CD5A400AE6FED /* Frameworks */,
 				17E788D1186CD5A400AE6FED /* Products */,
 			);
@@ -121,8 +121,8 @@
 		17E788D1186CD5A400AE6FED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17E788D0186CD5A400AE6FED /* TimerApp.app */,
-				17E788F1186CD5A500AE6FED /* TimerAppTests.xctest */,
+				17E788D0186CD5A400AE6FED /* TrackCoach.app */,
+				17E788F1186CD5A500AE6FED /* TrackCoachTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,47 +139,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		17E788D9186CD5A500AE6FED /* timerApp */ = {
+		17E788D9186CD5A500AE6FED /* TrackCoach */ = {
 			isa = PBXGroup;
 			children = (
-				17E788E2186CD5A500AE6FED /* TimerAppAppDelegate.h */,
-				17E788E3186CD5A500AE6FED /* TimerAppAppDelegate.m */,
+				17E788E2186CD5A500AE6FED /* TrackCoachAppDelegate.h */,
+				17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */,
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
-				17E788E8186CD5A500AE6FED /* TimerAppViewController.h */,
-				17E788E9186CD5A500AE6FED /* TimerAppViewController.m */,
+				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
+				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
 				172FB47F186CD60B00DD134A /* VolumeButtons.h */,
 				172FB480186CD60B00DD134A /* VolumeButtons.m */,
 				17E788EB186CD5A500AE6FED /* Images.xcassets */,
 				17E788DA186CD5A500AE6FED /* Supporting Files */,
 				17828B91187A1C080063535E /* TestFlight */,
 			);
-			path = timerApp;
+			path = TrackCoach;
 			sourceTree = "<group>";
 		};
 		17E788DA186CD5A500AE6FED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				17E788DB186CD5A500AE6FED /* TimerApp-Info.plist */,
+				17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */,
 				17E788DC186CD5A500AE6FED /* InfoPlist.strings */,
 				17E788DF186CD5A500AE6FED /* main.m */,
-				17E788E1186CD5A500AE6FED /* TimerApp-Prefix.pch */,
+				17E788E1186CD5A500AE6FED /* TrackCoach-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		17E788F8186CD5A500AE6FED /* timerAppTests */ = {
+		17E788F8186CD5A500AE6FED /* TrackCoachTests */ = {
 			isa = PBXGroup;
 			children = (
-				17E788FE186CD5A500AE6FED /* timerAppTests.m */,
+				1705E461187D21A30012C537 /* TrackCoachTests.m */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
-			path = timerAppTests;
+			path = TrackCoachTests;
 			sourceTree = "<group>";
 		};
 		17E788F9186CD5A500AE6FED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				17E788FA186CD5A500AE6FED /* TimerAppTests-Info.plist */,
+				17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */,
 				17E788FB186CD5A500AE6FED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -188,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		17E788CF186CD5A400AE6FED /* TimerApp */ = {
+		17E788CF186CD5A400AE6FED /* TrackCoach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17E78902186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TimerApp" */;
+			buildConfigurationList = 17E78902186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TrackCoach" */;
 			buildPhases = (
 				17E788CC186CD5A400AE6FED /* Sources */,
 				17E788CD186CD5A400AE6FED /* Frameworks */,
@@ -200,14 +200,14 @@
 			);
 			dependencies = (
 			);
-			name = TimerApp;
-			productName = timerApp;
-			productReference = 17E788D0186CD5A400AE6FED /* TimerApp.app */;
+			name = TrackCoach;
+			productName = TrackCoach;
+			productReference = 17E788D0186CD5A400AE6FED /* TrackCoach.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17E788F0186CD5A500AE6FED /* TimerAppTests */ = {
+		17E788F0186CD5A500AE6FED /* TrackCoachTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17E78905186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TimerAppTests" */;
+			buildConfigurationList = 17E78905186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TrackCoachTests" */;
 			buildPhases = (
 				17E788ED186CD5A500AE6FED /* Sources */,
 				17E788EE186CD5A500AE6FED /* Frameworks */,
@@ -218,9 +218,9 @@
 			dependencies = (
 				17E788F7186CD5A500AE6FED /* PBXTargetDependency */,
 			);
-			name = TimerAppTests;
-			productName = timerAppTests;
-			productReference = 17E788F1186CD5A500AE6FED /* TimerAppTests.xctest */;
+			name = TrackCoachTests;
+			productName = TrackCoachTests;
+			productReference = 17E788F1186CD5A500AE6FED /* TrackCoachTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +229,7 @@
 		17E788C8186CD5A400AE6FED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = timerApp;
+				CLASSPREFIX = TrackCoach;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Peter Carnesciali";
 				TargetAttributes = {
@@ -241,7 +241,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 17E788CB186CD5A400AE6FED /* Build configuration list for PBXProject "TimerApp" */;
+			buildConfigurationList = 17E788CB186CD5A400AE6FED /* Build configuration list for PBXProject "TrackCoach" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -254,8 +254,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17E788CF186CD5A400AE6FED /* TimerApp */,
-				17E788F0186CD5A500AE6FED /* TimerAppTests */,
+				17E788CF186CD5A400AE6FED /* TrackCoach */,
+				17E788F0186CD5A500AE6FED /* TrackCoachTests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,10 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E788E4186CD5A500AE6FED /* TimerAppAppDelegate.m in Sources */,
+				17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */,
 				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
-				17E788EA186CD5A500AE6FED /* TimerAppViewController.m in Sources */,
+				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17E788FF186CD5A500AE6FED /* timerAppTests.m in Sources */,
+				1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 /* Begin PBXTargetDependency section */
 		17E788F7186CD5A500AE6FED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17E788CF186CD5A400AE6FED /* TimerApp */;
+			target = 17E788CF186CD5A400AE6FED /* TrackCoach */;
 			targetProxy = 17E788F6186CD5A500AE6FED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -422,14 +422,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "timerApp/TimerApp-Prefix.pch";
-				INFOPLIST_FILE = "timerApp/TimerApp-Info.plist";
+				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/timerApp",
+					"$(PROJECT_DIR)/TrackCoach",
 				);
-				PRODUCT_NAME = TimerApp;
+				PRODUCT_NAME = TrackCoach;
 				PROVISIONING_PROFILE = "F3D83196-CB57-41B4-9959-CCC0B55102E3";
 				WRAPPER_EXTENSION = app;
 			};
@@ -443,14 +443,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "timerApp/TimerApp-Prefix.pch";
-				INFOPLIST_FILE = "timerApp/TimerApp-Info.plist";
+				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/timerApp",
+					"$(PROJECT_DIR)/TrackCoach",
 				);
-				PRODUCT_NAME = TimerApp;
+				PRODUCT_NAME = TrackCoach;
 				PROVISIONING_PROFILE = "4BE1ADDA-4CCA-4F04-B295-AC51C766362D";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,20 +460,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/timerApp.app/timerApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "timerApp/timerApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "timerAppTests/TimerAppTests-Info.plist";
-				PRODUCT_NAME = TimerAppTests;
+				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -483,16 +483,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/timerApp.app/timerApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "timerApp/timerApp-Prefix.pch";
-				INFOPLIST_FILE = "timerAppTests/TimerAppTests-Info.plist";
-				PRODUCT_NAME = TimerAppTests;
+				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
+				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -501,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17E788CB186CD5A400AE6FED /* Build configuration list for PBXProject "TimerApp" */ = {
+		17E788CB186CD5A400AE6FED /* Build configuration list for PBXProject "TrackCoach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17E78900186CD5A500AE6FED /* Debug */,
@@ -510,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17E78902186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TimerApp" */ = {
+		17E78902186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TrackCoach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17E78903186CD5A500AE6FED /* Debug */,
@@ -519,7 +519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17E78905186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TimerAppTests" */ = {
+		17E78905186CD5A500AE6FED /* Build configuration list for PBXNativeTarget "TrackCoachTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				17E78906186CD5A500AE6FED /* Debug */,

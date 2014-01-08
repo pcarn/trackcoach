@@ -1,4 +1,4 @@
-timerapp
+TrackCoach
 ========
 
 App IDea
