@@ -10,7 +10,7 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
 
-#define UNSTOP_ALERT 7
+#define UNDO_STOP_ALERT 7
 #define RESET_ALERT 8
 
 @interface TrackCoachViewController()
@@ -33,12 +33,12 @@
         if (self.lapTimes.count == 0) {
             [self start];
         } else /*if (sender != nil)*/ {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unstop"
-                                                            message:@"Are you sure you want to unstop? The time will return to where it would have been if it did not stop."
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
+                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Unstop", nil];
-            alert.tag = UNSTOP_ALERT;
+                                                  otherButtonTitles:@"Undo Stop", nil];
+            alert.tag = UNDO_STOP_ALERT;
             [alert show];
             self.alertIsDisplayed = YES;
         }
@@ -53,10 +53,10 @@
         [self lap];
     } else if (self.lapTimes.count > 0) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                            message:@"Are you sure you want to reset without saving?"
+                                                            message:@"Are you sure you want to reset?"
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Yes", nil];
+                                                  otherButtonTitles:@"Reset", nil];
             alert.tag = RESET_ALERT;
             [alert show];
             self.alertIsDisplayed = YES;
@@ -78,6 +78,7 @@
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
 - (void)stop {
@@ -92,15 +93,15 @@
     self.timerLabel.text = [self timeToString:[self totalOfLaps]];
 //    NSLog(@"Total of laps is %f", [self totalOfLaps]);
 //    NSLog(@"Total elapsed time is %@", self.timerLabel.text);
-    [self.startStopButton setTitle:@"Unstop" forState:UIControlStateNormal];
+    [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
 
-- (void)unstop {
+- (void)undoStop {
     if ([self.timer isValid]) {
-        [NSException raise:@"Tried to unstop, when already started" format:nil];
+        [NSException raise:@"Tried to undo stop, when already started" format:nil];
     }
     [self.lapTimes removeObjectAtIndex:0];
     [self.tableView reloadData];
@@ -108,6 +109,7 @@
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
 - (void)lap {
@@ -116,7 +118,7 @@
         [NSException raise:@"Tried to lap while timer not running"
                     format:nil];
     }
-    [self.lapTimes insertObject:[NSNumber numberWithDouble:([self elapsed] - [self totalOfLaps])] atIndex:0];
+    [self.lapTimes insertObject:@([self elapsed] - [self totalOfLaps]) atIndex:0];
     [self.tableView reloadData];
 }
 
@@ -187,7 +189,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapCell"];
     
-    NSNumber *lapTime = [self.lapTimes objectAtIndex:indexPath.row];
+    NSNumber *lapTime = self.lapTimes[indexPath.row];
     cell.detailTextLabel.text = [self timeToString:[lapTime doubleValue]];
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.lapTimes.count - indexPath.row)];
     return cell;
@@ -200,9 +202,9 @@
         if (buttonIndex == 1) {
             [self reset];
         }
-    } else if (alertView.tag == UNSTOP_ALERT) {
+    } else if (alertView.tag == UNDO_STOP_ALERT) {
         if (buttonIndex == 1) {
-            [self unstop];
+            [self undoStop];
         }
     } else {
         NSLog(@"Unknown alert clicked.");
