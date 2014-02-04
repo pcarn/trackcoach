@@ -13,7 +13,7 @@
 
 const double AUTO_VOLUME_INTERVAL_1 = -0.6;
 const double AUTO_VOLUME_INTERVAL_2 = -0.2;
-const double AUTO_VOLUME_INTERVAL_ERROR = 0.04; //0.03 for iphone 5s, 0.08 for iphone 3gs
+const double AUTO_VOLUME_INTERVAL_ERROR = 0.00; //0.03 for iphone 5s, 0.08 for iphone 3gs
 
 @interface VolumeButtons()
 @property (nonatomic) BOOL loweredVolume;

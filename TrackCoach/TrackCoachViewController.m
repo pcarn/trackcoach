@@ -83,16 +83,12 @@
 
 - (void)stop {
     [self lap];
-    if ([self.timer isValid]) {
-        [self.timer invalidate];
-    }
+    [self.timer invalidate];
     self.timer = nil;
-    self.lapTimerLabel.text = [self timeToString:[[self.lapTimes firstObject] doubleValue]];
-//    self.secondsAlreadyRun += [[NSDate date] timeIntervalSinceDate:self.startDate];
-//    self.timerLabel.text = [self timeToString:self.secondsAlreadyRun];
-    self.timerLabel.text = [self timeToString:[self totalOfLaps]];
-//    NSLog(@"Total of laps is %f", [self totalOfLaps]);
-//    NSLog(@"Total elapsed time is %@", self.timerLabel.text);
+//    self.lapTimerLabel.text = [self timeToString:[[self.lapTimes firstObject] doubleValue]];
+//    self.timerLabel.text = [self timeToString:[self totalOfLaps]];
+    NSLog(@"Total of laps is %f", [self totalOfLaps]);
+    NSLog(@"Total elapsed time is %@", self.timerLabel.text);
     [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
@@ -138,14 +134,16 @@
     [self.startStopButton setBackgroundColor:[UIColor greenColor]];
 }
 
-- (void)updateTime {
-    if (self.startDate != nil && [self.timer isValid]) {
-        NSTimeInterval totalElapsed = [self elapsed];
-        
-        self.timerLabel.text = [self timeToString:totalElapsed];
-        NSTimeInterval currentLapTime = totalElapsed - [self totalOfLaps];
-        self.lapTimerLabel.text = [self timeToString:currentLapTime];
-    }
+- (void)updateTime {    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.startDate != nil && [self.timer isValid]) {
+            NSTimeInterval totalElapsed = [self elapsed];
+            
+            self.timerLabel.text = [self timeToString:totalElapsed];
+            NSTimeInterval currentLapTime = totalElapsed - [self totalOfLaps];
+            self.lapTimerLabel.text = [self timeToString:currentLapTime];
+        }
+    });
 }
 
 #pragma mark Utility methods
@@ -214,21 +212,17 @@
 
 #pragma mark other methods for file
 - (void)startNSTimer {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 / 100.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 100.0)
                                                   target:self
                                                 selector:@selector(updateTime)
                                                 userInfo:nil
                                                  repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //    [self.startStopButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [self.startStopButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    //    [self.startStopButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    
-    //	self.timerLabel.text = @"0:00.00";
     self.lapTimerLabel.text = self.timerLabel.text;
     self.alertIsDisplayed = NO;
     //    self.timerRunning = NO;
