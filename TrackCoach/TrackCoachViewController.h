@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VolumeButtons.h"
+#import "RaceTime.h"
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate>
 
@@ -20,9 +21,10 @@
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-@property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSTimer *timer;
-@property (strong, nonatomic) NSMutableArray *lapTimes;
+//@property (strong, nonatomic) NSDate *startDate;
+//@property (strong, nonatomic) NSMutableArray *lapTimes;
+@property (strong, nonatomic) RaceTime *raceTime;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign) BOOL alertIsDisplayed;
 
@@ -30,6 +32,6 @@
 - (IBAction)startStopButtonAction:(UIButton *)sender;
 - (void)updateTime;
 - (NSString *)timeToString:(NSTimeInterval)elapsed;
-- (NSTimeInterval)totalOfLaps;
+//- (NSTimeInterval)totalOfLaps;
 
 @end

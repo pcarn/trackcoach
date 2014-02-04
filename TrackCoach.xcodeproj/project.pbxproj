@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
 		17828B98187A1C130063535E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B92187A1C130063535E /* libTestFlight.a */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
+		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
 		1705E463187D22260012C537 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		172FB47F186CD60B00DD134A /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
+				17049E0E18A0C59400052FAD /* RaceTime.h */,
+				17049E0F18A0C59400052FAD /* RaceTime.m */,
 				172FB47F186CD60B00DD134A /* VolumeButtons.h */,
 				172FB480186CD60B00DD134A /* VolumeButtons.m */,
 				17E788EB186CD5A500AE6FED /* Images.xcassets */,
@@ -368,6 +373,7 @@
 				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
+				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

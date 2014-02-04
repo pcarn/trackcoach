@@ -30,7 +30,7 @@
 - (IBAction)startStopButtonAction:(UIButton *)sender {
 //    if (!self.timerRunning) {
     if (!self.timer) {
-        if (self.lapTimes.count == 0) {
+        if (self.raceTime.lapTimes.count == 0) {
             [self start];
         } else /*if (sender != nil)*/ {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
@@ -51,7 +51,7 @@
 - (IBAction)lapResetButtonAction:(id)sender {
     if ([self.timer isValid]) {
         [self lap];
-    } else if (self.lapTimes.count > 0) {
+    } else if (self.raceTime.lapTimes.count > 0) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
                                                             message:@"Are you sure you want to reset?"
                                                            delegate:self
@@ -63,17 +63,9 @@
     }
 }
 
-#pragma mark init
-- (NSMutableArray *)lapTimes {
-    if (!_lapTimes) {
-        _lapTimes = [[NSMutableArray alloc] init];
-    }
-    return _lapTimes;
-}
-
 #pragma mark Timer
 - (void)start {
-    self.startDate = [NSDate date];
+    self.raceTime.startDate = [NSDate date];
     [self startNSTimer];
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
@@ -85,9 +77,9 @@
     [self lap];
     [self.timer invalidate];
     self.timer = nil;
-//    self.lapTimerLabel.text = [self timeToString:[[self.lapTimes firstObject] doubleValue]];
+    self.lapTimerLabel.text = [self timeToString:[self.raceTime mostRecentLapTime]];
 //    self.timerLabel.text = [self timeToString:[self totalOfLaps]];
-    NSLog(@"Total of laps is %f", [self totalOfLaps]);
+    NSLog(@"Total of laps is %f", [self.raceTime totalOfLaps]);
     NSLog(@"Total elapsed time is %@", self.timerLabel.text);
     [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
@@ -99,7 +91,7 @@
     if ([self.timer isValid]) {
         [NSException raise:@"Tried to undo stop, when already started" format:nil];
     }
-    [self.lapTimes removeObjectAtIndex:0];
+    [self.raceTime removeMostRecentLap];
     [self.tableView reloadData];
     [self startNSTimer];
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -114,7 +106,7 @@
         [NSException raise:@"Tried to lap while timer not running"
                     format:nil];
     }
-    [self.lapTimes insertObject:@([self elapsed] - [self totalOfLaps]) atIndex:0];
+    [self.raceTime addNewLap];
     [self.tableView reloadData];
 }
 
@@ -127,8 +119,7 @@
 //    self.secondsAlreadyRun = 0;
     self.timerLabel.text = @"0:00.00";
     self.lapTimerLabel.text = self.timerLabel.text;
-    self.startDate = nil;
-    self.lapTimes = nil;
+    self.raceTime = [[RaceTime alloc] init];
     [self.tableView reloadData];
     [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor greenColor]];
@@ -136,11 +127,11 @@
 
 - (void)updateTime {    
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.startDate != nil && [self.timer isValid]) {
-            NSTimeInterval totalElapsed = [self elapsed];
+        if (self.raceTime.startDate != nil && [self.timer isValid]) {
+            NSTimeInterval totalElapsed = [self.raceTime elapsed];
             
             self.timerLabel.text = [self timeToString:totalElapsed];
-            NSTimeInterval currentLapTime = totalElapsed - [self totalOfLaps];
+            NSTimeInterval currentLapTime = totalElapsed - [self.raceTime totalOfLaps];
             self.lapTimerLabel.text = [self timeToString:currentLapTime];
         }
     });
@@ -157,25 +148,25 @@
     return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
 }
 
-- (NSTimeInterval)totalOfLaps {
-    NSTimeInterval total = 0;
-    for (NSNumber *lap in self.lapTimes) {
-//        NSNumber *lapNS = lap;
-        total += [lap doubleValue];
-    }
-    return total;
-}
-
-- (NSTimeInterval)elapsed {
-//    NSDate *currentDate = [NSDate date];
-    return [[NSDate date] timeIntervalSinceDate:self.startDate];
-}
+//- (NSTimeInterval)totalOfLaps {
+//    NSTimeInterval total = 0;
+//    for (NSNumber *lap in self.lapTimes) {
+////        NSNumber *lapNS = lap;
+//        total += [lap doubleValue];
+//    }
+//    return total;
+//}
+//
+//- (NSTimeInterval)elapsed {
+////    NSDate *currentDate = [NSDate date];
+//    return [[NSDate date] timeIntervalSinceDate:self.startDate];
+//}
 
 #pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.lapTimes count];
+    return [self.raceTime.lapTimes count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -187,9 +178,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapCell"];
     
-    NSNumber *lapTime = self.lapTimes[indexPath.row];
+    NSNumber *lapTime = self.raceTime.lapTimes[indexPath.row];
     cell.detailTextLabel.text = [self timeToString:[lapTime doubleValue]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.lapTimes.count - indexPath.row)];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.raceTime.lapTimes.count - indexPath.row)];
     return cell;
 }
 
@@ -227,7 +218,7 @@
     self.alertIsDisplayed = NO;
     //    self.timerRunning = NO;
 //    self.secondsAlreadyRun = 0;
-    self.startDate = nil;
+    self.raceTime = [[RaceTime alloc] init];
     self.timer = nil;
     //    self.elapsedTime = 0;
     
