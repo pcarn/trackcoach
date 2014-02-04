@@ -82,7 +82,9 @@
     NSLog(@"Total of laps is %f", [self.raceTime totalOfLaps]);
     NSLog(@"Total elapsed time is %@", self.timerLabel.text);
     [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
-    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
+//    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
+    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(218.0/255.0) blue:(10.0/255.0) alpha:1.0]];
+
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
