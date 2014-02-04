@@ -252,6 +252,15 @@
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
+    
+    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
+    NSNumber *alreadyStartedOnVersion = [[NSUserDefaults standardUserDefaults] objectForKey:appFirstStartOfVersionKey];
+    if (!alreadyStartedOnVersion || [alreadyStartedOnVersion boolValue] == NO) {
+        NSLog(@"First time!");
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
