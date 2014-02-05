@@ -31,6 +31,9 @@
 }
 
 - (NSTimeInterval)elapsed {
+    if (self.startDate == nil) {
+        [NSException raise:@"Tried to find elapsed time when startDate was nil" format:nil];
+    }
     return [[NSDate date] timeIntervalSinceDate:self.startDate];
 }
 

@@ -10,29 +10,26 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
 
-#define UNDO_STOP_ALERT 7
-#define RESET_ALERT 8
 
 @interface TrackCoachViewController()
 @end
 
 @implementation TrackCoachViewController
 
-#pragma mark Buttons
-- (VolumeButtons *)volumeButtons {
-    if (!_volumeButtons) {
-        _volumeButtons = [[VolumeButtons alloc] init];
+- (TrackCoachBrain *)trackCoachBrain {
+    if (!_trackCoachBrain) {
+        _trackCoachBrain = [[TrackCoachBrain alloc] init];
     }
-    return _volumeButtons;
+    return _trackCoachBrain;
 }
 
 //sender is button either way
 - (IBAction)startStopButtonAction:(UIButton *)sender {
-//    if (!self.timerRunning) {
-    if (!self.timer) {
-        if (self.raceTime.lapTimes.count == 0) {
-            [self start];
-        } else /*if (sender != nil)*/ {
+    if (![self.trackCoachBrain timerIsRunning]) {
+        if (self.trackCoachBrain.raceTime.lapTimes.count == 0) {
+            [self.trackCoachBrain start];
+            [self setupForTimerRunning];
+        } else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
                                                             message:@"Are you sure you want to undo? The time will resume as though you did not stop."
                                                            delegate:self
@@ -43,29 +40,41 @@
             self.alertIsDisplayed = YES;
         }
     } else {
-        [self stop];
+        [self.trackCoachBrain stop];
+        [self.timer invalidate];
+        self.timer = nil;
+        [self.tableView reloadData];
+        self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+        NSLog(@"Total of laps is %f", [self.trackCoachBrain.raceTime totalOfLaps]);
+        NSLog(@"Total elapsed time is %@", self.timerLabel.text);
+        [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
+        [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
+        [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+        
     }
 }
 
 //sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
-    if ([self.timer isValid]) {
-        [self lap];
-    } else if (self.raceTime.lapTimes.count > 0) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                            message:@"Are you sure you want to reset?"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Reset", nil];
-            alert.tag = RESET_ALERT;
-            [alert show];
-            self.alertIsDisplayed = YES;
+//    [self.trackCoachBrain lapResetButtonPressed];
+    if ([self.trackCoachBrain timerIsRunning]) { // Just lapped
+        [self.trackCoachBrain lap];
+    } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
+                                                        message:@"Are you sure you want to reset?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Reset", nil];
+        alert.tag = RESET_ALERT;
+        [alert show];
+        self.alertIsDisplayed = YES;
+        
     }
+    [self.tableView reloadData];
 }
 
-#pragma mark Timer
-- (void)start {
-    self.raceTime.startDate = [NSDate date];
+- (void)setupForTimerRunning {
     [self startNSTimer];
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
@@ -73,70 +82,18 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 
-- (void)stop {
-    [self lap];
-    [self.timer invalidate];
-    self.timer = nil;
-    self.lapTimerLabel.text = [self timeToString:[self.raceTime mostRecentLapTime]];
-//    self.timerLabel.text = [self timeToString:[self totalOfLaps]];
-    NSLog(@"Total of laps is %f", [self.raceTime totalOfLaps]);
-    NSLog(@"Total elapsed time is %@", self.timerLabel.text);
-    [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
-//    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:0.82 green:0.80 blue:0.20 alpha:1.0]];
-    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(218.0/255.0) blue:(10.0/255.0) alpha:1.0]];
-
-    [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
-}
-
-- (void)undoStop {
-    if ([self.timer isValid]) {
-        [NSException raise:@"Tried to undo stop, when already started" format:nil];
-    }
-    [self.raceTime removeMostRecentLap];
-    [self.tableView reloadData];
-    [self startNSTimer];
-    [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
-    [self.startStopButton setBackgroundColor:[UIColor redColor]];
-    [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
-    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-}
-
-- (void)lap {
-    NSLog(@"Lap");
-    if (![self.timer isValid]) {
-        [NSException raise:@"Tried to lap while timer not running"
-                    format:nil];
-    }
-    [self.raceTime addNewLap];
-    [self.tableView reloadData];
-}
-
-- (void)reset {
-    if ([self.timer isValid]) {
-        [NSException raise:@"Tried to reset while timer running"
-                    format:nil];
-    }
-    NSLog(@"Reset");
-//    self.secondsAlreadyRun = 0;
-    self.timerLabel.text = @"0:00.00";
-    self.lapTimerLabel.text = self.timerLabel.text;
-    self.raceTime = [[RaceTime alloc] init];
-    [self.tableView reloadData];
-    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-    [self.startStopButton setBackgroundColor:[UIColor greenColor]];
-}
-
-- (void)updateTime {    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.raceTime.startDate != nil && [self.timer isValid]) {
-            NSTimeInterval totalElapsed = [self.raceTime elapsed];
-            
+- (void)updateUI {
+//    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.trackCoachBrain.timerIsRunning) {
+            NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
             self.timerLabel.text = [self timeToString:totalElapsed];
-            NSTimeInterval currentLapTime = totalElapsed - [self.raceTime totalOfLaps];
+            NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfLaps];
             self.lapTimerLabel.text = [self timeToString:currentLapTime];
+        } else {
+            self.timerLabel.text = @"0:00.00";
+            self.lapTimerLabel.text = @"0:00.00";
         }
-    });
+//    });
 }
 
 #pragma mark Utility methods
@@ -150,25 +107,11 @@
     return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
 }
 
-//- (NSTimeInterval)totalOfLaps {
-//    NSTimeInterval total = 0;
-//    for (NSNumber *lap in self.lapTimes) {
-////        NSNumber *lapNS = lap;
-//        total += [lap doubleValue];
-//    }
-//    return total;
-//}
-//
-//- (NSTimeInterval)elapsed {
-////    NSDate *currentDate = [NSDate date];
-//    return [[NSDate date] timeIntervalSinceDate:self.startDate];
-//}
-
 #pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.raceTime.lapTimes count];
+    return [self.trackCoachBrain.raceTime.lapTimes count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -180,9 +123,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapCell"];
     
-    NSNumber *lapTime = self.raceTime.lapTimes[indexPath.row];
+    NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
     cell.detailTextLabel.text = [self timeToString:[lapTime doubleValue]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.raceTime.lapTimes.count - indexPath.row)];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
     return cell;
 }
 
@@ -191,11 +134,17 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == RESET_ALERT) {
         if (buttonIndex == 1) {
-            [self reset];
+            [self.trackCoachBrain reset];
+            [self updateUI];
+            [self.tableView reloadData];
+            [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+            [self.startStopButton setBackgroundColor:[UIColor greenColor]];
         }
     } else if (alertView.tag == UNDO_STOP_ALERT) {
         if (buttonIndex == 1) {
-            [self undoStop];
+            [self.trackCoachBrain undoStop];
+            [self setupForTimerRunning];
+            [self.tableView reloadData];
         }
     } else {
         NSLog(@"Unknown alert clicked.");
@@ -207,7 +156,7 @@
 - (void)startNSTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 100.0)
                                                   target:self
-                                                selector:@selector(updateTime)
+                                                selector:@selector(updateUI)
                                                 userInfo:nil
                                                  repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
@@ -216,15 +165,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.lapTimerLabel.text = self.timerLabel.text;
-    self.alertIsDisplayed = NO;
-    //    self.timerRunning = NO;
-//    self.secondsAlreadyRun = 0;
-    self.raceTime = [[RaceTime alloc] init];
     self.timer = nil;
-    //    self.elapsedTime = 0;
-    
     self.tableView.dataSource = self;
+    self.volumeButtons = [[VolumeButtons alloc] init];
     __block TrackCoachViewController *blocksafeSelf = self;
     self.volumeButtons.volumeUpBlock = ^{
         NSLog(@"Volume Up");
@@ -248,12 +191,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
     }
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)dealloc {

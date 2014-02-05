@@ -44,6 +44,7 @@
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
+		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
+		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				17E788E2186CD5A500AE6FED /* TrackCoachAppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */,
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
+				17FAD50718A1E24600DC136A /* TrackCoachBrain.h */,
+				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
 				17049E0E18A0C59400052FAD /* RaceTime.h */,
@@ -374,6 +379,7 @@
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
+				17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,31 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VolumeButtons.h"
-#import "RaceTime.h"
+#import "TrackCoachBrain.h"
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate>
 
-//@property (nonatomic) BOOL timerRunning;
-//@property (nonatomic) NSTimeInterval lapStartTime;
-//@property (nonatomic) NSTimeInterval elapsedTime;
-//@property (nonatomic) NSTimeInterval secondsAlreadyRun; //If != 0, timer not reset
-@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
-@property (strong, nonatomic) VolumeButtons *volumeButtons;
-@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
-@property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-@property (strong, nonatomic) NSTimer *timer;
-//@property (strong, nonatomic) NSDate *startDate;
-//@property (strong, nonatomic) NSMutableArray *lapTimes;
-@property (strong, nonatomic) RaceTime *raceTime;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign) BOOL alertIsDisplayed;
+@property (strong, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
+@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
+@property (strong, nonatomic) VolumeButtons *volumeButtons;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(UIButton *)sender;
-- (void)updateTime;
-- (NSString *)timeToString:(NSTimeInterval)elapsed;
-//- (NSTimeInterval)totalOfLaps;
+- (void)updateUI;
 
 @end
