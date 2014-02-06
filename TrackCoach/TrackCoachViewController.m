@@ -24,7 +24,7 @@
 }
 
 //sender is button either way
-- (IBAction)startStopButtonAction:(UIButton *)sender {
+- (IBAction)startStopButtonAction:(id)sender {
     if (![self.trackCoachBrain timerIsRunning]) {
         if (self.trackCoachBrain.raceTime.lapTimes.count == 0) {
             [self.trackCoachBrain start];
@@ -53,6 +53,29 @@
         [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
         
     }
+}
+
+- (IBAction)shareButtonAction:(id)sender {
+    NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
+    NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
+    if (laps.count > 0) {
+        [textToShare appendString:@"\n"];
+    }
+    for (NSNumber *lap in laps) {
+        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [self timeToString:[lap doubleValue]]]];
+    }
+    NSLog(@"%ld",[[UIDevice currentDevice] userInterfaceIdiom]);
+    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? @"iPhone" : @"iPad")]];
+    [textToShare appendString:@"\nwww.trackcoachapp.com"];
+    
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
+    if (iOS_7_or_later) {
+        activityVC.excludedActivityTypes = [activityVC.excludedActivityTypes arrayByAddingObjectsFromArray:@[UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop]];
+    }
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 //sender is nil if triggered by volume button
