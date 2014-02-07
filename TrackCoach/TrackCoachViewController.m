@@ -66,7 +66,7 @@
     }
     NSLog(@"%ld",[[UIDevice currentDevice] userInterfaceIdiom]);
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? @"iPhone" : @"iPad")]];
-    [textToShare appendString:@"\nwww.trackcoachapp.com"];
+//    [textToShare appendString:@"\nwww.trackcoachapp.com"];
     
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
