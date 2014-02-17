@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TrackCoachBrain.h"
+#import "AppInfoViewController.h"
 
 #define iOS_7_or_later SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate>
+@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate>
 
 @property (assign) BOOL alertIsDisplayed;
 @property (strong, nonatomic) NSTimer *timer;

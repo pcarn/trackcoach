@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
@@ -14,6 +15,8 @@
 		17828B99187A1C130063535E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17828B93187A1C130063535E /* README.md */; };
 		17828B9A187A1C130063535E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 17828B94187A1C130063535E /* release_notes.md */; };
 		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
+		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
+		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
 		17E11062189F571C0037E7A5 /* volumeHider.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11061189F571C0037E7A5 /* volumeHider.png */; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
@@ -58,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1703257B18A478230026A4BC /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoViewController.h; sourceTree = "<group>"; };
+		1703257C18A478230026A4BC /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewController.m; sourceTree = "<group>"; };
 		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
@@ -70,6 +75,8 @@
 		17828B95187A1C130063535E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		17828B96187A1C130063535E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		17907C6718A5DE3B00E56137 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		17907C6818A5DE3B00E56137 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		17E11061189F571C0037E7A5 /* volumeHider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeHider.png; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
@@ -212,6 +219,8 @@
 				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
+				1703257B18A478230026A4BC /* AppInfoViewController.h */,
+				1703257C18A478230026A4BC /* AppInfoViewController.m */,
 				17049E0E18A0C59400052FAD /* RaceTime.h */,
 				17049E0F18A0C59400052FAD /* RaceTime.m */,
 				172FB47F186CD60B00DD134A /* VolumeButtons.h */,
@@ -226,6 +235,8 @@
 		17E788DA186CD5A500AE6FED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17907C6718A5DE3B00E56137 /* Icon.png */,
+				17907C6818A5DE3B00E56137 /* Icon@2x.png */,
 				17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */,
 				17E788DC186CD5A500AE6FED /* InfoPlist.strings */,
 				17E788DF186CD5A500AE6FED /* main.m */,
@@ -337,7 +348,9 @@
 				17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */,
 				17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */,
 				17828B99187A1C130063535E /* README.md in Resources */,
+				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
+				17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */,
 				17828B9A187A1C130063535E /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */,
+				1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */,
 				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,

@@ -64,8 +64,7 @@
     for (NSNumber *lap in laps) {
         [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [self timeToString:[lap doubleValue]]]];
     }
-    NSLog(@"%ld",[[UIDevice currentDevice] userInterfaceIdiom]);
-    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone ? @"iPhone" : @"iPad")]];
+    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
 //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
     
     
@@ -219,4 +218,23 @@
 - (void)dealloc {
     self.volumeButtons = nil;
 }
+
+#pragma mark Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AppInfo"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
+        appInfoVC.delegate = self;
+//        AppInfoViewController *appInfoViewController = segue.destinationViewController;
+//        appInfoViewController.delegate = self;
+    }
+}
+
+#pragma mark AppInfoViewControllerDelegate
+
+- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
