@@ -23,38 +23,6 @@
     return _trackCoachBrain;
 }
 
-//sender is button either way
-- (IBAction)startStopButtonAction:(id)sender {
-    if (![self.trackCoachBrain timerIsRunning]) {
-        if (self.trackCoachBrain.raceTime.lapTimes.count == 0) {
-            [self.trackCoachBrain start];
-            [self setupForTimerRunning];
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
-                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Undo Stop", nil];
-            alert.tag = UNDO_STOP_ALERT;
-            [alert show];
-            self.alertIsDisplayed = YES;
-        }
-    } else {
-        [self.trackCoachBrain stop];
-        [self.timer invalidate];
-        self.timer = nil;
-        [self.tableView reloadData];
-        self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
-        NSLog(@"Total of laps is %f", [self.trackCoachBrain.raceTime totalOfLaps]);
-        NSLog(@"Total elapsed time is %@", self.timerLabel.text);
-        [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
-        [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
-        [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
-        
-    }
-}
-
 - (IBAction)shareButtonAction:(id)sender {
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
@@ -76,6 +44,38 @@
     
     [self presentViewController:activityVC animated:YES completion:nil];
 }
+
+//sender is button either way
+- (IBAction)startStopButtonAction:(id)sender {
+    if (![self.trackCoachBrain timerIsRunning]) {
+        if (self.trackCoachBrain.raceTime.lapTimes.count == 0) { // Start
+            [self.trackCoachBrain start];
+            [self setupForTimerRunning];
+        } else { // Undo Stop
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
+                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Undo Stop", nil];
+            alert.tag = UNDO_STOP_ALERT;
+            [alert show];
+            self.alertIsDisplayed = YES;
+        }
+    } else { // Stop
+        NSLog(@"%f",[self.trackCoachBrain.raceTime elapsed]);
+        [self.trackCoachBrain stop];
+        [self.timer invalidate];
+        self.timer = nil;
+        [self.tableView reloadData];
+        self.timerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime totalOfLaps]];
+        self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];        [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
+        [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
+        [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+        
+    }
+}
+
 
 //sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
