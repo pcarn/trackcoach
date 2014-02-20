@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

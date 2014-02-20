@@ -63,7 +63,7 @@
                     format:nil];
     }
     NSLog(@"Reset");
-    self.raceTime = [[RaceTime alloc] init];
+    self.raceTime = nil;
 }
 
 - (BOOL)lapsIsEmpty {

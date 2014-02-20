@@ -47,7 +47,7 @@
 
 //sender is button either way
 - (IBAction)startStopButtonAction:(id)sender {
-    if (![self.trackCoachBrain timerIsRunning]) {
+    if (!self.trackCoachBrain.timerIsRunning) {
         if (self.trackCoachBrain.raceTime.lapTimes.count == 0) { // Start
             [self.trackCoachBrain start];
             [self setupForTimerRunning];
@@ -67,20 +67,17 @@
         [self.timer invalidate];
         self.timer = nil;
         [self.tableView reloadData];
-        self.timerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime totalOfLaps]];
-        self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];        [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
-        [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
-        [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
-        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+        [self setupForTimerStopped];
         
     }
+    [self saveSettings];
 }
 
 
 //sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
 //    [self.trackCoachBrain lapResetButtonPressed];
-    if ([self.trackCoachBrain timerIsRunning]) { // Just lapped
+    if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
@@ -94,6 +91,7 @@
         
     }
     [self.tableView reloadData];
+    [self saveSettings];
 }
 
 - (void)setupForTimerRunning {
@@ -102,6 +100,19 @@
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    [self.shareButton setEnabled:NO];
+    [self.shareButton setAlpha:0.2];
+}
+
+- (void)setupForTimerStopped {
+    self.timerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime totalOfLaps]];
+    self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+    [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
+    [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+    [self.shareButton setEnabled:YES];
+    [self.shareButton setAlpha:1.0];
 }
 
 - (void)updateUI {
@@ -112,8 +123,9 @@
             NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfLaps];
             self.lapTimerLabel.text = [self timeToString:currentLapTime];
         } else {
-            self.timerLabel.text = @"0:00.00";
-            self.lapTimerLabel.text = @"0:00.00";
+            NSTimeInterval totalOfLaps = [self.trackCoachBrain.raceTime totalOfLaps];
+            self.timerLabel.text = [self timeToString:totalOfLaps];
+            self.lapTimerLabel.text = [self timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
         }
 //    });
 }
@@ -161,6 +173,8 @@
             [self.tableView reloadData];
             [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
             [self.startStopButton setBackgroundColor:[UIColor greenColor]];
+            [self.shareButton setEnabled:NO];
+            [self.shareButton setAlpha:0.2];
         }
     } else if (alertView.tag == UNDO_STOP_ALERT) {
         if (buttonIndex == 1) {
@@ -172,6 +186,7 @@
         NSLog(@"Unknown alert clicked.");
     }
     self.alertIsDisplayed = NO;
+    [self saveSettings];
 }
 
 #pragma mark other methods for file
@@ -205,19 +220,52 @@
     };
     [self.volumeButtons startUsingVolumeButtons];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
     NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
-    NSNumber *alreadyStartedOnVersion = [[NSUserDefaults standardUserDefaults] objectForKey:appFirstStartOfVersionKey];
+    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
     if (!alreadyStartedOnVersion || [alreadyStartedOnVersion boolValue] == NO) {
         NSLog(@"First time!");
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
+        [defaults setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
     }
-    
+    if ([defaults boolForKey:@"timerIsRunning"]) {
+        NSLog(@"True");
+    }
+//    NSLog([NSString stringWithFormat:@"%@",[defaults objectForKey:@"timerIsRunning"]]);
+    self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
+    NSData *encodedRaceTime = [defaults objectForKey:@"encodedRaceTime"];
+    if (encodedRaceTime) {
+        self.trackCoachBrain.raceTime = [NSKeyedUnarchiver unarchiveObjectWithData:encodedRaceTime];
+    }
+    if (self.trackCoachBrain.timerIsRunning) {
+        [self setupForTimerRunning];
+    } else if (self.trackCoachBrain.raceTime.startDate) {  // Stopped
+        [self setupForTimerStopped];
+    } else {    // Clear
+        [self.shareButton setEnabled:NO];
+        [self.shareButton setAlpha:0.2];
+    }
+    [self updateUI];
+    [self.tableView reloadData];
 }
 
 - (void)dealloc {
     self.volumeButtons = nil;
 }
+
+#pragma mark UserDefaults
+- (void)saveSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSData *raceTime = self.trackCoachBrain.raceTime;
+    NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
+    
+//    [defaults setBool:NO forKey:@"timerIsRunning"];
+    [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
+    [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
+    [defaults synchronize];
+    NSLog(@"Data saved");
+}
+
 
 #pragma mark Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation

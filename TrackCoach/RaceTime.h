@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RaceTime : NSObject
+@interface RaceTime : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSMutableArray *lapTimes;
