@@ -221,17 +221,17 @@
     [self.volumeButtons startUsingVolumeButtons];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
-    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
-    if (!alreadyStartedOnVersion || [alreadyStartedOnVersion boolValue] == NO) {
+//    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+//    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
+//    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
+    
+    if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
         NSLog(@"First time!");
-        [defaults setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
+        [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
     }
-    if ([defaults boolForKey:@"timerIsRunning"]) {
-        NSLog(@"True");
-    }
-//    NSLog([NSString stringWithFormat:@"%@",[defaults objectForKey:@"timerIsRunning"]]);
+//    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"FirstTimeViewController"]
+//                                         animated:YES];
+    
     self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     NSData *encodedRaceTime = [defaults objectForKey:@"encodedRaceTime"];
     if (encodedRaceTime) {
@@ -247,6 +247,11 @@
     }
     [self updateUI];
     [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self performSegueWithIdentifier:@"FirstTimeViewController" sender:self];
+    NSLog(@"Pushed");
 }
 
 - (void)dealloc {
@@ -276,6 +281,9 @@
         appInfoVC.delegate = self;
 //        AppInfoViewController *appInfoViewController = segue.destinationViewController;
 //        appInfoViewController.delegate = self;
+//    } else if ([segue.identifier isEqualToString:@"FirstTime"]) {
+//        UINavigationController *navigationController = segue.destinationViewController;
+//        FirstTimeViewController *firstTimeVC = [navigationController viewControllers][0];
     }
 }
 
