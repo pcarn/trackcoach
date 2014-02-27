@@ -229,8 +229,20 @@
         NSLog(@"First time!");
         [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
     }
-//    [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"FirstTimeViewController"]
-//                                         animated:YES];
+    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    self.pageViewController.dataSource = self;
+    FirstTimeViewController *startingViewController = [self viewControllerAtIndex:0];
+    [self.pageViewController setViewControllers:@[startingViewController]
+                                      direction:UIPageViewControllerNavigationDirectionForward
+                                       animated:NO completion:nil];
+//    [self presentViewController:self.pageViewController animated:YES completion:nil];
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+    
+    
+    
     
     self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     NSData *encodedRaceTime = [defaults objectForKey:@"encodedRaceTime"];
@@ -249,10 +261,9 @@
     [self.tableView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [self performSegueWithIdentifier:@"FirstTimeViewController" sender:self];
-    NSLog(@"Pushed");
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [self performSegueWithIdentifier:@"PageViewController" sender:self];
+//}
 
 - (void)dealloc {
     self.volumeButtons = nil;
@@ -292,5 +303,54 @@
 - (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark Tutorial
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+      viewControllerBeforeViewController:(UIViewController *)viewController {
+    NSUInteger index = ((FirstTimeViewController *) viewController).pageIndex;
+    return nil;
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+}
+
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    NSUInteger index = ((FirstTimeViewController *) viewController).pageIndex;
+    if (index == NSNotFound) {
+        return nil;
+    }
+    index++;
+    return [self viewControllerAtIndex:index];
+}
+
+- (FirstTimeViewController *)viewControllerAtIndex:(NSUInteger)index {
+    if (index == 1) {
+        FirstTimeViewController *firstTime = [[FirstTimeViewController alloc] init];
+        firstTime.view.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+        firstTime.pageIndex = index;
+        return firstTime;
+    }
+    if (index == 2) {
+        [self.pageViewController.view removeFromSuperview];
+        [self.pageViewController removeFromParentViewController];
+        NSLog(@"tried to dismiss");
+    }
+    FirstTimeViewController *firstTimeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstTimeViewController"];
+    firstTimeViewController.pageIndex = index;
+    return firstTimeViewController;
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    return 1;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return 0;
+}
+
+
 
 @end

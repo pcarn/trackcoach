@@ -11,9 +11,9 @@
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
-		17828B98187A1C130063535E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B92187A1C130063535E /* libTestFlight.a */; };
-		17828B99187A1C130063535E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17828B93187A1C130063535E /* README.md */; };
-		17828B9A187A1C130063535E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 17828B94187A1C130063535E /* release_notes.md */; };
+		1767B74318BFB47600AC41A9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767B73D18BFB47600AC41A9 /* libTestFlight.a */; };
+		1767B74418BFB47600AC41A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73E18BFB47600AC41A9 /* README.md */; };
+		1767B74518BFB47600AC41A9 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73F18BFB47600AC41A9 /* release_notes.md */; };
 		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
 		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
@@ -68,14 +68,14 @@
 		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
-		1705E463187D22260012C537 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		172FB47F186CD60B00DD134A /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		172FB480186CD60B00DD134A /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
-		17828B92187A1C130063535E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		17828B93187A1C130063535E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		17828B94187A1C130063535E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		17828B95187A1C130063535E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		17828B96187A1C130063535E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		1767B73D18BFB47600AC41A9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		1767B73E18BFB47600AC41A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1767B73F18BFB47600AC41A9 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		1767B74018BFB47600AC41A9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		1767B74118BFB47600AC41A9 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		1767B74218BFB47600AC41A9 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		17907C6718A5DE3B00E56137 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		17907C6818A5DE3B00E56137 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
@@ -126,11 +126,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1767B74318BFB47600AC41A9 /* libTestFlight.a in Frameworks */,
 				17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */,
 				17E788D6186CD5A500AE6FED /* CoreGraphics.framework in Frameworks */,
 				17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */,
 				17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */,
-				17828B98187A1C130063535E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,12 +158,12 @@
 		17828B91187A1C080063535E /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
-				17828B92187A1C130063535E /* libTestFlight.a */,
-				17828B93187A1C130063535E /* README.md */,
-				17828B94187A1C130063535E /* release_notes.md */,
-				17828B95187A1C130063535E /* TestFlight.h */,
-				17828B96187A1C130063535E /* TestFlight+AsyncLogging.h */,
-				1705E463187D22260012C537 /* TestFlight+ManualSessions.h */,
+				1767B73D18BFB47600AC41A9 /* libTestFlight.a */,
+				1767B73E18BFB47600AC41A9 /* README.md */,
+				1767B73F18BFB47600AC41A9 /* release_notes.md */,
+				1767B74018BFB47600AC41A9 /* TestFlight.h */,
+				1767B74118BFB47600AC41A9 /* TestFlight+AsyncLogging.h */,
+				1767B74218BFB47600AC41A9 /* TestFlight+ManualSessions.h */,
 			);
 			name = TestFlight;
 			sourceTree = "<group>";
@@ -361,14 +361,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1767B74518BFB47600AC41A9 /* release_notes.md in Resources */,
 				17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */,
 				17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */,
-				17828B99187A1C130063535E /* README.md in Resources */,
 				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
+				1767B74418BFB47600AC41A9 /* README.md in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
 				17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */,
 				17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */,
-				17828B9A187A1C130063535E /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,13 +543,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
 				);
 				PRODUCT_NAME = TrackCoach;
-				PROVISIONING_PROFILE = "7601EF69-4BA7-4CA8-87C3-5522D3CDBC94";
+				PROVISIONING_PROFILE = "5017BD30-30D6-413E-B9CE-1708FCA5E222";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,13 +564,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
 				);
 				PRODUCT_NAME = TrackCoach;
-				PROVISIONING_PROFILE = "B6F14AB8-1011-40B9-9BAC-AC9142BC7759";
+				PROVISIONING_PROFILE = "90C597FC-E189-4BCC-9728-91E0940A876F";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

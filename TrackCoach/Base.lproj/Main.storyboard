@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5037.3" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -160,7 +160,6 @@
                         <outlet property="startStopButton" destination="fjv-yz-033" id="P9F-Pd-gDR"/>
                         <outlet property="tableView" destination="F4f-hm-0qB" id="aNW-1q-xCa"/>
                         <outlet property="timerLabel" destination="8In-eW-cgP" id="eOW-rY-7xT"/>
-                        <segue destination="srx-0w-jHu" kind="modal" identifier="FirstTimeViewController" id="YoU-bZ-VkD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -170,12 +169,12 @@
         <!--Page View Controller-->
         <scene sceneID="3wH-OK-8rn">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DMb-cY-fUL" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DMb-cY-fUL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zVu-cE-JkS"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bb6-6k-ET1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="462"/>
+            <point key="canvasLocation" x="882" y="438"/>
         </scene>
         <!--First Time View Controller-->
         <scene sceneID="SjF-x1-3wT">
@@ -189,20 +188,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-5U-Zwy">
-                                <rect key="frame" x="80" y="54" width="161" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-5U-Zwy">
+                                <rect key="frame" x="75" y="22" width="171" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvT-PP-qqx">
+                                <rect key="frame" x="15" y="75" width="117" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-fp-F0h">
+                                <rect key="frame" x="15" y="138" width="117" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FV-4P-zfs">
+                                <rect key="frame" x="30" y="291" width="260" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="OaN-9H-f6W"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control With Volume Buttons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-wZ-g29">
+                                <rect key="frame" x="27" y="242" width="266" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="oaK-wZ-g29" secondAttribute="centerX" id="5C5-HN-zXz"/>
+                            <constraint firstItem="fvT-PP-qqx" firstAttribute="width" secondItem="ph1-fp-F0h" secondAttribute="width" id="5x3-Zo-drr"/>
+                            <constraint firstItem="fvT-PP-qqx" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="55" id="7PP-sK-j9j"/>
+                            <constraint firstItem="7FV-4P-zfs" firstAttribute="top" secondItem="oaK-wZ-g29" secondAttribute="bottom" constant="25" id="7cD-Yt-fxG"/>
+                            <constraint firstItem="7FV-4P-zfs" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="30" id="8Sa-Ro-RX7"/>
+                            <constraint firstAttribute="centerX" secondItem="7FV-4P-zfs" secondAttribute="centerX" id="SOv-hh-WUY"/>
+                            <constraint firstItem="ph1-fp-F0h" firstAttribute="top" secondItem="fvT-PP-qqx" secondAttribute="bottom" constant="39" id="Vix-mf-rHI"/>
+                            <constraint firstAttribute="centerX" secondItem="gdO-5U-Zwy" secondAttribute="centerX" id="fVb-20-ibL"/>
+                            <constraint firstItem="gdO-5U-Zwy" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="2" id="gFG-Uf-dZh"/>
+                            <constraint firstItem="fvT-PP-qqx" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="15" id="jpP-IK-HAc"/>
+                            <constraint firstItem="D1r-Oq-O9D" firstAttribute="top" secondItem="7FV-4P-zfs" secondAttribute="bottom" id="q7J-oB-mRX"/>
+                            <constraint firstItem="ph1-fp-F0h" firstAttribute="leading" secondItem="fvT-PP-qqx" secondAttribute="leading" id="sUL-IX-v06"/>
+                            <constraint firstAttribute="trailing" secondItem="7FV-4P-zfs" secondAttribute="trailing" constant="30" id="uNc-Oe-XBq"/>
+                            <constraint firstAttribute="centerY" secondItem="oaK-wZ-g29" secondAttribute="centerY" constant="30" id="zGQ-K5-hX4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboveStartSpaceConstraint" destination="7PP-sK-j9j" id="xfQ-tY-HHo"/>
+                        <outlet property="centerTitleConstraint" destination="zGQ-K5-hX4" id="e2b-5B-iaP"/>
+                        <outlet property="differenceSpaceConstraint" destination="Vix-mf-rHI" id="G5M-oi-Nxb"/>
+                        <outlet property="titleTopSpaceConstraint" destination="gFG-Uf-dZh" id="poB-q3-x9w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRT-PK-YGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="462"/>
+            <point key="canvasLocation" x="1428" y="430"/>
         </scene>
         <!--App Info View Controller-->
         <scene sceneID="kuD-JF-jMn">

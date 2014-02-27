@@ -15,7 +15,7 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate>
+@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (assign) BOOL alertIsDisplayed;
 @property (strong, nonatomic) NSTimer *timer;
@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;

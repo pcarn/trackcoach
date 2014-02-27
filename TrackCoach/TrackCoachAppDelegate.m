@@ -16,6 +16,11 @@
     
     [TestFlight takeOff:@"af3fb1eb-5543-4b4a-979b-ee0253d3fb6e"];
     
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+    
     return YES;
 }
 							

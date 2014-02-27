@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+//        self.pageIndex = 1;
     }
     return self;
 }
@@ -26,6 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!IS_IPHONE_5_SIZE) {
+        NSLog(@"not iphone 5");
+        self.aboveStartSpaceConstraint.constant = 5;
+        self.differenceSpaceConstraint.constant = 35;
+        self.titleTopSpaceConstraint.constant = 120;
+        self.centerTitleConstraint.constant = 25;
+    }
+    
     // Do any additional setup after loading the view.
 }
 
