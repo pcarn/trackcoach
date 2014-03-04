@@ -1,25 +1,25 @@
 //
-//  FirstTimeViewController.m
+//  TutorialViewController.m
 //  TrackCoach
 //
-//  Created by Peter Carnesciali on 2/25/14.
+//  Created by Peter Carnesciali on 3/3/14.
 //  Copyright (c) 2014 Peter Carnesciali. All rights reserved.
 //
 
-#import "FirstTimeViewController.h"
+#import "TutorialViewController.h"
 
-@interface FirstTimeViewController ()
+@interface TutorialViewController ()
 
 @end
 
-@implementation FirstTimeViewController
+@implementation TutorialViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//        self.pageIndex = 1;
+        self.view.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     }
     return self;
 }
@@ -27,14 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!IS_IPHONE_5_SIZE) {
-        NSLog(@"not iphone 5");
-        self.aboveStartSpaceConstraint.constant = 5;
-        self.differenceSpaceConstraint.constant = 35;
-        self.titleTopSpaceConstraint.constant = 120;
-        self.centerTitleConstraint.constant = 25;
-    }
-    
     // Do any additional setup after loading the view.
 }
 

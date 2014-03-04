@@ -220,6 +220,7 @@
     };
     [self.volumeButtons startUsingVolumeButtons];
     
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 //    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
 //    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
@@ -229,18 +230,20 @@
         NSLog(@"First time!");
         [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
     }
-    self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+    
+    
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                              navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                            options:nil];
     self.pageViewController.dataSource = self;
-    FirstTimeViewController *startingViewController = [self viewControllerAtIndex:0];
+    TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
     [self.pageViewController setViewControllers:@[startingViewController]
                                       direction:UIPageViewControllerNavigationDirectionForward
                                        animated:NO completion:nil];
-//    [self presentViewController:self.pageViewController animated:YES completion:nil];
     self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
     
     
     
@@ -261,10 +264,6 @@
     [self.tableView reloadData];
 }
 
-//- (void)viewDidAppear:(BOOL)animated {
-//    [self performSegueWithIdentifier:@"PageViewController" sender:self];
-//}
-
 - (void)dealloc {
     self.volumeButtons = nil;
 }
@@ -272,10 +271,8 @@
 #pragma mark UserDefaults
 - (void)saveSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSData *raceTime = self.trackCoachBrain.raceTime;
     NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
     
-//    [defaults setBool:NO forKey:@"timerIsRunning"];
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
@@ -290,11 +287,6 @@
         UINavigationController *navigationController = segue.destinationViewController;
         AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
         appInfoVC.delegate = self;
-//        AppInfoViewController *appInfoViewController = segue.destinationViewController;
-//        appInfoViewController.delegate = self;
-//    } else if ([segue.identifier isEqualToString:@"FirstTime"]) {
-//        UINavigationController *navigationController = segue.destinationViewController;
-//        FirstTimeViewController *firstTimeVC = [navigationController viewControllers][0];
     }
 }
 
@@ -306,9 +298,9 @@
 
 #pragma mark Tutorial
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+- (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = ((FirstTimeViewController *) viewController).pageIndex;
+    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
     return nil;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -318,7 +310,8 @@
 
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = ((FirstTimeViewController *) viewController).pageIndex;
+    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
+    
     if (index == NSNotFound) {
         return nil;
     }
@@ -326,25 +319,32 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (FirstTimeViewController *)viewControllerAtIndex:(NSUInteger)index {
-    if (index == 1) {
-        FirstTimeViewController *firstTime = [[FirstTimeViewController alloc] init];
-        firstTime.view.backgroundColor = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
-        firstTime.pageIndex = index;
-        return firstTime;
-    }
-    if (index == 2) {
-        [self.pageViewController.view removeFromSuperview];
-        [self.pageViewController removeFromParentViewController];
+- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
+    if (index == 0) {
+        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
+        tutorial1ViewController.pageIndex = index;
+        return tutorial1ViewController;
+    } else if (index == 1) {
+        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
+        tutorial2ViewController.pageIndex = index;
+        return tutorial2ViewController;
+    } else if (index == 2) {
+        TutorialViewController *tutorialEnd = [[TutorialViewController alloc] init];
+        tutorialEnd.pageIndex = index;
+        return tutorialEnd;
+    } else {
+        [UIView animateWithDuration:0.4
+                         animations:^{self.pageViewController.view.alpha = 0.2;}
+                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
+                                    [self.pageViewController removeFromParentViewController];}];
+
         NSLog(@"tried to dismiss");
+        return nil;
     }
-    FirstTimeViewController *firstTimeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstTimeViewController"];
-    firstTimeViewController.pageIndex = index;
-    return firstTimeViewController;
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

@@ -17,8 +17,12 @@
 		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
 		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
-		17A8A72618BD3C49001EE05F /* FirstTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A72518BD3C49001EE05F /* FirstTimeViewController.m */; };
+		17A8A72618BD3C49001EE05F /* Tutorial1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A72518BD3C49001EE05F /* Tutorial1ViewController.m */; };
 		17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C33E0718B66F7900B3DFE2 /* Main_iPad.storyboard */; };
+		17CAB21118C562BA009C0370 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB20F18C562BA009C0370 /* transparent.png */; };
+		17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB21018C562BA009C0370 /* transparent@2x.png */; };
+		17CAB21F18C5654F009C0370 /* Tutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CAB21E18C5654F009C0370 /* Tutorial2ViewController.m */; };
+		17CAB22218C56D5F009C0370 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CAB22118C56D5F009C0370 /* TutorialViewController.m */; };
 		17E11062189F571C0037E7A5 /* volumeHider.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11061189F571C0037E7A5 /* volumeHider.png */; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
@@ -79,9 +83,15 @@
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		17907C6718A5DE3B00E56137 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		17907C6818A5DE3B00E56137 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		17A8A72418BD3C49001EE05F /* FirstTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeViewController.h; sourceTree = "<group>"; };
-		17A8A72518BD3C49001EE05F /* FirstTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTimeViewController.m; sourceTree = "<group>"; };
+		17A8A72418BD3C49001EE05F /* Tutorial1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial1ViewController.h; sourceTree = "<group>"; };
+		17A8A72518BD3C49001EE05F /* Tutorial1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial1ViewController.m; sourceTree = "<group>"; };
 		17C33E0718B66F7900B3DFE2 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		17CAB20F18C562BA009C0370 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
+		17CAB21018C562BA009C0370 /* transparent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent@2x.png"; sourceTree = "<group>"; };
+		17CAB21D18C5654F009C0370 /* Tutorial2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial2ViewController.h; sourceTree = "<group>"; };
+		17CAB21E18C5654F009C0370 /* Tutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial2ViewController.m; sourceTree = "<group>"; };
+		17CAB22018C56D5F009C0370 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		17CAB22118C56D5F009C0370 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		17E11061189F571C0037E7A5 /* volumeHider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeHider.png; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
@@ -233,8 +243,12 @@
 				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
-				17A8A72418BD3C49001EE05F /* FirstTimeViewController.h */,
-				17A8A72518BD3C49001EE05F /* FirstTimeViewController.m */,
+				17CAB22018C56D5F009C0370 /* TutorialViewController.h */,
+				17CAB22118C56D5F009C0370 /* TutorialViewController.m */,
+				17A8A72418BD3C49001EE05F /* Tutorial1ViewController.h */,
+				17A8A72518BD3C49001EE05F /* Tutorial1ViewController.m */,
+				17CAB21D18C5654F009C0370 /* Tutorial2ViewController.h */,
+				17CAB21E18C5654F009C0370 /* Tutorial2ViewController.m */,
 				1703257B18A478230026A4BC /* AppInfoViewController.h */,
 				1703257C18A478230026A4BC /* AppInfoViewController.m */,
 				17049E0E18A0C59400052FAD /* RaceTime.h */,
@@ -253,6 +267,8 @@
 			children = (
 				17907C6718A5DE3B00E56137 /* Icon.png */,
 				17907C6818A5DE3B00E56137 /* Icon@2x.png */,
+				17CAB20F18C562BA009C0370 /* transparent.png */,
+				17CAB21018C562BA009C0370 /* transparent@2x.png */,
 				17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */,
 				17E788DC186CD5A500AE6FED /* InfoPlist.strings */,
 				17E788DF186CD5A500AE6FED /* main.m */,
@@ -364,7 +380,9 @@
 				1767B74518BFB47600AC41A9 /* release_notes.md in Resources */,
 				17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */,
 				17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */,
+				17CAB21118C562BA009C0370 /* transparent.png in Resources */,
 				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
+				17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */,
 				1767B74418BFB47600AC41A9 /* README.md in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
 				17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */,
@@ -406,10 +424,12 @@
 			files = (
 				17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */,
 				1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */,
-				17A8A72618BD3C49001EE05F /* FirstTimeViewController.m in Sources */,
+				17A8A72618BD3C49001EE05F /* Tutorial1ViewController.m in Sources */,
 				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
+				17CAB22218C56D5F009C0370 /* TutorialViewController.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
+				17CAB21F18C5654F009C0370 /* Tutorial2ViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
 				17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */,
 			);

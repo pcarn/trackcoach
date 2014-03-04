@@ -57,8 +57,8 @@
 - (IBAction)contactButton:(id)sender {
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
-    [mailController setSubject:@"TrackCoach"];
-    [mailController setMessageBody:@"Hello World." isHTML:NO];
+    [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
+    [mailController setSubject:@"TrackCoach Feedback"];
     if (mailController) {
         [self presentViewController:mailController animated:YES completion:nil];
     }

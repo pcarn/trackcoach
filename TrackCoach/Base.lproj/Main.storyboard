@@ -167,19 +167,17 @@
             <point key="canvasLocation" x="347" y="57"/>
         </scene>
         <!--Page View Controller-->
-        <scene sceneID="3wH-OK-8rn">
+        <scene sceneID="hsS-fh-TVe">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DMb-cY-fUL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zVu-cE-JkS"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bb6-6k-ET1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jBL-4p-Ke7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qu-Hv-YGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882" y="438"/>
+            <point key="canvasLocation" x="866" y="414"/>
         </scene>
-        <!--First Time View Controller-->
+        <!--Tutorial1 View Controller-->
         <scene sceneID="SjF-x1-3wT">
             <objects>
-                <viewController storyboardIdentifier="FirstTimeViewController" id="srx-0w-jHu" customClass="FirstTimeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Tutorial1ViewController" id="srx-0w-jHu" customClass="Tutorial1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5VF-fM-ERs"/>
                         <viewControllerLayoutGuide type="bottom" id="D1r-Oq-O9D"/>
@@ -189,9 +187,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-5U-Zwy">
-                                <rect key="frame" x="75" y="22" width="171" height="39"/>
+                                <rect key="frame" x="72" y="25" width="177" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -226,6 +224,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-5J-9aP">
+                                <rect key="frame" x="168" y="51" width="126" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="jXp-Dh-nuw"/>
+                                    <constraint firstAttribute="height" constant="126" id="nj4-br-cNU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -236,16 +242,20 @@
                             <constraint firstItem="7FV-4P-zfs" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="30" id="8Sa-Ro-RX7"/>
                             <constraint firstAttribute="centerX" secondItem="7FV-4P-zfs" secondAttribute="centerX" id="SOv-hh-WUY"/>
                             <constraint firstItem="ph1-fp-F0h" firstAttribute="top" secondItem="fvT-PP-qqx" secondAttribute="bottom" constant="39" id="Vix-mf-rHI"/>
+                            <constraint firstAttribute="trailing" secondItem="qHN-5J-9aP" secondAttribute="trailing" constant="26" id="ZMY-7I-dzp"/>
                             <constraint firstAttribute="centerX" secondItem="gdO-5U-Zwy" secondAttribute="centerX" id="fVb-20-ibL"/>
-                            <constraint firstItem="gdO-5U-Zwy" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="2" id="gFG-Uf-dZh"/>
+                            <constraint firstItem="gdO-5U-Zwy" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="5" id="gFG-Uf-dZh"/>
                             <constraint firstItem="fvT-PP-qqx" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="15" id="jpP-IK-HAc"/>
                             <constraint firstItem="D1r-Oq-O9D" firstAttribute="top" secondItem="7FV-4P-zfs" secondAttribute="bottom" id="q7J-oB-mRX"/>
                             <constraint firstItem="ph1-fp-F0h" firstAttribute="leading" secondItem="fvT-PP-qqx" secondAttribute="leading" id="sUL-IX-v06"/>
+                            <constraint firstItem="qHN-5J-9aP" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="168" id="uFA-N2-Yca"/>
                             <constraint firstAttribute="trailing" secondItem="7FV-4P-zfs" secondAttribute="trailing" constant="30" id="uNc-Oe-XBq"/>
+                            <constraint firstItem="qHN-5J-9aP" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="31" id="vaR-06-Xi6"/>
                             <constraint firstAttribute="centerY" secondItem="oaK-wZ-g29" secondAttribute="centerY" constant="30" id="zGQ-K5-hX4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="aboveLogoTopContraint" destination="vaR-06-Xi6" id="XNi-Sz-P98"/>
                         <outlet property="aboveStartSpaceConstraint" destination="7PP-sK-j9j" id="xfQ-tY-HHo"/>
                         <outlet property="centerTitleConstraint" destination="zGQ-K5-hX4" id="e2b-5B-iaP"/>
                         <outlet property="differenceSpaceConstraint" destination="Vix-mf-rHI" id="G5M-oi-Nxb"/>
@@ -254,7 +264,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRT-PK-YGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="430"/>
+            <point key="canvasLocation" x="1394" y="422"/>
+        </scene>
+        <!--Tutorial2 View Controller-->
+        <scene sceneID="Q3c-x9-iqI">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial2ViewController" id="Wjb-eZ-Ucl" customClass="Tutorial2ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bjk-5f-8pL"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbg-QV-DTb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cfy-7Q-nNg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-kG-4XK">
+                                <rect key="frame" x="72" y="25" width="177" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-0M-h33">
+                                <rect key="frame" x="103" y="83" width="115" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmU-bz-txT">
+                                <rect key="frame" x="30" y="136" width="260" height="432"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">If you accidentaly press stop during a race, don't worry! With the new Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rbg-QV-DTb" firstAttribute="top" secondItem="CmU-bz-txT" secondAttribute="bottom" id="3Gw-fv-ds4"/>
+                            <constraint firstAttribute="centerX" secondItem="aDW-0M-h33" secondAttribute="centerX" id="Bur-sD-5QG"/>
+                            <constraint firstItem="CmU-bz-txT" firstAttribute="leading" secondItem="cfy-7Q-nNg" secondAttribute="leading" constant="30" id="Cj3-ys-sXk"/>
+                            <constraint firstAttribute="centerX" secondItem="foB-kG-4XK" secondAttribute="centerX" id="TAX-q0-EQb"/>
+                            <constraint firstItem="foB-kG-4XK" firstAttribute="top" secondItem="bjk-5f-8pL" secondAttribute="bottom" constant="5" id="TVj-Sd-gGi"/>
+                            <constraint firstItem="aDW-0M-h33" firstAttribute="top" secondItem="foB-kG-4XK" secondAttribute="bottom" constant="19" id="Zvl-y0-f94"/>
+                            <constraint firstAttribute="trailing" secondItem="CmU-bz-txT" secondAttribute="trailing" constant="30" id="bIZ-8g-9Ps"/>
+                            <constraint firstAttribute="centerX" secondItem="CmU-bz-txT" secondAttribute="centerX" id="k6J-ff-r0I"/>
+                            <constraint firstItem="CmU-bz-txT" firstAttribute="top" secondItem="aDW-0M-h33" secondAttribute="bottom" constant="24" id="y0J-K0-4oX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-Q1-wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912" y="416"/>
         </scene>
         <!--App Info View Controller-->
         <scene sceneID="kuD-JF-jMn">
@@ -296,7 +359,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EPf-vD-Xhc"/>
                                 </constraints>
-                                <string key="text">Undo Stop can help if you accidentally press Stop. The timer goes back to where it would be, if you had never stopped.
+                                <string key="text">Undo Stop can help if you accidentally press Stop. TrackCoach will continue with no lost time, as if you had never stopped.
 
 Please let me know if you have any questions or feedback!
 
@@ -393,6 +456,7 @@ More features coming soon!
     </scenes>
     <resources>
         <image name="Icon.png" width="76" height="76"/>
+        <image name="transparent.png" width="126" height="126"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
