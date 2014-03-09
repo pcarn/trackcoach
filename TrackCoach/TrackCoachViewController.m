@@ -183,7 +183,7 @@
             [self.tableView reloadData];
         }
     } else {
-        NSLog(@"Unknown alert clicked.");
+        NSLog(@"Other alert clicked.");
     }
     self.alertIsDisplayed = NO;
     [self saveSettings];
@@ -209,13 +209,33 @@
     self.volumeButtons.volumeUpBlock = ^{
         NSLog(@"Volume Up");
         if (!blocksafeSelf.alertIsDisplayed) {
-            [blocksafeSelf startStopButtonAction:nil];
+            if (blocksafeSelf.tutorialIsDisplayed) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
+                                                                message:@"This button starts or stops the timer!"
+                                                               delegate:blocksafeSelf
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                blocksafeSelf.alertIsDisplayed = YES;
+            } else {
+                [blocksafeSelf startStopButtonAction:nil];
+            }
         }
     };
     self.volumeButtons.volumeDownBlock = ^{
         NSLog(@"Volume Down");
         if (!blocksafeSelf.alertIsDisplayed) {
-            [blocksafeSelf lapResetButtonAction:nil];
+            if (blocksafeSelf.tutorialIsDisplayed) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+                                                                message:@"This button laps or resets the timer!"
+                                                               delegate:blocksafeSelf
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                blocksafeSelf.alertIsDisplayed = YES;
+            } else {
+                [blocksafeSelf lapResetButtonAction:nil];
+            }
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
@@ -231,7 +251,7 @@
         [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
     }
     
-    
+    self.tutorialIsDisplayed = YES;
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                               navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
                                                                             options:nil];
@@ -338,6 +358,7 @@
                          completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
                                     [self.pageViewController removeFromParentViewController];}];
 
+        self.tutorialIsDisplayed = NO;
         NSLog(@"tried to dismiss");
         return nil;
     }

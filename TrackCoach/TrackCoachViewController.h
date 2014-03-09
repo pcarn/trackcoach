@@ -20,6 +20,7 @@
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (assign) BOOL alertIsDisplayed;
+@property (assign) BOOL tutorialIsDisplayed;
 @property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;

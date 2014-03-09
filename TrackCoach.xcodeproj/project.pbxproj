@@ -15,6 +15,7 @@
 		1767B74418BFB47600AC41A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73E18BFB47600AC41A9 /* README.md */; };
 		1767B74518BFB47600AC41A9 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73F18BFB47600AC41A9 /* release_notes.md */; };
 		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
+		178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
 		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
 		17A8A72618BD3C49001EE05F /* Tutorial1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A72518BD3C49001EE05F /* Tutorial1ViewController.m */; };
@@ -81,6 +82,8 @@
 		1767B74118BFB47600AC41A9 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		1767B74218BFB47600AC41A9 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		178AADEA18CCDC6200C7691F /* TrackCoachViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachViewController_iPad.h; sourceTree = "<group>"; };
+		178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewController_iPad.m; sourceTree = "<group>"; };
 		17907C6718A5DE3B00E56137 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		17907C6818A5DE3B00E56137 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		17A8A72418BD3C49001EE05F /* Tutorial1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial1ViewController.h; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
+				178AADEA18CCDC6200C7691F /* TrackCoachViewController_iPad.h */,
+				178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */,
 				17CAB22018C56D5F009C0370 /* TutorialViewController.h */,
 				17CAB22118C56D5F009C0370 /* TutorialViewController.m */,
 				17A8A72418BD3C49001EE05F /* Tutorial1ViewController.h */,
@@ -425,6 +430,7 @@
 				17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */,
 				1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */,
 				17A8A72618BD3C49001EE05F /* Tutorial1ViewController.m in Sources */,
+				178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */,
 				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
 				17CAB22218C56D5F009C0370 /* TutorialViewController.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
