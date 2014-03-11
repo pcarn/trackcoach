@@ -7,6 +7,7 @@
 //
 
 #import "TrackCoachViewController.h"
+#import "TrackCoachiPadTableViewCell.h"
 
 @interface TrackCoachViewController_iPad : TrackCoachViewController
 

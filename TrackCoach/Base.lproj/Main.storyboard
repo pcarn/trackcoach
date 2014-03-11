@@ -317,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-Q1-wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="416"/>
+            <point key="canvasLocation" x="1870" y="414"/>
         </scene>
         <!--App Info View Controller-->
         <scene sceneID="kuD-JF-jMn">
@@ -452,6 +452,54 @@ More features coming soon!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR9-EW-0wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="882" y="-291"/>
+        </scene>
+        <!--Tutorial3 View Controller-->
+        <scene sceneID="Ufb-hu-rAK">
+            <objects>
+                <viewController storyboardIdentifier="Tutorial3ViewController" id="tEO-Pz-Fto" customClass="Tutorial3ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZCO-B5-j4c"/>
+                        <viewControllerLayoutGuide type="bottom" id="X0b-zb-ppG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fxw-Wf-maM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWU-dM-WIH">
+                                <rect key="frame" x="30" y="88" width="260" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Start 
+using
+TrackCoach!</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⇨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keb-Fe-6QG">
+                                <rect key="frame" x="60" y="379" width="200" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="158"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wWU-dM-WIH" secondAttribute="trailing" constant="30" id="DUl-zt-avg"/>
+                            <constraint firstItem="wWU-dM-WIH" firstAttribute="top" secondItem="ZCO-B5-j4c" secondAttribute="bottom" constant="68" id="Pk3-Rf-YeM"/>
+                            <constraint firstAttribute="centerX" secondItem="wWU-dM-WIH" secondAttribute="centerX" id="XUp-Fn-GzA"/>
+                            <constraint firstItem="keb-Fe-6QG" firstAttribute="leading" secondItem="Fxw-Wf-maM" secondAttribute="leading" constant="60" id="XpE-xD-NUB"/>
+                            <constraint firstItem="X0b-zb-ppG" firstAttribute="top" secondItem="keb-Fe-6QG" secondAttribute="bottom" id="e6P-ns-0x9"/>
+                            <constraint firstAttribute="trailing" secondItem="keb-Fe-6QG" secondAttribute="trailing" constant="60" id="eW0-nb-cIh"/>
+                            <constraint firstItem="X0b-zb-ppG" firstAttribute="top" secondItem="wWU-dM-WIH" secondAttribute="bottom" constant="200" id="o6u-fS-ga9"/>
+                            <constraint firstAttribute="centerX" secondItem="keb-Fe-6QG" secondAttribute="centerX" id="oMM-0K-R6y"/>
+                            <constraint firstItem="wWU-dM-WIH" firstAttribute="leading" secondItem="Fxw-Wf-maM" secondAttribute="leading" constant="30" id="pHq-uN-YPp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCK-Qi-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="414"/>
         </scene>
     </scenes>
     <resources>

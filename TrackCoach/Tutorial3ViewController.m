@@ -1,18 +1,18 @@
 //
-//  TrackCoachViewController_iPad.m
+//  Tutorial3ViewController.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 3/9/14.
 //  Copyright (c) 2014 Peter Carnesciali. All rights reserved.
 //
 
-#import "TrackCoachViewController_iPad.h"
+#import "Tutorial3ViewController.h"
 
-@interface TrackCoachViewController_iPad ()
+@interface Tutorial3ViewController ()
 
 @end
 
-@implementation TrackCoachViewController_iPad
+@implementation Tutorial3ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,20 +22,6 @@
     }
     return self;
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TrackCoachiPadTableViewCell *cell = (TrackCoachiPadTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LapCell"];
-    
-    NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
-    cell.detailTextLabel.text = [super timeToString:[lapTime doubleValue]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
-    cell.splitLabel.text = @"Hello World";
-    return cell;
-}
-
-
-
-
 
 - (void)viewDidLoad
 {

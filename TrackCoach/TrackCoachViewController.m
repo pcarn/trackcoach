@@ -349,7 +349,7 @@
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [[TutorialViewController alloc] init];
+        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
         tutorialEnd.pageIndex = index;
         return tutorialEnd;
     } else {
@@ -365,7 +365,7 @@
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
