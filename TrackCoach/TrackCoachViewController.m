@@ -23,6 +23,7 @@
     return _trackCoachBrain;
 }
 
+#pragma mark Button Actions
 - (IBAction)shareButtonAction:(id)sender {
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
@@ -76,7 +77,6 @@
 
 //sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
-//    [self.trackCoachBrain lapResetButtonPressed];
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
@@ -94,6 +94,8 @@
     [self saveSettings];
 }
 
+
+#pragma mark UI Setup for Timer
 - (void)setupForTimerRunning {
     [self startNSTimer];
     [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -116,18 +118,16 @@
 }
 
 - (void)updateUI {
-//    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.trackCoachBrain.timerIsRunning) {
-            NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
-            self.timerLabel.text = [TrackCoachViewController timeToString:totalElapsed];
-            NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfAllLaps];
-            self.lapTimerLabel.text = [TrackCoachViewController timeToString:currentLapTime];
-        } else {
-            NSTimeInterval totalOfLaps = [self.trackCoachBrain.raceTime totalOfAllLaps];
-            self.timerLabel.text = [TrackCoachViewController timeToString:totalOfLaps];
-            self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
-        }
-//    });
+    if (self.trackCoachBrain.timerIsRunning) {
+        NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
+        self.timerLabel.text = [TrackCoachViewController timeToString:totalElapsed];
+        NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfAllLaps];
+        self.lapTimerLabel.text = [TrackCoachViewController timeToString:currentLapTime];
+    } else {
+        NSTimeInterval totalOfLaps = [self.trackCoachBrain.raceTime totalOfAllLaps];
+        self.timerLabel.text = [TrackCoachViewController timeToString:totalOfLaps];
+        self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+    }
 }
 
 #pragma mark TableView
@@ -153,7 +153,6 @@
 }
 
 #pragma mark AlertView
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == RESET_ALERT) {
         if (buttonIndex == 1) {
@@ -178,7 +177,98 @@
     [self saveSettings];
 }
 
-#pragma mark other methods for file
+#pragma mark UserDefaults
+- (void)saveSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
+    
+    [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
+    [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
+    [defaults synchronize];
+    NSLog(@"Data saved");
+}
+
+
+#pragma mark Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AppInfo"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
+        appInfoVC.delegate = self;
+    }
+}
+
+#pragma mark AppInfoViewControllerDelegate
+- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Tutorial
+- (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
+      viewControllerBeforeViewController:(UIViewController *)viewController {
+    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
+    return nil;
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
+    
+    if (index == NSNotFound) {
+        return nil;
+    }
+    index++;
+    return [self viewControllerAtIndex:index];
+}
+
+- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
+    if (index == 0) {
+        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
+        tutorial1ViewController.pageIndex = index;
+        return tutorial1ViewController;
+    } else if (index == 1) {
+        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
+        tutorial2ViewController.pageIndex = index;
+        return tutorial2ViewController;
+    } else if (index == 2) {
+        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
+        tutorialEnd.pageIndex = index;
+        return tutorialEnd;
+    } else {
+        [UIView animateWithDuration:0.4
+                         animations:^{self.pageViewController.view.alpha = 0.2;}
+                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
+                                    [self.pageViewController removeFromParentViewController];}];
+
+        self.tutorialIsDisplayed = NO;
+        NSLog(@"tried to dismiss");
+        return nil;
+    }
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    return 3;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    return 0;
+}
+
+#pragma mark Other/Utility methods
++ (NSString *)timeToString:(NSTimeInterval)time {
+    int mins = (int)(time / 60.0);
+    time -= mins * 60;
+    int secs = (int)(time);
+    time -= secs;
+    int dec = time * 100.0;
+    
+    return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
+}
+
 - (void)startNSTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 100.0)
                                                   target:self
@@ -231,9 +321,9 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-//    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
-//    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
+    //    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
+    //    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
     
     if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
         NSLog(@"First time!");
@@ -277,100 +367,7 @@
     self.volumeButtons = nil;
 }
 
-#pragma mark UserDefaults
-- (void)saveSettings {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
-    
-    [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
-    [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
-    [defaults synchronize];
-    NSLog(@"Data saved");
-}
 
-
-#pragma mark Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AppInfo"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
-        appInfoVC.delegate = self;
-    }
-}
-
-#pragma mark AppInfoViewControllerDelegate
-
-- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark Tutorial
-
-- (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
-      viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    return nil;
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    return [self viewControllerAtIndex:index];
-}
-
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    
-    if (index == NSNotFound) {
-        return nil;
-    }
-    index++;
-    return [self viewControllerAtIndex:index];
-}
-
-- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
-    if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
-        tutorial1ViewController.pageIndex = index;
-        return tutorial1ViewController;
-    } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
-        tutorial2ViewController.pageIndex = index;
-        return tutorial2ViewController;
-    } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
-        tutorialEnd.pageIndex = index;
-        return tutorialEnd;
-    } else {
-        [UIView animateWithDuration:0.4
-                         animations:^{self.pageViewController.view.alpha = 0.2;}
-                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
-                                    [self.pageViewController removeFromParentViewController];}];
-
-        self.tutorialIsDisplayed = NO;
-        NSLog(@"tried to dismiss");
-        return nil;
-    }
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 3;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
-}
-
-#pragma mark Utility methods
-+ (NSString *)timeToString:(NSTimeInterval)time {
-    int mins = (int)(time / 60.0);
-    time -= mins * 60;
-    int secs = (int)(time);
-    time -= secs;
-    int dec = time * 100.0;
-    
-    return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
-}
 
 
 

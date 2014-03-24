@@ -14,7 +14,6 @@
 #import "Tutorial2ViewController.h"
 
 #define iOS_7_or_later SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
-
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate, UIPageViewControllerDataSource>
@@ -23,8 +22,8 @@
 @property (assign) BOOL tutorialIsDisplayed;
 @property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

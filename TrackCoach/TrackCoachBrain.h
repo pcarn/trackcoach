@@ -18,10 +18,10 @@
 @property (strong, nonatomic) RaceTime *raceTime;
 
 - (void)lap;
+- (BOOL)lapsIsEmpty;
 - (void)reset;
 - (void)start;
 - (void)stop;
 - (void)undoStop;
-- (BOOL)lapsIsEmpty;
 
 @end
