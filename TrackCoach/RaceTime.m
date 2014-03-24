@@ -61,7 +61,7 @@
     if (count > numberOfLaps) {
         [NSException raise:@"Tried to total more laps than were present" format:nil];
     }
-    for (int i=count; i<numberOfLaps; i++) {
+    for (NSInteger i=count; i<numberOfLaps; i++) {
         total += [self.lapTimes[i] doubleValue];
     }
     return total;

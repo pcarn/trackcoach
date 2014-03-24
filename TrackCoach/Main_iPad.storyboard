@@ -214,7 +214,7 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="contactButton:" destination="1XP-Fe-ht0" eventType="touchUpInside" id="obj-WQ-S6x"/>
+                                    <action selector="contactButtonAction:" destination="1XP-Fe-ht0" eventType="touchUpInside" id="dcv-zd-f0K"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can keep your eyes on the race. Use the volume buttons on your iPhone to Start, Stop, or Lap the timer." translatesAutoresizingMaskIntoConstraints="NO" id="dMQ-SV-9FO">

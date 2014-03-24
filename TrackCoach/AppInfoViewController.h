@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
 @property (weak, nonatomic) IBOutlet UITextView *topTextView;
-- (IBAction)contactButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *contactButton;
+
+- (IBAction)contactButtonAction:(id)sender;
 - (IBAction)back:(id)sender;
 @end
