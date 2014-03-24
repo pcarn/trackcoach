@@ -45,6 +45,8 @@
 		17E11081189F602C0037E7A5 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11071189F602C0037E7A5 /* AppIcon76x76@2x.png */; };
 		17E11082189F602C0037E7A5 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11072189F602C0037E7A5 /* iTunesArtwork.png */; };
 		17E11083189F602C0037E7A5 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11073189F602C0037E7A5 /* iTunesArtwork@2x.png */; };
+		17E61AD918E0DD33004AB7BE /* Icon_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E61AD718E0DD33004AB7BE /* Icon_iPad.png */; };
+		17E61ADA18E0DD33004AB7BE /* Icon_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */; };
 		17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788D6186CD5A500AE6FED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D5186CD5A500AE6FED /* CoreGraphics.framework */; };
 		17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
@@ -122,6 +124,8 @@
 		17E11071189F602C0037E7A5 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 		17E11072189F602C0037E7A5 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		17E11073189F602C0037E7A5 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		17E61AD718E0DD33004AB7BE /* Icon_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_iPad.png; sourceTree = "<group>"; };
+		17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_iPad@2x.png"; sourceTree = "<group>"; };
 		17E788D0186CD5A400AE6FED /* TrackCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E788D3186CD5A400AE6FED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17E788D5186CD5A500AE6FED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -286,6 +290,8 @@
 			children = (
 				17907C6718A5DE3B00E56137 /* Icon.png */,
 				17907C6818A5DE3B00E56137 /* Icon@2x.png */,
+				17E61AD718E0DD33004AB7BE /* Icon_iPad.png */,
+				17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */,
 				17CAB20F18C562BA009C0370 /* transparent.png */,
 				17CAB21018C562BA009C0370 /* transparent@2x.png */,
 				178AADED18CCE08C00C7691F /* transparent_iPad.png */,
@@ -405,7 +411,9 @@
 				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
 				17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */,
 				1767B74418BFB47600AC41A9 /* README.md in Resources */,
+				17E61AD918E0DD33004AB7BE /* Icon_iPad.png in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
+				17E61ADA18E0DD33004AB7BE /* Icon_iPad@2x.png in Resources */,
 				178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */,
 				17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */,
 				17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */,
@@ -583,6 +591,7 @@
 		17E78903186CD5A500AE6FED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -604,6 +613,7 @@
 		17E78904186CD5A500AE6FED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

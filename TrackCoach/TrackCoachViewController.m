@@ -328,23 +328,20 @@
     if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
         NSLog(@"First time!");
         [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
+        self.tutorialIsDisplayed = YES;
+        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                                options:nil];
+        self.pageViewController.dataSource = self;
+        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
+        [self.pageViewController setViewControllers:@[startingViewController]
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:NO completion:nil];
+        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self addChildViewController:self.pageViewController];
+        [self.view addSubview:self.pageViewController.view];
+        [self.pageViewController didMoveToParentViewController:self];
     }
-    
-    self.tutorialIsDisplayed = YES;
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                              navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                            options:nil];
-    self.pageViewController.dataSource = self;
-    TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-    [self.pageViewController setViewControllers:@[startingViewController]
-                                      direction:UIPageViewControllerNavigationDirectionForward
-                                       animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self addChildViewController:self.pageViewController];
-    [self.view addSubview:self.pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
-    
-    
     
     self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     NSData *encodedRaceTime = [defaults objectForKey:@"encodedRaceTime"];
