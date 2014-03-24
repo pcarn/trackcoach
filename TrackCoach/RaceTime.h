@@ -17,6 +17,7 @@
 - (void)removeMostRecentLap;
 - (void)addNewLap;
 - (NSTimeInterval)elapsed;
-- (NSTimeInterval)totalOfLaps;
+- (NSTimeInterval)totalOfAllLaps;
+- (NSTimeInterval)totalOfLapAndBelow:(NSInteger)count;
 
 @end

@@ -37,7 +37,7 @@
 }
 
 - (void)addNewLap {
-    [self.lapTimes insertObject:@([self elapsed] - [self totalOfLaps]) atIndex:0];
+    [self.lapTimes insertObject:@([self elapsed] - [self totalOfAllLaps]) atIndex:0];
 }
 
 - (NSTimeInterval)elapsed {
@@ -47,10 +47,22 @@
     return [[NSDate date] timeIntervalSinceDate:self.startDate];
 }
 
-- (NSTimeInterval)totalOfLaps {
+- (NSTimeInterval)totalOfAllLaps {
     NSTimeInterval total = 0;
     for (NSNumber *lap in self.lapTimes) {
         total += [lap doubleValue];
+    }
+    return total;
+}
+
+- (NSTimeInterval)totalOfLapAndBelow:(NSInteger)count {
+    NSTimeInterval total = 0;
+    NSUInteger numberOfLaps = self.lapTimes.count;
+    if (count > numberOfLaps) {
+        [NSException raise:@"Tried to total more laps than were present" format:nil];
+    }
+    for (int i=count; i<numberOfLaps; i++) {
+        total += [self.lapTimes[i] doubleValue];
     }
     return total;
 }

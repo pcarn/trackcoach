@@ -70,5 +70,16 @@
     return ([self.raceTime.lapTimes count] == 0);
 }
 
+#pragma mark Utility methods
++ (NSString *)timeToString:(NSTimeInterval)time {
+    int mins = (int)(time / 60.0);
+    time -= mins * 60;
+    int secs = (int)(time);
+    time -= secs;
+    int dec = time * 100.0;
+    
+    return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
+}
+
 
 @end

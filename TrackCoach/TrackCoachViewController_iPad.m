@@ -27,14 +27,11 @@
     TrackCoachiPadTableViewCell *cell = (TrackCoachiPadTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LapCell"];
     
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
-    cell.detailTextLabel.text = [super timeToString:[lapTime doubleValue]];
+    cell.splitLabel.text = [TrackCoachBrain timeToString:[lapTime doubleValue]];
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
-    cell.splitLabel.text = @"Hello World";
+    cell.detailLabel.text = [TrackCoachBrain timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
     return cell;
 }
-
-
-
 
 
 - (void)viewDidLoad

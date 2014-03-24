@@ -24,4 +24,6 @@
 - (void)undoStop;
 - (BOOL)lapsIsEmpty;
 
++ (NSString *)timeToString:(NSTimeInterval)time;
+
 @end

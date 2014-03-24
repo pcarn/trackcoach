@@ -36,6 +36,5 @@
 - (IBAction)startStopButtonAction:(id)sender;
 - (IBAction)shareButtonAction:(id)sender;
 - (void)updateUI;
-- (NSString *)timeToString:(NSTimeInterval)time;
 
 @end
