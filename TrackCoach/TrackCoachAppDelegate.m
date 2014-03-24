@@ -14,7 +14,7 @@
 {
     // Override point for customization after application launch.
     
-    [TestFlight takeOff:@"af3fb1eb-5543-4b4a-979b-ee0253d3fb6e"];
+    [TestFlight takeOff:@"0f020678-8a94-49de-9dc3-95fdc26bd448"];
     
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
