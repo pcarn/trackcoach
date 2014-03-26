@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Track Coach View Controller-->
@@ -254,11 +255,13 @@
                             <constraint firstAttribute="centerY" secondItem="oaK-wZ-g29" secondAttribute="centerY" constant="30" id="zGQ-K5-hX4"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="aboveButtonIndicatorsSpaceConstraint" destination="7PP-sK-j9j" id="0L3-0O-anq"/>
                         <outlet property="aboveLogoTopContraint" destination="vaR-06-Xi6" id="XNi-Sz-P98"/>
-                        <outlet property="aboveStartSpaceConstraint" destination="7PP-sK-j9j" id="xfQ-tY-HHo"/>
-                        <outlet property="centerTitleConstraint" destination="zGQ-K5-hX4" id="e2b-5B-iaP"/>
-                        <outlet property="differenceSpaceConstraint" destination="Vix-mf-rHI" id="G5M-oi-Nxb"/>
+                        <outlet property="betweenSubtitleAndMainTextSpaceConstraint" destination="7cD-Yt-fxG" id="bBk-lD-VKG"/>
+                        <outlet property="centerSubtitleVerticalOffsetConstraint" destination="zGQ-K5-hX4" id="uAl-vN-yQZ"/>
+                        <outlet property="differenceBetweenButtonIndicatorsSpaceConstraint" destination="Vix-mf-rHI" id="PqG-xl-xV7"/>
                         <outlet property="titleTopSpaceConstraint" destination="gFG-Uf-dZh" id="poB-q3-x9w"/>
                     </connections>
                 </viewController>
@@ -281,6 +284,9 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-kG-4XK">
                                 <rect key="frame" x="72" y="25" width="177" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="DA2-0E-9ub"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -288,32 +294,51 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-0M-h33">
                                 <rect key="frame" x="103" y="83" width="115" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="TtE-A9-SYc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmU-bz-txT">
-                                <rect key="frame" x="30" y="147" width="260" height="421"/>
+                                <rect key="frame" x="30" y="142" width="260" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">If you accidentaly press stop during a race, don't worry! With the new Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="fb2-zB-9vA"/>
+                                </constraints>
+                                <string key="text">If you accidentally press stop during a race, don't worry! With the new Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="RCy-Cg-daY">
+                                <rect key="frame" x="56" y="327" width="208" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RCy-Cg-daY" secondAttribute="height" multiplier="1:1" id="65K-aT-Dnh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="120" id="fd0-Z8-hlN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rbg-QV-DTb" firstAttribute="top" secondItem="CmU-bz-txT" secondAttribute="bottom" id="3Gw-fv-ds4"/>
+                            <constraint firstItem="rbg-QV-DTb" firstAttribute="top" secondItem="RCy-Cg-daY" secondAttribute="bottom" constant="33" id="B9F-Ca-KBv"/>
                             <constraint firstAttribute="centerX" secondItem="aDW-0M-h33" secondAttribute="centerX" id="Bur-sD-5QG"/>
-                            <constraint firstItem="CmU-bz-txT" firstAttribute="leading" secondItem="cfy-7Q-nNg" secondAttribute="leading" constant="30" id="Cj3-ys-sXk"/>
+                            <constraint firstItem="CmU-bz-txT" firstAttribute="leading" secondItem="cfy-7Q-nNg" secondAttribute="leading" constant="30" id="T5I-iM-ot4"/>
                             <constraint firstAttribute="centerX" secondItem="foB-kG-4XK" secondAttribute="centerX" id="TAX-q0-EQb"/>
                             <constraint firstItem="foB-kG-4XK" firstAttribute="top" secondItem="bjk-5f-8pL" secondAttribute="bottom" constant="5" id="TVj-Sd-gGi"/>
+                            <constraint firstAttribute="centerX" secondItem="RCy-Cg-daY" secondAttribute="centerX" id="ZEL-wW-Ufv"/>
                             <constraint firstItem="aDW-0M-h33" firstAttribute="top" secondItem="foB-kG-4XK" secondAttribute="bottom" constant="19" id="Zvl-y0-f94"/>
+                            <constraint firstItem="RCy-Cg-daY" firstAttribute="top" secondItem="CmU-bz-txT" secondAttribute="bottom" constant="40" id="aO3-D1-PEH"/>
                             <constraint firstAttribute="trailing" secondItem="CmU-bz-txT" secondAttribute="trailing" constant="30" id="bIZ-8g-9Ps"/>
-                            <constraint firstAttribute="centerX" secondItem="CmU-bz-txT" secondAttribute="centerX" id="k6J-ff-r0I"/>
-                            <constraint firstItem="CmU-bz-txT" firstAttribute="top" secondItem="aDW-0M-h33" secondAttribute="bottom" constant="35" id="y0J-K0-4oX"/>
+                            <constraint firstItem="CmU-bz-txT" firstAttribute="top" secondItem="aDW-0M-h33" secondAttribute="bottom" constant="30" id="y0J-K0-4oX"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="mainTextView" destination="CmU-bz-txT" id="uOU-Hb-okz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-Q1-wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,6 +522,7 @@ TrackCoach!</string>
                             <constraint firstItem="wWU-dM-WIH" firstAttribute="leading" secondItem="Fxw-Wf-maM" secondAttribute="leading" constant="30" id="pHq-uN-YPp"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCK-Qi-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

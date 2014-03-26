@@ -30,11 +30,13 @@
 //    self.pageIndex = 1;
     if (!IS_IPHONE_5_SIZE) {
         NSLog(@"not iphone 5");
-        self.aboveStartSpaceConstraint.constant = 5;
-        self.differenceSpaceConstraint.constant = 35;
+        self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
+        self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
         self.titleTopSpaceConstraint.constant = 120;
-        self.centerTitleConstraint.constant = 25;
+        self.centerSubtitleVerticalOffsetConstraint.constant = 18;
         self.aboveLogoTopContraint.constant = -17;
+        self.betweenSubtitleAndMainTextSpaceConstraint.constant -= 5;
+//        self.aboveSubtitleSpaceConstraint.constant += 5;
     }
     
     // Do any additional setup after loading the view.

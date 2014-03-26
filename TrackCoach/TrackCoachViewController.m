@@ -1,6 +1,6 @@
 //
-//  TestTimerViewController.m
-//  TestTimer
+//  TrackCoachViewController.m
+//  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/12/13.
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
@@ -208,7 +208,7 @@
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    return nil;
+//    return nil;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
@@ -245,7 +245,8 @@
                                     [self.pageViewController removeFromParentViewController];}];
 
         self.tutorialIsDisplayed = NO;
-        NSLog(@"tried to dismiss");
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
+        NSLog(@"Dismissed tutorial");
         return nil;
     }
 }
@@ -327,7 +328,7 @@
     
     if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
         NSLog(@"First time!");
-        [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
+//        [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
         self.tutorialIsDisplayed = YES;
         self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                   navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal

@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.pageIndex = 2;
     // Do any additional setup after loading the view.
 }
 

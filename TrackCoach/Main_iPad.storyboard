@@ -413,7 +413,7 @@ More features coming soon!
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="differenceSpaceConstraint" destination="FBS-Ye-I3n" id="fnD-Pb-MMr"/>
+                        <outlet property="differenceBetweenButtonIndicatorsSpaceConstraint" destination="FBS-Ye-I3n" id="cEd-Of-vx2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rY-Dz-5hv" userLabel="First Responder" sceneMemberID="firstResponder"/>

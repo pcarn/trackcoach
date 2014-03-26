@@ -1,6 +1,6 @@
 //
-//  TestTimerViewController.h
-//  TestTimer
+//  TrackCoachViewController.h
+//  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/12/13.
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.

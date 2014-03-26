@@ -13,9 +13,11 @@
 
 @interface Tutorial1ViewController : TutorialViewController
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveStartSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *differenceSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveButtonIndicatorsSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *differenceBetweenButtonIndicatorsSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerTitleConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerSubtitleVerticalOffsetConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveLogoTopContraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenSubtitleAndMainTextSpaceConstraint;
+
 @end
