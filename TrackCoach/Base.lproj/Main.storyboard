@@ -307,7 +307,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="fb2-zB-9vA"/>
                                 </constraints>
-                                <string key="text">If you accidentally press stop during a race, don't worry! With the new Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</string>
+                                <string key="text">If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -336,9 +336,6 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="mainTextView" destination="CmU-bz-txT" id="uOU-Hb-okz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-Q1-wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -384,7 +381,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EPf-vD-Xhc"/>
                                 </constraints>
-                                <string key="text">Undo Stop can help if you accidentally press Stop. TrackCoach will continue with no lost time, as if you had never stopped.
+                                <string key="text">If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.
 
 Please let me know if you have any questions or feedback!
 
