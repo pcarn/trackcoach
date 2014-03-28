@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8In-eW-cgP">
-                                <rect key="frame" x="45" y="45" width="680" height="84"/>
+                                <rect key="frame" x="45" y="45" width="680" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="72"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-hm-0qB">
-                                <rect key="frame" x="20" y="149" width="730" height="585"/>
+                                <rect key="frame" x="20" y="150" width="730" height="584"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -105,9 +105,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-fc-7HQ">
-                                <rect key="frame" x="20" y="8" width="40" height="18"/>
+                                <rect key="frame" x="20" y="10" width="47" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Share">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -116,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu6-2f-6kA">
-                                <rect key="frame" x="720" y="1" width="30" height="31"/>
+                                <rect key="frame" x="720" y="5" width="30" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7tK-Ua-0qN"/>
@@ -130,21 +129,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-n0-726">
-                                <rect key="frame" x="323" y="3" width="124" height="29"/>
+                                <rect key="frame" x="323" y="7" width="124" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbB-mj-93r">
-                                <rect key="frame" x="368" y="132" width="35" height="21"/>
+                                <rect key="frame" x="368" y="133" width="35" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-3V-obu">
-                                <rect key="frame" x="697" y="132" width="37" height="21"/>
+                                <rect key="frame" x="697" y="133" width="37" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,7 +154,7 @@
                         <constraints>
                             <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" id="0B0-rx-OBz"/>
                             <constraint firstItem="bvf-3V-obu" firstAttribute="leading" secondItem="DbB-mj-93r" secondAttribute="trailing" constant="294" id="1Gf-e2-grJ"/>
-                            <constraint firstItem="tbn-fc-7HQ" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="8" id="6fv-Z2-UmE"/>
+                            <constraint firstItem="tbn-fc-7HQ" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="10" id="6fv-Z2-UmE"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="20" id="DX7-QV-hf2"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="20" id="Ej0-pX-t13"/>
                             <constraint firstItem="DbB-mj-93r" firstAttribute="centerY" secondItem="bvf-3V-obu" secondAttribute="centerY" id="HEm-1r-WD9"/>
