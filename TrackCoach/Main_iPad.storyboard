@@ -212,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elx-Xf-jmf">
-                                <rect key="frame" x="325" y="620" width="119" height="28"/>
+                                <rect key="frame" x="325" y="640" width="119" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Contact Me">
@@ -230,17 +230,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF2-y5-eT6">
-                                <rect key="frame" x="15" y="390" width="733" height="200"/>
+                                <rect key="frame" x="15" y="390" width="733" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="EPf-vD-Xhc"/>
+                                    <constraint firstAttribute="height" constant="220" id="EPf-vD-Xhc"/>
                                 </constraints>
                                 <string key="text">Undo Stop can help if you accidentally press Stop. The timer goes back to where it would be, if you had never stopped.
 
 Please let me know if you have any questions or feedback!
 
-More features coming soon!
+More features on the way!
 
  - Peter Carnesciali</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>

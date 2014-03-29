@@ -305,6 +305,7 @@
 			buildPhases = (
 				17E788CC186CD5A400AE6FED /* Sources */,
 				17E788CD186CD5A400AE6FED /* Frameworks */,
+				17D59ACC18E6841D002214BC /* ShellScript */,
 				17E788CE186CD5A400AE6FED /* Resources */,
 			);
 			buildRules = (
@@ -417,6 +418,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17D59ACC18E6841D002214BC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17E788CC186CD5A400AE6FED /* Sources */ = {
@@ -566,6 +583,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
@@ -588,6 +606,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CURRENT_PROJECT_VERSION = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
