@@ -11,9 +11,6 @@
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
-		1767B74318BFB47600AC41A9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1767B73D18BFB47600AC41A9 /* libTestFlight.a */; };
-		1767B74418BFB47600AC41A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73E18BFB47600AC41A9 /* README.md */; };
-		1767B74518BFB47600AC41A9 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 1767B73F18BFB47600AC41A9 /* release_notes.md */; };
 		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
 		178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
@@ -81,12 +78,6 @@
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
 		172FB47F186CD60B00DD134A /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		172FB480186CD60B00DD134A /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
-		1767B73D18BFB47600AC41A9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		1767B73E18BFB47600AC41A9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		1767B73F18BFB47600AC41A9 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		1767B74018BFB47600AC41A9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		1767B74118BFB47600AC41A9 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		1767B74218BFB47600AC41A9 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADEA18CCDC6200C7691F /* TrackCoachViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachViewController_iPad.h; sourceTree = "<group>"; };
 		178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewController_iPad.m; sourceTree = "<group>"; };
@@ -153,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1767B74318BFB47600AC41A9 /* libTestFlight.a in Frameworks */,
 				17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */,
 				17E788D6186CD5A500AE6FED /* CoreGraphics.framework in Frameworks */,
 				17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */,
@@ -184,19 +174,6 @@
 				1798666E18CCF439002AD404 /* TrackCoachiPadTableViewCell.m */,
 			);
 			name = iPad;
-			sourceTree = "<group>";
-		};
-		17828B91187A1C080063535E /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				1767B73D18BFB47600AC41A9 /* libTestFlight.a */,
-				1767B73E18BFB47600AC41A9 /* README.md */,
-				1767B73F18BFB47600AC41A9 /* release_notes.md */,
-				1767B74018BFB47600AC41A9 /* TestFlight.h */,
-				1767B74118BFB47600AC41A9 /* TestFlight+AsyncLogging.h */,
-				1767B74218BFB47600AC41A9 /* TestFlight+ManualSessions.h */,
-			);
-			name = TestFlight;
 			sourceTree = "<group>";
 		};
 		17E11063189F602C0037E7A5 /* App Icon [Squared] */ = {
@@ -280,7 +257,6 @@
 				172FB480186CD60B00DD134A /* VolumeButtons.m */,
 				17E788EB186CD5A500AE6FED /* Images.xcassets */,
 				17E788DA186CD5A500AE6FED /* Supporting Files */,
-				17828B91187A1C080063535E /* TestFlight */,
 			);
 			path = TrackCoach;
 			sourceTree = "<group>";
@@ -404,13 +380,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1767B74518BFB47600AC41A9 /* release_notes.md in Resources */,
 				17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */,
 				17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */,
 				17CAB21118C562BA009C0370 /* transparent.png in Resources */,
 				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
 				17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */,
-				1767B74418BFB47600AC41A9 /* README.md in Resources */,
 				17E61AD918E0DD33004AB7BE /* Icon_iPad.png in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
 				17E61ADA18E0DD33004AB7BE /* Icon_iPad@2x.png in Resources */,
