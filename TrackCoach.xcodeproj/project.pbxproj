@@ -11,7 +11,6 @@
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
-		17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
 		178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -20,6 +19,7 @@
 		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
 		1798666F18CCF439002AD404 /* TrackCoachiPadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachiPadTableViewCell.m */; };
 		17A8A72618BD3C49001EE05F /* Tutorial1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A8A72518BD3C49001EE05F /* Tutorial1ViewController.m */; };
+		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C33E0718B66F7900B3DFE2 /* Main_iPad.storyboard */; };
 		17CAB21118C562BA009C0370 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB20F18C562BA009C0370 /* transparent.png */; };
 		17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB21018C562BA009C0370 /* transparent@2x.png */; };
@@ -45,8 +45,6 @@
 		17E61AD918E0DD33004AB7BE /* Icon_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E61AD718E0DD33004AB7BE /* Icon_iPad.png */; };
 		17E61ADA18E0DD33004AB7BE /* Icon_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */; };
 		17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
-		17E788D6186CD5A500AE6FED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D5186CD5A500AE6FED /* CoreGraphics.framework */; };
-		17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788DC186CD5A500AE6FED /* InfoPlist.strings */; };
 		17E788E0186CD5A500AE6FED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788DF186CD5A500AE6FED /* main.m */; };
 		17E788E4186CD5A500AE6FED /* TrackCoachAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */; };
@@ -144,9 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17828B9C187A1C3D0063535E /* libz.dylib in Frameworks */,
-				17E788D6186CD5A500AE6FED /* CoreGraphics.framework in Frameworks */,
-				17E788D8186CD5A500AE6FED /* UIKit.framework in Frameworks */,
+				17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */,
 				17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -557,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
