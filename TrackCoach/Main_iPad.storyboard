@@ -277,6 +277,16 @@ More features coming soon!
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright Notice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDT-xf-Tv3">
+                                <rect key="frame" x="20" y="920" width="728" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="728" id="noj-0s-h5E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -285,6 +295,7 @@ More features coming soon!
                             <constraint firstItem="aWn-rO-jhU" firstAttribute="centerY" secondItem="HdR-lm-emO" secondAttribute="centerY" id="Bcj-Q3-yi8"/>
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="leading" secondItem="TF2-y5-eT6" secondAttribute="leading" constant="5" id="DIX-DH-VPX"/>
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="centerY" secondItem="dMQ-SV-9FO" secondAttribute="centerY" id="LiV-1Z-i05"/>
+                            <constraint firstItem="XYK-oi-Wlr" firstAttribute="top" secondItem="nDT-xf-Tv3" secondAttribute="bottom" constant="60" id="Nai-jt-wms"/>
                             <constraint firstItem="HdR-lm-emO" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="20" id="Oiw-k9-fMd"/>
                             <constraint firstItem="elx-Xf-jmf" firstAttribute="top" secondItem="TF2-y5-eT6" secondAttribute="bottom" constant="30" id="SfA-n7-WII"/>
                             <constraint firstAttribute="centerX" secondItem="elx-Xf-jmf" secondAttribute="centerX" id="VbO-Fl-E0M"/>
@@ -295,6 +306,7 @@ More features coming soon!
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="top" secondItem="PKK-Jg-Ixs" secondAttribute="bottom" constant="60" id="hTU-B7-lSv"/>
                             <constraint firstItem="aWn-rO-jhU" firstAttribute="top" secondItem="PKK-Jg-Ixs" secondAttribute="bottom" constant="4" id="iTM-mE-W5G"/>
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="20" id="nZc-HX-y6S"/>
+                            <constraint firstAttribute="centerX" secondItem="nDT-xf-Tv3" secondAttribute="centerX" id="paO-W0-NFM"/>
                             <constraint firstItem="dMQ-SV-9FO" firstAttribute="leading" secondItem="CY1-yX-dTa" secondAttribute="trailing" constant="30" id="uUD-uv-3ic"/>
                             <constraint firstAttribute="centerX" secondItem="aWn-rO-jhU" secondAttribute="centerX" id="vND-Gg-EaS"/>
                         </constraints>
@@ -303,6 +315,7 @@ More features coming soon!
                     <navigationItem key="navigationItem" id="HIE-KG-TPd"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="copyrightNoticeLabel" destination="nDT-xf-Tv3" id="JSB-RT-fxk"/>
                         <outlet property="mainTextView" destination="TF2-y5-eT6" id="sxh-60-WsQ"/>
                         <outlet property="topTextView" destination="dMQ-SV-9FO" id="m21-UL-B6C"/>
                     </connections>

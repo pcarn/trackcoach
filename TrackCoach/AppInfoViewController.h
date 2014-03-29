@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
 @property (weak, nonatomic) IBOutlet UITextView *topTextView;
 @property (weak, nonatomic) IBOutlet UIButton *contactButton;
+@property (weak, nonatomic) IBOutlet UILabel *copyrightNoticeLabel;
 
 - (IBAction)contactButtonAction:(id)sender;
 - (IBAction)back:(id)sender;

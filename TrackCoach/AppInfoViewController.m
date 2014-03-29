@@ -33,6 +33,7 @@
     [self.contactButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [self.topTextView sizeToFit];
     [self.mainTextView sizeToFit];
+    self.copyrightNoticeLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"NSHumanReadableCopyright"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
