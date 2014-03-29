@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -85,7 +85,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lap 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwD-be-ytj">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwD-be-ytj">
                                                     <rect key="frame" x="20" y="17" width="50" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -94,10 +94,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="FwD-be-ytj" secondAttribute="centerY" id="Ept-VW-hZ6"/>
                                                 <constraint firstAttribute="centerX" secondItem="cft-UF-TVl" secondAttribute="centerX" id="YP0-vu-eB2"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dwk-uK-zg9" secondAttribute="trailing" constant="17" id="Z3L-eh-9ek"/>
                                                 <constraint firstAttribute="centerY" secondItem="cft-UF-TVl" secondAttribute="centerY" id="jD4-pb-TkW"/>
                                                 <constraint firstItem="cft-UF-TVl" firstAttribute="centerY" secondItem="Dwk-uK-zg9" secondAttribute="centerY" id="rcN-vO-hQn"/>
+                                                <constraint firstItem="FwD-be-ytj" firstAttribute="leading" secondItem="0tj-rD-YM9" secondAttribute="leading" constant="20" id="w6r-50-Juc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
