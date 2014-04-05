@@ -10,7 +10,6 @@
 		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
-		172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 172FB480186CD60B00DD134A /* VolumeButtons.m */; };
 		178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -70,8 +69,6 @@
 		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
-		172FB47F186CD60B00DD134A /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
-		172FB480186CD60B00DD134A /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADEA18CCDC6200C7691F /* TrackCoachViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachViewController_iPad.h; sourceTree = "<group>"; };
 		178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewController_iPad.m; sourceTree = "<group>"; };
@@ -223,14 +220,12 @@
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
 				1703257B18A478230026A4BC /* AppInfoViewController.h */,
 				1703257C18A478230026A4BC /* AppInfoViewController.m */,
-				17FAD50718A1E24600DC136A /* TrackCoachBrain.h */,
-				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
 				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
+				17FAD50718A1E24600DC136A /* TrackCoachBrain.h */,
+				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				17049E0E18A0C59400052FAD /* RaceTime.h */,
 				17049E0F18A0C59400052FAD /* RaceTime.m */,
-				172FB47F186CD60B00DD134A /* VolumeButtons.h */,
-				172FB480186CD60B00DD134A /* VolumeButtons.m */,
 				17E788EB186CD5A500AE6FED /* Images.xcassets */,
 				17E788DA186CD5A500AE6FED /* Supporting Files */,
 			);
@@ -424,7 +419,6 @@
 				1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */,
 				1798666F18CCF439002AD404 /* TrackCoachiPadTableViewCell.m in Sources */,
 				178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */,
-				172FB481186CD60B00DD134A /* VolumeButtons.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,

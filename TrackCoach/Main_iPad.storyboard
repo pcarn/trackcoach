@@ -287,6 +287,13 @@ More features on the way!
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oh-JP-zpd">
+                                <rect key="frame" x="20" y="968" width="7" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -294,6 +301,7 @@ More features on the way!
                             <constraint firstItem="TF2-y5-eT6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dMQ-SV-9FO" secondAttribute="bottom" constant="30" id="6zj-jL-DMg"/>
                             <constraint firstItem="aWn-rO-jhU" firstAttribute="centerY" secondItem="HdR-lm-emO" secondAttribute="centerY" id="Bcj-Q3-yi8"/>
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="leading" secondItem="TF2-y5-eT6" secondAttribute="leading" constant="5" id="DIX-DH-VPX"/>
+                            <constraint firstItem="1oh-JP-zpd" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="20" id="JJ9-On-1BE"/>
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="centerY" secondItem="dMQ-SV-9FO" secondAttribute="centerY" id="LiV-1Z-i05"/>
                             <constraint firstItem="XYK-oi-Wlr" firstAttribute="top" secondItem="nDT-xf-Tv3" secondAttribute="bottom" constant="60" id="Nai-jt-wms"/>
                             <constraint firstItem="HdR-lm-emO" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="20" id="Oiw-k9-fMd"/>
@@ -309,6 +317,7 @@ More features on the way!
                             <constraint firstAttribute="centerX" secondItem="nDT-xf-Tv3" secondAttribute="centerX" id="paO-W0-NFM"/>
                             <constraint firstItem="dMQ-SV-9FO" firstAttribute="leading" secondItem="CY1-yX-dTa" secondAttribute="trailing" constant="30" id="uUD-uv-3ic"/>
                             <constraint firstAttribute="centerX" secondItem="aWn-rO-jhU" secondAttribute="centerX" id="vND-Gg-EaS"/>
+                            <constraint firstItem="XYK-oi-Wlr" firstAttribute="top" secondItem="1oh-JP-zpd" secondAttribute="bottom" constant="20" id="x2F-4m-oRF"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -318,6 +327,7 @@ More features on the way!
                         <outlet property="copyrightNoticeLabel" destination="nDT-xf-Tv3" id="JSB-RT-fxk"/>
                         <outlet property="mainTextView" destination="TF2-y5-eT6" id="sxh-60-WsQ"/>
                         <outlet property="topTextView" destination="dMQ-SV-9FO" id="m21-UL-B6C"/>
+                        <outlet property="versionLabel" destination="1oh-JP-zpd" id="pXw-9G-qA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>

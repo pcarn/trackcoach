@@ -254,6 +254,13 @@ More features on the way!
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-aH-xfx">
+                                <rect key="frame" x="10" y="420" width="7" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -276,6 +283,8 @@ More features on the way!
                             <constraint firstItem="CY1-yX-dTa" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="10" id="nZc-HX-y6S"/>
                             <constraint firstItem="dMQ-SV-9FO" firstAttribute="leading" secondItem="CY1-yX-dTa" secondAttribute="trailing" constant="10" id="uUD-uv-3ic"/>
                             <constraint firstAttribute="centerX" secondItem="aWn-rO-jhU" secondAttribute="centerX" id="vND-Gg-EaS"/>
+                            <constraint firstItem="q6Z-Fl-l79" firstAttribute="top" secondItem="HmL-aH-xfx" secondAttribute="bottom" constant="8" id="wyU-gb-Y5w"/>
+                            <constraint firstItem="HmL-aH-xfx" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" constant="10" id="yVH-Vc-4Yy"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -286,6 +295,7 @@ More features on the way!
                         <outlet property="copyrightNoticeLabel" destination="q6Z-Fl-l79" id="96k-uO-jzE"/>
                         <outlet property="mainTextView" destination="TF2-y5-eT6" id="sxh-60-WsQ"/>
                         <outlet property="topTextView" destination="dMQ-SV-9FO" id="m21-UL-B6C"/>
+                        <outlet property="versionLabel" destination="HmL-aH-xfx" id="XHm-cN-rIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
