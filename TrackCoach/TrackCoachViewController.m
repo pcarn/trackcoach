@@ -75,7 +75,6 @@
 }
 
 
-//sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
@@ -230,22 +229,6 @@
     [super viewDidLoad];
     self.timer = nil;
     self.tableView.dataSource = self;
-    self.volumeButtons = [[VolumeButtons alloc] init];
-    __block TrackCoachViewController *blocksafeSelf = self;
-    self.volumeButtons.volumeUpBlock = ^{
-        NSLog(@"Volume Up");
-        if (!blocksafeSelf.alertIsDisplayed) {
-            [blocksafeSelf startStopButtonAction:nil];
-        }
-    };
-    self.volumeButtons.volumeDownBlock = ^{
-        NSLog(@"Volume Down");
-        if (!blocksafeSelf.alertIsDisplayed) {
-            [blocksafeSelf lapResetButtonAction:nil];
-        }
-    };
-    [self.volumeButtons startUsingVolumeButtons];
-    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
@@ -274,7 +257,6 @@
 }
 
 - (void)dealloc {
-    self.volumeButtons = nil;
 }
 
 
