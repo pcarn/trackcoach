@@ -204,60 +204,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark Tutorial
-- (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
-      viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-//    return nil;
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    }
-    return [self viewControllerAtIndex:index];
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    
-    if (index == NSNotFound) {
-        return nil;
-    }
-    index++;
-    return [self viewControllerAtIndex:index];
-}
-
-- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
-    if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
-        tutorial1ViewController.pageIndex = index;
-        return tutorial1ViewController;
-    } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
-        tutorial2ViewController.pageIndex = index;
-        return tutorial2ViewController;
-    } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
-        tutorialEnd.pageIndex = index;
-        return tutorialEnd;
-    } else {
-        [UIView animateWithDuration:0.4
-                         animations:^{self.pageViewController.view.alpha = 0.2;}
-                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
-                                    [self.pageViewController removeFromParentViewController];}];
-
-        self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
-        NSLog(@"Dismissed tutorial");
-        return nil;
-    }
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 3;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
-}
 
 #pragma mark Other/Utility methods
 + (NSString *)timeToString:(NSTimeInterval)time {
@@ -289,33 +235,13 @@
     self.volumeButtons.volumeUpBlock = ^{
         NSLog(@"Volume Up");
         if (!blocksafeSelf.alertIsDisplayed) {
-            if (blocksafeSelf.tutorialIsDisplayed) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
-                                                                message:@"This button starts or stops the timer!"
-                                                               delegate:blocksafeSelf
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-                blocksafeSelf.alertIsDisplayed = YES;
-            } else {
-                [blocksafeSelf startStopButtonAction:nil];
-            }
+            [blocksafeSelf startStopButtonAction:nil];
         }
     };
     self.volumeButtons.volumeDownBlock = ^{
         NSLog(@"Volume Down");
         if (!blocksafeSelf.alertIsDisplayed) {
-            if (blocksafeSelf.tutorialIsDisplayed) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
-                                                                message:@"This button laps or resets the timer!"
-                                                               delegate:blocksafeSelf
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-                blocksafeSelf.alertIsDisplayed = YES;
-            } else {
-                [blocksafeSelf lapResetButtonAction:nil];
-            }
+            [blocksafeSelf lapResetButtonAction:nil];
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
@@ -328,20 +254,6 @@
     
     if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
         NSLog(@"First time!");
-//        [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
-        self.tutorialIsDisplayed = YES;
-        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                options:nil];
-        self.pageViewController.dataSource = self;
-        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [self.pageViewController setViewControllers:@[startingViewController]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:NO completion:nil];
-        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [self addChildViewController:self.pageViewController];
-        [self.view addSubview:self.pageViewController.view];
-        [self.pageViewController didMoveToParentViewController:self];
     }
     
     self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];

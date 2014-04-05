@@ -13,37 +13,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrackCoach/TrackCoachViewController.m"
-            timestampString = "417503486.406626"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-viewControllerAtIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrackCoach/TrackCoachViewController.m"
-            timestampString = "417503718.694221"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-pageViewController:viewControllerBeforeViewController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
