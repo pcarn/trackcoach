@@ -37,7 +37,7 @@
         self.betweenSubtitleAndMainTextSpaceConstraint.constant -= 5;
     }
     
-    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial.txt"];
+    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
     if (webTextStrings) {
         self.mainTextTitle.text = webTextStrings[0];
         if (IOS_7_OR_LATER) {

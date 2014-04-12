@@ -31,7 +31,7 @@
     if (IOS_7_OR_LATER) {
         self.topTextView.selectable = YES;
     }
-    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo.txt"];
+    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo"];
     if (webTextStrings) {
         self.topTextView.text = webTextStrings[0];
         if (!IOS_7_OR_LATER) {

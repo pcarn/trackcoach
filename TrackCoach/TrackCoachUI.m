@@ -11,7 +11,7 @@
 @implementation TrackCoachUI
 
 + (NSArray *)getStringsFromSite:(NSString *)filename {
-    NSURL *url = [NSURL URLWithString:[@"http://trackcoachapp.com/appdata/" stringByAppendingString:filename]];
+    NSURL *url = [NSURL URLWithString:[[@"http://trackcoachapp.com/appdata/" stringByAppendingString:filename] stringByAppendingString:@".pcarn"]];
     NSString *data = [NSString stringWithContentsOfURL:url
                                           usedEncoding:NULL
                                                  error:NULL];

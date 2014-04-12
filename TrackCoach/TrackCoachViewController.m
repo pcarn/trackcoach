@@ -207,10 +207,10 @@
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-//    return nil;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
     }
+    index--;
     return [self viewControllerAtIndex:index];
 }
 
