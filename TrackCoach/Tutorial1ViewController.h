@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TrackCoachDefines.h"
+#import "TrackCoachUI.h"
 #import "TutorialViewController.h"
-#define IS_IPHONE_5_SIZE ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 
 @interface Tutorial1ViewController : TutorialViewController
@@ -21,5 +22,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenSubtitleAndMainTextSpaceConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *mainTextTitle;
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerHorizontalOffsetLogoConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *startStopLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lapResetLabel;
 
 @end

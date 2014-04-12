@@ -27,8 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.pageIndex = 1;
-    if (!IS_IPHONE_5_SIZE) {
+    if (!IS_IPHONE_5_SIZE && !IS_IPAD) {
         NSLog(@"not iphone 5");
         self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
         self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
@@ -36,23 +35,31 @@
         self.centerSubtitleVerticalOffsetConstraint.constant = 18;
         self.aboveLogoTopContraint.constant = -17;
         self.betweenSubtitleAndMainTextSpaceConstraint.constant -= 5;
-//        self.aboveSubtitleSpaceConstraint.constant += 5;
     }
     
-    NSLog(@"Started url");
-    NSURL *url = [NSURL URLWithString:@"http://trackcoachapp.com/appdata/tutorial.txt"];
-    NSStringEncoding usedEncoding;
-    NSError *error;
-    NSString *data = [NSString stringWithContentsOfURL:url
-                                          usedEncoding:&usedEncoding
-                                                 error:&error];
-    NSLog(@"Ended URL");
-    if (data) {
-        NSArray *webTextStrings = [data componentsSeparatedByString:@"\n"];
+    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial.txt"];
+    if (webTextStrings) {
         self.mainTextTitle.text = webTextStrings[0];
-        self.mainTextView.selectable = YES;
+        if (IOS_7_OR_LATER) {
+            self.mainTextView.selectable = YES;
+        }
         self.mainTextView.text = webTextStrings[1];
-        self.mainTextView.selectable = NO;
+        if (IS_IPAD) {
+            self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
+        }
+        if (IOS_7_OR_LATER) {
+            self.mainTextView.selectable = NO;
+        }
+        
+        if ([webTextStrings[2] isEqualToString:@"showButtons = true"]) {
+            self.startStopLabel.hidden = NO;
+            self.lapResetLabel.hidden = NO;
+            if (IS_IPAD) {
+                self.centerHorizontalOffsetLogoConstraint.constant = 90;
+            } else {
+                self.centerHorizontalOffsetLogoConstraint.constant = -71;
+            }
+        }
     }
     
     // Do any additional setup after loading the view.

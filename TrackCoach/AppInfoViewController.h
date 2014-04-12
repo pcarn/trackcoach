@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "TrackCoachUI.h"
+#import "TrackCoachDefines.h"
 
 @class AppInfoViewController;
 
@@ -16,13 +18,14 @@
 @end
 
 @interface AppInfoViewController : UIViewController <MFMailComposeViewControllerDelegate>
-@property (weak, nonatomic) id <AppInfoViewControllerDelegate> delegate;
 
+@property (weak, nonatomic) id <AppInfoViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
 @property (weak, nonatomic) IBOutlet UITextView *topTextView;
 @property (weak, nonatomic) IBOutlet UIButton *contactButton;
 @property (weak, nonatomic) IBOutlet UILabel *copyrightNoticeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTextViewHeightConstraint;
 
 - (IBAction)contactButtonAction:(id)sender;
 - (IBAction)back:(id)sender;

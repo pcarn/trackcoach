@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -194,14 +194,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvT-PP-qqx">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvT-PP-qqx">
                                 <rect key="frame" x="15" y="75" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-fp-F0h">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-fp-F0h">
                                 <rect key="frame" x="15" y="138" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -226,7 +226,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-5J-9aP">
-                                <rect key="frame" x="168" y="51" width="126" height="126"/>
+                                <rect key="frame" x="97" y="51" width="126" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="126" id="jXp-Dh-nuw"/>
@@ -238,18 +238,18 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="oaK-wZ-g29" secondAttribute="centerX" id="5C5-HN-zXz"/>
                             <constraint firstItem="fvT-PP-qqx" firstAttribute="width" secondItem="ph1-fp-F0h" secondAttribute="width" id="5x3-Zo-drr"/>
+                            <constraint firstAttribute="centerX" secondItem="qHN-5J-9aP" secondAttribute="centerX" id="79j-js-xnb"/>
                             <constraint firstItem="fvT-PP-qqx" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="55" id="7PP-sK-j9j"/>
                             <constraint firstItem="7FV-4P-zfs" firstAttribute="top" secondItem="oaK-wZ-g29" secondAttribute="bottom" constant="25" id="7cD-Yt-fxG"/>
                             <constraint firstItem="7FV-4P-zfs" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="30" id="8Sa-Ro-RX7"/>
                             <constraint firstAttribute="centerX" secondItem="7FV-4P-zfs" secondAttribute="centerX" id="SOv-hh-WUY"/>
                             <constraint firstItem="ph1-fp-F0h" firstAttribute="top" secondItem="fvT-PP-qqx" secondAttribute="bottom" constant="39" id="Vix-mf-rHI"/>
-                            <constraint firstAttribute="trailing" secondItem="qHN-5J-9aP" secondAttribute="trailing" constant="26" id="ZMY-7I-dzp"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHN-5J-9aP" secondAttribute="trailing" constant="26" id="ZMY-7I-dzp"/>
                             <constraint firstAttribute="centerX" secondItem="gdO-5U-Zwy" secondAttribute="centerX" id="fVb-20-ibL"/>
                             <constraint firstItem="gdO-5U-Zwy" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="5" id="gFG-Uf-dZh"/>
                             <constraint firstItem="fvT-PP-qqx" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="15" id="jpP-IK-HAc"/>
                             <constraint firstItem="D1r-Oq-O9D" firstAttribute="top" secondItem="7FV-4P-zfs" secondAttribute="bottom" id="q7J-oB-mRX"/>
                             <constraint firstItem="ph1-fp-F0h" firstAttribute="leading" secondItem="fvT-PP-qqx" secondAttribute="leading" id="sUL-IX-v06"/>
-                            <constraint firstItem="qHN-5J-9aP" firstAttribute="leading" secondItem="y8q-VZ-FNp" secondAttribute="leading" constant="168" id="uFA-N2-Yca"/>
                             <constraint firstAttribute="trailing" secondItem="7FV-4P-zfs" secondAttribute="trailing" constant="30" id="uNc-Oe-XBq"/>
                             <constraint firstItem="qHN-5J-9aP" firstAttribute="top" secondItem="5VF-fM-ERs" secondAttribute="bottom" constant="31" id="vaR-06-Xi6"/>
                             <constraint firstAttribute="centerY" secondItem="oaK-wZ-g29" secondAttribute="centerY" constant="30" id="zGQ-K5-hX4"/>
@@ -260,10 +260,13 @@
                         <outlet property="aboveButtonIndicatorsSpaceConstraint" destination="7PP-sK-j9j" id="0L3-0O-anq"/>
                         <outlet property="aboveLogoTopContraint" destination="vaR-06-Xi6" id="XNi-Sz-P98"/>
                         <outlet property="betweenSubtitleAndMainTextSpaceConstraint" destination="7cD-Yt-fxG" id="bBk-lD-VKG"/>
+                        <outlet property="centerHorizontalOffsetLogoConstraint" destination="79j-js-xnb" id="Fty-F3-A1q"/>
                         <outlet property="centerSubtitleVerticalOffsetConstraint" destination="zGQ-K5-hX4" id="uAl-vN-yQZ"/>
                         <outlet property="differenceBetweenButtonIndicatorsSpaceConstraint" destination="Vix-mf-rHI" id="PqG-xl-xV7"/>
+                        <outlet property="lapResetLabel" destination="ph1-fp-F0h" id="6Eo-fb-mdA"/>
                         <outlet property="mainTextTitle" destination="oaK-wZ-g29" id="lc9-7f-QgJ"/>
                         <outlet property="mainTextView" destination="7FV-4P-zfs" id="K8I-Ev-5yo"/>
+                        <outlet property="startStopLabel" destination="fvT-PP-qqx" id="KZv-xq-6sV"/>
                         <outlet property="titleTopSpaceConstraint" destination="gFG-Uf-dZh" id="poB-q3-x9w"/>
                     </connections>
                 </viewController>
@@ -366,10 +369,13 @@
                                     <action selector="contactButtonAction:" destination="1XP-Fe-ht0" eventType="touchUpInside" id="mts-EB-kn7"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can simply time races, and easily share them!" translatesAutoresizingMaskIntoConstraints="NO" id="dMQ-SV-9FO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can simply time races, and easily share them!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMQ-SV-9FO">
                                 <rect key="frame" x="96" y="85" width="214" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="RZk-HJ-9Ox"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -472,6 +478,7 @@ More features on the way!
                         <outlet property="copyrightNoticeLabel" destination="q6Z-Fl-l79" id="96k-uO-jzE"/>
                         <outlet property="mainTextView" destination="TF2-y5-eT6" id="sxh-60-WsQ"/>
                         <outlet property="topTextView" destination="dMQ-SV-9FO" id="m21-UL-B6C"/>
+                        <outlet property="topTextViewHeightConstraint" destination="RZk-HJ-9Ox" id="w6J-bF-gud"/>
                         <outlet property="versionLabel" destination="HmL-aH-xfx" id="XHm-cN-rIx"/>
                     </connections>
                 </viewController>

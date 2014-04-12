@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RaceTime.h"
-#define UNDO_STOP_ALERT 7
-#define RESET_ALERT 8
+#import "TrackCoachDefines.h"
 
 @interface TrackCoachBrain : NSObject
 

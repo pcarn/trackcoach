@@ -27,9 +27,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    
+    if (IOS_7_OR_LATER) {
+        self.topTextView.selectable = YES;
+    }
+    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo.txt"];
+    if (webTextStrings) {
+        self.topTextView.text = webTextStrings[0];
+        if (!IOS_7_OR_LATER) {
+            if (IS_IPAD) {
+                self.topTextViewHeightConstraint.constant = 117;
+            } else {
+                self.topTextViewHeightConstraint.constant = 100;
+            }
+        }
+    }
+    if (IS_IPAD) {
         self.topTextView.text = [self.topTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
     }
+    if (IOS_7_OR_LATER) {
+        self.topTextView.selectable = NO;
+    }
+    
     [self.contactButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [self.topTextView sizeToFit];
     [self.mainTextView sizeToFit];

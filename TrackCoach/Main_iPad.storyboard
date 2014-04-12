@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -226,6 +226,9 @@
                                 <rect key="frame" x="350" y="177" width="388" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="pRz-GZ-Z5y"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -327,6 +330,7 @@ More features on the way!
                         <outlet property="copyrightNoticeLabel" destination="nDT-xf-Tv3" id="JSB-RT-fxk"/>
                         <outlet property="mainTextView" destination="TF2-y5-eT6" id="sxh-60-WsQ"/>
                         <outlet property="topTextView" destination="dMQ-SV-9FO" id="m21-UL-B6C"/>
+                        <outlet property="topTextViewHeightConstraint" destination="pRz-GZ-Z5y" id="wad-I0-RAp"/>
                         <outlet property="versionLabel" destination="1oh-JP-zpd" id="pXw-9G-qA7"/>
                     </connections>
                 </viewController>
@@ -380,21 +384,21 @@ More features on the way!
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start/Stop ▷" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f38-Y8-rBQ">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start/Stop ▷" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f38-Y8-rBQ">
                                 <rect key="frame" x="636" y="70" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap/Reset ▷" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ8-uK-7Le">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lap/Reset ▷" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ8-uK-7Le">
                                 <rect key="frame" x="636" y="142" width="117" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-AZ-nsG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="With TrackCoach, you can share the races you time, and much more!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-AZ-nsG">
                                 <rect key="frame" x="150" y="594" width="468" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -404,15 +408,15 @@ More features on the way!
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control With Volume Buttons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-A6-9ly">
-                                <rect key="frame" x="159" y="523" width="451" height="41"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple, Easy Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0F-A6-9ly">
+                                <rect key="frame" x="195" y="523" width="379" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent_iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="yLt-wi-xQL">
-                                <rect key="frame" x="110" y="75" width="318" height="318"/>
+                                <rect key="frame" x="225" y="75" width="318" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="318" id="6nY-Mb-zev"/>
@@ -427,11 +431,12 @@ More features on the way!
                             <constraint firstItem="sZ8-uK-7Le" firstAttribute="top" secondItem="f38-Y8-rBQ" secondAttribute="bottom" constant="48" id="FBS-Ye-I3n"/>
                             <constraint firstItem="RP9-AZ-nsG" firstAttribute="leading" secondItem="mHz-8J-fAs" secondAttribute="leading" constant="150" id="GQC-e0-Sni"/>
                             <constraint firstAttribute="centerX" secondItem="U0F-A6-9ly" secondAttribute="centerX" id="Gt8-5H-Ra6"/>
-                            <constraint firstItem="yLt-wi-xQL" firstAttribute="leading" secondItem="mHz-8J-fAs" secondAttribute="leading" constant="110" id="H3e-8J-oEX"/>
+                            <constraint firstItem="yLt-wi-xQL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mHz-8J-fAs" secondAttribute="leading" constant="110" id="H3e-8J-oEX"/>
                             <constraint firstItem="sZ8-uK-7Le" firstAttribute="leading" secondItem="f38-Y8-rBQ" secondAttribute="leading" id="RRZ-dp-Qe6"/>
                             <constraint firstItem="RP9-AZ-nsG" firstAttribute="top" secondItem="U0F-A6-9ly" secondAttribute="bottom" constant="30" id="Z8A-g5-iHq"/>
                             <constraint firstItem="yLt-wi-xQL" firstAttribute="top" secondItem="RVK-kY-giR" secondAttribute="bottom" constant="75" id="dOP-LM-dS4"/>
                             <constraint firstAttribute="centerX" secondItem="0F9-mN-blT" secondAttribute="centerX" id="di7-BG-fKr"/>
+                            <constraint firstAttribute="centerX" secondItem="yLt-wi-xQL" secondAttribute="centerX" id="fqx-bu-Zbl"/>
                             <constraint firstItem="sZ8-uK-7Le" firstAttribute="trailing" secondItem="f38-Y8-rBQ" secondAttribute="trailing" id="h3b-eh-dGM"/>
                             <constraint firstItem="0F9-mN-blT" firstAttribute="top" secondItem="RVK-kY-giR" secondAttribute="bottom" constant="25" id="hUN-dp-UIN"/>
                             <constraint firstItem="f38-Y8-rBQ" firstAttribute="top" secondItem="RVK-kY-giR" secondAttribute="bottom" constant="70" id="iNp-X8-Ymv"/>
@@ -441,7 +446,14 @@ More features on the way!
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="aboveLogoTopContraint" destination="dOP-LM-dS4" id="YMH-bI-mZs"/>
+                        <outlet property="betweenSubtitleAndMainTextSpaceConstraint" destination="Z8A-g5-iHq" id="5bp-Dp-OOi"/>
+                        <outlet property="centerHorizontalOffsetLogoConstraint" destination="fqx-bu-Zbl" id="yGb-Hu-KxC"/>
                         <outlet property="differenceBetweenButtonIndicatorsSpaceConstraint" destination="FBS-Ye-I3n" id="cEd-Of-vx2"/>
+                        <outlet property="lapResetLabel" destination="sZ8-uK-7Le" id="F6s-bm-nqg"/>
+                        <outlet property="mainTextTitle" destination="U0F-A6-9ly" id="hb2-Fy-aKR"/>
+                        <outlet property="mainTextView" destination="RP9-AZ-nsG" id="Cz3-tR-Boe"/>
+                        <outlet property="startStopLabel" destination="f38-Y8-rBQ" id="7Q7-2t-ZDW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rY-Dz-5hv" userLabel="First Responder" sceneMemberID="firstResponder"/>
