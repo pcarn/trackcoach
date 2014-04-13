@@ -63,7 +63,6 @@
             self.alertIsDisplayed = YES;
         }
     } else { // Stop
-        NSLog(@"%f",[self.trackCoachBrain.raceTime elapsed]);
         [self.trackCoachBrain stop];
         [self.timer invalidate];
         self.timer = nil;
@@ -244,7 +243,7 @@
                                     [self.pageViewController removeFromParentViewController];}];
 
         self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"1_0_2_TutorialRun"];
         NSLog(@"Dismissed tutorial");
         return nil;
     }
@@ -285,13 +284,8 @@
     self.tableView.dataSource = self;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    //    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
-    //    NSNumber *alreadyStartedOnVersion = [defaults objectForKey:appFirstStartOfVersionKey];
-    
-    if (![defaults boolForKey:@"TutorialRun"] || [defaults boolForKey:@"TutorialRun"] == NO) {
+    if (![defaults boolForKey:@"1_0_2_TutorialRun"] || [defaults boolForKey:@"1_0_2_TutorialRun"] == NO) {
         NSLog(@"First time!");
-//        [defaults setObject:[NSNumber numberWithBool:YES] forKey:@"TutorialRun"];
         self.tutorialIsDisplayed = YES;
         self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                   navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
