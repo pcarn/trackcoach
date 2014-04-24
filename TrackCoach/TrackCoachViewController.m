@@ -73,7 +73,7 @@
     [self saveSettings];
 }
 
-
+//sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
@@ -320,22 +320,59 @@
     }
 }
 
+- (void)setupVolumeButtons {
+    self.volumeButtons = [[VolumeButtons alloc] init];
+    __block TrackCoachViewController *blocksafeSelf = self;
+    self.volumeButtons.volumeUpBlock = ^{
+        NSLog(@"Volume Up");
+        if (!blocksafeSelf.alertIsDisplayed) {
+            if (blocksafeSelf.tutorialIsDisplayed) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
+                                                                message:@"This button starts or stops the timer!"
+                                                               delegate:blocksafeSelf
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                blocksafeSelf.alertIsDisplayed = YES;
+            } else {
+                [blocksafeSelf startStopButtonAction:nil];
+            }
+        }
+    };
+    self.volumeButtons.volumeDownBlock = ^{
+        NSLog(@"Volume Down");
+        if (!blocksafeSelf.alertIsDisplayed) {
+            if (blocksafeSelf.tutorialIsDisplayed) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+                                                                message:@"This button laps or resets the timer!"
+                                                               delegate:blocksafeSelf
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                blocksafeSelf.alertIsDisplayed = YES;
+            } else {
+                [blocksafeSelf lapResetButtonAction:nil];
+            }
+        }
+    };
+    [self.volumeButtons startUsingVolumeButtons];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.timer = nil;
     self.tableView.dataSource = self;
     [self runTutorialIfNeeded];
     [self setupEncodedRaceTime];
+    [self setupVolumeButtons];
     
     [self updateUI];
     [self.tableView reloadData];
 }
 
 - (void)dealloc {
+    self.volumeButtons = nil;
 }
-
-
-
 
 
 @end

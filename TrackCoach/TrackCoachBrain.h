@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RaceTime.h"
 #import "TrackCoachDefines.h"
+#import "VolumeButtons.h"
 
 @interface TrackCoachBrain : NSObject
 
