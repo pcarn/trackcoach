@@ -257,6 +257,26 @@
     return 0;
 }
 
+- (void)runTutorialIfNeeded {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults boolForKey:@"1_0_2_TutorialRun"] || [defaults boolForKey:@"1_0_2_TutorialRun"] == NO) {
+        NSLog(@"First time!");
+        self.tutorialIsDisplayed = YES;
+        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                                options:nil];
+        self.pageViewController.dataSource = self;
+        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
+        [self.pageViewController setViewControllers:@[startingViewController]
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:NO completion:nil];
+        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self addChildViewController:self.pageViewController];
+        [self.view addSubview:self.pageViewController.view];
+        [self.pageViewController didMoveToParentViewController:self];
+    }
+}
+
 #pragma mark Other/Utility methods
 + (NSString *)timeToString:(NSTimeInterval)time {
     int hours = (int)(time / 3600.0);
@@ -283,35 +303,13 @@
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.timer = nil;
-    self.tableView.dataSource = self;
-    
+- (void)setupEncodedRaceTime {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"1_0_2_TutorialRun"] || [defaults boolForKey:@"1_0_2_TutorialRun"] == NO) {
-        NSLog(@"First time!");
-        self.tutorialIsDisplayed = YES;
-        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                options:nil];
-        self.pageViewController.dataSource = self;
-        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [self.pageViewController setViewControllers:@[startingViewController]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:NO completion:nil];
-        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [self addChildViewController:self.pageViewController];
-        [self.view addSubview:self.pageViewController.view];
-        [self.pageViewController didMoveToParentViewController:self];
-    }
-    
-    self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     NSData *encodedRaceTime = [defaults objectForKey:@"encodedRaceTime"];
     if (encodedRaceTime) {
         self.trackCoachBrain.raceTime = [NSKeyedUnarchiver unarchiveObjectWithData:encodedRaceTime];
     }
+    self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     if (self.trackCoachBrain.timerIsRunning) {
         [self setupForTimerRunning];
     } else if (self.trackCoachBrain.raceTime.startDate) {  // Stopped
@@ -320,6 +318,15 @@
         [self.shareButton setEnabled:NO];
         [self.shareButton setAlpha:0.2];
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.timer = nil;
+    self.tableView.dataSource = self;
+    [self runTutorialIfNeeded];
+    [self setupEncodedRaceTime];
+    
     [self updateUI];
     [self.tableView reloadData];
 }
