@@ -243,7 +243,8 @@
                                     [self.pageViewController removeFromParentViewController];}];
 
         self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"1_0_2_TutorialRun"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:TUTORIAL_RUN_STRING];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"Dismissed tutorial");
         return nil;
     }
@@ -259,8 +260,8 @@
 
 - (void)runTutorialIfNeeded {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:@"1_0_2_TutorialRun"] || [defaults boolForKey:@"1_0_2_TutorialRun"] == NO) {
-        NSLog(@"First time!");
+    if (![defaults boolForKey:TUTORIAL_RUN_STRING] || [defaults boolForKey:TUTORIAL_RUN_STRING] == NO) {
+        NSLog(@"Running tutorial");
         self.tutorialIsDisplayed = YES;
         self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                   navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal

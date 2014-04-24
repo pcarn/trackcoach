@@ -16,3 +16,5 @@
 
 #define UNDO_STOP_ALERT 7
 #define RESET_ALERT 8
+
+#define TUTORIAL_RUN_STRING @"1_0_3_TutorialRun"
