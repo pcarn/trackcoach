@@ -12,7 +12,6 @@
 
 #pragma mark init
 - (id)initWithCoder:(NSCoder *)decoder {
-//    self = [super initWithCoder:decoder];
     self = [super init];
     if (self) {
         _startDate = [decoder decodeObjectForKey:@"startDate"];
