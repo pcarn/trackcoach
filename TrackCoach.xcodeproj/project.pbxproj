@@ -12,7 +12,7 @@
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		175B5F9B19B8E0A5001F2A38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175B5F9A19B8E0A5001F2A38 /* CoreData.framework */; };
-		175B5F9E19B8E0EA001F2A38 /* TimeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* TimeModel.xcdatamodeld */; };
+		175B5F9E19B8E0EA001F2A38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */; };
 		178AADEC18CCDC6200C7691F /* TrackCoachViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -81,7 +81,7 @@
 		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* TrackCoachDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachDefines.h; sourceTree = "<group>"; };
 		175B5F9A19B8E0A5001F2A38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		175B5F9D19B8E0EA001F2A38 /* TimeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeModel.xcdatamodel; sourceTree = "<group>"; };
+		175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADEA18CCDC6200C7691F /* TrackCoachViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachViewController_iPad.h; sourceTree = "<group>"; };
 		178AADEB18CCDC6200C7691F /* TrackCoachViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewController_iPad.m; sourceTree = "<group>"; };
@@ -125,7 +125,6 @@
 		17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_iPad@2x.png"; sourceTree = "<group>"; };
 		17E788D0186CD5A400AE6FED /* TrackCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E788D3186CD5A400AE6FED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		17E788D5186CD5A500AE6FED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		17E788D7186CD5A500AE6FED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoach-Info.plist"; sourceTree = "<group>"; };
 		17E788DD186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -172,7 +171,7 @@
 		17034D8519B8E1540099E030 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				175B5F9C19B8E0EA001F2A38 /* TimeModel.xcdatamodeld */,
+				175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -252,7 +251,6 @@
 				175B5F9A19B8E0A5001F2A38 /* CoreData.framework */,
 				17828B9B187A1C3D0063535E /* libz.dylib */,
 				17E788D3186CD5A400AE6FED /* Foundation.framework */,
-				17E788D5186CD5A500AE6FED /* CoreGraphics.framework */,
 				17E788D7186CD5A500AE6FED /* UIKit.framework */,
 				17E788F2186CD5A500AE6FED /* XCTest.framework */,
 			);
@@ -482,7 +480,7 @@
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
-				175B5F9E19B8E0EA001F2A38 /* TimeModel.xcdatamodeld in Sources */,
+				175B5F9E19B8E0EA001F2A38 /* Model.xcdatamodeld in Sources */,
 				17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */,
 				179A4FBC18F7985E008994AA /* Tutorial2ViewController.m in Sources */,
 			);
@@ -727,13 +725,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		175B5F9C19B8E0EA001F2A38 /* TimeModel.xcdatamodeld */ = {
+		175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				175B5F9D19B8E0EA001F2A38 /* TimeModel.xcdatamodel */,
+				175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */,
 			);
-			currentVersion = 175B5F9D19B8E0EA001F2A38 /* TimeModel.xcdatamodel */;
-			path = TimeModel.xcdatamodeld;
+			currentVersion = 175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -78,6 +78,7 @@
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
+        [self saveData];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
                                                         message:@"Are you sure you want to reset?"
                                                        delegate:self
@@ -277,6 +278,22 @@
         [self.pageViewController didMoveToParentViewController:self];
     }
 }
+
+#pragma mark Data Model
+- (void)saveData {
+    TrackCoachAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObject *newTime;
+    newTime = [NSEntityDescription insertNewObjectForEntityForName:@"Time" inManagedObjectContext:context];
+    [newTime setValue:self.trackCoachBrain.raceTime.startDate forKey:@"startDate"];
+    
+    NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime.lapTimes];
+    [newTime setValue:arrayData forKey:@"lapTimes"];
+    
+    NSError *error;
+    [context save:&error];
+}
+
 
 #pragma mark Other/Utility methods
 + (NSString *)timeToString:(NSTimeInterval)time {
