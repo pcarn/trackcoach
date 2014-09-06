@@ -14,7 +14,6 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-#define UNDO_STOP_ALERT 7
-#define RESET_ALERT 8
+enum alertTypes {undoStopAlert, resetAlert};
 
 #define TUTORIAL_RUN_STRING @"1_0_3_TutorialRun"
