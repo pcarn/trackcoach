@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>modelFilePath</key>
+	<string>file:///Users/pcarn/Library/Developer/CoreSimulator/Devices/A4562237-9963-4F26-AF58-BB031CA371AF/data/Containers/Bundle/Application/A6BDC449-3F83-493F-866A-8A69A00DCD8E/TrackCoach.app/Model.momd/Model.mom</string>
+	<key>storeFilePath</key>
+	<string>file:///Users/pcarn/Library/Developer/CoreSimulator/Devices/A4562237-9963-4F26-AF58-BB031CA371AF/data/Containers/Data/Application/84838637-F02B-417E-8D2F-E0BC72532D49/Documents/CoreData.sqlite</string>
+	<key>storeFormat</key>
+	<integer>1</integer>
+	<key>v</key>
+	<integer>1</integer>
+</dict>
+</plist>
