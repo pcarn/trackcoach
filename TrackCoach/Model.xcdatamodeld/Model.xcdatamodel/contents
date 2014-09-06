@@ -10,6 +10,7 @@
     </entity>
     <entity name="Race" syncable="YES">
         <attribute name="event" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="athlete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Athlete" inverseName="race" inverseEntity="Athlete" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="race" inverseEntity="Location" syncable="YES"/>
         <relationship name="time" maxCount="1" deletionRule="Nullify" destinationEntity="Time" inverseName="race" inverseEntity="Time" syncable="YES"/>
@@ -20,9 +21,9 @@
         <relationship name="race" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Race" inverseName="time" inverseEntity="Race" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Time" positionX="-272" positionY="-124" width="128" height="88"/>
         <element name="Athlete" positionX="-252" positionY="-226" width="128" height="73"/>
-        <element name="Race" positionX="-63" positionY="-216" width="128" height="103"/>
         <element name="Location" positionX="106" positionY="-72" width="128" height="73"/>
+        <element name="Race" positionX="-63" positionY="-216" width="128" height="120"/>
+        <element name="Time" positionX="-272" positionY="-124" width="128" height="88"/>
     </elements>
 </model>
