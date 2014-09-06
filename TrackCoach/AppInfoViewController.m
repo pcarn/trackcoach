@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.contentWidth.constant = [[UIScreen mainScreen] bounds].size.width;
     
     self.topTextView.selectable = YES; //for formatting
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo"];
