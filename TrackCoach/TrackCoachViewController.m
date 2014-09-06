@@ -16,6 +16,8 @@
 
 @implementation TrackCoachViewController
 
+enum alertTypes {undoStopAlert, resetAlert};
+
 - (TrackCoachBrain *)trackCoachBrain {
     if (!_trackCoachBrain) {
         _trackCoachBrain = [[TrackCoachBrain alloc] init];
@@ -31,16 +33,22 @@
         [textToShare appendString:@"\n"];
     }
     for (NSNumber *lap in laps) {
-        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachViewController timeToString:[lap doubleValue]]]];
+        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1,
+                                   [TrackCoachViewController timeToString:[lap doubleValue]]]];
     }
-    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
+    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", (IS_IPAD ? @"iPad" : @"iPhone")]];
 //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
     
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
     if (IOS_7_OR_LATER) {
-        activityVC.excludedActivityTypes = [activityVC.excludedActivityTypes arrayByAddingObjectsFromArray:@[UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop]];
+        activityVC.excludedActivityTypes =
+            [activityVC.excludedActivityTypes arrayByAddingObjectsFromArray:@[UIActivityTypeAddToReadingList,
+                                                                              UIActivityTypePostToFlickr,
+                                                                              UIActivityTypePostToVimeo,
+                                                                              UIActivityTypePostToTencentWeibo,
+                                                                              UIActivityTypeAirDrop]];
     }
     
     [self presentViewController:activityVC animated:YES completion:nil];
@@ -54,7 +62,8 @@
             [self setupForTimerRunning];
         } else { // Undo Stop
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
-                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
+                                                            message:@"Are you sure you want to undo? \
+                                  The time will resume as though you did not stop."
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                                   otherButtonTitles:@"Undo Stop", nil];
@@ -147,7 +156,8 @@
     
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
     cell.detailTextLabel.text = [TrackCoachViewController timeToString:[lapTime doubleValue]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu",
+                           (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
     return cell;
 }
 
@@ -214,7 +224,8 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+       viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
     
     if (index == NSNotFound) {
