@@ -38,10 +38,9 @@
     
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
-    if (IOS_7_OR_LATER) {
-        activityVC.excludedActivityTypes = [activityVC.excludedActivityTypes arrayByAddingObjectsFromArray:@[UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo, UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop]];
-    }
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
     
     [self presentViewController:activityVC animated:YES completion:nil];
 }
