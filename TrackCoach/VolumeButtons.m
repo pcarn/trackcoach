@@ -11,6 +11,9 @@
 
 #import "VolumeButtons.h"
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+// Keep this until deprecation is resolved.
+
 const double AUTO_VOLUME_INTERVAL_1 = -0.6;
 const double AUTO_VOLUME_INTERVAL_2 = -0.2;
 const double AUTO_VOLUME_INTERVAL_ERROR = 0.03; //0.03 for iphone 5s, 0.08 for iphone 3gs
@@ -81,7 +84,6 @@ void volumeListenerCallback (
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self)); //Don't want infinite loop
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.initialVolume];
     [self performSelector:@selector(initializeVolumeButtons) withObject:self afterDelay:0.1]; //set up again
-//    NSLog(@"%f", self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate]);
     if (self.lastChange != VOLUME_DOWN
         || (fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_1) > AUTO_VOLUME_INTERVAL_ERROR
         && fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_2) > AUTO_VOLUME_INTERVAL_ERROR)) {
