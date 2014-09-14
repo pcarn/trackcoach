@@ -27,8 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!IS_IPHONE_5_SIZE && !IS_IPAD) {
-        NSLog(@"not iphone 5");
+    if (IS_3_5_INCH_SIZE) {
         self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
         self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
         self.titleTopSpaceConstraint.constant = 120;

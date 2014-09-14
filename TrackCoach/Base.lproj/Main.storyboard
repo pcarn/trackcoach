@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -146,9 +145,11 @@
                             <constraint firstItem="JLk-DV-xeV" firstAttribute="trailing" secondItem="8In-eW-cgP" secondAttribute="trailing" constant="-3" id="tKS-ey-N0n"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="lapResetButton" destination="3MO-vs-ItQ" id="qgb-Kr-w6b"/>
                         <outlet property="lapTimerLabel" destination="JLk-DV-xeV" id="lZk-fY-AXA"/>
+                        <outlet property="resetButtonHeight" destination="8gh-CS-6AU" id="fGT-hV-arg"/>
                         <outlet property="shareButton" destination="tbn-fc-7HQ" id="ERz-ds-e3l"/>
                         <outlet property="startStopButton" destination="fjv-yz-033" id="P9F-Pd-gDR"/>
                         <outlet property="tableView" destination="F4f-hm-0qB" id="aNW-1q-xCa"/>
