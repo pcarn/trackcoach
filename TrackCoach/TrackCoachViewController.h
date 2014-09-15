@@ -29,6 +29,7 @@
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *resetButtonHeight;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;

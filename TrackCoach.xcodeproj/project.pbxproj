@@ -25,6 +25,8 @@
 		179A4FBD18F7985E008994AA /* Tutorial3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB818F7985E008994AA /* Tutorial3ViewController.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
 		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
+		17C21A4619C4B66700E30C6F /* Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C21A4519C4B66700E30C6F /* Icon@3x.png */; };
+		17C21A4819C4B6DC00E30C6F /* transparent@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C21A4719C4B6DC00E30C6F /* transparent@3x.png */; };
 		17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C33E0718B66F7900B3DFE2 /* Main_iPad.storyboard */; };
 		17CAB21118C562BA009C0370 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB20F18C562BA009C0370 /* transparent.png */; };
 		17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB21018C562BA009C0370 /* transparent@2x.png */; };
@@ -101,6 +103,8 @@
 		179A4FB818F7985E008994AA /* Tutorial3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial3ViewController.m; sourceTree = "<group>"; };
 		179A4FB918F7985E008994AA /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		179A4FBA18F7985E008994AA /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		17C21A4519C4B66700E30C6F /* Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@3x.png"; sourceTree = "<group>"; };
+		17C21A4719C4B6DC00E30C6F /* transparent@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent@3x.png"; sourceTree = "<group>"; };
 		17C33E0718B66F7900B3DFE2 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		17CAB20F18C562BA009C0370 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
 		17CAB21018C562BA009C0370 /* transparent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent@2x.png"; sourceTree = "<group>"; };
@@ -290,10 +294,12 @@
 			children = (
 				17907C6718A5DE3B00E56137 /* Icon.png */,
 				17907C6818A5DE3B00E56137 /* Icon@2x.png */,
+				17C21A4519C4B66700E30C6F /* Icon@3x.png */,
 				17E61AD718E0DD33004AB7BE /* Icon_iPad.png */,
 				17E61AD818E0DD33004AB7BE /* Icon_iPad@2x.png */,
 				17CAB20F18C562BA009C0370 /* transparent.png */,
 				17CAB21018C562BA009C0370 /* transparent@2x.png */,
+				17C21A4719C4B6DC00E30C6F /* transparent@3x.png */,
 				178AADED18CCE08C00C7691F /* transparent_iPad.png */,
 				178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */,
 				17E788DB186CD5A500AE6FED /* TrackCoach-Info.plist */,
@@ -411,11 +417,13 @@
 				17907C6918A5DE3B00E56137 /* Icon.png in Resources */,
 				17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */,
 				17E61AD918E0DD33004AB7BE /* Icon_iPad.png in Resources */,
+				17C21A4619C4B66700E30C6F /* Icon@3x.png in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
 				17E61ADA18E0DD33004AB7BE /* Icon_iPad@2x.png in Resources */,
 				178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */,
 				17C33E0818B66F7900B3DFE2 /* Main_iPad.storyboard in Resources */,
 				17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */,
+				17C21A4819C4B6DC00E30C6F /* transparent@3x.png in Resources */,
 				178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -611,13 +619,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
@@ -634,13 +642,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",

@@ -41,15 +41,9 @@ enum alertTypes {undoStopAlert, resetAlert};
     
     
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll];
-    if (IOS_7_OR_LATER) {
-        activityVC.excludedActivityTypes =
-            [activityVC.excludedActivityTypes arrayByAddingObjectsFromArray:@[UIActivityTypeAddToReadingList,
-                                                                              UIActivityTypePostToFlickr,
-                                                                              UIActivityTypePostToVimeo,
-                                                                              UIActivityTypePostToTencentWeibo,
-                                                                              UIActivityTypeAirDrop]];
-    }
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
     
     [self presentViewController:activityVC animated:YES completion:nil];
 }
@@ -394,6 +388,19 @@ enum alertTypes {undoStopAlert, resetAlert};
     [self runTutorialIfNeeded];
     [self setupEncodedRaceTime];
     [self setupVolumeButtons];
+    if (IS_3_5_INCH_SIZE) {
+        NSLog(@"3.5 inch");
+        self.resetButtonHeight.constant = 80;
+    } else if (IS_4_INCH_SIZE) {
+        NSLog(@"4 inch");
+        self.resetButtonHeight.constant = 84;
+    } else if (IS_4_7_INCH_SIZE) {
+        NSLog(@"4.7 inch");
+        self.resetButtonHeight.constant = 120;
+    } else if (IS_5_5_INCH_SIZE) {
+        NSLog(@"5.5 inch");
+        self.resetButtonHeight.constant = 150;
+    }
     
     [self updateUI];
     [self.tableView reloadData];

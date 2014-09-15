@@ -27,8 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!IS_IPHONE_5_SIZE && !IS_IPAD) {
-        NSLog(@"not iphone 5");
+    if (IS_3_5_INCH_SIZE) {
         self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
         self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
         self.titleTopSpaceConstraint.constant = 120;
@@ -40,17 +39,12 @@
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
     if (webTextStrings) {
         self.mainTextTitle.text = webTextStrings[0];
-        if (IOS_7_OR_LATER) {
-            self.mainTextView.selectable = YES;
-        }
+        self.mainTextView.selectable = YES; //for formatting
+        self.mainTextView.selectable = NO;
         self.mainTextView.text = webTextStrings[1];
         if (IS_IPAD) {
             self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
         }
-        if (IOS_7_OR_LATER) {
-            self.mainTextView.selectable = NO;
-        }
-        
         if ([webTextStrings[2] isEqualToString:@"showButtons = true"]) {
             self.startStopLabel.hidden = NO;
             self.lapResetLabel.hidden = NO;
