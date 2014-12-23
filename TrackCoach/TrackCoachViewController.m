@@ -77,15 +77,19 @@
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                        message:@"Are you sure you want to reset?"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Reset", nil];
-        alert.tag = RESET_ALERT;
-        [alert show];
-        self.alertIsDisplayed = YES;
-        
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
+                                                            message:@"Are you sure you want to reset?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Reset", nil];
+            alert.tag = RESET_ALERT;
+            [alert show];
+            self.alertIsDisplayed = YES;
+        } else {
+            [self reset];
+        }
+               
     }
     [self.tableView reloadData];
     [self saveSettings];
@@ -112,6 +116,22 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
     [self.shareButton setAlpha:1.0];
+}
+
+- (void)reset {
+    [self.trackCoachBrain reset];
+    [self updateUI];
+    [self.tableView reloadData];
+    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundColor:[UIColor greenColor]];
+    [self.shareButton setEnabled:NO];
+    [self.shareButton setAlpha:0.2];
+}
+
+- (void)undoStop {
+    [self.trackCoachBrain undoStop];
+    [self setupForTimerRunning];
+    [self.tableView reloadData];
 }
 
 - (void)updateUI {
@@ -153,19 +173,11 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == RESET_ALERT) {
         if (buttonIndex == 1) {
-            [self.trackCoachBrain reset];
-            [self updateUI];
-            [self.tableView reloadData];
-            [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-            [self.startStopButton setBackgroundColor:[UIColor greenColor]];
-            [self.shareButton setEnabled:NO];
-            [self.shareButton setAlpha:0.2];
+            [self reset];
         }
     } else if (alertView.tag == UNDO_STOP_ALERT) {
         if (buttonIndex == 1) {
-            [self.trackCoachBrain undoStop];
-            [self setupForTimerRunning];
-            [self.tableView reloadData];
+            [self undoStop];
         }
     } else {
         NSLog(@"Other alert clicked.");
@@ -377,6 +389,12 @@
     } else if (IS_5_5_INCH_SIZE) {
         NSLog(@"5.5 inch");
         self.resetButtonHeight.constant = 150;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"confirmReset"]) {
+        [defaults setBool:YES forKey:@"confirmReset"];
+        [defaults synchronize];
     }
     
     [self updateUI];
