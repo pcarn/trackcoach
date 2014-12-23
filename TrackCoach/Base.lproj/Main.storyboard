@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -101,7 +101,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="foH-3H-Gp0" kind="modal" identifier="AppInfo" modalTransitionStyle="coverVertical" id="0ec-tu-E8H"/>
+                                    <segue destination="foH-3H-Gp0" kind="presentation" identifier="AppInfo" modalTransitionStyle="coverVertical" id="0ec-tu-E8H"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-n0-726">
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="57"/>
+            <point key="canvasLocation" x="650.625" y="60.2112676056338"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="hsS-fh-TVe">
@@ -168,7 +168,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jBL-4p-Ke7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qu-Hv-YGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="414"/>
+            <point key="canvasLocation" x="1623.75" y="437.32394366197178"/>
         </scene>
         <!--Tutorial1 View Controller-->
         <scene sceneID="SjF-x1-3wT">
@@ -179,11 +179,11 @@
                         <viewControllerLayoutGuide type="bottom" id="D1r-Oq-O9D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y8q-VZ-FNp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-5U-Zwy">
-                                <rect key="frame" x="72" y="25" width="177" height="39"/>
+                                <rect key="frame" x="212" y="25" width="177" height="39"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="With TrackCoach, you can share the races you time, and much more!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FV-4P-zfs">
-                                <rect key="frame" x="30" y="291" width="260" height="277"/>
+                                <rect key="frame" x="30" y="307" width="540" height="293"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="OaN-9H-f6W"/>
                                 </constraints>
@@ -210,13 +210,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple, Easy Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-wZ-g29">
-                                <rect key="frame" x="48" y="242" width="224" height="24"/>
+                                <rect key="frame" x="188" y="258" width="224" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="qHN-5J-9aP">
-                                <rect key="frame" x="97" y="51" width="126" height="126"/>
+                                <rect key="frame" x="237" y="51" width="126" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="126" id="jXp-Dh-nuw"/>
                                     <constraint firstAttribute="height" constant="126" id="nj4-br-cNU"/>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRT-PK-YGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="632"/>
+            <point key="canvasLocation" x="2613.75" y="667.6056338028169"/>
         </scene>
         <!--Tutorial2 View Controller-->
         <scene sceneID="Q3c-x9-iqI">
@@ -272,11 +272,11 @@
                         <viewControllerLayoutGuide type="bottom" id="rbg-QV-DTb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cfy-7Q-nNg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foB-kG-4XK">
-                                <rect key="frame" x="72" y="25" width="177" height="39"/>
+                                <rect key="frame" x="212" y="25" width="177" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="DA2-0E-9ub"/>
                                 </constraints>
@@ -285,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-0M-h33">
-                                <rect key="frame" x="103" y="83" width="114" height="29"/>
+                                <rect key="frame" x="243" y="83" width="114" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="TtE-A9-SYc"/>
                                 </constraints>
@@ -294,7 +294,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmU-bz-txT">
-                                <rect key="frame" x="30" y="142" width="260" height="145"/>
+                                <rect key="frame" x="30" y="142" width="540" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="fb2-zB-9vA"/>
                                 </constraints>
@@ -304,7 +304,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="RCy-Cg-daY">
-                                <rect key="frame" x="56" y="327" width="208" height="208"/>
+                                <rect key="frame" x="180" y="327" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RCy-Cg-daY" secondAttribute="height" multiplier="1:1" id="65K-aT-Dnh"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="120" id="fd0-Z8-hlN"/>
@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-Q1-wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="632"/>
+            <point key="canvasLocation" x="3495" y="667.6056338028169"/>
         </scene>
         <!--App Info View Controller-->
         <scene sceneID="kuD-JF-jMn">
@@ -524,7 +524,7 @@ More features on the way!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1549" y="-323"/>
+            <point key="canvasLocation" x="2904.375" y="-341.19718309859155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2aa-JE-Q3C">
@@ -547,7 +547,7 @@ More features on the way!
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR9-EW-0wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="784" y="-298"/>
+            <point key="canvasLocation" x="1470" y="-314.78873239436615"/>
         </scene>
         <!--Tutorial3 View Controller-->
         <scene sceneID="Ufb-hu-rAK">
@@ -558,11 +558,11 @@ More features on the way!
                         <viewControllerLayoutGuide type="bottom" id="X0b-zb-ppG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fxw-Wf-maM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWU-dM-WIH">
-                                <rect key="frame" x="30" y="88" width="260" height="280"/>
+                                <rect key="frame" x="30" y="88" width="540" height="312"/>
                                 <string key="text">Start 
 using
 TrackCoach!</string>
@@ -571,7 +571,7 @@ TrackCoach!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⇨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keb-Fe-6QG">
-                                <rect key="frame" x="60" y="379" width="200" height="189"/>
+                                <rect key="frame" x="60" y="411" width="480" height="189"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="158"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -594,16 +594,11 @@ TrackCoach!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCK-Qi-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286" y="414"/>
+            <point key="canvasLocation" x="4286.25" y="437.32394366197178"/>
         </scene>
     </scenes>
     <resources>
         <image name="Icon.png" width="76" height="76"/>
         <image name="transparent.png" width="126" height="126"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
