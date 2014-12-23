@@ -23,6 +23,37 @@
     return _trackCoachBrain;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.timer = nil;
+    self.tableView.dataSource = self;
+    [self runTutorialIfNeeded];
+    [self setupEncodedRaceTime];
+    [self setupVolumeButtons];
+    if (IS_3_5_INCH_SIZE) {
+        NSLog(@"3.5 inch");
+        self.resetButtonHeight.constant = 80;
+    } else if (IS_4_INCH_SIZE) {
+        NSLog(@"4 inch");
+        self.resetButtonHeight.constant = 84;
+    } else if (IS_4_7_INCH_SIZE) {
+        NSLog(@"4.7 inch");
+        self.resetButtonHeight.constant = 120;
+    } else if (IS_5_5_INCH_SIZE) {
+        NSLog(@"5.5 inch");
+        self.resetButtonHeight.constant = 150;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"confirmReset"]) {
+        [defaults setBool:YES forKey:@"confirmReset"];
+        [defaults synchronize];
+    }
+    
+    [self updateUI];
+    [self.tableView reloadData];
+}
+
 #pragma mark Button Actions
 - (IBAction)shareButtonAction:(id)sender {
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
@@ -368,37 +399,6 @@
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.timer = nil;
-    self.tableView.dataSource = self;
-    [self runTutorialIfNeeded];
-    [self setupEncodedRaceTime];
-    [self setupVolumeButtons];
-    if (IS_3_5_INCH_SIZE) {
-        NSLog(@"3.5 inch");
-        self.resetButtonHeight.constant = 80;
-    } else if (IS_4_INCH_SIZE) {
-        NSLog(@"4 inch");
-        self.resetButtonHeight.constant = 84;
-    } else if (IS_4_7_INCH_SIZE) {
-        NSLog(@"4.7 inch");
-        self.resetButtonHeight.constant = 120;
-    } else if (IS_5_5_INCH_SIZE) {
-        NSLog(@"5.5 inch");
-        self.resetButtonHeight.constant = 150;
-    }
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:@"confirmReset"]) {
-        [defaults setBool:YES forKey:@"confirmReset"];
-        [defaults synchronize];
-    }
-    
-    [self updateUI];
-    [self.tableView reloadData];
 }
 
 - (void)dealloc {

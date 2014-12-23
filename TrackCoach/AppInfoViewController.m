@@ -23,11 +23,6 @@
     return self;
 }
 
-- (UIStatusBarStyle) preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -59,10 +54,34 @@
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];
 }
 
+#pragma mark Confirm Reset
 - (void)setConfirmResetState:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:[sender isOn] forKey:@"confirmReset"];
     [defaults synchronize];
+}
+
+#pragma mark Other
+- (IBAction)contactButtonAction:(id)sender {
+    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+    mailController.mailComposeDelegate = self;
+    [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
+    [mailController setSubject:@"TrackCoach Feedback"];
+    if (mailController) {
+        [self presentViewController:mailController animated:YES completion:nil];
+    }
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"Email sent");
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)back:(id)sender {
+    [self.delegate appInfoViewControllerDidCancel:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,36 +95,19 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (UIStatusBarStyle) preferredStatusBarStyle
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)contactButtonAction:(id)sender {
-    MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-    mailController.mailComposeDelegate = self;
-    [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
-    [mailController setSubject:@"TrackCoach Feedback"];
-    if (mailController) {
-        [self presentViewController:mailController animated:YES completion:nil];
-    }
-    
-}
-
-- (IBAction)back:(id)sender {
-    [self.delegate appInfoViewControllerDidCancel:self];
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    if (result == MFMailComposeResultSent) {
-        NSLog(@"Email sent");
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    return UIStatusBarStyleLightContent;
 }
 
 @end
