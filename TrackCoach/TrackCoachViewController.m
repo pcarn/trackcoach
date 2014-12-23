@@ -259,7 +259,7 @@
 
 - (void)runTutorialIfNeeded {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:TUTORIAL_RUN_STRING] || [defaults boolForKey:TUTORIAL_RUN_STRING] == NO) {
+    if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
         NSLog(@"Running tutorial");
         self.tutorialIsDisplayed = YES;
         self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll

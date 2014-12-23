@@ -513,6 +513,7 @@ More features on the way!
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
+                        <outlet property="confirmResetSwitch" destination="oGA-iO-dW1" id="pgx-fv-0M5"/>
                         <outlet property="contactButton" destination="PbV-SZ-Ayb" id="Vge-Iq-bvQ"/>
                         <outlet property="contentWidth" destination="Fq1-gl-B1Q" id="rOy-b7-m2B"/>
                         <outlet property="copyrightNoticeLabel" destination="hsx-3j-I5c" id="Gtj-MB-lE3"/>
