@@ -1,5 +1,5 @@
 //
-//  TrackCoachiPadTableViewCell.h
+//  TrackCoachTableViewCell.h
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 3/9/14.
@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrackCoachiPadTableViewCell : UITableViewCell
+@interface TrackCoachTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *splitLabel;
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 
 @end

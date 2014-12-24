@@ -13,6 +13,7 @@
 #import "Tutorial1ViewController.h"
 #import "Tutorial2ViewController.h"
 #import "TrackCoachDefines.h"
+#import "TrackCoachTableViewCell.h"
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate, UIPageViewControllerDataSource>
 

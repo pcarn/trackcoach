@@ -1,14 +1,14 @@
 //
-//  TrackCoachiPadTableViewCell.m
+//  TrackCoachTableViewCell.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 3/9/14.
 //  Copyright (c) 2014 Peter Carnesciali. All rights reserved.
 //
 
-#import "TrackCoachiPadTableViewCell.h"
+#import "TrackCoachTableViewCell.h"
 
-@implementation TrackCoachiPadTableViewCell
+@implementation TrackCoachTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
