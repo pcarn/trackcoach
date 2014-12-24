@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Track Coach View Controller-->
@@ -16,43 +17,65 @@
                         <viewControllerLayoutGuide type="bottom" id="Nac-Bq-1O4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8In-eW-cgP">
-                                <rect key="frame" x="41" y="65" width="238" height="83"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="8In-eW-cgP">
+                                <rect key="frame" x="41" y="65" width="686" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="cGx-Rg-f2v"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="yRf-VG-vqX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="70"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cGx-Rg-f2v"/>
+                                        <exclude reference="yRf-VG-vqX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="cGx-Rg-f2v"/>
+                                        <include reference="yRf-VG-vqX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="120"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-yz-033">
-                                <rect key="frame" x="0.0" y="370" width="320" height="84"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startStopButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="xoQ-BM-QtY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MO-vs-ItQ">
-                                <rect key="frame" x="0.0" y="474" width="320" height="84"/>
+                                <rect key="frame" x="0.0" y="940" width="768" height="84"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="8gh-CS-6AU"/>
+                                    <constraint firstAttribute="height" constant="84" id="8gh-CS-6AU">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="acB-vq-Ak7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="acB-vq-Ak7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="8gh-CS-6AU"/>
+                                        <include reference="acB-vq-Ak7"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="lapResetButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="EhK-U5-4WC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-DV-xeV">
-                                <rect key="frame" x="205" y="55" width="71" height="29"/>
+                                <rect key="frame" x="653" y="55" width="71" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="32S-UY-HcC"/>
                                     <constraint firstAttribute="height" constant="29" id="unw-Rn-aau"/>
@@ -60,9 +83,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
+                                    <mask key="constraints">
+                                        <exclude reference="32S-UY-HcC"/>
+                                        <exclude reference="unw-Rn-aau"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-hm-0qB">
-                                <rect key="frame" x="16" y="158" width="288" height="192"/>
+                                <rect key="frame" x="16" y="158" width="736" height="658"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LapCell" textLabel="06g-qr-cah" detailTextLabel="zmt-bM-knu" style="IBUITableViewCellStyleValue1" id="fLy-vB-U2F">
@@ -90,6 +120,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="158" width="736" height="413"/>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu6-2f-6kA">
                                 <rect key="frame" x="16" y="29" width="30" height="30"/>
@@ -105,13 +138,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-n0-726">
-                                <rect key="frame" x="98" y="29" width="124" height="29"/>
+                                <rect key="frame" x="322" y="29" width="124" height="29"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbn-fc-7HQ">
-                                <rect key="frame" x="264" y="29" width="40" height="30"/>
+                                <rect key="frame" x="712" y="29" width="40" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Share">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,21 +153,44 @@
                                     <action selector="shareButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qsv-K6-Dgb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-yz-033">
+                                <rect key="frame" x="0.0" y="836" width="768" height="84"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="591" width="768" height="207"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startStopButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="xoQ-BM-QtY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="20" id="1g4-iW-yWZ"/>
                             <constraint firstAttribute="centerX" secondItem="fjv-yz-033" secondAttribute="centerX" id="2lQ-tg-bdG"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="F4f-hm-0qB" secondAttribute="height" multiplier="0.5" id="5H0-5f-Uhd"/>
                             <constraint firstItem="IXH-n0-726" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="9" id="79q-oH-0kd"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="10" id="Ej0-pX-t13"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="width" secondItem="fjv-yz-033" secondAttribute="width" id="IZx-NW-T01"/>
-                            <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="3MO-vs-ItQ" secondAttribute="bottom" constant="10" id="PW1-94-EcP"/>
+                            <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Il3-7E-Bzi"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="F4f-hm-0qB" secondAttribute="height" id="Mwt-pR-HkY"/>
+                            <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="3MO-vs-ItQ" secondAttribute="bottom" id="PW1-94-EcP"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PjT-90-Adl"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="centerY" secondItem="fjv-yz-033" secondAttribute="centerY" id="QyO-0i-2aV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tbn-fc-7HQ" secondAttribute="trailing" id="R1x-dH-4Vg"/>
-                            <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="JLk-DV-xeV" secondAttribute="bottom" constant="-19" id="Soo-qA-zj3"/>
+                            <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="JLk-DV-xeV" secondAttribute="top" constant="10" id="Soo-qA-zj3">
+                                <variation key="heightClass=regular-widthClass=regular" constant="2"/>
+                            </constraint>
                             <constraint firstItem="fjv-yz-033" firstAttribute="top" secondItem="F4f-hm-0qB" secondAttribute="bottom" constant="20" id="VIA-4c-CRw"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="4:7" id="VkR-Z1-dVj"/>
                             <constraint firstAttribute="trailing" secondItem="3MO-vs-ItQ" secondAttribute="trailing" id="VvS-Zd-mvN"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" constant="20" id="bbf-ha-Pnl"/>
                             <constraint firstItem="IXH-n0-726" firstAttribute="centerY" secondItem="Fu6-2f-6kA" secondAttribute="centerY" id="cK6-Gg-Tnz"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="F4f-hm-0qB" secondAttribute="height" multiplier="0.25" id="dqy-fN-qY1"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="fjv-yz-033" secondAttribute="height" id="e7H-hj-bK8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8In-eW-cgP" secondAttribute="trailing" constant="25" id="efH-Zv-e8h"/>
                             <constraint firstAttribute="centerX" secondItem="IXH-n0-726" secondAttribute="centerX" id="ekE-go-Y0g"/>
@@ -146,8 +202,38 @@
                             <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="45" id="rHf-f7-el7"/>
                             <constraint firstItem="JLk-DV-xeV" firstAttribute="trailing" secondItem="8In-eW-cgP" secondAttribute="trailing" constant="-3" id="tKS-ey-N0n"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Il3-7E-Bzi"/>
+                                <exclude reference="1g4-iW-yWZ"/>
+                                <exclude reference="5H0-5f-Uhd"/>
+                                <exclude reference="Mwt-pR-HkY"/>
+                                <exclude reference="QyO-0i-2aV"/>
+                                <exclude reference="VkR-Z1-dVj"/>
+                                <exclude reference="dqy-fN-qY1"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="5H0-5f-Uhd"/>
+                                <exclude reference="Mwt-pR-HkY"/>
+                                <exclude reference="VkR-Z1-dVj"/>
+                                <exclude reference="dqy-fN-qY1"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="2lQ-tg-bdG"/>
+                                <include reference="Il3-7E-Bzi"/>
+                                <include reference="1g4-iW-yWZ"/>
+                                <exclude reference="PjT-90-Adl"/>
+                                <include reference="QyO-0i-2aV"/>
+                                <exclude reference="bbf-ha-Pnl"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
                     <connections>
                         <outlet property="lapResetButton" destination="3MO-vs-ItQ" id="qgb-Kr-w6b"/>
                         <outlet property="lapTimerLabel" destination="JLk-DV-xeV" id="lZk-fY-AXA"/>
@@ -160,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="650.625" y="60.2112676056338"/>
+            <point key="canvasLocation" x="650.25" y="60"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="hsS-fh-TVe">
