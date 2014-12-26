@@ -392,6 +392,9 @@
 
 - (void)dealloc {
     self.volumeButtons = nil;
+    self.timer = nil;
+    self.trackCoachBrain = nil;
+    self.pageViewController = nil;
 }
 
 

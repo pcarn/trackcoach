@@ -19,13 +19,13 @@
 
 @property (assign) BOOL alertIsDisplayed;
 @property (assign) BOOL tutorialIsDisplayed;
-@property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
