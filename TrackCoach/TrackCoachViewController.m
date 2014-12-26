@@ -50,7 +50,7 @@
         [textToShare appendString:@"\n"];
     }
     for (NSNumber *lap in laps) {
-        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachViewController timeToString:[lap doubleValue]]]];
+        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
     }
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
 //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
@@ -127,8 +127,8 @@
 }
 
 - (void)setupForTimerStopped {
-    self.timerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime totalOfAllLaps]];
-    self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+    self.timerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfAllLaps]];
+    self.lapTimerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
     [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
@@ -156,13 +156,13 @@
 - (void)updateUI {
     if (self.trackCoachBrain.timerIsRunning) {
         NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
-        self.timerLabel.text = [TrackCoachViewController timeToString:totalElapsed];
+        self.timerLabel.text = [TrackCoachUI timeToString:totalElapsed];
         NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfAllLaps];
-        self.lapTimerLabel.text = [TrackCoachViewController timeToString:currentLapTime];
+        self.lapTimerLabel.text = [TrackCoachUI timeToString:currentLapTime];
     } else {
         NSTimeInterval totalOfLaps = [self.trackCoachBrain.raceTime totalOfAllLaps];
-        self.timerLabel.text = [TrackCoachViewController timeToString:totalOfLaps];
-        self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+        self.timerLabel.text = [TrackCoachUI timeToString:totalOfLaps];
+        self.lapTimerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
     }
 }
 
@@ -183,9 +183,9 @@
     TrackCoachTableViewCell *cell = (TrackCoachTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LapCell"];
     
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
-    cell.splitLabel.text = [TrackCoachViewController timeToString:[lapTime doubleValue]];
+    cell.splitLabel.text = [TrackCoachUI timeToString:[lapTime doubleValue]];
     cell.titleLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
-    cell.totalLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
+    cell.totalLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
     return cell;
 }
 
