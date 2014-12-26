@@ -11,5 +11,6 @@
 @interface TrackCoachUI : NSObject
 
 + (NSArray *)getStringsFromSite:(NSString *)filename;
++ (NSString *)timeToString:(NSTimeInterval)time;
 
 @end
