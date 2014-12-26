@@ -10,7 +10,6 @@
 		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
-		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
@@ -26,7 +25,6 @@
 		17C21A4819C4B6DC00E30C6F /* transparent@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C21A4719C4B6DC00E30C6F /* transparent@3x.png */; };
 		17CAB21118C562BA009C0370 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB20F18C562BA009C0370 /* transparent.png */; };
 		17CAB21218C562BA009C0370 /* transparent@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CAB21018C562BA009C0370 /* transparent@2x.png */; };
-		17E11062189F571C0037E7A5 /* volumeHider.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11061189F571C0037E7A5 /* volumeHider.png */; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
 		17E11076189F602C0037E7A5 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11066189F602C0037E7A5 /* AppIcon40x40.png */; };
@@ -76,7 +74,6 @@
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		1704DFFD19096A9C000079C4 /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
-		1705E461187D21A30012C537 /* TrackCoachTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTests.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* TrackCoachDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachDefines.h; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADED18CCE08C00C7691F /* transparent_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_iPad.png; sourceTree = "<group>"; };
@@ -284,7 +281,6 @@
 		17E788F8186CD5A500AE6FED /* TrackCoachTests */ = {
 			isa = PBXGroup;
 			children = (
-				1705E461187D21A30012C537 /* TrackCoachTests.m */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
 			path = TrackCoachTests;
@@ -407,7 +403,6 @@
 				17E11077189F602C0037E7A5 /* AppIcon40x40@2x.png in Resources */,
 				17E1107A189F602C0037E7A5 /* AppIcon57x57.png in Resources */,
 				17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */,
-				17E11062189F571C0037E7A5 /* volumeHider.png in Resources */,
 				17E11078189F602C0037E7A5 /* AppIcon50x50.png in Resources */,
 				17E11079189F602C0037E7A5 /* AppIcon50x50@2x.png in Resources */,
 				17E1107B189F602C0037E7A5 /* AppIcon57x57@2x.png in Resources */,
@@ -466,7 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
