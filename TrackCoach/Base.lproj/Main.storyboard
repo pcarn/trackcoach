@@ -46,30 +46,16 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MO-vs-ItQ">
-                                <rect key="frame" x="0.0" y="940" width="768" height="84"/>
+                                <rect key="frame" x="0.0" y="867" width="768" height="157"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="8gh-CS-6AU">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="acB-vq-Ak7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="C56-J7-6mR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="acB-vq-Ak7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="8gh-CS-6AU"/>
-                                        <include reference="acB-vq-Ak7"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="lapResetButtonAction:" destination="vXZ-lx-hvc" eventType="touchDown" id="EhK-U5-4WC"/>
                                 </connections>
@@ -92,7 +78,7 @@
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-hm-0qB">
-                                <rect key="frame" x="16" y="158" width="736" height="658"/>
+                                <rect key="frame" x="16" y="158" width="736" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LapCell" id="fLy-vB-U2F" customClass="TrackCoachTableViewCell">
@@ -171,7 +157,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-yz-033">
-                                <rect key="frame" x="0.0" y="836" width="768" height="84"/>
+                                <rect key="frame" x="0.0" y="690" width="768" height="157"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="Start">
@@ -189,47 +175,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="367" y="195" width="35" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB0-fu-k6i">
                                 <rect key="frame" x="700" y="140" width="33" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="689" y="195" width="37" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="20" id="1g4-iW-yWZ"/>
+                            <constraint firstItem="F4f-hm-0qB" firstAttribute="height" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.5" id="0XM-qy-akc"/>
                             <constraint firstAttribute="centerX" secondItem="fjv-yz-033" secondAttribute="centerX" id="2lQ-tg-bdG"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="F4f-hm-0qB" secondAttribute="height" multiplier="0.5" id="5H0-5f-Uhd"/>
                             <constraint firstItem="IXH-n0-726" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="9" id="79q-oH-0kd"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="10" id="Ej0-pX-t13"/>
+                            <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GEb-98-Jw3"/>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="550" id="H7j-cd-Fxc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="width" secondItem="fjv-yz-033" secondAttribute="width" id="IZx-NW-T01"/>
-                            <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Il3-7E-Bzi"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="F4f-hm-0qB" secondAttribute="height" id="Mwt-pR-HkY"/>
                             <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="3MO-vs-ItQ" secondAttribute="bottom" id="PW1-94-EcP"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PjT-90-Adl"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="centerY" secondItem="fjv-yz-033" secondAttribute="centerY" id="QyO-0i-2aV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tbn-fc-7HQ" secondAttribute="trailing" id="R1x-dH-4Vg"/>
                             <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="JLk-DV-xeV" secondAttribute="top" constant="10" id="Soo-qA-zj3">
                                 <variation key="heightClass=regular-widthClass=regular" constant="2"/>
                             </constraint>
                             <constraint firstItem="fjv-yz-033" firstAttribute="top" secondItem="F4f-hm-0qB" secondAttribute="bottom" constant="20" id="VIA-4c-CRw"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="4:7" id="VkR-Z1-dVj"/>
                             <constraint firstAttribute="trailing" secondItem="3MO-vs-ItQ" secondAttribute="trailing" id="VvS-Zd-mvN"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="c5K-ma-JlF" secondAttribute="bottom" id="X07-81-3hx"/>
                             <constraint firstItem="YB0-fu-k6i" firstAttribute="centerY" secondItem="c5K-ma-JlF" secondAttribute="centerY" id="X3J-jk-fNc"/>
+                            <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" constant="191" id="XhY-dB-dPc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="c5K-ma-JlF" secondAttribute="centerX" id="ZRO-0A-QWw"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" constant="20" id="bbf-ha-Pnl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YB0-fu-k6i" secondAttribute="trailing" constant="19" id="bzO-J7-sm2"/>
                             <constraint firstItem="IXH-n0-726" firstAttribute="centerY" secondItem="Fu6-2f-6kA" secondAttribute="centerY" id="cK6-Gg-Tnz"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="F4f-hm-0qB" secondAttribute="height" multiplier="0.25" id="dqy-fN-qY1"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="height" secondItem="fjv-yz-033" secondAttribute="height" id="e7H-hj-bK8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8In-eW-cgP" secondAttribute="trailing" constant="25" id="efH-Zv-e8h"/>
                             <constraint firstAttribute="centerX" secondItem="IXH-n0-726" secondAttribute="centerX" id="ekE-go-Y0g"/>
@@ -238,50 +219,24 @@
                             <constraint firstAttribute="trailingMargin" secondItem="F4f-hm-0qB" secondAttribute="trailing" id="j90-q8-8Fg"/>
                             <constraint firstItem="Fu6-2f-6kA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="k6U-Xs-ydA"/>
                             <constraint firstItem="tbn-fc-7HQ" firstAttribute="centerY" secondItem="IXH-n0-726" secondAttribute="centerY" id="lTt-eK-i0i"/>
-                            <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="c5K-ma-JlF" secondAttribute="bottom" constant="1" id="mXN-PR-etm"/>
-                            <constraint firstItem="YB0-fu-k6i" firstAttribute="leading" secondItem="F4f-hm-0qB" secondAttribute="trailing" constant="-63" id="nTC-D6-A1y"/>
-                            <constraint firstItem="YB0-fu-k6i" firstAttribute="centerY" secondItem="c5K-ma-JlF" secondAttribute="centerY" id="qSW-QF-h8j"/>
                             <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="45" id="rHf-f7-el7"/>
                             <constraint firstItem="JLk-DV-xeV" firstAttribute="trailing" secondItem="8In-eW-cgP" secondAttribute="trailing" constant="-3" id="tKS-ey-N0n"/>
-                            <constraint firstAttribute="centerX" secondItem="c5K-ma-JlF" secondAttribute="centerX" constant="-0.5" id="vLj-hq-Kfs">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="mXN-PR-etm"/>
-                                <exclude reference="vLj-hq-Kfs"/>
-                                <exclude reference="nTC-D6-A1y"/>
-                                <exclude reference="qSW-QF-h8j"/>
-                                <exclude reference="Il3-7E-Bzi"/>
-                                <exclude reference="1g4-iW-yWZ"/>
-                                <exclude reference="5H0-5f-Uhd"/>
-                                <exclude reference="Mwt-pR-HkY"/>
-                                <exclude reference="QyO-0i-2aV"/>
-                                <exclude reference="VkR-Z1-dVj"/>
-                                <exclude reference="dqy-fN-qY1"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="5H0-5f-Uhd"/>
-                                <exclude reference="Mwt-pR-HkY"/>
-                                <exclude reference="VkR-Z1-dVj"/>
-                                <exclude reference="dqy-fN-qY1"/>
+                                <exclude reference="GEb-98-Jw3"/>
+                                <exclude reference="H7j-cd-Fxc"/>
+                                <exclude reference="XhY-dB-dPc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="mXN-PR-etm"/>
-                                <exclude reference="vLj-hq-Kfs"/>
-                                <exclude reference="nTC-D6-A1y"/>
-                                <exclude reference="qSW-QF-h8j"/>
                                 <exclude reference="2lQ-tg-bdG"/>
-                                <include reference="Il3-7E-Bzi"/>
-                                <include reference="1g4-iW-yWZ"/>
+                                <include reference="GEb-98-Jw3"/>
+                                <include reference="H7j-cd-Fxc"/>
                                 <exclude reference="PjT-90-Adl"/>
-                                <include reference="QyO-0i-2aV"/>
                                 <exclude reference="bbf-ha-Pnl"/>
+                                <include reference="XhY-dB-dPc"/>
                             </mask>
                         </variation>
                     </view>
@@ -290,7 +245,6 @@
                     <connections>
                         <outlet property="lapResetButton" destination="3MO-vs-ItQ" id="qgb-Kr-w6b"/>
                         <outlet property="lapTimerLabel" destination="JLk-DV-xeV" id="lZk-fY-AXA"/>
-                        <outlet property="resetButtonHeight" destination="8gh-CS-6AU" id="fGT-hV-arg"/>
                         <outlet property="shareButton" destination="tbn-fc-7HQ" id="ERz-ds-e3l"/>
                         <outlet property="startStopButton" destination="fjv-yz-033" id="P9F-Pd-gDR"/>
                         <outlet property="tableView" destination="F4f-hm-0qB" id="aNW-1q-xCa"/>
