@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "TrackCoachUI.h"
-#import "TrackCoachDefines.h"
+#import "Defines.h"
 
 @class AppInfoViewController;
 
