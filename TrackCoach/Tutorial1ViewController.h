@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TrackCoachDefines.h"
+#import "Defines.h"
 #import "TrackCoachUI.h"
 #import "TutorialViewController.h"
 
