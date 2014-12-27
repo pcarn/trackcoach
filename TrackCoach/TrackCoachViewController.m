@@ -256,17 +256,17 @@
 
 - (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
+        TutorialViewController *tutorial1ViewController = [[Tutorial1ViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
         tutorial1ViewController.pageIndex = index;
         return tutorial1ViewController;
     } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
+        TutorialViewController *tutorial2ViewController = [[Tutorial2ViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
-        tutorialEnd.pageIndex = index;
-        return tutorialEnd;
+        TutorialViewController *tutorial3ViewController = [[Tutorial3ViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
+        tutorial3ViewController.pageIndex = index;
+        return tutorial3ViewController;
     } else {
         [UIView animateWithDuration:0.4
                          animations:^{self.pageViewController.view.alpha = 0.2;}
