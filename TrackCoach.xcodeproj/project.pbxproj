@@ -98,7 +98,6 @@
 		17C21A4719C4B6DC00E30C6F /* transparent@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent@3x.png"; sourceTree = "<group>"; };
 		17CAB20F18C562BA009C0370 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
 		17CAB21018C562BA009C0370 /* transparent@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent@2x.png"; sourceTree = "<group>"; };
-		17E11061189F571C0037E7A5 /* volumeHider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volumeHider.png; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		17E11066189F602C0037E7A5 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -301,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				17E11063189F602C0037E7A5 /* App Icon [Squared] */,
-				17E11061189F571C0037E7A5 /* volumeHider.png */,
 				17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */,
 				17E788FB186CD5A500AE6FED /* InfoPlist.strings */,
 			);
