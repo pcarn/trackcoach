@@ -1,5 +1,5 @@
 //
-//  MainStoryboardTest.m
+//  TrackCoachViewControllerTest.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 12/27/14.
@@ -10,11 +10,11 @@
 #import <XCTest/XCTest.h>
 #import "TrackCoachViewController.h"
 
-@interface MainStoryboardTest : XCTestCase
+@interface TrackCoachViewControllerTest : XCTestCase
 
 @end
 
-@implementation MainStoryboardTest {
+@implementation TrackCoachViewControllerTest {
     TrackCoachViewController *viewController;
 }
 
