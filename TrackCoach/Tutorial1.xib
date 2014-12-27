@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-Gc-3tq">
-                    <rect key="frame" x="15" y="63" width="117" height="24"/>
+                    <rect key="frame" x="15" y="83" width="117" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="117" id="nea-7l-Pe1"/>
                     </constraints>
@@ -39,7 +39,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-fW-wli">
-                    <rect key="frame" x="15" y="126" width="116" height="24"/>
+                    <rect key="frame" x="15" y="146" width="116" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="mTL-BB-ZL5"/>
                     </constraints>
@@ -88,7 +88,7 @@
                 <constraint firstAttribute="trailing" secondItem="5Ib-wV-FQB" secondAttribute="trailing" constant="30" id="2NW-LR-qIv"/>
                 <constraint firstAttribute="centerX" secondItem="nL3-Yy-hy4" secondAttribute="centerX" id="B5O-vh-iG6"/>
                 <constraint firstItem="5Ib-wV-FQB" firstAttribute="top" secondItem="nL3-Yy-hy4" secondAttribute="bottom" constant="25" id="D2x-fo-FuN"/>
-                <constraint firstItem="T5i-Gc-3tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="55" id="Kar-cd-5zY"/>
+                <constraint firstItem="T5i-Gc-3tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="75" id="Kar-cd-5zY"/>
                 <constraint firstAttribute="centerX" secondItem="fiZ-6m-EFA" secondAttribute="centerX" id="L9I-69-cFm"/>
                 <constraint firstItem="fiZ-6m-EFA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="20" id="Mgz-bd-aUt"/>
                 <constraint firstAttribute="bottom" secondItem="5Ib-wV-FQB" secondAttribute="bottom" id="OCC-JL-1c4"/>
