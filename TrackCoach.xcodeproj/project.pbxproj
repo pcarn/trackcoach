@@ -10,6 +10,7 @@
 		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
+		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		17739AC41A4D29A000EEDF34 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -76,6 +77,7 @@
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		1704DFFD19096A9C000079C4 /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
 		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADED18CCE08C00C7691F /* transparent_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_iPad.png; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */,
+				1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17739AC41A4D29A000EEDF34 /* TrackCoachUITests.m in Sources */,
+				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
