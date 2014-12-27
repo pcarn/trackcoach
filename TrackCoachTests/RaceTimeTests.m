@@ -39,13 +39,15 @@
 - (void)testRemoveMostRecentLap {
     [time removeMostRecentLap];
     XCTAssertEqual(90, [time mostRecentLapTime]);
+    XCTAssertEqual(2, [time.lapTimes count]);
 }
 
 - (void)testAddNewLapAtCurrentTime {
-    time = [[RaceTime alloc] init]; // New RaceTime
     time.startDate = [[NSDate date] dateByAddingTimeInterval:-30];
+    time.lapTimes = nil;
     [time addNewLapAtCurrentTime];
-    XCTAssertEqualWithAccuracy(30, [time mostRecentLapTime], 0.001);
+    XCTAssertEqualWithAccuracy(30, [time mostRecentLapTime], 0.01);
+    XCTAssertEqual(1, [time.lapTimes count]);
 }
 
 - (void)testElapsed {
@@ -53,7 +55,7 @@
     XCTAssertEqual(0, [time elapsed]);
     
     time.startDate = [[NSDate date] dateByAddingTimeInterval:-5];
-    XCTAssertEqualWithAccuracy(5, [time elapsed], 0.001);
+    XCTAssertEqualWithAccuracy(5, [time elapsed], 0.01);
 }
 
 - (void)testTotalOfAllLaps {
@@ -63,6 +65,12 @@
 - (void)testTotalOfLapAndBelow {
     XCTAssertThrows([time totalOfLapAndBelow:7]);
     XCTAssertEqual(150, [time totalOfLapAndBelow:1]);
+}
+
+- (void)testEncodeWithCoder {
+    [NSKeyedArchiver archivedDataWithRootObject:time];
+    // Assuming this function works, no test
+    // If more properties are added, this must be updated
 }
 
 @end
