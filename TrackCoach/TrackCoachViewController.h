@@ -12,6 +12,7 @@
 #import "TutorialViewController.h"
 #import "Tutorial1ViewController.h"
 #import "Tutorial2ViewController.h"
+#import "Tutorial3ViewController.h"
 #import "Defines.h"
 #import "TrackCoachTableViewCell.h"
 

@@ -254,14 +254,6 @@
             </objects>
             <point key="canvasLocation" x="650.25" y="60"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="hsS-fh-TVe">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jBL-4p-Ke7" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qu-Hv-YGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1623.75" y="437.32394366197178"/>
-        </scene>
         <!--App Info View Controller-->
         <scene sceneID="kuD-JF-jMn">
             <objects>
@@ -479,53 +471,6 @@ More features on the way!
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR9-EW-0wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="-314.78873239436615"/>
-        </scene>
-        <!--Tutorial3 View Controller-->
-        <scene sceneID="Ufb-hu-rAK">
-            <objects>
-                <viewController storyboardIdentifier="Tutorial3ViewController" id="tEO-Pz-Fto" customClass="Tutorial3ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZCO-B5-j4c"/>
-                        <viewControllerLayoutGuide type="bottom" id="X0b-zb-ppG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fxw-Wf-maM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWU-dM-WIH">
-                                <rect key="frame" x="30" y="88" width="540" height="312"/>
-                                <string key="text">Start 
-using
-TrackCoach!</string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⇨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keb-Fe-6QG">
-                                <rect key="frame" x="60" y="411" width="480" height="189"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="158"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wWU-dM-WIH" secondAttribute="trailing" constant="30" id="DUl-zt-avg"/>
-                            <constraint firstItem="wWU-dM-WIH" firstAttribute="top" secondItem="ZCO-B5-j4c" secondAttribute="bottom" constant="68" id="Pk3-Rf-YeM"/>
-                            <constraint firstAttribute="centerX" secondItem="wWU-dM-WIH" secondAttribute="centerX" id="XUp-Fn-GzA"/>
-                            <constraint firstItem="keb-Fe-6QG" firstAttribute="leading" secondItem="Fxw-Wf-maM" secondAttribute="leading" constant="60" id="XpE-xD-NUB"/>
-                            <constraint firstItem="X0b-zb-ppG" firstAttribute="top" secondItem="keb-Fe-6QG" secondAttribute="bottom" id="e6P-ns-0x9"/>
-                            <constraint firstAttribute="trailing" secondItem="keb-Fe-6QG" secondAttribute="trailing" constant="60" id="eW0-nb-cIh"/>
-                            <constraint firstItem="X0b-zb-ppG" firstAttribute="top" secondItem="wWU-dM-WIH" secondAttribute="bottom" constant="200" id="o6u-fS-ga9"/>
-                            <constraint firstAttribute="centerX" secondItem="keb-Fe-6QG" secondAttribute="centerX" id="oMM-0K-R6y"/>
-                            <constraint firstItem="wWU-dM-WIH" firstAttribute="leading" secondItem="Fxw-Wf-maM" secondAttribute="leading" constant="30" id="pHq-uN-YPp"/>
-                        </constraints>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XCK-Qi-W4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4286.25" y="437.32394366197178"/>
         </scene>
     </scenes>
     <resources>

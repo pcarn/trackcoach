@@ -264,9 +264,9 @@
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
-        tutorialEnd.pageIndex = index;
-        return tutorialEnd;
+        TutorialViewController *tutorial3ViewController = [[Tutorial3ViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
+        tutorial3ViewController.pageIndex = index;
+        return tutorial3ViewController;
     } else {
         [UIView animateWithDuration:0.4
                          animations:^{self.pageViewController.view.alpha = 0.2;}
