@@ -35,7 +35,7 @@
     [self.lapTimes removeObjectAtIndex:0];
 }
 
-- (void)addNewLap {
+- (void)addNewLapAtCurrentTime {
     [self.lapTimes insertObject:@([self elapsed] - [self totalOfAllLaps]) atIndex:0];
 }
 
