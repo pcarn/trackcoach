@@ -10,7 +10,7 @@
         <!--Track Coach View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="TrackCoachViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackCoachViewController" id="vXZ-lx-hvc" customClass="TrackCoachViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xqG-Av-2QV"/>
                         <viewControllerLayoutGuide type="bottom" id="Nac-Bq-1O4"/>
