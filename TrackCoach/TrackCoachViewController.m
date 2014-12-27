@@ -260,7 +260,7 @@
         tutorial1ViewController.pageIndex = index;
         return tutorial1ViewController;
     } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
+        TutorialViewController *tutorial2ViewController = [[Tutorial2ViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {

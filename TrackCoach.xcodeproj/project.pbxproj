@@ -13,6 +13,7 @@
 		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
 		1705E462187D21A30012C537 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
+		170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0B1A4E86C900393022 /* Tutorial2.xib */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
@@ -79,6 +80,7 @@
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		1704DFFD19096A9C000079C4 /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
 		170E7A031A4E7C9B00393022 /* Tutorial1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial1.xib; sourceTree = "<group>"; };
+		170E7A0B1A4E86C900393022 /* Tutorial2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial2.xib; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADED18CCE08C00C7691F /* transparent_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_iPad.png; sourceTree = "<group>"; };
@@ -182,13 +184,14 @@
 			children = (
 				179A4FB318F7985E008994AA /* Tutorial1ViewController.h */,
 				179A4FB418F7985E008994AA /* Tutorial1ViewController.m */,
+				170E7A031A4E7C9B00393022 /* Tutorial1.xib */,
 				179A4FB518F7985E008994AA /* Tutorial2ViewController.h */,
 				179A4FB618F7985E008994AA /* Tutorial2ViewController.m */,
+				170E7A0B1A4E86C900393022 /* Tutorial2.xib */,
 				179A4FB718F7985E008994AA /* Tutorial3ViewController.h */,
 				179A4FB818F7985E008994AA /* Tutorial3ViewController.m */,
 				179A4FB918F7985E008994AA /* TutorialViewController.h */,
 				179A4FBA18F7985E008994AA /* TutorialViewController.m */,
-				170E7A031A4E7C9B00393022 /* Tutorial1.xib */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */,
 				17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */,
 				17C21A4819C4B6DC00E30C6F /* transparent@3x.png in Resources */,
+				170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */,
 				178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
