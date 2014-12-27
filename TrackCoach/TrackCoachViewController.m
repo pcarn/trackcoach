@@ -256,7 +256,7 @@
 
 - (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
+        TutorialViewController *tutorial1ViewController = [[Tutorial1ViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
         tutorial1ViewController.pageIndex = index;
         return tutorial1ViewController;
     } else if (index == 1) {
