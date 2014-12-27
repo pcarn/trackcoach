@@ -30,10 +30,6 @@
     if (IS_3_5_INCH_SIZE) {
         self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
         self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
-        self.titleTopSpaceConstraint.constant = 120;
-        self.centerSubtitleVerticalOffsetConstraint.constant = 18;
-        self.aboveLogoTopContraint.constant = -17;
-        self.betweenSubtitleAndMainTextSpaceConstraint.constant -= 5;
     }
     
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
@@ -48,11 +44,6 @@
         if ([webTextStrings[2] isEqualToString:@"showButtons = true"]) {
             self.startStopLabel.hidden = NO;
             self.lapResetLabel.hidden = NO;
-            if (IS_IPAD) {
-                self.centerHorizontalOffsetLogoConstraint.constant = 90;
-            } else {
-                self.centerHorizontalOffsetLogoConstraint.constant = -71;
-            }
         }
     }
     
