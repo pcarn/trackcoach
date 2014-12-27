@@ -44,7 +44,7 @@
         [NSException raise:@"Tried to lap while timer not running"
                     format:nil];
     }
-    [self.raceTime addNewLap];
+    [self.raceTime addNewLapAtCurrentTime];
 }
 
 - (void)undoStop {
