@@ -45,10 +45,6 @@
     self.versionLabel.text = [NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:@"confirmReset"]) {
-        [defaults setBool:YES forKey:@"confirmReset"];
-        [defaults synchronize];
-    }
     self.confirmResetSwitch.on = [defaults boolForKey:@"confirmReset"];
     
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];

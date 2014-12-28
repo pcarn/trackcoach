@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="650.25" y="60"/>
         </scene>
-        <!--App Info View Controller-->
+        <!--AppInfoViewController-->
         <scene sceneID="kuD-JF-jMn">
             <objects>
-                <viewController id="1XP-Fe-ht0" customClass="AppInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppInfoViewController" title="AppInfoViewController" id="1XP-Fe-ht0" customClass="AppInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKK-Jg-Ixs"/>
                         <viewControllerLayoutGuide type="bottom" id="XYK-oi-Wlr"/>
@@ -447,7 +447,7 @@ More features on the way!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904.375" y="-341.19718309859155"/>
+            <point key="canvasLocation" x="2799" y="-158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2aa-JE-Q3C">
