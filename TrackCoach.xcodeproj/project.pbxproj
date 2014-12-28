@@ -61,6 +61,7 @@
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
+		17F6E2B11A4FBAD500B8EF7F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
 		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
 		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E788F3186CD5A500AE6FED /* XCTest.framework in Frameworks */,
+				17F6E2B11A4FBAD500B8EF7F /* libOCMock.a in Frameworks */,
 				17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */,
 				17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */,
 			);
@@ -258,6 +261,7 @@
 		17E788D2186CD5A400AE6FED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */,
 				17828B9B187A1C3D0063535E /* libz.dylib */,
 				17E788D3186CD5A400AE6FED /* Foundation.framework */,
 				17E788D5186CD5A500AE6FED /* CoreGraphics.framework */,
@@ -688,6 +692,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/usr/lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -721,6 +726,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/usr/lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
