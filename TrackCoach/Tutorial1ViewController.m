@@ -19,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//        self.pageIndex = 1;
     }
     return self;
 }
@@ -27,11 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (IS_3_5_INCH_SIZE) {
-        self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
-        self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
-    }
-    
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
     if (webTextStrings) {
         self.mainTextTitle.text = webTextStrings[0];
@@ -46,8 +40,6 @@
             self.lapResetLabel.hidden = NO;
         }
     }
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
