@@ -190,6 +190,7 @@
 			children = (
 				17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */,
 				1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */,
+				170E7A101A4F060900393022 /* TrackCoachViewControllerTest.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -315,7 +316,6 @@
 			children = (
 				17739AC21A4D297B00EEDF34 /* Models */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
-				170E7A101A4F060900393022 /* TrackCoachViewControllerTest.m */,
 			);
 			path = TrackCoachTests;
 			sourceTree = "<group>";
@@ -679,7 +679,22 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/usr/include",
+				);
 				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -697,7 +712,22 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/usr/include",
+				);
 				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
