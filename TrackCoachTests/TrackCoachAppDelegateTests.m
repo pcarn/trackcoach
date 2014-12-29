@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 #import "TrackCoachAppDelegate.h"
 
 @interface TrackCoachAppDelegateTests : XCTestCase
@@ -29,9 +30,44 @@
     [super tearDown];
 }
 
-- (void)testOthers {
+- (void)testApplicationWillResignActive {
+    id mockViewController = OCMClassMock([TrackCoachViewController class]);
+    delegate.viewController = mockViewController;
     [delegate applicationWillResignActive:nil];
+    OCMVerify([mockViewController stopNSTimer]);
 }
 
+- (void)testApplicationDidEnterBackground {
+    id mockViewController = OCMClassMock([TrackCoachViewController class]);
+    delegate.viewController = mockViewController;
+    [delegate applicationDidEnterBackground:nil];
+    OCMVerify([mockViewController stopNSTimer]);
+}
+
+- (void)testApplicationWillEnterForeground {
+    id mockViewController = OCMClassMock([TrackCoachViewController class]);
+    delegate.viewController = mockViewController;
+    [delegate applicationWillEnterForeground:nil];
+    OCMVerify([mockViewController startNSTimer]);
+}
+
+- (void)testApplicationDidBecomeActive {
+    id mockViewController = OCMClassMock([TrackCoachViewController class]);
+    delegate.viewController = mockViewController;
+    [delegate applicationDidBecomeActive:nil];
+    OCMVerify([mockViewController startNSTimer]);
+}
+
+- (void)testApplicationWillTerminate {
+    id mockViewController = OCMClassMock([TrackCoachViewController class]);
+    delegate.viewController = mockViewController;
+    [delegate applicationWillTerminate:nil];
+    OCMVerify([mockViewController saveSettings]);
+}
+
+- (void)testExtra {
+    [TrackCoachAppDelegate alloc];
+    // This is here to get coverage of the @implementation line
+}
 
 @end
