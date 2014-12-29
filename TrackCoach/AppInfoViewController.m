@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.contentWidth.constant = [[UIScreen mainScreen] bounds].size.width;
-    
+
     self.topTextView.selectable = YES; //for formatting
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo"];
     if (webTextStrings) {
@@ -46,7 +46,7 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.confirmResetSwitch.on = [defaults boolForKey:@"confirmReset"];
-    
+
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -66,7 +66,7 @@
     if (mailController) {
         [self presentViewController:mailController animated:YES completion:nil];
     }
-    
+
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
@@ -92,7 +92,7 @@
 
 /*
  #pragma mark - Navigation
- 
+
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
  {

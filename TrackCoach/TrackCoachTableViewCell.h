@@ -14,5 +14,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *splitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
-
 @end

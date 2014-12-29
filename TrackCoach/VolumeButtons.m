@@ -49,8 +49,8 @@ void volumeListenerCallback (
                              ){
     const float *volumePointer = inData;
     float volume = *volumePointer;
-    
-    
+
+
     if (volume > [(__bridge VolumeButtons*)inClientData initialVolume])
     {
         [(__bridge VolumeButtons*)inClientData volumeUp];
@@ -59,7 +59,7 @@ void volumeListenerCallback (
     {
         [(__bridge VolumeButtons*)inClientData volumeDown];
     }
-    
+
 }
 
 
@@ -86,31 +86,31 @@ void volumeListenerCallback (
     [self performSelector:@selector(initializeVolumeButtons) withObject:self afterDelay:0.1]; //set up again
     if (self.lastChange != VOLUME_DOWN
         || (fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_1) > AUTO_VOLUME_INTERVAL_ERROR
-        && fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_2) > AUTO_VOLUME_INTERVAL_ERROR)) {
-        if (self.volumeDownBlock) {
-            self.volumeDownBlock();
+            && fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_2) > AUTO_VOLUME_INTERVAL_ERROR)) {
+            if (self.volumeDownBlock) {
+                self.volumeDownBlock();
+            }
         }
-    }
     self.timeOfLastChange = [NSDate timeIntervalSinceReferenceDate];
     self.lastChange = VOLUME_DOWN;
-//    NSLog(@"%f", self.timeOfLastChange);
+    //    NSLog(@"%f", self.timeOfLastChange);
 }
 
 - (void)volumeUp {
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self)); //Don't want infinite loop
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:self.initialVolume];
     [self performSelector:@selector(initializeVolumeButtons) withObject:self afterDelay:0.1]; //set up again
-//    NSLog(@"%f", self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate]);
+    //    NSLog(@"%f", self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate]);
     if (self.lastChange != VOLUME_UP
         || (fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_1) > AUTO_VOLUME_INTERVAL_ERROR
-        && fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_2) > AUTO_VOLUME_INTERVAL_ERROR)) {
-        if (self.volumeUpBlock) {
-            self.volumeUpBlock();
+            && fabs(self.timeOfLastChange-[NSDate timeIntervalSinceReferenceDate] - AUTO_VOLUME_INTERVAL_2) > AUTO_VOLUME_INTERVAL_ERROR)) {
+            if (self.volumeUpBlock) {
+                self.volumeUpBlock();
+            }
         }
-    }
     self.timeOfLastChange = [NSDate timeIntervalSinceReferenceDate];
     self.lastChange = VOLUME_UP;
-//    NSLog(@"%f", self.timeOfLastChange);
+    //    NSLog(@"%f", self.timeOfLastChange);
 }
 
 - (void)startUsingVolumeButtons {
@@ -119,13 +119,13 @@ void volumeListenerCallback (
         return;
     }
     self.active = YES;
-    
+
     AudioSessionInitialize(NULL, NULL, NULL, NULL);
     AudioSessionSetActive(YES);
     self.initialVolume = [[MPMusicPlayerController applicationMusicPlayer] volume];
     self.loweredVolume = (self.initialVolume == 1.0); //will lower
     self.raisedVolume = (self.initialVolume == 0.0); //will raise
-    
+
     if (self.loweredVolume) {
         [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.95];
         self.initialVolume = 0.95;
@@ -133,14 +133,14 @@ void volumeListenerCallback (
         [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.05];
         self.initialVolume = 0.05;
     }
-    
+
     CGRect frame = CGRectMake(-1000, -1000, 0, 0);
     self.volumeView = [[MPVolumeView alloc] initWithFrame:frame];
     [self.volumeView sizeToFit];
     [[[UIApplication sharedApplication] windows][0] addSubview:self.volumeView];
-    
+
     [self initializeVolumeButtons];
-    
+
     if (!self.paused) {
         //Check for notifications to suspend for
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -164,15 +164,15 @@ void volumeListenerCallback (
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
-//    if (self.loweredVolume) {
-//        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
-//    } else if (self.raisedVolume) {
-//        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
-//    }
-    
+    //    if (self.loweredVolume) {
+    //        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
+    //    } else if (self.raisedVolume) {
+    //        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
+    //    }
+
     [self.volumeView removeFromSuperview];
     self.volumeView = nil;
-    
+
     AudioSessionSetActive(NO);
     self.active = NO;
 }
