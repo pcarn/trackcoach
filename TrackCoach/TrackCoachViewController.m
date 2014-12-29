@@ -9,6 +9,7 @@
 #import "TrackCoachViewController.h"
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "TrackCoachAppDelegate.h"
 
 
 @interface TrackCoachViewController()
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    TrackCoachAppDelegate *appDelegate = (TrackCoachAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.viewController = self;
     self.timer = nil;
     self.tableView.dataSource = self;
     [self runTutorialIfNeeded];
@@ -82,8 +85,6 @@
         }
     } else { // Stop
         [self.trackCoachBrain stop];
-        [self.timer invalidate];
-        self.timer = nil;
         [self.tableView reloadData];
         [self setupForTimerStopped];
         
@@ -135,6 +136,7 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
     [self.shareButton setAlpha:1.0];
+    [self stopNSTimer];
 }
 
 - (void)reset {
@@ -317,6 +319,11 @@
                                                 userInfo:nil
                                                  repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)stopNSTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)setupEncodedRaceTime {

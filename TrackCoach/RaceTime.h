@@ -19,5 +19,6 @@
 - (NSTimeInterval)elapsed;
 - (NSTimeInterval)totalOfAllLaps;
 - (NSTimeInterval)totalOfLapAndBelow:(NSInteger)count;
+- (BOOL)isEqualToRaceTime:(RaceTime *)otherTime;
 
 @end
