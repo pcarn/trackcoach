@@ -9,6 +9,7 @@
 #import "TrackCoachViewController.h"
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "TrackCoachAppDelegate.h"
 
 
 @interface TrackCoachViewController()
@@ -25,19 +26,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    TrackCoachAppDelegate *appDelegate = (TrackCoachAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.viewController = self;
     self.timer = nil;
     self.tableView.dataSource = self;
     [self runTutorialIfNeeded];
     [self setupEncodedRaceTime];
     [self setupVolumeButtons];
     [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"confirmReset"]) {
         [defaults setBool:YES forKey:@"confirmReset"];
         [defaults synchronize];
     }
-    
+
     [self updateUI];
     [self.tableView reloadData];
 }
@@ -53,14 +56,14 @@
         [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
     }
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
-//    [textToShare appendString:@"\nwww.trackcoachapp.com"];
-    
-    
+    //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
+
+
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
                                          UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
-    
+
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
@@ -82,11 +85,9 @@
         }
     } else { // Stop
         [self.trackCoachBrain stop];
-        [self.timer invalidate];
-        self.timer = nil;
         [self.tableView reloadData];
         [self setupForTimerStopped];
-        
+
     }
     [self saveSettings];
 }
@@ -97,7 +98,7 @@
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
                                                             message:@"Are you sure you want to reset?"
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
@@ -108,7 +109,7 @@
         } else {
             [self reset];
         }
-               
+
     }
     [self.tableView reloadData];
     [self saveSettings];
@@ -135,6 +136,7 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
     [self.shareButton setAlpha:1.0];
+    [self stopNSTimer];
 }
 
 - (void)reset {
@@ -181,7 +183,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TrackCoachTableViewCell *cell = (TrackCoachTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LapCell"];
-    
+
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
     cell.splitLabel.text = [TrackCoachUI timeToString:[lapTime doubleValue]];
     cell.titleLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
@@ -210,7 +212,7 @@
 - (void)saveSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
-    
+
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
@@ -235,7 +237,7 @@
 
 #pragma mark Tutorial
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
-      viewControllerBeforeViewController:(UIViewController *)viewController {
+            viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -246,7 +248,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    
+
     if (index == NSNotFound) {
         return nil;
     }
@@ -271,7 +273,7 @@
         [UIView animateWithDuration:0.4
                          animations:^{self.pageViewController.view.alpha = 0.2;}
                          completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
-                                    [self.pageViewController removeFromParentViewController];}];
+                             [self.pageViewController removeFromParentViewController];}];
 
         self.tutorialIsDisplayed = NO;
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:TUTORIAL_RUN_STRING];
@@ -317,6 +319,11 @@
                                                 userInfo:nil
                                                  repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)stopNSTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)setupEncodedRaceTime {
@@ -380,6 +387,5 @@
     self.trackCoachBrain = nil;
     self.pageViewController = nil;
 }
-
 
 @end

@@ -11,7 +11,6 @@
 #import "TrackCoachUI.h"
 #import "TutorialViewController.h"
 
-
 @interface Tutorial1ViewController : TutorialViewController
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveButtonIndicatorsSpaceConstraint;

@@ -35,4 +35,8 @@
 - (IBAction)startStopButtonAction:(id)sender;
 - (IBAction)shareButtonAction:(id)sender;
 - (void)updateUI;
+- (void)startNSTimer;
+- (void)stopNSTimer;
+- (void)saveSettings;
+
 @end

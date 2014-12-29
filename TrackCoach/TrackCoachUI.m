@@ -15,10 +15,9 @@
     NSString *data = [NSString stringWithContentsOfURL:url
                                           usedEncoding:NULL
                                                  error:NULL];
-    
+
     return [data componentsSeparatedByString:@"\n"];
 }
-
 
 + (NSString *)timeToString:(NSTimeInterval)time {
     int hours = (int)(time / 3600.0);
@@ -28,7 +27,7 @@
     int seconds = (int)(time);
     time -= seconds;
     int decimal = time * 100.0;
-    
+
     if (hours > 0) {
         return [NSString stringWithFormat:@"%u:%02u:%02u.%02u", hours, minutes, seconds, decimal];
     } else {

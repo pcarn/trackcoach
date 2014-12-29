@@ -51,10 +51,10 @@
     if (self.timerIsRunning) {
         [NSException raise:@"Tried to undo stop, when already started" format:nil];
     }
-    
+
     [self.raceTime removeMostRecentLap];
     self.timerIsRunning = YES;
-    
+
 }
 
 - (void)reset {

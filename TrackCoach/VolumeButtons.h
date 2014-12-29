@@ -15,7 +15,6 @@ typedef void (^volumeBlock)();
 extern const double AUTO_VOLUME_INTERVAL_1;
 extern const double AUTO_VOLUME_INTERVAL_2;
 extern const double AUTO_VOLUME_INTERVAL_ERROR;
-extern
 
 @interface VolumeButtons : NSObject
 @property (nonatomic, copy) volumeBlock volumeUpBlock;
