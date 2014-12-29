@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 #import "RaceTime.h"
 
 @interface RaceTimeTests : XCTestCase
@@ -67,10 +68,48 @@
     XCTAssertEqual(150, [time totalOfLapAndBelow:1]);
 }
 
-- (void)testEncodeWithCoder {
-    [NSKeyedArchiver archivedDataWithRootObject:time];
-    // Assuming this function works, no test
-    // If more properties are added, this must be updated
+- (void)testCoder {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:time];
+    RaceTime *decoded = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    XCTAssertEqualObjects(decoded, time);
+    // If more properties are added, coder method must be updated
+}
+
+- (void)testIsEqual_sameObject {
+    XCTAssertTrue([time isEqual:time]);
+}
+
+
+- (void)testIsEqual_nilObject {
+    XCTAssertFalse([time isEqual:nil]);
+}
+
+- (void)testIsEqual_equalObject {
+    id mock = OCMPartialMock(time);
+    RaceTime *other = [[RaceTime alloc] init];
+    [other.lapTimes insertObject:@60 atIndex:0];
+    [other.lapTimes insertObject:@90 atIndex:0];
+    [other.lapTimes insertObject:@120 atIndex:0];
+    other.startDate = time.startDate = [NSDate date];
+    [time isEqualToRaceTime:other];
+    OCMVerify([mock isEqualToRaceTime:other]);
+}
+
+- (void)testIsEqualToRaceTime_sameObject {
+    XCTAssertTrue([time isEqualToRaceTime:time]);
+}
+
+- (void)testIsEqualToRaceTime_nilObject {
+    XCTAssertFalse([time isEqualToRaceTime:nil]);
+}
+
+- (void)testIsEqualToRaceTime_equalObject {
+    RaceTime *other = [[RaceTime alloc] init];
+    [other.lapTimes insertObject:@60 atIndex:0];
+    [other.lapTimes insertObject:@90 atIndex:0];
+    [other.lapTimes insertObject:@120 atIndex:0];
+    other.startDate = time.startDate = [NSDate date];
+    XCTAssertTrue([time isEqualToRaceTime:other]);
 }
 
 @end
