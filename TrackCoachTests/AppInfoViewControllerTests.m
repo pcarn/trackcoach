@@ -11,6 +11,13 @@
 #import <OCMock/OCMock.h>
 #import "AppInfoViewController.h"
 #import "TrackCoachUI.h"
+#import "TrackCoachViewController.h"
+
+@interface AppInfoViewController (Testing)
+
+- (void)setConfirmResetState:(id)sender;
+
+@end
 
 @interface AppInfoViewControllerTests : XCTestCase
 
@@ -48,11 +55,46 @@
 }
 
 - (void)testViewDidLoad_stringsChangeForiPad {
-    id partialMock = OCMPartialMock([UIDevice currentDevice]);
-    OCMStub([partialMock userInterfaceIdiom]).andReturn(UIUserInterfaceIdiomPad);
+    id deviceMock = OCMPartialMock([UIDevice currentDevice]);
+    OCMStub([deviceMock userInterfaceIdiom]).andReturn(UIUserInterfaceIdiomPad);
     [self setUpInterface];
     XCTAssertTrue([viewController.topTextView.text containsString:@"iPad"]);
-    OCMVerify([partialMock userInterfaceIdiom]);
+    OCMVerify([deviceMock userInterfaceIdiom]);
+}
+
+- (void)testSetConfirmResetState {
+    id mockSwitch = OCMClassMock([UISwitch class]);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:NO forKey:@"confirmReset"];
+    OCMStub([mockSwitch isOn]).andReturn(YES);
+    [viewController setConfirmResetState:mockSwitch];
+    XCTAssertTrue([defaults boolForKey:@"confirmReset"]);
+    OCMVerify([mockSwitch isOn]);
+}
+
+- (void)testContactButtonAction {
+    id mockcontroller = OCMPartialMock(viewController);
+    [viewController contactButtonAction:nil];
+    OCMVerify([mockcontroller presentViewController:[OCMArg any] animated:YES completion:nil]);
+}
+
+- (void)testMailComposeController_dismisses {
+    id mockcontroller = OCMPartialMock(viewController);
+    [viewController mailComposeController:nil didFinishWithResult:MFMailComposeResultSent error:nil];
+    OCMVerify([mockcontroller dismissViewControllerAnimated:YES completion:nil]);
+}
+
+- (void)testBack {
+    id mockDelegate = OCMClassMock([TrackCoachViewController class]);
+    viewController.delegate = mockDelegate;
+    [viewController back:nil];
+    OCMVerify([mockDelegate appInfoViewControllerDidCancel:viewController]);
+}
+
+- (void)testOthers {
+    [viewController viewDidAppear:NO];
+    [viewController didReceiveMemoryWarning];
+    XCTAssertEqual(UIStatusBarStyleLightContent, [viewController preferredStatusBarStyle]);
 }
 
 @end
