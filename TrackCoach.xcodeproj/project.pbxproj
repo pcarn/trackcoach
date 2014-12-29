@@ -65,6 +65,7 @@
 		17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */; };
 		17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */; };
 		17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */; };
+		17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 		17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardAppInfoViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachAppDelegateTests.m; sourceTree = "<group>"; };
 		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
 		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -324,8 +326,9 @@
 			isa = PBXGroup;
 			children = (
 				17F6E2B41A509DBC00B8EF7F /* Storyboard */,
-				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
 				17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */,
+				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
+				17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */,
 				17739AC21A4D297B00EEDF34 /* Models */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
@@ -521,6 +524,7 @@
 			files = (
 				170E7A0F1A4E8C0800393022 /* (null) in Sources */,
 				17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */,
+				17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */,
 				17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */,
 				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
 				170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */,
