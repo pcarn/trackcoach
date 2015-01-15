@@ -50,7 +50,7 @@
     OCMVerify([mockRaceTime addNewLapAtCurrentTime]);
 }
 
-- (void)testLapWhenStopped {
+- (void)testLap_whenStopped {
     brain.timerIsRunning = NO;
     XCTAssertThrows([brain lap]);
 }
@@ -63,7 +63,7 @@
     XCTAssertTrue(brain.timerIsRunning);
 }
 
-- (void)testUndoStopWhenRunning {
+- (void)testUndoStop_whenRunning {
     brain.timerIsRunning = YES;
     XCTAssertThrows([brain undoStop]);
 }
@@ -76,7 +76,7 @@
     //Because of lazy initialization, cannot check if nil.
 }
 
-- (void)testResetWhileRunning {
+- (void)testReset_whileRunning {
     [brain start];
     XCTAssertThrows([brain reset]);
 }
