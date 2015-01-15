@@ -70,8 +70,6 @@ void volumeListenerCallback (
         self.paused = NO;
         self.timeOfLastChange = 0;
         self.lastChange = 0;
-    } else {
-        NSLog(@"VolumeButtons did not init");
     }
     return self;
 }

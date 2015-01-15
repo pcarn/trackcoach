@@ -14,8 +14,6 @@
     self = [super init];
     if (self) {
         self.timerIsRunning = NO;
-    } else {
-        NSLog(@"Super did not init");
     }
     return self;
 }
