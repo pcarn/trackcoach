@@ -15,6 +15,9 @@
 		170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0D1A4E893100393022 /* Tutorial3.xib */; };
 		170E7A0F1A4E8C0800393022 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */; };
+		173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */; };
+		173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */; };
+		173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -91,6 +94,9 @@
 		170E7A0D1A4E893100393022 /* Tutorial3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial3.xib; sourceTree = "<group>"; };
 		170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachViewControllerTests.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrainTests.m; sourceTree = "<group>"; };
+		173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
+		173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
 		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
 		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -201,6 +207,7 @@
 			children = (
 				17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */,
 				1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */,
+				173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 				17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */,
 				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
 				17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */,
+				173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */,
 				17739AC21A4D297B00EEDF34 /* Models */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
@@ -350,6 +358,7 @@
 			children = (
 				170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */,
 				17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */,
+				173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -525,7 +534,10 @@
 				170E7A0F1A4E8C0800393022 /* (null) in Sources */,
 				17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */,
 				17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */,
+				173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */,
+				173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */,
 				17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */,
+				173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */,
 				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
 				170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */,
 				17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */,
