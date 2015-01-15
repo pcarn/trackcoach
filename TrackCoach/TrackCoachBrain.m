@@ -52,7 +52,6 @@
 
     [self.raceTime removeMostRecentLap];
     self.timerIsRunning = YES;
-
 }
 
 - (void)reset {
@@ -67,10 +66,5 @@
 - (BOOL)lapsIsEmpty {
     return ([self.raceTime.lapTimes count] == 0);
 }
-
-- (void)dealloc {
-    self.raceTime = nil;
-}
-
 
 @end
