@@ -13,11 +13,11 @@
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
 		170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0B1A4E86C900393022 /* Tutorial2.xib */; };
 		170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0D1A4E893100393022 /* Tutorial3.xib */; };
-		170E7A0F1A4E8C0800393022 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */; };
 		173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */; };
 		173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */; };
 		173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */; };
+		173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
@@ -531,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170E7A0F1A4E8C0800393022 /* (null) in Sources */,
 				17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */,
 				17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */,
 				173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */,
@@ -541,6 +540,7 @@
 				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
 				170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */,
 				17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */,
+				173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
