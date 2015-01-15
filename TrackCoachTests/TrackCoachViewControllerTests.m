@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 #import "TrackCoachViewController.h"
 
 @interface TrackCoachViewControllerTests : XCTestCase
@@ -35,6 +36,36 @@
     [defaults removeObjectForKey:@"confirmReset"];
     [viewController viewDidLoad];
     XCTAssertTrue([defaults boolForKey:@"confirmReset"]);
+}
+
+- (void)testShareButtonAction {
+    id mock = OCMPartialMock(viewController);
+    [viewController.trackCoachBrain.raceTime.lapTimes insertObject:@60 atIndex:0];
+    [viewController shareButtonAction:nil];
+    OCMVerify([mock presentViewController:[OCMArg any] animated:YES completion:nil]);
+}
+
+- (void)testStartStopButtonAction_start {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    OCMStub([mockBrain timerIsRunning]).andReturn(NO);
+    viewController.trackCoachBrain = mockBrain;
+    [viewController startStopButtonAction:nil];
+    OCMVerify([(TrackCoachBrain *)mockBrain start]);
+}
+
+- (void)testStartStopButtonAction_undoStop {
+    viewController.trackCoachBrain.timerIsRunning = NO;
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [viewController startStopButtonAction:nil];
+    XCTAssertTrue(viewController.alertIsDisplayed);
+}
+
+- (void)testStartStopButtonAction_stop {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
+    viewController.trackCoachBrain = mockBrain;
+    [viewController startStopButtonAction:nil];
+    OCMVerify([mockBrain stop]);
 }
 
 @end

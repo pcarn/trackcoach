@@ -334,9 +334,9 @@
 			children = (
 				17F6E2B41A509DBC00B8EF7F /* Storyboard */,
 				17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */,
-				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
 				17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */,
 				173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */,
+				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
 				17739AC21A4D297B00EEDF34 /* Models */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
