@@ -193,16 +193,18 @@
 
 #pragma mark AlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == RESET_ALERT) {
-        if (buttonIndex == 1) {
-            [self reset];
+    if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
+        if (alertView.tag == RESET_ALERT) {
+            if (buttonIndex == 1) {
+                [self reset];
+            }
+        } else if (alertView.tag == UNDO_STOP_ALERT) {
+            if (buttonIndex == 1) {
+                [self undoStop];
+            }
+        } else {
+            NSLog(@"Other alert clicked.");
         }
-    } else if (alertView.tag == UNDO_STOP_ALERT) {
-        if (buttonIndex == 1) {
-            [self undoStop];
-        }
-    } else {
-        NSLog(@"Other alert clicked.");
     }
     self.alertIsDisplayed = NO;
     [self saveSettings];
@@ -241,9 +243,10 @@
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
+    } else {
+        index--;
+        return [self viewControllerAtIndex:index];
     }
-    index--;
-    return [self viewControllerAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
@@ -251,9 +254,10 @@
 
     if (index == NSNotFound) {
         return nil;
+    } else {
+        index++;
+        return [self viewControllerAtIndex:index];
     }
-    index++;
-    return [self viewControllerAtIndex:index];
 }
 
 - (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
@@ -274,9 +278,8 @@
                          animations:^{self.pageViewController.view.alpha = 0.2;}
                          completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
                              [self.pageViewController removeFromParentViewController];}];
-
         self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:TUTORIAL_RUN_STRING];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TUTORIAL_RUN_STRING];
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"Dismissed tutorial");
         return nil;
@@ -294,6 +297,7 @@
 - (void)runTutorialIfNeeded {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
+        // Doesn't exist, or false
         NSLog(@"Running tutorial");
         self.tutorialIsDisplayed = YES;
         self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
