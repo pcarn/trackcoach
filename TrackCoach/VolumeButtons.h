@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
 //
 
+#define VOLUME_UP 4
+#define VOLUME_DOWN 5
+
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>

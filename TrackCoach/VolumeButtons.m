@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
 //
 
-#define VOLUME_UP 4
-#define VOLUME_DOWN 5
-
 #import "VolumeButtons.h"
 
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -19,6 +16,7 @@ const double AUTO_VOLUME_INTERVAL_2 = -0.2;
 const double AUTO_VOLUME_INTERVAL_ERROR = 0.03; //0.03 for iphone 5s, 0.08 for iphone 3gs
 
 @interface VolumeButtons()
+
 @property (nonatomic) BOOL loweredVolume;
 @property (nonatomic) BOOL raisedVolume;
 @property (nonatomic) BOOL active;
@@ -29,7 +27,6 @@ const double AUTO_VOLUME_INTERVAL_ERROR = 0.03; //0.03 for iphone 5s, 0.08 for i
 @property (nonatomic) int lastChange;
 - (void)pauseUsingVolumeButtons;
 - (void)resumeUsingVolumeButtons;
-
 
 @end
 
@@ -112,10 +109,6 @@ void volumeListenerCallback (
 }
 
 - (void)startUsingVolumeButtons {
-    if (self.active) {
-        NSLog(@"Tried to re-activate buttons");
-        return;
-    }
     self.active = YES;
 
     AudioSessionInitialize(NULL, NULL, NULL, NULL);
@@ -153,10 +146,6 @@ void volumeListenerCallback (
 }
 
 - (void)stopUsingVolumeButtons {
-    if (!self.active) {
-        NSLog(@"Tried to re-deactivate buttons");
-        return;
-    }
     //Stop notifications
     if (!self.paused) {
         [[NSNotificationCenter defaultCenter] removeObserver:self];
