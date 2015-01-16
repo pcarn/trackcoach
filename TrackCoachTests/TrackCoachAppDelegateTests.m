@@ -62,7 +62,7 @@
     OCMVerify([mockViewController saveSettings]);
 }
 
-- (void)testExtra {
+- (void)testOthers {
     [TrackCoachAppDelegate alloc];
     // This is here to get coverage of the @implementation line
 }

@@ -90,7 +90,7 @@
     XCTAssertTrue([brain lapsIsEmpty]);
 }
 
-- (void)testExtra {
+- (void)testOthers {
     [TrackCoachBrain alloc];
     // This is here to get coverage of the @implementation line
 }

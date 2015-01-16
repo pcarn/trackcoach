@@ -28,7 +28,7 @@
     [super tearDown];
 }
 
-- (void)testExtra {
+- (void)testOthers {
     // All calls here, since nothing to test.
     cell = [[TrackCoachTableViewCell alloc] init];
     [TrackCoachTableViewCell alloc];
