@@ -11,6 +11,19 @@
 #import <OCMock/OCMock.h>
 #import "TrackCoachViewController.h"
 
+@interface TrackCoachViewController (Testing)
+
+- (void)setupForTimerRunning;
+- (void)setupForTimerStopped;
+- (void)reset;
+- (void)undoStop;
+- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index;
+- (void)runTutorialIfNeeded;
+- (void)setupEncodedRaceTime;
+- (void)setupVolumeButtons;
+
+@end
+
 @interface TrackCoachViewControllerTests : XCTestCase
 
 @end
@@ -47,8 +60,8 @@
 
 - (void)testStartStopButtonAction_start {
     id mockBrain = OCMClassMock([TrackCoachBrain class]);
-    OCMStub([mockBrain timerIsRunning]).andReturn(NO);
     viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(NO);
     [viewController startStopButtonAction:nil];
     OCMVerify([(TrackCoachBrain *)mockBrain start]);
 }
@@ -62,10 +75,195 @@
 
 - (void)testStartStopButtonAction_stop {
     id mockBrain = OCMClassMock([TrackCoachBrain class]);
-    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
     viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
     [viewController startStopButtonAction:nil];
     OCMVerify([mockBrain stop]);
+}
+
+- (void)testLapResetButtonAction_lap {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
+    [viewController lapResetButtonAction:nil];
+    OCMVerify([mockBrain lap]);
+}
+
+- (void)testLapResetButtonAction_showResetAlert {
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"confirmReset"];
+    [viewController lapResetButtonAction:nil];
+    XCTAssertTrue(viewController.alertIsDisplayed);
+}
+
+- (void)testLapResetButtonAction_reset {
+    id mock = OCMPartialMock(viewController);
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [[NSUserDefaults standardUserDefaults]
+     setBool:NO forKey:@"confirmReset"];
+    [viewController lapResetButtonAction:nil];
+    OCMVerify([mock reset]);
+}
+
+- (void)testSetupForTimerRunning {
+    id mock = OCMPartialMock(viewController);
+    [viewController setupForTimerRunning];
+    OCMVerify([mock startNSTimer]);
+}
+
+- (void)testSetupForTimerStopped {
+    id mock = OCMPartialMock(viewController);
+    [viewController setupForTimerStopped];
+    OCMVerify([mock stopNSTimer]);
+}
+
+- (void)testReset {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    [viewController reset];
+    OCMVerify([mockBrain reset]);
+}
+
+- (void)testUndoStop {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    [viewController undoStop];
+    OCMVerify([mockBrain undoStop]);
+}
+
+- (void)testUpdateUI {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
+    [viewController updateUI];
+
+    OCMStub([mockBrain timerIsRunning]).andReturn(NO);
+    [viewController updateUI];
+    // Nothing easy to test here
+}
+
+- (void)testAlertView_reset {
+    id mock = OCMPartialMock(viewController);
+    UIAlertView *testAlert = [[UIAlertView alloc] init];
+    testAlert.tag = RESET_ALERT;
+    viewController.trackCoachBrain.timerIsRunning = NO;
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [viewController alertView:testAlert clickedButtonAtIndex:1];
+    OCMVerify([mock reset]);
+}
+
+- (void)testAlertView_undoStop {
+    id mock = OCMPartialMock(viewController);
+    UIAlertView *testAlert = [[UIAlertView alloc] init];
+    testAlert.tag = UNDO_STOP_ALERT;
+    viewController.trackCoachBrain.timerIsRunning = NO;
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [viewController alertView:testAlert clickedButtonAtIndex:1];
+    OCMVerify([mock undoStop]);
+}
+
+- (void)testAlertView_other {
+    UIAlertView *testAlert = [[UIAlertView alloc] init];
+    testAlert.tag = 429;
+    viewController.trackCoachBrain.timerIsRunning = NO;
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [viewController alertView:testAlert clickedButtonAtIndex:1];
+}
+
+- (void)testSaveSettings_notRunning {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(NO);
+    [viewController saveSettings];
+    XCTAssertEqual([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"], NO);
+}
+
+- (void)testSaveSettings_running {
+    id mockBrain = OCMClassMock([TrackCoachBrain class]);
+    viewController.trackCoachBrain = mockBrain;
+    OCMStub([mockBrain timerIsRunning]).andReturn(YES);
+    [viewController saveSettings];
+    XCTAssertEqual([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"], YES);
+}
+
+- (void)testTutorialOthers {
+    [viewController pageViewController];
+    [viewController pageViewController:nil viewControllerAfterViewController:nil];
+
+    id mockVC = OCMClassMock([TutorialViewController class]);
+    OCMStub([mockVC pageIndex]).andReturn(NSNotFound);
+    [viewController pageViewController:nil viewControllerAfterViewController:mockVC];
+
+    [viewController pageViewController:nil viewControllerBeforeViewController:nil];
+
+    mockVC = OCMClassMock([TutorialViewController class]);
+    OCMStub([mockVC pageIndex]).andReturn(429);
+    [viewController pageViewController:nil viewControllerBeforeViewController:mockVC];
+
+    TutorialViewController *tutorial;
+    tutorial = [viewController viewControllerAtIndex:0];
+    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial1");
+
+    tutorial = [viewController viewControllerAtIndex:1];
+    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial2");
+
+    tutorial = [viewController viewControllerAtIndex:2];
+    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial3");
+
+    tutorial = [viewController viewControllerAtIndex:3];
+    XCTAssertFalse(viewController.tutorialIsDisplayed);
+    XCTAssertTrue([[NSUserDefaults standardUserDefaults] boolForKey:TUTORIAL_RUN_STRING]);
+    [viewController presentationCountForPageViewController:nil];
+    [viewController presentationIndexForPageViewController:nil];
+}
+
+- (void)testTutorialIfNeeded {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:TUTORIAL_RUN_STRING];
+    [viewController runTutorialIfNeeded];
+    XCTAssertTrue(viewController.tutorialIsDisplayed);
+}
+
+- (void)testStartNSTimer {
+    [viewController startNSTimer];
+    XCTAssertNotNil(viewController.timer);
+}
+
+- (void)testStopNSTimer {
+    XCTAssertNil(viewController.timer);
+}
+
+- (void)testSetupEncodedRaceTime_running {
+    id mock = OCMPartialMock(viewController);
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"timerIsRunning"];
+    [viewController setupEncodedRaceTime];
+    OCMVerify([mock setupForTimerRunning]);
+}
+
+- (void)testSetupEncodedRaceTime_stopped {
+    id mock = OCMPartialMock(viewController);
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"timerIsRunning"];
+    viewController.trackCoachBrain.raceTime.startDate = [NSDate date];
+    [viewController saveSettings];
+    [viewController setupEncodedRaceTime];
+    OCMVerify([mock setupForTimerStopped]);
+}
+
+- (void)testSetupVolumeButtons {
+    viewController.alertIsDisplayed = NO;
+    viewController.tutorialIsDisplayed = YES;
+    [viewController setupVolumeButtons];
+}
+
+- (void)testOthers {
+    [viewController tableView:nil numberOfRowsInSection:0];
+    [viewController numberOfSectionsInTableView:nil];
+    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
+    [viewController tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+
+    id mockSegue = OCMClassMock([UIStoryboardSegue class]);
+    OCMStub([mockSegue identifier]).andReturn(@"AppInfo");
+    [viewController prepareForSegue:mockSegue sender:nil];
+    [viewController appInfoViewControllerDidCancel:nil];
 }
 
 @end

@@ -16,6 +16,7 @@
 - (void)setupForTimerStopped;
 - (void)reset;
 - (void)undoStop;
+- (void)setupEncodedRaceTime;
 
 @end
 
@@ -75,6 +76,17 @@
     viewController.trackCoachBrain.raceTime.lapTimes = nil;
     [viewController.tableView reloadData];
     XCTAssertEqual(0, [viewController.tableView numberOfRowsInSection:0]);
+}
+
+// From ViewController
+- (void)testSetupEncodedRaceTime_clear {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"timerIsRunning"];
+    viewController.trackCoachBrain.raceTime.startDate = nil;
+    [viewController saveSettings];
+    [viewController setupEncodedRaceTime];
+
+    XCTAssertFalse(viewController.shareButton.enabled);
+    XCTAssertEqualWithAccuracy(viewController.shareButton.alpha, 0.2, 0.0001);
 }
 
 //- (void)testViewDidLoad {
