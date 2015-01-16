@@ -10,14 +10,20 @@
 		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
-		1705E462187D21A30012C537 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
 		170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0B1A4E86C900393022 /* Tutorial2.xib */; };
 		170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0D1A4E893100393022 /* Tutorial3.xib */; };
+		170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */; };
+		173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */; };
+		173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */; };
+		173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */; };
+		173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
+		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		178AADEF18CCE08C00C7691F /* transparent_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADED18CCE08C00C7691F /* transparent_iPad.png */; };
 		178AADF018CCE08C00C7691F /* transparent_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */; };
 		17907C6918A5DE3B00E56137 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6718A5DE3B00E56137 /* Icon.png */; };
 		17907C6A18A5DE3B00E56137 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17907C6818A5DE3B00E56137 /* Icon@2x.png */; };
+		1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795B6331A69B46700926C16 /* VolumeButtonsTests.m */; };
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBB18F7985E008994AA /* Tutorial1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB418F7985E008994AA /* Tutorial1ViewController.m */; };
@@ -59,6 +65,11 @@
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
+		17F6E2B11A4FBAD500B8EF7F /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */; };
+		17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */; };
+		17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */; };
+		17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */; };
+		17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
 /* End PBXBuildFile section */
 
@@ -82,12 +93,19 @@
 		170E7A031A4E7C9B00393022 /* Tutorial1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial1.xib; sourceTree = "<group>"; };
 		170E7A0B1A4E86C900393022 /* Tutorial2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial2.xib; sourceTree = "<group>"; };
 		170E7A0D1A4E893100393022 /* Tutorial3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial3.xib; sourceTree = "<group>"; };
+		170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachViewControllerTests.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrainTests.m; sourceTree = "<group>"; };
+		173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
+		173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
+		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
+		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		178AADED18CCE08C00C7691F /* transparent_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_iPad.png; sourceTree = "<group>"; };
 		178AADEE18CCE08C00C7691F /* transparent_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparent_iPad@2x.png"; sourceTree = "<group>"; };
 		17907C6718A5DE3B00E56137 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		17907C6818A5DE3B00E56137 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		1795B6331A69B46700926C16 /* VolumeButtonsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtonsTests.m; sourceTree = "<group>"; };
 		1798666D18CCF439002AD404 /* TrackCoachTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachTableViewCell.h; sourceTree = "<group>"; };
 		1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTableViewCell.m; sourceTree = "<group>"; };
 		179900F518F9027B00E626ED /* TrackCoachUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachUI.h; sourceTree = "<group>"; };
@@ -140,6 +158,11 @@
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
+		17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardAppInfoViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachAppDelegateTests.m; sourceTree = "<group>"; };
 		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
 		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E788F3186CD5A500AE6FED /* XCTest.framework in Frameworks */,
+				17F6E2B11A4FBAD500B8EF7F /* libOCMock.a in Frameworks */,
 				17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */,
 				17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */,
 			);
@@ -176,6 +200,16 @@
 				17FAD50818A1E24600DC136A /* TrackCoachBrain.m */,
 				179900F518F9027B00E626ED /* TrackCoachUI.h */,
 				179900F618F9027B00E626ED /* TrackCoachUI.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		17739AC21A4D297B00EEDF34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */,
+				1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */,
+				173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,6 +277,7 @@
 		17E788D2186CD5A400AE6FED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17F6E2B01A4FBAD500B8EF7F /* libOCMock.a */,
 				17828B9B187A1C3D0063535E /* libz.dylib */,
 				17E788D3186CD5A400AE6FED /* Foundation.framework */,
 				17E788D5186CD5A500AE6FED /* CoreGraphics.framework */,
@@ -299,6 +334,13 @@
 		17E788F8186CD5A500AE6FED /* TrackCoachTests */ = {
 			isa = PBXGroup;
 			children = (
+				17F6E2B41A509DBC00B8EF7F /* Storyboard */,
+				17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */,
+				17F6E2B91A510E0000B8EF7F /* TrackCoachAppDelegateTests.m */,
+				173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */,
+				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
+				1795B6331A69B46700926C16 /* VolumeButtonsTests.m */,
+				17739AC21A4D297B00EEDF34 /* Models */,
 				17E788F9186CD5A500AE6FED /* Supporting Files */,
 			);
 			path = TrackCoachTests;
@@ -312,6 +354,16 @@
 				17E788FB186CD5A500AE6FED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17F6E2B41A509DBC00B8EF7F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */,
+				17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */,
+				173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +412,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TrackCoach;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Peter Carnesciali";
 				TargetAttributes = {
 					17E788CF186CD5A400AE6FED = {
@@ -453,7 +505,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "";
+			shellScript = XcodeCoverage/exportenv.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -482,7 +534,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1705E462187D21A30012C537 /* (null) in Sources */,
+				17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */,
+				17F6E2BA1A510E0100B8EF7F /* TrackCoachAppDelegateTests.m in Sources */,
+				1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */,
+				173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */,
+				173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */,
+				17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */,
+				173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */,
+				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
+				170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */,
+				17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */,
+				173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +607,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -659,7 +723,23 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/usr/include",
+				);
 				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -677,7 +757,23 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/usr/include",
+				);
 				INFOPLIST_FILE = "TrackCoachTests/TrackCoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = TrackCoachTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
