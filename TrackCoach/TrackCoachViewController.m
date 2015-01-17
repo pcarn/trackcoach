@@ -124,7 +124,6 @@
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     [self.shareButton setEnabled:NO];
-    [self.shareButton setAlpha:0.2];
 }
 
 - (void)setupForTimerStopped {
@@ -135,7 +134,6 @@
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
-    [self.shareButton setAlpha:1.0];
     [self stopNSTimer];
 }
 
@@ -146,7 +144,6 @@
     [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor greenColor]];
     [self.shareButton setEnabled:NO];
-    [self.shareButton setAlpha:0.2];
 }
 
 - (void)undoStop {
@@ -343,7 +340,6 @@
         [self setupForTimerStopped];
     } else {    // Clear
         [self.shareButton setEnabled:NO];
-        [self.shareButton setAlpha:0.2];
     }
 }
 

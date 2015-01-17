@@ -21,7 +21,7 @@
 @property (assign) BOOL alertIsDisplayed;
 @property (assign) BOOL tutorialIsDisplayed;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
