@@ -187,7 +187,6 @@
 }
 
 - (void)testTutorialOthers {
-    [viewController pageViewController];
     [viewController pageViewController:nil viewControllerAfterViewController:nil];
 
     id mockVC = OCMClassMock([TutorialViewController class]);
