@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiZ-6m-EFA">
-                    <rect key="frame" x="212" y="28" width="177" height="39"/>
+                    <rect key="frame" x="212" y="38" width="177" height="39"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="With TrackCoach, you can share the races you time, and much more!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-wV-FQB">
-                    <rect key="frame" x="30" y="290" width="540" height="310"/>
+                    <rect key="frame" x="30" y="300" width="540" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="1mU-7P-gvP"/>
                         <constraint firstAttribute="height" constant="293" id="MOi-mF-gWs"/>
@@ -63,13 +63,13 @@
                     </variation>
                 </textView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple, Easy Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-Yy-hy4">
-                    <rect key="frame" x="188" y="241" width="224" height="24"/>
+                    <rect key="frame" x="188" y="251" width="224" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vfq-5h-oIT">
-                    <rect key="frame" x="237" y="55" width="126" height="126"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Vfq-5h-oIT">
+                    <rect key="frame" x="237" y="65" width="126" height="126"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="126" id="DsA-0V-UaT"/>
                         <constraint firstAttribute="width" secondItem="Vfq-5h-oIT" secondAttribute="height" multiplier="1:1" id="EpJ-kk-zB4"/>
@@ -90,7 +90,7 @@
                 <constraint firstItem="5Ib-wV-FQB" firstAttribute="top" secondItem="nL3-Yy-hy4" secondAttribute="bottom" constant="25" id="D2x-fo-FuN"/>
                 <constraint firstItem="T5i-Gc-3tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="75" id="Kar-cd-5zY"/>
                 <constraint firstAttribute="centerX" secondItem="fiZ-6m-EFA" secondAttribute="centerX" id="L9I-69-cFm"/>
-                <constraint firstItem="fiZ-6m-EFA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="20" id="Mgz-bd-aUt"/>
+                <constraint firstItem="fiZ-6m-EFA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="30" id="Mgz-bd-aUt"/>
                 <constraint firstAttribute="bottom" secondItem="5Ib-wV-FQB" secondAttribute="bottom" id="OCC-JL-1c4"/>
                 <constraint firstItem="Vfq-5h-oIT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DSs-fW-wli" secondAttribute="trailing" constant="10" id="WW9-0u-skk"/>
                 <constraint firstAttribute="centerX" secondItem="5Ib-wV-FQB" secondAttribute="centerX" id="Y6G-MH-DEf"/>
@@ -101,9 +101,10 @@
                 <constraint firstItem="T5i-Gc-3tq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="seR-tw-3bn"/>
                 <constraint firstItem="DSs-fW-wli" firstAttribute="leading" secondItem="T5i-Gc-3tq" secondAttribute="leading" id="wNA-r9-OqP"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="transparent.png" width="126" height="126"/>
+        <image name="transparent" width="126" height="126"/>
     </resources>
 </document>

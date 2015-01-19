@@ -59,8 +59,7 @@
     XCTAssertTrue([actions containsObject:@"lapResetButtonAction:"]);
     actions = [viewController.startStopButton actionsForTarget:viewController forControlEvent:UIControlEventTouchDown];
     XCTAssertTrue([actions containsObject:@"startStopButtonAction:"]);
-    actions = [viewController.shareButton actionsForTarget:viewController forControlEvent:UIControlEventTouchUpInside];
-    XCTAssertTrue([actions containsObject:@"shareButtonAction:"]);
+    XCTAssertTrue([viewController respondsToSelector:[viewController.shareButton action]]);
 }
 
 - (void)testTableView_ForMultipleLaps {
@@ -86,7 +85,6 @@
     [viewController setupEncodedRaceTime];
 
     XCTAssertFalse(viewController.shareButton.enabled);
-    XCTAssertEqualWithAccuracy(viewController.shareButton.alpha, 0.2, 0.0001);
 }
 
 @end
