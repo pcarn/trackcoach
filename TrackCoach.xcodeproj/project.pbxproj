@@ -273,11 +273,11 @@
 			isa = PBXGroup;
 			children = (
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
+				17E788E2186CD5A500AE6FED /* TrackCoachAppDelegate.h */,
+				17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */,
 				1703257B18A478230026A4BC /* AppInfoViewController.h */,
 				1703257C18A478230026A4BC /* AppInfoViewController.m */,
 				1712333218F90E3A00DC58CD /* Defines.h */,
-				17E788E2186CD5A500AE6FED /* TrackCoachAppDelegate.h */,
-				17E788E3186CD5A500AE6FED /* TrackCoachAppDelegate.m */,
 				1798666D18CCF439002AD404 /* TrackCoachTableViewCell.h */,
 				1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */,
 				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,

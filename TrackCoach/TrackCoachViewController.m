@@ -30,7 +30,6 @@
     appDelegate.viewController = self;
     self.timer = nil;
     self.tableView.dataSource = self;
-    [self runTutorialIfNeeded];
     [self setupEncodedRaceTime];
     [self setupVolumeButtons];
     [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
@@ -43,6 +42,10 @@
 
     [self updateUI];
     [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self runTutorialIfNeeded];
 }
 
 #pragma mark Button Actions
@@ -63,7 +66,6 @@
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
                                          UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
-
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
@@ -271,10 +273,7 @@
         tutorial3ViewController.pageIndex = index;
         return tutorial3ViewController;
     } else {
-        [UIView animateWithDuration:0.4
-                         animations:^{self.pageViewController.view.alpha = 0.2;}
-                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
-                             [self.pageViewController removeFromParentViewController];}];
+        [self dismissViewControllerAnimated:YES completion:nil];
         self.tutorialIsDisplayed = NO;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TUTORIAL_RUN_STRING];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -297,18 +296,17 @@
         // Doesn't exist, or false
         NSLog(@"Running tutorial");
         self.tutorialIsDisplayed = YES;
-        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                options:nil];
-        self.pageViewController.dataSource = self;
+        UIPageViewController *pageViewController =
+            [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                            navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                          options:nil];
+        pageViewController.dataSource = self;
         TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [self.pageViewController setViewControllers:@[startingViewController]
+        [pageViewController setViewControllers:@[startingViewController]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:NO completion:nil];
-        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [self addChildViewController:self.pageViewController];
-        [self.view addSubview:self.pageViewController.view];
-        [self.pageViewController didMoveToParentViewController:self];
+        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
     }
 }
 
@@ -379,13 +377,6 @@
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
-}
-
-- (void)dealloc {
-    self.volumeButtons = nil;
-    self.timer = nil;
-    self.trackCoachBrain = nil;
-    self.pageViewController = nil;
 }
 
 @end

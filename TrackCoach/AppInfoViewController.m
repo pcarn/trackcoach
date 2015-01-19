@@ -62,11 +62,10 @@
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
     [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
-    [mailController setSubject:@"TrackCoach Feedback"];
+    [mailController setSubject:@"Feedback"];
     if (mailController) {
         [self presentViewController:mailController animated:YES completion:nil];
     }
-
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {

@@ -17,19 +17,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TrackCoach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xND-Gt-WRr">
-                    <rect key="frame" x="207" y="25" width="177" height="39"/>
+                    <rect key="frame" x="207" y="30" width="177" height="39"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Undo Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTv-5G-w1Y">
-                    <rect key="frame" x="238" y="83" width="114" height="29"/>
+                    <rect key="frame" x="238" y="88" width="114" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp9-Ib-KWY">
-                    <rect key="frame" x="30" y="142" width="540" height="145"/>
+                    <rect key="frame" x="30" y="147" width="540" height="145"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="145" id="KbH-Sy-aF8"/>
                     </constraints>
@@ -38,8 +38,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-iG-9PH">
-                    <rect key="frame" x="232" y="327" width="126" height="126"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transparent" translatesAutoresizingMaskIntoConstraints="NO" id="hiy-iG-9PH">
+                    <rect key="frame" x="232" y="332" width="126" height="126"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="120" id="PHc-WM-bEi"/>
                     </constraints>
@@ -51,7 +51,7 @@
                 <constraint firstAttribute="centerX" secondItem="hiy-iG-9PH" secondAttribute="centerX" constant="5" id="CK1-hs-ShJ"/>
                 <constraint firstItem="ZTv-5G-w1Y" firstAttribute="top" secondItem="xND-Gt-WRr" secondAttribute="bottom" constant="19" id="DGR-zH-as4"/>
                 <constraint firstAttribute="trailing" secondItem="Rp9-Ib-KWY" secondAttribute="trailing" constant="30" id="GVD-eD-EdV"/>
-                <constraint firstItem="xND-Gt-WRr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="OBS-Wk-Q0K"/>
+                <constraint firstItem="xND-Gt-WRr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="OBS-Wk-Q0K"/>
                 <constraint firstItem="hiy-iG-9PH" firstAttribute="top" secondItem="Rp9-Ib-KWY" secondAttribute="bottom" constant="40" id="RQ1-s6-U9n"/>
                 <constraint firstAttribute="centerX" secondItem="xND-Gt-WRr" secondAttribute="centerX" constant="4.5" id="Zzf-Vf-fYN"/>
                 <constraint firstItem="hiy-iG-9PH" firstAttribute="width" secondItem="hiy-iG-9PH" secondAttribute="height" multiplier="1:1" id="tgb-TU-96f"/>
@@ -61,6 +61,6 @@
         </view>
     </objects>
     <resources>
-        <image name="transparent.png" width="126" height="126"/>
+        <image name="transparent" width="126" height="126"/>
     </resources>
 </document>

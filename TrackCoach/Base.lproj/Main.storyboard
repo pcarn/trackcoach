@@ -224,13 +224,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="TrackCoach" id="ZhP-ZE-bxd">
-                        <barButtonItem key="leftBarButtonItem" image="settings" style="plain" id="2DA-7p-BGW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="T2T-pG-MfQ"/>
+                        <barButtonItem key="leftBarButtonItem" image="settings" style="done" id="2DA-7p-BGW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="1XP-Fe-ht0" kind="show" id="tE9-7x-xyN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="3wz-Mz-ko6">
+                        <barButtonItem key="rightBarButtonItem" title="Share" style="done" id="3wz-Mz-ko6">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="shareButtonAction:" destination="vXZ-lx-hvc" id="C5H-3o-iU8"/>
@@ -262,17 +263,17 @@
                         <viewControllerLayoutGuide type="bottom" id="XYK-oi-Wlr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S7T-kg-ov0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1k-H9-XFT">
-                                <rect key="frame" x="0.0" y="77" width="600" height="923"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1k-H9-XFT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-D5-Fdg" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="435"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-D5-Fdg" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="455"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbV-SZ-Ayb">
-                                                <rect key="frame" x="248" y="344" width="104" height="36"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbV-SZ-Ayb">
+                                                <rect key="frame" x="248" y="364" width="104" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Contact Me">
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -281,14 +282,14 @@
                                                     <action selector="contactButtonAction:" destination="1XP-Fe-ht0" eventType="touchUpInside" id="in8-f7-Ct5"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can simply time races, and easily share them!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eai-uI-LuV">
-                                                <rect key="frame" x="109" y="22" width="483" height="33"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can simply time races, and easily share them!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eai-uI-LuV">
+                                                <rect key="frame" x="109" y="42" width="483" height="33"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPF-60-vEQ">
-                                                <rect key="frame" x="8" y="76" width="584" height="150"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPF-60-vEQ">
+                                                <rect key="frame" x="8" y="96" width="584" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="150" id="npF-3j-ceA"/>
                                                 </constraints>
@@ -303,33 +304,33 @@ More features on the way!
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Copyright Notice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hsx-3j-I5c">
-                                                <rect key="frame" x="245" y="408" width="110" height="17"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright Notice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hsx-3j-I5c">
+                                                <rect key="frame" x="245" y="428" width="110" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="v" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-hu-eQ1">
-                                                <rect key="frame" x="13" y="385" width="7" height="15"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-hu-eQ1">
+                                                <rect key="frame" x="13" y="405" width="7" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="4M9-6W-Ot6">
-                                                <rect key="frame" x="13" y="0.0" width="76" height="76"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="4M9-6W-Ot6">
+                                                <rect key="frame" x="13" y="20" width="76" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="76" id="nCd-xn-5HR"/>
                                                     <constraint firstAttribute="height" constant="76" id="nl7-t8-htU"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Ah-Ea2">
-                                                <rect key="frame" x="0.0" y="286" width="600" height="50"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Ah-Ea2">
+                                                <rect key="frame" x="0.0" y="306" width="600" height="50"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGA-iO-dW1">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGA-iO-dW1">
                                                         <rect key="frame" x="533" y="9" width="51" height="31"/>
                                                         <color key="onTintColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </switch>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Confirm before Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-0m-re5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm before Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-0m-re5">
                                                         <rect key="frame" x="20" y="14" width="156" height="21"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -345,8 +346,8 @@ More features on the way!
                                                     <constraint firstAttribute="trailingMargin" secondItem="oGA-iO-dW1" secondAttribute="trailing" constant="10" id="pJU-jm-Vzj"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk8-gB-PYw">
-                                                <rect key="frame" x="13" y="251" width="78" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk8-gB-PYw">
+                                                <rect key="frame" x="13" y="271" width="78" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                 <color key="textColor" red="1" green="0.47843137254901963" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -355,7 +356,7 @@ More features on the way!
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="vPF-60-vEQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eai-uI-LuV" secondAttribute="bottom" id="3sj-zA-VrT"/>
-                                            <constraint firstItem="4M9-6W-Ot6" firstAttribute="top" secondItem="hFB-D5-Fdg" secondAttribute="top" id="4m3-oa-MxU"/>
+                                            <constraint firstItem="4M9-6W-Ot6" firstAttribute="top" secondItem="hFB-D5-Fdg" secondAttribute="top" constant="20" id="4m3-oa-MxU"/>
                                             <constraint firstItem="eai-uI-LuV" firstAttribute="leading" secondItem="4M9-6W-Ot6" secondAttribute="trailing" constant="20" id="65T-FP-1WQ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="eai-uI-LuV" secondAttribute="trailing" id="6CI-jk-cTD"/>
                                             <constraint firstItem="4M9-6W-Ot6" firstAttribute="centerY" secondItem="eai-uI-LuV" secondAttribute="centerY" id="6Qg-mx-5u5"/>
@@ -398,13 +399,16 @@ More features on the way!
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="l1k-H9-XFT" secondAttribute="bottom" id="DKz-bs-7Ix"/>
+                            <constraint firstItem="l1k-H9-XFT" firstAttribute="top" secondItem="PKK-Jg-Ixs" secondAttribute="bottom" id="Dji-SO-yZO"/>
                             <constraint firstItem="l1k-H9-XFT" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" id="H2L-oY-ehw"/>
                             <constraint firstAttribute="trailing" secondItem="l1k-H9-XFT" secondAttribute="trailing" id="TyI-ft-wvF"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="About TrackCoach" id="HIE-KG-TPd"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationItem key="navigationItem" title="About TrackCoach" id="HIE-KG-TPd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="g1X-Ot-rDN"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <connections>
@@ -423,7 +427,7 @@ More features on the way!
         </scene>
     </scenes>
     <resources>
-        <image name="Icon.png" width="76" height="76"/>
+        <image name="Icon" width="76" height="76"/>
         <image name="settings" width="30" height="30"/>
     </resources>
 </document>
