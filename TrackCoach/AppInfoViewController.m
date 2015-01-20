@@ -62,7 +62,7 @@
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
     [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
-    [mailController setSubject:@"Feedback"];
+    [mailController setSubject:@"TrackCoach Feedback"];
     NSString *deviceSize;
     if(IS_IPAD) {
         deviceSize = @"iPad";

@@ -20,14 +20,6 @@
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = myOrange;
 
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBarTintColor:myOrange];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{
-                               NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:24],
-                    NSForegroundColorAttributeName: [UIColor whiteColor]
-                                                           }];
-
     return YES;
 }
 
