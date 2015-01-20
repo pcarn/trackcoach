@@ -1,0 +1,13 @@
+PODS:
+  - JVFloatingDrawer (0.1.0)
+  - OCMock (3.1.2)
+
+DEPENDENCIES:
+  - JVFloatingDrawer
+  - OCMock
+
+SPEC CHECKSUMS:
+  JVFloatingDrawer: 0fcbfed4abba0b6209c79fafaa35959f427cc821
+  OCMock: ecdd510b73ef397f2f97274785c1e87fd147c49f
+
+COCOAPODS: 0.35.0

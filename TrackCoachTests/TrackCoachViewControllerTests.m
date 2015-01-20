@@ -228,6 +228,8 @@
 }
 
 - (void)testStopNSTimer {
+    [viewController startNSTimer];
+    [viewController stopNSTimer];
     XCTAssertNil(viewController.timer);
 }
 
