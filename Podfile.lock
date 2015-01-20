@@ -1,0 +1,10 @@
+PODS:
+  - JVFloatingDrawer (0.1.0)
+
+DEPENDENCIES:
+  - JVFloatingDrawer
+
+SPEC CHECKSUMS:
+  JVFloatingDrawer: 0fcbfed4abba0b6209c79fafaa35959f427cc821
+
+COCOAPODS: 0.35.0
