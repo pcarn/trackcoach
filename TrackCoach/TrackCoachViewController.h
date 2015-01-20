@@ -7,34 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppInfoViewController.h"
-#import "TrackCoachAppDelegate.h"
 #import "TrackCoachBrain.h"
-#import "TrackCoachDefines.h"
+#import "AppInfoViewController.h"
 #import "TutorialViewController.h"
 #import "Tutorial1ViewController.h"
 #import "Tutorial2ViewController.h"
+#import "Tutorial3ViewController.h"
+#import "Defines.h"
+#import "TrackCoachTableViewCell.h"
 
-@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, AppInfoViewControllerDelegate, UIPageViewControllerDataSource>
+@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, UIPageViewControllerDataSource>
 
 @property (assign) BOOL alertIsDisplayed;
 @property (assign) BOOL tutorialIsDisplayed;
-@property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
-@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *lapTimerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
-@property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *resetButtonHeight;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;
 - (IBAction)shareButtonAction:(id)sender;
 - (void)updateUI;
+- (void)startNSTimer;
+- (void)stopNSTimer;
+- (void)saveSettings;
 
-+ (NSString *)timeToString:(NSTimeInterval)time;
 @end

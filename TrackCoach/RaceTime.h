@@ -15,9 +15,10 @@
 
 - (NSTimeInterval)mostRecentLapTime;
 - (void)removeMostRecentLap;
-- (void)addNewLap;
+- (void)addNewLapAtCurrentTime;
 - (NSTimeInterval)elapsed;
 - (NSTimeInterval)totalOfAllLaps;
 - (NSTimeInterval)totalOfLapAndBelow:(NSInteger)count;
+- (BOOL)isEqualToRaceTime:(RaceTime *)otherTime;
 
 @end

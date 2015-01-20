@@ -14,8 +14,6 @@
     self = [super init];
     if (self) {
         self.timerIsRunning = NO;
-    } else {
-        NSLog(@"Super did not init");
     }
     return self;
 }
@@ -44,17 +42,16 @@
         [NSException raise:@"Tried to lap while timer not running"
                     format:nil];
     }
-    [self.raceTime addNewLap];
+    [self.raceTime addNewLapAtCurrentTime];
 }
 
 - (void)undoStop {
     if (self.timerIsRunning) {
         [NSException raise:@"Tried to undo stop, when already started" format:nil];
     }
-    
+
     [self.raceTime removeMostRecentLap];
     self.timerIsRunning = YES;
-    
 }
 
 - (void)reset {
@@ -69,6 +66,5 @@
 - (BOOL)lapsIsEmpty {
     return ([self.raceTime.lapTimes count] == 0);
 }
-
 
 @end

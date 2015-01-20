@@ -9,6 +9,7 @@
 #import "TrackCoachViewController.h"
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "TrackCoachAppDelegate.h"
 
 
 @interface TrackCoachViewController()
@@ -25,16 +26,36 @@ enum alertTypes {undoStopAlert, resetAlert};
     return _trackCoachBrain;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    TrackCoachAppDelegate *appDelegate = (TrackCoachAppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.viewController = self;
+    self.timer = nil;
+    self.tableView.dataSource = self;
+    [self setupEncodedRaceTime];
+    [self setupVolumeButtons];
+    [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"confirmReset"]) {
+        [defaults setBool:YES forKey:@"confirmReset"];
+        [defaults synchronize];
+    }
+
+    [self updateUI];
+    [self.tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self runTutorialIfNeeded];
+}
+
 #pragma mark Button Actions
 - (IBAction)shareButtonAction:(id)sender {
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
-    if (laps.count > 0) {
-        [textToShare appendString:@"\n"];
-    }
     for (NSNumber *lap in laps) {
-        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1,
-                                   [TrackCoachViewController timeToString:[lap doubleValue]]]];
+        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
     }
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", (IS_IPAD ? @"iPad" : @"iPhone")]];
 //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
@@ -44,7 +65,10 @@ enum alertTypes {undoStopAlert, resetAlert};
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
                                          UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
-    
+    if ([activityVC respondsToSelector:@selector(popoverPresentationController)]) {
+        //iOS8
+        activityVC.popoverPresentationController.sourceView = sender;
+    }
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
@@ -67,11 +91,9 @@ enum alertTypes {undoStopAlert, resetAlert};
         }
     } else { // Stop
         [self.trackCoachBrain stop];
-        [self.timer invalidate];
-        self.timer = nil;
         [self.tableView reloadData];
         [self setupForTimerStopped];
-        
+
     }
     [self saveSettings];
 }
@@ -81,16 +103,20 @@ enum alertTypes {undoStopAlert, resetAlert};
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-        [self saveData];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                        message:@"Are you sure you want to reset?"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Reset", nil];
-        alert.tag = resetAlert;
-        [alert show];
-        self.alertIsDisplayed = YES;
-        
+	    [self saveData];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
+                                                            message:@"Are you sure you want to reset?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Reset", nil];
+            alert.tag = resetAlert;
+            [alert show];
+            self.alertIsDisplayed = YES;
+        } else {
+            [self reset];
+        }
+
     }
     [self.tableView reloadData];
     [self saveSettings];
@@ -105,30 +131,44 @@ enum alertTypes {undoStopAlert, resetAlert};
     [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     [self.shareButton setEnabled:NO];
-    [self.shareButton setAlpha:0.2];
 }
 
 - (void)setupForTimerStopped {
-    self.timerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime totalOfAllLaps]];
-    self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+    self.timerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfAllLaps]];
+    self.lapTimerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
     [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
     [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
-    [self.shareButton setAlpha:1.0];
+    [self stopNSTimer];
+}
+
+- (void)reset {
+    [self.trackCoachBrain reset];
+    [self updateUI];
+    [self.tableView reloadData];
+    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startStopButton setBackgroundColor:[UIColor greenColor]];
+    [self.shareButton setEnabled:NO];
+}
+
+- (void)undoStop {
+    [self.trackCoachBrain undoStop];
+    [self setupForTimerRunning];
+    [self.tableView reloadData];
 }
 
 - (void)updateUI {
     if (self.trackCoachBrain.timerIsRunning) {
         NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
-        self.timerLabel.text = [TrackCoachViewController timeToString:totalElapsed];
+        self.timerLabel.text = [TrackCoachUI timeToString:totalElapsed];
         NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfAllLaps];
-        self.lapTimerLabel.text = [TrackCoachViewController timeToString:currentLapTime];
+        self.lapTimerLabel.text = [TrackCoachUI timeToString:currentLapTime];
     } else {
         NSTimeInterval totalOfLaps = [self.trackCoachBrain.raceTime totalOfAllLaps];
-        self.timerLabel.text = [TrackCoachViewController timeToString:totalOfLaps];
-        self.lapTimerLabel.text = [TrackCoachViewController timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
+        self.timerLabel.text = [TrackCoachUI timeToString:totalOfLaps];
+        self.lapTimerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
     }
 }
 
@@ -146,35 +186,29 @@ enum alertTypes {undoStopAlert, resetAlert};
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LapCell"];
-    
+    TrackCoachTableViewCell *cell = (TrackCoachTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LapCell"];
+
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
-    cell.detailTextLabel.text = [TrackCoachViewController timeToString:[lapTime doubleValue]];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %lu",
-                           (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
+    cell.splitLabel.text = [TrackCoachUI timeToString:[lapTime doubleValue]];
+    cell.titleLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
+    cell.totalLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
     return cell;
 }
 
 #pragma mark AlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
     if (alertView.tag == resetAlert) {
-        if (buttonIndex == 1) {
-            [self.trackCoachBrain reset];
-            [self updateUI];
-            [self.tableView reloadData];
-            [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
-            [self.startStopButton setBackgroundColor:[UIColor greenColor]];
-            [self.shareButton setEnabled:NO];
-            [self.shareButton setAlpha:0.2];
-        }
+            if (buttonIndex == 1) {
+                [self reset];
+            }
     } else if (alertView.tag == undoStopAlert) {
-        if (buttonIndex == 1) {
-            [self.trackCoachBrain undoStop];
-            [self setupForTimerRunning];
-            [self.tableView reloadData];
+            if (buttonIndex == 1) {
+                [self undoStop];
+            }
+        } else {
+            NSLog(@"Other alert clicked.");
         }
-    } else {
-        NSLog(@"Other alert clicked.");
     }
     self.alertIsDisplayed = NO;
     [self saveSettings];
@@ -184,72 +218,54 @@ enum alertTypes {undoStopAlert, resetAlert};
 - (void)saveSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
-    
+
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
     NSLog(@"Data saved");
 }
 
-
-#pragma mark Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AppInfo"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
-        appInfoVC.delegate = self;
-    }
-}
-
-#pragma mark AppInfoViewControllerDelegate
-- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark Tutorial
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
-      viewControllerBeforeViewController:(UIViewController *)viewController {
+            viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
+    } else {
+        index--;
+        return [self viewControllerAtIndex:index];
     }
-    index--;
-    return [self viewControllerAtIndex:index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    
+
     if (index == NSNotFound) {
         return nil;
+    } else {
+        index++;
+        return [self viewControllerAtIndex:index];
     }
-    index++;
-    return [self viewControllerAtIndex:index];
 }
 
 - (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
+        TutorialViewController *tutorial1ViewController = [[Tutorial1ViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
         tutorial1ViewController.pageIndex = index;
         return tutorial1ViewController;
     } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
+        TutorialViewController *tutorial2ViewController = [[Tutorial2ViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {
-        TutorialViewController *tutorialEnd = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
-        tutorialEnd.pageIndex = index;
-        return tutorialEnd;
+        TutorialViewController *tutorial3ViewController = [[Tutorial3ViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
+        tutorial3ViewController.pageIndex = index;
+        return tutorial3ViewController;
     } else {
-        [UIView animateWithDuration:0.4
-                         animations:^{self.pageViewController.view.alpha = 0.2;}
-                         completion:^(BOOL finished){[self.pageViewController.view removeFromSuperview];
-                                    [self.pageViewController removeFromParentViewController];}];
-
+        [self dismissViewControllerAnimated:YES completion:nil];
         self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:TUTORIAL_RUN_STRING];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TUTORIAL_RUN_STRING];
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"Dismissed tutorial");
         return nil;
@@ -266,21 +282,21 @@ enum alertTypes {undoStopAlert, resetAlert};
 
 - (void)runTutorialIfNeeded {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:TUTORIAL_RUN_STRING] || [defaults boolForKey:TUTORIAL_RUN_STRING] == NO) {
+    if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
+        // Doesn't exist, or false
         NSLog(@"Running tutorial");
         self.tutorialIsDisplayed = YES;
-        self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                  navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                options:nil];
-        self.pageViewController.dataSource = self;
+        UIPageViewController *pageViewController =
+            [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                            navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                          options:nil];
+        pageViewController.dataSource = self;
         TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [self.pageViewController setViewControllers:@[startingViewController]
+        [pageViewController setViewControllers:@[startingViewController]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:NO completion:nil];
-        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        [self addChildViewController:self.pageViewController];
-        [self.view addSubview:self.pageViewController.view];
-        [self.pageViewController didMoveToParentViewController:self];
+        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
     }
 }
 
@@ -301,22 +317,6 @@ enum alertTypes {undoStopAlert, resetAlert};
 
 
 #pragma mark Other/Utility methods
-+ (NSString *)timeToString:(NSTimeInterval)time {
-    int hours = (int)(time / 3600.0);
-    time -= hours * 3600;
-    int mins = (int)(time / 60.0);
-    time -= mins * 60;
-    int secs = (int)(time);
-    time -= secs;
-    int dec = time * 100.0;
-    
-    if (hours > 0) {
-        return [NSString stringWithFormat:@"%u:%02u:%02u.%02u", hours, mins, secs, dec];
-    } else {
-        return [NSString stringWithFormat:@"%u:%02u.%02u", mins, secs, dec];
-    }
-}
-
 - (void)startNSTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 100.0)
                                                   target:self
@@ -324,6 +324,11 @@ enum alertTypes {undoStopAlert, resetAlert};
                                                 userInfo:nil
                                                  repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)stopNSTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)setupEncodedRaceTime {
@@ -339,7 +344,6 @@ enum alertTypes {undoStopAlert, resetAlert};
         [self setupForTimerStopped];
     } else {    // Clear
         [self.shareButton setEnabled:NO];
-        [self.shareButton setAlpha:0.2];
     }
 }
 
@@ -380,35 +384,5 @@ enum alertTypes {undoStopAlert, resetAlert};
     };
     [self.volumeButtons startUsingVolumeButtons];
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.timer = nil;
-    self.tableView.dataSource = self;
-    [self runTutorialIfNeeded];
-    [self setupEncodedRaceTime];
-    [self setupVolumeButtons];
-    if (IS_3_5_INCH_SIZE) {
-        NSLog(@"3.5 inch");
-        self.resetButtonHeight.constant = 80;
-    } else if (IS_4_INCH_SIZE) {
-        NSLog(@"4 inch");
-        self.resetButtonHeight.constant = 84;
-    } else if (IS_4_7_INCH_SIZE) {
-        NSLog(@"4.7 inch");
-        self.resetButtonHeight.constant = 120;
-    } else if (IS_5_5_INCH_SIZE) {
-        NSLog(@"5.5 inch");
-        self.resetButtonHeight.constant = 150;
-    }
-    
-    [self updateUI];
-    [self.tableView reloadData];
-}
-
-- (void)dealloc {
-    self.volumeButtons = nil;
-}
-
 
 @end

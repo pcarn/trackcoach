@@ -35,7 +35,7 @@
     [self.lapTimes removeObjectAtIndex:0];
 }
 
-- (void)addNewLap {
+- (void)addNewLapAtCurrentTime {
     [self.lapTimes insertObject:@([self elapsed] - [self totalOfAllLaps]) atIndex:0];
 }
 
@@ -70,6 +70,27 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.startDate forKey:@"startDate"];
     [encoder encodeObject:self.lapTimes forKey:@"lapTimes"];
+}
+
+- (BOOL)isEqual:(id)object {
+    if (object == self) {
+        return YES;
+    } else if (!object || ![object isKindOfClass:[self class]]) {
+        return NO;
+    } else {
+        return [self isEqualToRaceTime:object];
+    }
+}
+
+- (BOOL)isEqualToRaceTime:(RaceTime *)otherTime {
+    if (otherTime == self) {
+        return YES;
+    } else if (!otherTime || ![otherTime isKindOfClass:[self class]]) {
+        return NO;
+    } else {
+        return (([self.startDate isEqualToDate:otherTime.startDate] || (!self.startDate && !otherTime.startDate))
+                && ([self.lapTimes isEqualToArray:otherTime.lapTimes] || (!self.lapTimes && !otherTime.lapTimes)));
+    }
 }
 
 @end

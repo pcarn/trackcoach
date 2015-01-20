@@ -19,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-//        self.pageIndex = 1;
     }
     return self;
 }
@@ -27,15 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (IS_3_5_INCH_SIZE) {
-        self.aboveButtonIndicatorsSpaceConstraint.constant = 5;
-        self.differenceBetweenButtonIndicatorsSpaceConstraint.constant = 35;
-        self.titleTopSpaceConstraint.constant = 120;
-        self.centerSubtitleVerticalOffsetConstraint.constant = 18;
-        self.aboveLogoTopContraint.constant = -17;
-        self.betweenSubtitleAndMainTextSpaceConstraint.constant -= 5;
-    }
-    
     NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
     if (webTextStrings) {
         self.mainTextTitle.text = webTextStrings[0];
@@ -48,15 +38,8 @@
         if ([webTextStrings[2] isEqualToString:@"showButtons = true"]) {
             self.startStopLabel.hidden = NO;
             self.lapResetLabel.hidden = NO;
-            if (IS_IPAD) {
-                self.centerHorizontalOffsetLogoConstraint.constant = 90;
-            } else {
-                self.centerHorizontalOffsetLogoConstraint.constant = -71;
-            }
         }
     }
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,14 +49,14 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

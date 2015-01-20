@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TrackCoachViewController.h"
 #import <CoreData/CoreData.h>
 
 @interface TrackCoachAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) IBOutlet TrackCoachViewController *viewController;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

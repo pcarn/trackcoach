@@ -7,22 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TrackCoachDefines.h"
+#import "Defines.h"
 #import "TrackCoachUI.h"
 #import "TutorialViewController.h"
-
 
 @interface Tutorial1ViewController : TutorialViewController
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveButtonIndicatorsSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *differenceBetweenButtonIndicatorsSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpaceConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerSubtitleVerticalOffsetConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aboveLogoTopContraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *betweenSubtitleAndMainTextSpaceConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *mainTextTitle;
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerHorizontalOffsetLogoConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *startStopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lapResetLabel;
 
