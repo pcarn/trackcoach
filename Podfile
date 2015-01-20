@@ -6,6 +6,6 @@ pod "JVFloatingDrawer"
 end
 
 target 'TrackCoachTests' do
-
+pod "OCMock"
 end
 
