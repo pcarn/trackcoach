@@ -262,7 +262,6 @@
     id mockSegue = OCMClassMock([UIStoryboardSegue class]);
     OCMStub([mockSegue identifier]).andReturn(@"AppInfo");
     [viewController prepareForSegue:mockSegue sender:nil];
-    [viewController appInfoViewControllerDidCancel:nil];
 }
 
 @end

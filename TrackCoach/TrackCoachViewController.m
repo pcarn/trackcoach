@@ -220,22 +220,6 @@
     NSLog(@"Data saved");
 }
 
-
-#pragma mark Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AppInfo"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        AppInfoViewController *appInfoVC = [navigationController viewControllers][0];
-        appInfoVC.delegate = self;
-    }
-}
-
-#pragma mark AppInfoViewControllerDelegate
-- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark Tutorial
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
             viewControllerBeforeViewController:(UIViewController *)viewController {

@@ -84,13 +84,6 @@
     OCMVerify([mockcontroller dismissViewControllerAnimated:YES completion:nil]);
 }
 
-- (void)testBack {
-    id mockDelegate = OCMClassMock([TrackCoachViewController class]);
-    viewController.delegate = mockDelegate;
-    [viewController back:nil];
-    OCMVerify([mockDelegate appInfoViewControllerDidCancel:viewController]);
-}
-
 - (void)testOthers {
     [viewController viewDidAppear:NO];
     [viewController didReceiveMemoryWarning];

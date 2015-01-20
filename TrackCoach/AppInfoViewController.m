@@ -75,10 +75,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)back:(id)sender {
-    [self.delegate appInfoViewControllerDidCancel:self];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }

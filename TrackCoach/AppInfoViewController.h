@@ -13,13 +13,8 @@
 
 @class AppInfoViewController;
 
-@protocol AppInfoViewControllerDelegate <NSObject>
-- (void)appInfoViewControllerDidCancel:(AppInfoViewController *)controller;
-@end
-
 @interface AppInfoViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
-@property (weak, nonatomic) id <AppInfoViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
 @property (weak, nonatomic) IBOutlet UITextView *topTextView;
 @property (weak, nonatomic) IBOutlet UIButton *contactButton;
@@ -29,5 +24,4 @@
 @property (weak, nonatomic) IBOutlet UISwitch *confirmResetSwitch;
 
 - (IBAction)contactButtonAction:(id)sender;
-- (IBAction)back:(id)sender;
 @end
