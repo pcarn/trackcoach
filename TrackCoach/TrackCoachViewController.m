@@ -52,9 +52,6 @@
 - (IBAction)shareButtonAction:(id)sender {
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
-    if (laps.count > 0) {
-        [textToShare appendString:@"\n"];
-    }
     for (NSNumber *lap in laps) {
         [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
     }
@@ -66,6 +63,10 @@
     activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
                                          UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
+    if ([activityVC respondsToSelector:@selector(popoverPresentationController)]) {
+        //iOS8
+        activityVC.popoverPresentationController.sourceView = sender;
+    }
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
