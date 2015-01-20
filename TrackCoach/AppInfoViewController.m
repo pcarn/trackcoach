@@ -63,6 +63,25 @@
     mailController.mailComposeDelegate = self;
     [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
     [mailController setSubject:@"Feedback"];
+    NSString *deviceSize;
+    if(IS_IPAD) {
+        deviceSize = @"iPad";
+    } else if (IS_3_5_INCH_SIZE) {
+        deviceSize = @"3.5 Inch";
+    } else if (IS_4_INCH_SIZE) {
+        deviceSize = @"4 Inch";
+    } else if (IS_4_7_INCH_SIZE) {
+        deviceSize = @"4.7 Inch";
+    } else if (IS_5_5_INCH_SIZE) {
+        deviceSize = @"5.5 Inch";
+    } else {
+        deviceSize = @"other size";
+    }
+    NSString *message = [NSString stringWithFormat:@"\n\n\n\niOS Version: %@\nTrackCoach Version: %@\nDevice Size: %@",
+                         [[UIDevice currentDevice] systemVersion],
+                         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                         deviceSize];
+    [mailController setMessageBody:message isHTML:NO];
     if (mailController) {
         [self presentViewController:mailController animated:YES completion:nil];
     }
