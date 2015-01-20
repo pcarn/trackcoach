@@ -1,14 +1,14 @@
 //
-//  TrackCoachAppDelegate.m
+//  AppDelegate.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/16/13.
 //  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
 //
 
-#import "TrackCoachAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation TrackCoachAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

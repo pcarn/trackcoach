@@ -9,7 +9,7 @@
 #import "TrackCoachViewController.h"
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
-#import "TrackCoachAppDelegate.h"
+#import "AppDelegate.h"
 
 
 @interface TrackCoachViewController()
@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    TrackCoachAppDelegate *appDelegate = (TrackCoachAppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.viewController = self;
     self.timer = nil;
     self.tableView.dataSource = self;

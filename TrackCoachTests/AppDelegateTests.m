@@ -1,5 +1,5 @@
 //
-//  TrackCoachAppDelegateTests.m
+//  AppDelegateTests.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 12/28/14.
@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import "TrackCoachAppDelegate.h"
+#import "AppDelegate.h"
 
-@interface TrackCoachAppDelegateTests : XCTestCase
+@interface AppDelegateTests : XCTestCase
 
 @end
 
-@implementation TrackCoachAppDelegateTests {
-    TrackCoachAppDelegate *delegate;
+@implementation AppDelegateTests {
+    AppDelegate *delegate;
     id mockViewController;
 }
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    delegate = [[TrackCoachAppDelegate alloc] init];
+    delegate = [[AppDelegate alloc] init];
     mockViewController = OCMClassMock([TrackCoachViewController class]);
 }
 
@@ -63,7 +63,7 @@
 }
 
 - (void)testOthers {
-    [TrackCoachAppDelegate alloc];
+    [AppDelegate alloc];
     // This is here to get coverage of the @implementation line
 }
 
