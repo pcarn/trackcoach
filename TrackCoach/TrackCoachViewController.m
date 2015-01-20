@@ -65,7 +65,7 @@
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
     if ([activityVC respondsToSelector:@selector(popoverPresentationController)]) {
         //iOS8
-        activityVC.popoverPresentationController.sourceView = sender;
+        activityVC.popoverPresentationController.sourceView = self.view;
     }
     [self presentViewController:activityVC animated:YES completion:nil];
 }
