@@ -110,7 +110,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lap 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-jx-4ug">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lap 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="44" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-jx-4ug">
                                                     <rect key="frame" x="18" y="11" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,6 +125,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="Z2M-Yy-875" secondAttribute="centerX" id="6nv-hc-fhl"/>
+                                                <constraint firstItem="cfg-jx-4ug" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0tj-rD-YM9" secondAttribute="topMargin" id="B7j-oz-n32"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="cfg-jx-4ug" secondAttribute="bottom" id="WVe-tg-3Oa"/>
                                                 <constraint firstAttribute="centerY" secondItem="Z2M-Yy-875" secondAttribute="centerY" id="XeM-zp-3Cc"/>
                                                 <constraint firstItem="cfg-jx-4ug" firstAttribute="leading" secondItem="0tj-rD-YM9" secondAttribute="leadingMargin" constant="10" id="fri-9Q-JYL"/>
                                                 <constraint firstItem="Z2M-Yy-875" firstAttribute="centerY" secondItem="ZKv-w0-9fo" secondAttribute="centerY" id="m4z-iT-r1N"/>
