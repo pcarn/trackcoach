@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *contactButton;
 @property (weak, nonatomic) IBOutlet UILabel *copyrightNoticeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentWidth;
 @property (weak, nonatomic) IBOutlet UISwitch *confirmResetSwitch;
 
 - (IBAction)contactButtonAction:(id)sender;

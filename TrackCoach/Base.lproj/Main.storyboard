@@ -259,26 +259,26 @@
             </objects>
             <point key="canvasLocation" x="650.25" y="60"/>
         </scene>
-        <!--About TrackCoach-->
+        <!--Settings-->
         <scene sceneID="kuD-JF-jMn">
             <objects>
-                <viewController storyboardIdentifier="SettingsView" id="1XP-Fe-ht0" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsView" title="Settings" id="1XP-Fe-ht0" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKK-Jg-Ixs"/>
                         <viewControllerLayoutGuide type="bottom" id="XYK-oi-Wlr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S7T-kg-ov0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1k-H9-XFT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="936"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFB-D5-Fdg" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="476"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbV-SZ-Ayb">
-                                                <rect key="frame" x="248" y="364" width="104" height="36"/>
+                                                <rect key="frame" x="155" y="385" width="104" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Contact Me">
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -288,13 +288,13 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="With TrackCoach, you can keep your eyes on the race. Press the volume buttons on your iPhone to Start, Stop, or Lap the timer." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eai-uI-LuV">
-                                                <rect key="frame" x="109" y="33" width="483" height="50"/>
+                                                <rect key="frame" x="109" y="17" width="287" height="83"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPF-60-vEQ">
-                                                <rect key="frame" x="8" y="96" width="584" height="150"/>
+                                                <rect key="frame" x="8" y="100" width="388" height="167"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="150" id="npF-3j-ceA"/>
                                                 </constraints>
@@ -310,13 +310,13 @@ More features on the way!
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright Notice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hsx-3j-I5c">
-                                                <rect key="frame" x="245" y="428" width="110" height="17"/>
+                                                <rect key="frame" x="152" y="449" width="110" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-hu-eQ1">
-                                                <rect key="frame" x="13" y="405" width="7" height="15"/>
+                                                <rect key="frame" x="13" y="426" width="7" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -329,10 +329,10 @@ More features on the way!
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2We-Ah-Ea2">
-                                                <rect key="frame" x="0.0" y="306" width="600" height="50"/>
+                                                <rect key="frame" x="0.0" y="327" width="414" height="50"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGA-iO-dW1">
-                                                        <rect key="frame" x="533" y="9" width="51" height="31"/>
+                                                        <rect key="frame" x="347" y="9" width="51" height="31"/>
                                                         <color key="onTintColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm before Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-0m-re5">
@@ -352,7 +352,7 @@ More features on the way!
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk8-gB-PYw">
-                                                <rect key="frame" x="13" y="271" width="78" height="25"/>
+                                                <rect key="frame" x="13" y="292" width="78" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                                 <color key="textColor" red="1" green="0.47843137254901963" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -363,7 +363,7 @@ More features on the way!
                                             <constraint firstItem="vPF-60-vEQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eai-uI-LuV" secondAttribute="bottom" id="3sj-zA-VrT"/>
                                             <constraint firstItem="4M9-6W-Ot6" firstAttribute="top" secondItem="hFB-D5-Fdg" secondAttribute="top" constant="20" id="4m3-oa-MxU"/>
                                             <constraint firstItem="eai-uI-LuV" firstAttribute="leading" secondItem="4M9-6W-Ot6" secondAttribute="trailing" constant="20" id="65T-FP-1WQ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="eai-uI-LuV" secondAttribute="trailing" id="6CI-jk-cTD"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="eai-uI-LuV" secondAttribute="trailing" constant="10" id="6CI-jk-cTD"/>
                                             <constraint firstItem="4M9-6W-Ot6" firstAttribute="centerY" secondItem="eai-uI-LuV" secondAttribute="centerY" id="6Qg-mx-5u5"/>
                                             <constraint firstItem="eai-uI-LuV" firstAttribute="trailing" secondItem="vPF-60-vEQ" secondAttribute="trailing" id="At7-qH-pLb"/>
                                             <constraint firstItem="vPF-60-vEQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4M9-6W-Ot6" secondAttribute="bottom" id="Bg0-lM-jis"/>
@@ -371,12 +371,10 @@ More features on the way!
                                             <constraint firstItem="vPF-60-vEQ" firstAttribute="leading" secondItem="4M9-6W-Ot6" secondAttribute="leading" constant="-5" id="ECp-Cf-zg0"/>
                                             <constraint firstItem="PbV-SZ-Ayb" firstAttribute="top" secondItem="2We-Ah-Ea2" secondAttribute="bottom" constant="8" id="EWY-mf-jhP"/>
                                             <constraint firstItem="2We-Ah-Ea2" firstAttribute="top" secondItem="Jk8-gB-PYw" secondAttribute="bottom" constant="10" id="F8F-Va-6GZ"/>
-                                            <constraint firstAttribute="width" constant="600" id="Fq1-gl-B1Q"/>
                                             <constraint firstAttribute="centerX" secondItem="PbV-SZ-Ayb" secondAttribute="centerX" id="J2Z-xJ-B3x"/>
                                             <constraint firstItem="Jk8-gB-PYw" firstAttribute="leading" secondItem="hFB-D5-Fdg" secondAttribute="leadingMargin" constant="5" id="QSz-D7-cof"/>
                                             <constraint firstItem="vPF-60-vEQ" firstAttribute="top" secondItem="4M9-6W-Ot6" secondAttribute="bottom" priority="250" id="Qzy-wx-ZaR"/>
                                             <constraint firstItem="A0B-hu-eQ1" firstAttribute="top" secondItem="PbV-SZ-Ayb" secondAttribute="bottom" constant="5" id="TWs-eF-0mD"/>
-                                            <constraint firstItem="4M9-6W-Ot6" firstAttribute="top" secondItem="hFB-D5-Fdg" secondAttribute="top" id="ZhI-je-rUK"/>
                                             <constraint firstAttribute="bottom" secondItem="hsx-3j-I5c" secondAttribute="bottom" constant="10" id="Zub-k1-6ZU"/>
                                             <constraint firstItem="2We-Ah-Ea2" firstAttribute="top" secondItem="vPF-60-vEQ" secondAttribute="bottom" constant="60" id="b9A-6Q-Ac9"/>
                                             <constraint firstAttribute="trailing" secondItem="2We-Ah-Ea2" secondAttribute="trailing" id="ck3-ox-jhi"/>
@@ -385,11 +383,6 @@ More features on the way!
                                             <constraint firstAttribute="centerX" secondItem="hsx-3j-I5c" secondAttribute="centerX" id="lrt-UV-0x4"/>
                                             <constraint firstItem="A0B-hu-eQ1" firstAttribute="leading" secondItem="hFB-D5-Fdg" secondAttribute="leadingMargin" constant="5" id="zZ8-xN-DXK"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ZhI-je-rUK"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -403,6 +396,7 @@ More features on the way!
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hFB-D5-Fdg" firstAttribute="width" secondItem="S7T-kg-ov0" secondAttribute="width" id="246-0q-7o5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="l1k-H9-XFT" secondAttribute="bottom" id="DKz-bs-7Ix"/>
                             <constraint firstItem="l1k-H9-XFT" firstAttribute="top" secondItem="PKK-Jg-Ixs" secondAttribute="bottom" id="Dji-SO-yZO"/>
                             <constraint firstItem="l1k-H9-XFT" firstAttribute="leading" secondItem="S7T-kg-ov0" secondAttribute="leading" id="H2L-oY-ehw"/>
@@ -420,12 +414,10 @@ More features on the way!
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1000"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="confirmResetSwitch" destination="oGA-iO-dW1" id="pgx-fv-0M5"/>
                         <outlet property="contactButton" destination="PbV-SZ-Ayb" id="Vge-Iq-bvQ"/>
-                        <outlet property="contentWidth" destination="Fq1-gl-B1Q" id="rOy-b7-m2B"/>
                         <outlet property="copyrightNoticeLabel" destination="hsx-3j-I5c" id="Gtj-MB-lE3"/>
                         <outlet property="mainTextView" destination="vPF-60-vEQ" id="GCZ-ST-9oM"/>
                         <outlet property="topTextView" destination="eai-uI-LuV" id="jh8-3w-Hau"/>
@@ -434,7 +426,7 @@ More features on the way!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250" y="226"/>
+            <point key="canvasLocation" x="1250" y="60"/>
         </scene>
         <!--(Left) Left Drawer-->
         <scene sceneID="nND-a3-CCO">
