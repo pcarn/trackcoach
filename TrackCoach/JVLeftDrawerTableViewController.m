@@ -12,7 +12,8 @@
 #import "JVFloatingDrawerViewController.h"
 
 enum {
-    trackCoachViewControllerIndex = 0
+    trackCoachViewControllerIndex = 0,
+    settingsIndex = 1
 };
 
 static const CGFloat kJVTableViewTopInset = 80.0;
@@ -44,7 +45,7 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -52,8 +53,13 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
     
     if (indexPath.row == trackCoachViewControllerIndex) {
         cell.titleText = @"TrackCoach";
+        cell.iconImage = [UIImage imageNamed:@"transparent"];
+    } else {
+        cell.titleText = @"Settings";
+        cell.iconImage = [UIImage imageNamed:@"gear"];
     }
-    
+    [cell setBackgroundColor:[UIColor clearColor]];
+
     return cell;
 }
 
@@ -62,6 +68,8 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
 
     if(indexPath.row == trackCoachViewControllerIndex) {
         destinationViewController = [[AppDelegate globalDelegate] trackCoachViewController];
+    } else {
+        destinationViewController = [[AppDelegate globalDelegate] settingsViewController];
     }
     
     [[[AppDelegate globalDelegate] drawerViewController] setCenterViewController:destinationViewController];

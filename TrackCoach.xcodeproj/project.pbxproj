@@ -30,6 +30,7 @@
 		179A4FBD18F7985E008994AA /* Tutorial3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB818F7985E008994AA /* Tutorial3ViewController.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
 		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
+		17C1CE401A703DE500590FD0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C1CE3F1A703DE500590FD0 /* LaunchScreen.xib */; };
 		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
@@ -116,6 +117,7 @@
 		179A4FB818F7985E008994AA /* Tutorial3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial3ViewController.m; sourceTree = "<group>"; };
 		179A4FB918F7985E008994AA /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		179A4FBA18F7985E008994AA /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		17C1CE3F1A703DE500590FD0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		17E11066189F602C0037E7A5 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
+				17C1CE3F1A703DE500590FD0 /* LaunchScreen.xib */,
 				17E788E2186CD5A500AE6FED /* AppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* AppDelegate.m */,
 				1703257B18A478230026A4BC /* SettingsViewController.h */,
@@ -467,6 +470,7 @@
 				170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */,
 				170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */,
 				175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */,
+				17C1CE401A703DE500590FD0 /* LaunchScreen.xib in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
 				170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */,
 			);
@@ -735,6 +739,7 @@
 			baseConfigurationReference = B442A63906C994A57F5CAAD4 /* Pods-TrackCoach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
@@ -758,6 +763,7 @@
 			baseConfigurationReference = 9E2D541A9DE6DE25215B1752 /* Pods-TrackCoach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";

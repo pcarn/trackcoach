@@ -11,20 +11,21 @@
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
 
-static NSString * const kJVDrawersStoryboardName = @"Main";
+static NSString * const kJVStoryboardName = @"Main";
 
 static NSString * const kJVLeftDrawerStoryboardID = @"JVLeftDrawerViewControllerStoryboardID";
 static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewControllerStoryboardID";
+static NSString * const settingsViewControllerStoryboardID = @"SettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong, readonly) UIStoryboard *drawersStoryboard;
+@property (nonatomic, strong, readonly) UIStoryboard *storyboard;
 
 @end
 
 @implementation AppDelegate
 
-@synthesize drawersStoryboard = _drawersStoryboard;
+@synthesize storyboard = _storyboard;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -60,7 +61,7 @@ static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewC
 
 - (UITableViewController *)leftDrawerViewController {
     if (!_leftDrawerViewController) {
-        _leftDrawerViewController = [self.drawersStoryboard instantiateViewControllerWithIdentifier:kJVLeftDrawerStoryboardID];
+        _leftDrawerViewController = [self.storyboard instantiateViewControllerWithIdentifier:kJVLeftDrawerStoryboardID];
     }
 
     return _leftDrawerViewController;
@@ -70,10 +71,18 @@ static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewC
 
 - (UIViewController *)trackCoachViewController {
     if (!_trackCoachViewController) {
-        _trackCoachViewController = [self.drawersStoryboard instantiateViewControllerWithIdentifier:trackCoachViewControllerStoryboardID];
+        _trackCoachViewController = [self.storyboard instantiateViewControllerWithIdentifier:trackCoachViewControllerStoryboardID];
     }
 
     return _trackCoachViewController;
+}
+
+- (UIViewController *)settingsViewController {
+    if (!_settingsViewController) {
+        _settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:settingsViewControllerStoryboardID];
+    }
+
+    return _settingsViewController;
 }
 
 - (JVFloatingDrawerSpringAnimator *)drawerAnimator {
@@ -84,12 +93,12 @@ static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewC
     return _drawerAnimator;
 }
 
-- (UIStoryboard *)drawersStoryboard {
-    if(!_drawersStoryboard) {
-        _drawersStoryboard = [UIStoryboard storyboardWithName:kJVDrawersStoryboardName bundle:nil];
+- (UIStoryboard *)storyboard {
+    if(!_storyboard) {
+        _storyboard = [UIStoryboard storyboardWithName:kJVStoryboardName bundle:nil];
     }
     
-    return _drawersStoryboard;
+    return _storyboard;
 }
 
 - (void)configureDrawerViewController {

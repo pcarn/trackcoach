@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Peter Carnesciali. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "TutorialViewController.h"
 
 @interface Tutorial2ViewController : TutorialViewController
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "AppDelegate.h"
 
 @interface SettingsViewController ()
 
@@ -29,15 +30,12 @@
     // Do any additional setup after loading the view.
     self.contentWidth.constant = [[UIScreen mainScreen] bounds].size.width;
 
-    self.topTextView.selectable = YES; //for formatting
-    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"settings"];
-    if (webTextStrings) {
-        self.topTextView.text = webTextStrings[0];
-    }
+    self.topTextView.selectable = YES; // for formatting
     if (IS_IPAD) {
         self.topTextView.text = [self.topTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
     }
-    self.topTextView.selectable = NO; //for formatting
+    self.topTextView.selectable = NO; // for formatting
+    
     [self.contactButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [self.topTextView sizeToFit];
     [self.mainTextView sizeToFit];
@@ -48,6 +46,10 @@
     self.confirmResetSwitch.on = [defaults boolForKey:@"confirmReset"];
 
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+
 }
 
 #pragma mark Confirm Reset
@@ -94,10 +96,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -115,9 +113,8 @@
  }
  */
 
-- (UIStatusBarStyle) preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+- (IBAction)actionToggleLeftDrawer:(id)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
 }
 
 @end

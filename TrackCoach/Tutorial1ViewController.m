@@ -7,6 +7,7 @@
 //
 
 #import "Tutorial1ViewController.h"
+#import "Defines.h"
 
 @interface Tutorial1ViewController ()
 
@@ -14,8 +15,7 @@
 
 @implementation Tutorial1ViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -23,27 +23,16 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"tutorial"];
-    if (webTextStrings) {
-        self.mainTextTitle.text = webTextStrings[0];
-        self.mainTextView.selectable = YES; //for formatting
-        self.mainTextView.selectable = NO;
-        self.mainTextView.text = webTextStrings[1];
-        if (IS_IPAD) {
-            self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
-        }
-        if ([webTextStrings[2] isEqualToString:@"showButtons = true"]) {
-            self.startStopLabel.hidden = NO;
-            self.lapResetLabel.hidden = NO;
-        }
+    self.mainTextView.selectable = YES; // for formatting
+    if (IS_IPAD) {
+        self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
     }
+    self.mainTextView.selectable = NO; // for formatting
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

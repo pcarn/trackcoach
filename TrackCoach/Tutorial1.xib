@@ -9,12 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Tutorial1ViewController">
             <connections>
-                <outlet property="aboveButtonIndicatorsSpaceConstraint" destination="Kar-cd-5zY" id="BiQ-y4-cGo"/>
-                <outlet property="differenceBetweenButtonIndicatorsSpaceConstraint" destination="jmU-KE-e4X" id="fdO-D1-Y9U"/>
-                <outlet property="lapResetLabel" destination="DSs-fW-wli" id="pnh-v7-QEE"/>
-                <outlet property="mainTextTitle" destination="nL3-Yy-hy4" id="RJe-2H-uyh"/>
                 <outlet property="mainTextView" destination="5Ib-wV-FQB" id="Sjd-rQ-pf3"/>
-                <outlet property="startStopLabel" destination="T5i-Gc-3tq" id="BXI-aY-Der"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dmD-CI-Ibu"/>
             </connections>
         </placeholder>
@@ -29,7 +24,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-Gc-3tq">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Start/Stop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-Gc-3tq">
                     <rect key="frame" x="15" y="83" width="117" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="117" id="nea-7l-Pe1"/>
@@ -38,7 +33,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-fW-wli">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-fW-wli">
                     <rect key="frame" x="15" y="146" width="116" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="mTL-BB-ZL5"/>
@@ -47,7 +42,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="With TrackCoach, you can share the races you time, and much more!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-wV-FQB">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ib-wV-FQB">
                     <rect key="frame" x="30" y="300" width="540" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="1mU-7P-gvP"/>
@@ -62,8 +57,8 @@
                         </mask>
                     </variation>
                 </textView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple, Easy Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-Yy-hy4">
-                    <rect key="frame" x="188" y="251" width="224" height="24"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control With Volume Buttons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-Yy-hy4">
+                    <rect key="frame" x="167" y="251" width="266" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
