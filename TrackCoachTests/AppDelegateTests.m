@@ -17,14 +17,12 @@
 
 @implementation AppDelegateTests {
     AppDelegate *delegate;
-    id mockViewController;
 }
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     delegate = [[AppDelegate alloc] init];
-    mockViewController = OCMClassMock([TrackCoachViewController class]);
 }
 
 - (void)tearDown {
@@ -32,39 +30,5 @@
     [super tearDown];
 }
 
-- (void)testApplicationWillResignActive {
-    delegate.viewController = mockViewController;
-    [delegate applicationWillResignActive:nil];
-    OCMVerify([mockViewController stopNSTimer]);
-}
-
-- (void)testApplicationDidEnterBackground {
-    delegate.viewController = mockViewController;
-    [delegate applicationDidEnterBackground:nil];
-    OCMVerify([mockViewController stopNSTimer]);
-}
-
-- (void)testApplicationWillEnterForeground {
-    delegate.viewController = mockViewController;
-    [delegate applicationWillEnterForeground:nil];
-    OCMVerify([mockViewController startNSTimer]);
-}
-
-- (void)testApplicationDidBecomeActive {
-    delegate.viewController = mockViewController;
-    [delegate applicationDidBecomeActive:nil];
-    OCMVerify([mockViewController startNSTimer]);
-}
-
-- (void)testApplicationWillTerminate {
-    delegate.viewController = mockViewController;
-    [delegate applicationWillTerminate:nil];
-    OCMVerify([mockViewController saveSettings]);
-}
-
-- (void)testOthers {
-    [AppDelegate alloc];
-    // This is here to get coverage of the @implementation line
-}
 
 @end

@@ -26,8 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    appDelegate.viewController = self;
     self.timer = nil;
     self.tableView.dataSource = self;
     [self setupEncodedRaceTime];
@@ -42,6 +40,19 @@
 
     [self updateUI];
     [self.tableView reloadData];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(startNSTimer)
+                                                 name:@"startNSTimer"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(stopNSTimer)
+                                                 name:@"stopNSTimer"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveSettings)
+                                                 name:@"saveSettings"
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -362,6 +373,10 @@
         }
     };
     [self.volumeButtons startUsingVolumeButtons];
+}
+
+- (IBAction)actionToggleLeftDrawer:(id)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
 }
 
 @end

@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TrackCoachViewController.h"
+
+@class JVFloatingDrawerViewController;
+@class JVFloatingDrawerSpringAnimator;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) IBOutlet TrackCoachViewController *viewController;
+
+@property (nonatomic, strong) JVFloatingDrawerViewController *drawerViewController;
+@property (nonatomic, strong) JVFloatingDrawerSpringAnimator *drawerAnimator;
+@property (nonatomic, strong) UITableViewController *leftDrawerViewController;
+@property (nonatomic, strong) UIViewController *trackCoachViewController;
+
++ (AppDelegate *)globalDelegate;
+
+- (void)toggleLeftDrawer:(id)sender animated:(BOOL)animated;
 
 @end

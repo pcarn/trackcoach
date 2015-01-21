@@ -8,7 +8,23 @@
 
 #import "AppDelegate.h"
 
+#import "JVFloatingDrawerViewController.h"
+#import "JVFloatingDrawerSpringAnimator.h"
+
+static NSString * const kJVDrawersStoryboardName = @"Main";
+
+static NSString * const kJVLeftDrawerStoryboardID = @"JVLeftDrawerViewControllerStoryboardID";
+static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewControllerStoryboardID";
+
+@interface AppDelegate ()
+
+@property (nonatomic, strong, readonly) UIStoryboard *drawersStoryboard;
+
+@end
+
 @implementation AppDelegate
+
+@synthesize drawersStoryboard = _drawersStoryboard;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,15 +36,94 @@
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
     pageControl.backgroundColor = myOrange;
 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.drawerViewController;
+    [self configureDrawerViewController];
+
+    [self.window makeKeyAndVisible];
+
+
     return YES;
 }
+
+#pragma mark - Drawer View Controllers
+
+- (JVFloatingDrawerViewController *)drawerViewController {
+    if (!_drawerViewController) {
+        _drawerViewController = [[JVFloatingDrawerViewController alloc] init];
+    }
+
+    return _drawerViewController;
+}
+
+#pragma mark Sides
+
+- (UITableViewController *)leftDrawerViewController {
+    if (!_leftDrawerViewController) {
+        _leftDrawerViewController = [self.drawersStoryboard instantiateViewControllerWithIdentifier:kJVLeftDrawerStoryboardID];
+    }
+
+    return _leftDrawerViewController;
+}
+
+#pragma mark Center
+
+- (UIViewController *)trackCoachViewController {
+    if (!_trackCoachViewController) {
+        _trackCoachViewController = [self.drawersStoryboard instantiateViewControllerWithIdentifier:trackCoachViewControllerStoryboardID];
+    }
+
+    return _trackCoachViewController;
+}
+
+- (JVFloatingDrawerSpringAnimator *)drawerAnimator {
+    if (!_drawerAnimator) {
+        _drawerAnimator = [[JVFloatingDrawerSpringAnimator alloc] init];
+    }
+    
+    return _drawerAnimator;
+}
+
+- (UIStoryboard *)drawersStoryboard {
+    if(!_drawersStoryboard) {
+        _drawersStoryboard = [UIStoryboard storyboardWithName:kJVDrawersStoryboardName bundle:nil];
+    }
+    
+    return _drawersStoryboard;
+}
+
+- (void)configureDrawerViewController {
+    self.drawerViewController.leftViewController = self.leftDrawerViewController;
+    self.drawerViewController.centerViewController = self.trackCoachViewController;
+    
+    self.drawerViewController.animator = self.drawerAnimator;
+    
+    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"sky"];
+
+    self.drawerAnimator.animationDuration = 0.5;
+    self.drawerAnimator.animationDelay = 0.0;
+    self.drawerAnimator.initialSpringVelocity = 9.0;
+    self.drawerAnimator.springDamping = 1.0;
+}
+
+
+#pragma mark - Global Access Helper
+
++ (AppDelegate *)globalDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (void)toggleLeftDrawer:(id)sender animated:(BOOL)animated {
+    [self.drawerViewController toggleDrawerWithSide:JVFloatingDrawerSideLeft animated:animated completion:nil];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 
-    [self.viewController stopNSTimer];
+    [self stopNSTimer];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -36,28 +131,40 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 
-    [self.viewController stopNSTimer];
+    [self stopNSTimer];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 
-    [self.viewController startNSTimer];
+    [self startNSTimer];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-    [self.viewController startNSTimer];
+    [self startNSTimer];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
-    [self.viewController saveSettings];
+    [self saveSettings];
+}
+
+- (void)startNSTimer {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"startNSTimer" object:self];
+}
+
+- (void)stopNSTimer {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"stopNSTimer" object:self];
+}
+
+- (void)saveSettings {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"saveSettings" object:self];
 }
 
 @end
