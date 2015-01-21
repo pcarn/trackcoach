@@ -261,9 +261,9 @@
     viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
     [viewController tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 
-    id mockSegue = OCMClassMock([UIStoryboardSegue class]);
-    OCMStub([mockSegue identifier]).andReturn(@"AppInfo");
-    [viewController prepareForSegue:mockSegue sender:nil];
+//    id mockSegue = OCMClassMock([UIStoryboardSegue class]);
+//    OCMStub([mockSegue identifier]).andReturn(@"Settings");
+//    [viewController prepareForSegue:mockSegue sender:nil];
 }
 
 @end
