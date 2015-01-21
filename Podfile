@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'TrackCoach' do
-pod "JVFloatingDrawer"
+
 end
 
 target 'TrackCoachTests' do
