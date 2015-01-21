@@ -1,5 +1,5 @@
 //
-//  AppInfoViewController.h
+//  SettingsViewController.h
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 2/6/14.
@@ -11,9 +11,9 @@
 #import "TrackCoachUI.h"
 #import "Defines.h"
 
-@class AppInfoViewController;
+@class SettingsViewController;
 
-@interface AppInfoViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface SettingsViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *mainTextView;
 @property (weak, nonatomic) IBOutlet UITextView *topTextView;

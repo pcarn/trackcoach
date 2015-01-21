@@ -27,7 +27,7 @@
 }
 
 - (void)testGetStringsFromSite {
-    NSArray *testData = [TrackCoachUI getStringsFromSite:@"appInfo"];
+    NSArray *testData = [TrackCoachUI getStringsFromSite:@"settings"];
     XCTAssertNotNil(testData);
     
     NSArray *testData2 = [TrackCoachUI getStringsFromSite:@"notHere"];

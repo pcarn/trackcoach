@@ -1,5 +1,5 @@
 //
-//  StoryboardAppInfoViewControllerTests.m
+//  StoryboardSettingsViewControllerTests.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 12/28/14.
@@ -9,21 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import "AppInfoViewController.h"
+#import "SettingsViewController.h"
 
-@interface StoryboardAppInfoViewControllerTests : XCTestCase
+@interface StoryboardSettingsViewControllerTests : XCTestCase
 
 @end
 
-@implementation StoryboardAppInfoViewControllerTests {
-    AppInfoViewController *viewController;
+@implementation StoryboardSettingsViewControllerTests {
+    SettingsViewController *viewController;
 }
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    viewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoViewController"];
+    viewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewControllerStoryboardID"];
     [viewController view];
 }
 

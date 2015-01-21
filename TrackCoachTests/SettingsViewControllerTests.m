@@ -1,5 +1,5 @@
 //
-//  AppInfoViewControllerTests.m
+//  SettingsViewControllerTests.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 12/28/14.
@@ -9,33 +9,33 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
-#import "AppInfoViewController.h"
+#import "SettingsViewController.h"
 #import "TrackCoachUI.h"
 #import "TrackCoachViewController.h"
 
-@interface AppInfoViewController (Testing)
+@interface SettingsViewController (Testing)
 
 - (void)setConfirmResetState:(id)sender;
 
 @end
 
-@interface AppInfoViewControllerTests : XCTestCase
+@interface SettingsViewControllerTests : XCTestCase
 
 @end
 
-@implementation AppInfoViewControllerTests {
-    AppInfoViewController *viewController;
+@implementation SettingsViewControllerTests {
+    SettingsViewController *viewController;
 }
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    viewController = [[AppInfoViewController alloc] init];
+    viewController = [[SettingsViewController alloc] init];
 }
 
 - (void)setUpInterface {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    viewController = [storyboard instantiateViewControllerWithIdentifier:@"AppInfoViewController"];
+    viewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewControllerStoryboardID"];
     [viewController view];
 }
 

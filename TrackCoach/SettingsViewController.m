@@ -1,18 +1,18 @@
 //
-//  AppInfoViewController.m
+//  SettingsViewController.m
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 2/6/14.
 //  Copyright (c) 2014 Peter Carnesciali. All rights reserved.
 //
 
-#import "AppInfoViewController.h"
+#import "SettingsViewController.h"
 
-@interface AppInfoViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation AppInfoViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,7 @@
     self.contentWidth.constant = [[UIScreen mainScreen] bounds].size.width;
 
     self.topTextView.selectable = YES; //for formatting
-    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"appInfo"];
+    NSArray *webTextStrings = [TrackCoachUI getStringsFromSite:@"settings"];
     if (webTextStrings) {
         self.topTextView.text = webTextStrings[0];
     }

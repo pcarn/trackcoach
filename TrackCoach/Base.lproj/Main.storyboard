@@ -259,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="650.25" y="60"/>
         </scene>
-        <!--AppInfoViewController-->
+        <!--About TrackCoach-->
         <scene sceneID="kuD-JF-jMn">
             <objects>
-                <viewController storyboardIdentifier="AppInfoViewController" title="AppInfoViewController" id="1XP-Fe-ht0" customClass="AppInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewControllerStoryboardID" id="1XP-Fe-ht0" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PKK-Jg-Ixs"/>
                         <viewControllerLayoutGuide type="bottom" id="XYK-oi-Wlr"/>
@@ -428,7 +428,7 @@ More features on the way!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="-168"/>
+            <point key="canvasLocation" x="1470" y="226"/>
         </scene>
         <!--(Left) Left Drawer-->
         <scene sceneID="nND-a3-CCO">

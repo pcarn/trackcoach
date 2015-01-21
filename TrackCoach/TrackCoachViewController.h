@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TrackCoachBrain.h"
-#import "AppInfoViewController.h"
+#import "SettingsViewController.h"
 #import "TutorialViewController.h"
 #import "Tutorial1ViewController.h"
 #import "Tutorial2ViewController.h"

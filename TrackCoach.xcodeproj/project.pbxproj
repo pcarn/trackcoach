@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* AppInfoViewController.m */; };
+		1703257D18A478230026A4BC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* SettingsViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
@@ -58,9 +58,9 @@
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
-		17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */; };
+		17F6E2B31A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B21A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m */; };
 		17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */; };
-		17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */; };
+		17F6E2B81A50B8B900B8EF7F /* SettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */; };
 		17F6E2BA1A510E0100B8EF7F /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
 		267E35580ED9B36F269682F8 /* libPods-TrackCoach.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */; };
@@ -81,8 +81,8 @@
 		0BFC511B5BF55237D00A70A9 /* Pods-TrackCoachTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackCoachTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests.release.xcconfig"; sourceTree = "<group>"; };
 		0D5C70538A595D27F2E4842A /* libPods-TrackCoachTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackCoachTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackCoach.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1703257B18A478230026A4BC /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoViewController.h; sourceTree = "<group>"; };
-		1703257C18A478230026A4BC /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewController.m; sourceTree = "<group>"; };
+		1703257B18A478230026A4BC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1703257C18A478230026A4BC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
@@ -150,9 +150,9 @@
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardAppInfoViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B21A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardSettingsViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewControllerTests.m; sourceTree = "<group>"; };
-		17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewControllerTests.m; sourceTree = "<group>"; };
+		17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
 		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
 		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
@@ -301,8 +301,8 @@
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
 				17E788E2186CD5A500AE6FED /* AppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* AppDelegate.m */,
-				1703257B18A478230026A4BC /* AppInfoViewController.h */,
-				1703257C18A478230026A4BC /* AppInfoViewController.m */,
+				1703257B18A478230026A4BC /* SettingsViewController.h */,
+				1703257C18A478230026A4BC /* SettingsViewController.m */,
 				1712333218F90E3A00DC58CD /* Defines.h */,
 				1798666D18CCF439002AD404 /* TrackCoachTableViewCell.h */,
 				1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */,
@@ -335,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				17F6E2B41A509DBC00B8EF7F /* Storyboard */,
-				17F6E2B71A50B8B900B8EF7F /* AppInfoViewControllerTests.m */,
+				17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */,
 				17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */,
 				173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */,
 				17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */,
@@ -360,7 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */,
-				17F6E2B21A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m */,
+				17F6E2B21A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m */,
 				173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */,
 			);
 			name = Storyboard;
@@ -588,7 +588,7 @@
 				179A4FBB18F7985E008994AA /* Tutorial1ViewController.m in Sources */,
 				179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */,
 				17E788E4186CD5A500AE6FED /* AppDelegate.m in Sources */,
-				1703257D18A478230026A4BC /* AppInfoViewController.m in Sources */,
+				1703257D18A478230026A4BC /* SettingsViewController.m in Sources */,
 				1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
@@ -602,12 +602,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F6E2B31A509DB600B8EF7F /* StoryboardAppInfoViewControllerTests.m in Sources */,
+				17F6E2B31A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m in Sources */,
 				17F6E2BA1A510E0100B8EF7F /* AppDelegateTests.m in Sources */,
 				1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */,
 				173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */,
 				173A7B091A6789AF00EFD155 /* TrackCoachBrainTests.m in Sources */,
-				17F6E2B81A50B8B900B8EF7F /* AppInfoViewControllerTests.m in Sources */,
+				17F6E2B81A50B8B900B8EF7F /* SettingsViewControllerTests.m in Sources */,
 				173A7B0B1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m in Sources */,
 				1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */,
 				170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */,
