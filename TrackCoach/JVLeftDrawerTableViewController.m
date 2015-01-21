@@ -53,7 +53,7 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
     
     if (indexPath.row == trackCoachViewControllerIndex) {
         cell.titleText = @"TrackCoach";
-        cell.iconImage = [UIImage imageNamed:@"transparent"];
+        cell.iconImage = [UIImage imageNamed:@"smallTransparent"];
     } else {
         cell.titleText = @"Settings";
         cell.iconImage = [UIImage imageNamed:@"gear"];
