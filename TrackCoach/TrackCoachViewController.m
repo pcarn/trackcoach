@@ -74,8 +74,7 @@
                                          UIActivityTypeAddToReadingList, UIActivityTypePostToFlickr, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypeAirDrop];
     if ([activityVC respondsToSelector:@selector(popoverPresentationController)]) {
-        //iOS8
-        activityVC.popoverPresentationController.sourceView = self.view;
+        activityVC.popoverPresentationController.barButtonItem = sender;
     }
     [self presentViewController:activityVC animated:YES completion:nil];
 }
