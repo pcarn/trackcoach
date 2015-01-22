@@ -65,7 +65,7 @@
     for (NSNumber *lap in laps) {
         [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
     }
-    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed by TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
+    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed with TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
     //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
 
 
