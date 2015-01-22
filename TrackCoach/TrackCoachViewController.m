@@ -27,7 +27,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.timer = nil;
-    self.tableView.dataSource = self;
     [self setupEncodedRaceTime];
     [self setupVolumeButtons];
     [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
@@ -200,6 +199,10 @@
     cell.titleLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
     cell.totalLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 42;
 }
 
 #pragma mark AlertView

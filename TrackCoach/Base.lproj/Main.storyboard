@@ -45,7 +45,6 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="8In-eW-cgP">
                                 <rect key="frame" x="16" y="74" width="288" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="84" id="cGx-Rg-f2v"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="yRf-VG-vqX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="70"/>
@@ -53,13 +52,11 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="cGx-Rg-f2v"/>
                                         <exclude reference="yRf-VG-vqX"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="cGx-Rg-f2v"/>
                                         <include reference="yRf-VG-vqX"/>
                                     </mask>
                                 </variation>
@@ -94,11 +91,11 @@
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
                                 </variation>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-hm-0qB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F4f-hm-0qB">
                                 <rect key="frame" x="16" y="167" width="288" height="193"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LapCell" id="fLy-vB-U2F" customClass="TrackCoachTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LapCell" rowHeight="42" id="fLy-vB-U2F" customClass="TrackCoachTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLy-vB-U2F" id="0tj-rD-YM9">
@@ -110,9 +107,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="660" y="11" width="58" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Lap 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="44" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-jx-4ug">
                                                     <rect key="frame" x="18" y="11" width="44" height="21"/>
@@ -125,9 +119,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="339" y="11" width="58" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -153,6 +144,10 @@
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="158" width="736" height="413"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="REe-PP-XxK"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="jcz-O6-dKV"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-yz-033">
                                 <rect key="frame" x="0.0" y="380" width="320" height="84"/>
@@ -187,9 +182,7 @@
                             <constraint firstAttribute="centerX" secondItem="fjv-yz-033" secondAttribute="centerX" id="2lQ-tg-bdG"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="10" id="Ej0-pX-t13"/>
                             <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GEb-98-Jw3"/>
-                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="550" id="H7j-cd-Fxc">
-                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
-                            </constraint>
+                            <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="20" id="H7j-cd-Fxc"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="width" secondItem="fjv-yz-033" secondAttribute="width" id="IZx-NW-T01"/>
                             <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="3MO-vs-ItQ" secondAttribute="bottom" id="PW1-94-EcP"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PjT-90-Adl"/>
@@ -198,9 +191,7 @@
                             <constraint firstAttribute="trailing" secondItem="3MO-vs-ItQ" secondAttribute="trailing" id="VvS-Zd-mvN"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="c5K-ma-JlF" secondAttribute="bottom" id="X07-81-3hx"/>
                             <constraint firstItem="YB0-fu-k6i" firstAttribute="centerY" secondItem="c5K-ma-JlF" secondAttribute="centerY" id="X3J-jk-fNc"/>
-                            <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" constant="191" id="XhY-dB-dPc">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                            </constraint>
+                            <constraint firstItem="Nac-Bq-1O4" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" id="XhY-dB-dPc"/>
                             <constraint firstAttribute="centerX" secondItem="c5K-ma-JlF" secondAttribute="centerX" id="ZRO-0A-QWw"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="top" secondItem="fjv-yz-033" secondAttribute="bottom" constant="20" id="bbf-ha-Pnl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YB0-fu-k6i" secondAttribute="trailing" constant="19" id="bzO-J7-sm2"/>
@@ -244,7 +235,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="lapResetButton" destination="3MO-vs-ItQ" id="qgb-Kr-w6b"/>
                         <outlet property="lapTimerLabel" destination="JLk-DV-xeV" id="lZk-fY-AXA"/>
@@ -291,9 +282,6 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="109" y="34" width="609" height="50"/>
-                                                </variation>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPF-60-vEQ">
                                                 <rect key="frame" x="8" y="100" width="388" height="167"/>
@@ -428,7 +416,7 @@ More features on the way!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBF-Wd-1X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250" y="60"/>
+            <point key="canvasLocation" x="1618" y="64"/>
         </scene>
         <!--(Left) Left Drawer-->
         <scene sceneID="nND-a3-CCO">
@@ -486,7 +474,7 @@ More features on the way!
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uu-fI-iCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="37"/>
+            <point key="canvasLocation" x="-223" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AVC-Xk-uaU">
@@ -516,4 +504,5 @@ More features on the way!
         <image name="Icon" width="76" height="76"/>
         <image name="list" width="19" height="15"/>
     </resources>
+    <color key="tintColor" red="1" green="0.47843137250000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

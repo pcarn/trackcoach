@@ -16,7 +16,7 @@
 #import "Defines.h"
 #import "TrackCoachTableViewCell.h"
 
-@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UIAlertViewDelegate, UIPageViewControllerDataSource>
+@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIPageViewControllerDataSource>
 
 @property (assign) BOOL alertIsDisplayed;
 @property (assign) BOOL tutorialIsDisplayed;
