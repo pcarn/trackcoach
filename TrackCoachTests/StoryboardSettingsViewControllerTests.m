@@ -42,7 +42,6 @@
     XCTAssertNotNil([viewController contactButton]);
     XCTAssertNotNil([viewController copyrightNoticeLabel]);
     XCTAssertNotNil([viewController versionLabel]);
-    XCTAssertNotNil([viewController contentWidth]);
     XCTAssertNotNil([viewController confirmResetSwitch]);
 }
 

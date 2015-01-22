@@ -44,24 +44,6 @@
     [super tearDown];
 }
 
-- (void)testViewDidLoad_webTextStringsExist {
-    id uiMock = OCMClassMock([TrackCoachUI class]);
-    NSString *mockString = @"test";
-    NSArray *mockArray = [NSArray arrayWithObject:mockString];
-    OCMStub([uiMock getStringsFromSite:[OCMArg any]]).andReturn(mockArray);
-    [self setUpInterface];
-    XCTAssertEqualObjects(mockString, viewController.topTextView.text);
-    OCMVerify([uiMock getStringsFromSite:[OCMArg any]]);
-}
-
-- (void)testViewDidLoad_stringsChangeForiPad {
-    id deviceMock = OCMPartialMock([UIDevice currentDevice]);
-    OCMStub([deviceMock userInterfaceIdiom]).andReturn(UIUserInterfaceIdiomPad);
-    [self setUpInterface];
-    XCTAssertTrue([viewController.topTextView.text containsString:@"iPad"]);
-    OCMVerify([deviceMock userInterfaceIdiom]);
-}
-
 - (void)testSetConfirmResetState {
     id mockSwitch = OCMClassMock([UISwitch class]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -87,7 +69,6 @@
 - (void)testOthers {
     [viewController viewDidAppear:NO];
     [viewController didReceiveMemoryWarning];
-    XCTAssertEqual(UIStatusBarStyleLightContent, [viewController preferredStatusBarStyle]);
 }
 
 @end
