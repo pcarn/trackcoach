@@ -107,7 +107,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     
     self.drawerViewController.animator = self.drawerAnimator;
     
-    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"sky"];
+    self.drawerViewController.backgroundImage = [UIImage imageNamed:@"track"];
 
     self.drawerAnimator.animationDuration = 0.5;
     self.drawerAnimator.animationDelay = 0.0;
