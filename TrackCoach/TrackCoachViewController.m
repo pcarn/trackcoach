@@ -13,6 +13,9 @@
 
 
 @interface TrackCoachViewController()
+
+@property BOOL timerSuspended;
+
 @end
 
 @implementation TrackCoachViewController
@@ -41,12 +44,12 @@
     [self.tableView reloadData];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(startNSTimer)
-                                                 name:@"startNSTimer"
+                                             selector:@selector(startNSTimerIfSuspended)
+                                                 name:@"startNSTimerIfSuspended"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(stopNSTimer)
-                                                 name:@"stopNSTimer"
+                                             selector:@selector(stopNSTimerIfRunning)
+                                                 name:@"stopNSTimerIfRunning"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(saveSettings)
@@ -321,6 +324,20 @@
 - (void)stopNSTimer {
     [self.timer invalidate];
     self.timer = nil;
+}
+
+- (void)startNSTimerIfSuspended {
+    if (self.timerSuspended) {
+        self.timerSuspended = NO;
+        [self startNSTimer];
+    }
+}
+
+- (void)stopNSTimerIfRunning {
+    if (self.timer) {
+        self.timerSuspended = YES;
+        [self stopNSTimer];
+    }
 }
 
 - (void)setupEncodedRaceTime {
