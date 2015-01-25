@@ -370,7 +370,7 @@
                                                       otherButtonTitles:nil];
                 [alert show];
                 blocksafeSelf.alertIsDisplayed = YES;
-            } else {
+            } else if (blocksafeSelf.isViewLoaded && blocksafeSelf.view.window) {
                 [blocksafeSelf startStopButtonAction:nil];
             }
         }
@@ -386,7 +386,7 @@
                                                       otherButtonTitles:nil];
                 [alert show];
                 blocksafeSelf.alertIsDisplayed = YES;
-            } else {
+            } else if (blocksafeSelf.isViewLoaded && blocksafeSelf.view.window) {
                 [blocksafeSelf lapResetButtonAction:nil];
             }
         }
