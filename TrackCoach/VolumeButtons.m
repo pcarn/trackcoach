@@ -178,4 +178,8 @@ void volumeListenerCallback (
     }
 }
 
+- (void)dealloc {
+    [self stopUsingVolumeButtons];
+}
+
 @end
