@@ -43,6 +43,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
     [self.window makeKeyAndVisible];
 
+    [self setupVolumeButtons];
 
     return YES;
 }
@@ -115,6 +116,22 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     self.drawerAnimator.springDamping = 1.0;
 }
 
+#pragma mark - Volume Buttons
+
+- (void)setupVolumeButtons {
+    self.volumeButtons = [[VolumeButtons alloc] init];
+    self.volumeButtons.volumeDownBlock = ^{
+        NSLog(@"Volume Down");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeDown"
+                                                            object:nil];
+    };
+    self.volumeButtons.volumeUpBlock = ^{
+        NSLog(@"Volume Up");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeUp"
+                                                            object:nil];
+    };
+    [self.volumeButtons startUsingVolumeButtons];
+}
 
 #pragma mark - Global Access Helper
 

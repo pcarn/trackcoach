@@ -28,7 +28,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
-@property (strong, nonatomic) VolumeButtons *volumeButtons;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;

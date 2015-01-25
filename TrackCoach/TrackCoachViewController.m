@@ -31,7 +31,6 @@
     [super viewDidLoad];
     self.timer = nil;
     [self setupEncodedRaceTime];
-    [self setupVolumeButtons];
     [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -54,6 +53,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(saveSettings)
                                                  name:@"saveSettings"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeDown)
+                                                 name:@"volumeDown"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeUp)
+                                                 name:@"volumeUp"
                                                object:nil];
 }
 
@@ -311,6 +318,39 @@
     }
 }
 
+#pragma mark - Volume Buttons
+- (void)volumeDown {
+    if (!self.alertIsDisplayed) {
+        if (self.tutorialIsDisplayed) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+                                                            message:@"This button laps or resets the timer!"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            self.alertIsDisplayed = YES;
+        } else if (self.isViewLoaded && self.view.window) {
+            [self lapResetButtonAction:nil];
+        }
+    }
+}
+
+- (void)volumeUp {
+    if (!self.alertIsDisplayed) {
+        if (self.tutorialIsDisplayed) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
+                                                            message:@"This button starts or stops the timer!"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            self.alertIsDisplayed = YES;
+        } else if (self.isViewLoaded && self.view.window) {
+            [self startStopButtonAction:nil];
+        }
+    }
+}
+
 #pragma mark Other/Utility methods
 - (void)startNSTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / 100.0)
@@ -354,44 +394,6 @@
     } else {    // Clear
         [self.shareButton setEnabled:NO];
     }
-}
-
-- (void)setupVolumeButtons {
-    self.volumeButtons = [[VolumeButtons alloc] init];
-    __block TrackCoachViewController *blocksafeSelf = self;
-    self.volumeButtons.volumeUpBlock = ^{
-        NSLog(@"Volume Up");
-        if (!blocksafeSelf.alertIsDisplayed) {
-            if (blocksafeSelf.tutorialIsDisplayed) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
-                                                                message:@"This button starts or stops the timer!"
-                                                               delegate:blocksafeSelf
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-                blocksafeSelf.alertIsDisplayed = YES;
-            } else if (blocksafeSelf.isViewLoaded && blocksafeSelf.view.window) {
-                [blocksafeSelf startStopButtonAction:nil];
-            }
-        }
-    };
-    self.volumeButtons.volumeDownBlock = ^{
-        NSLog(@"Volume Down");
-        if (!blocksafeSelf.alertIsDisplayed) {
-            if (blocksafeSelf.tutorialIsDisplayed) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
-                                                                message:@"This button laps or resets the timer!"
-                                                               delegate:blocksafeSelf
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-                blocksafeSelf.alertIsDisplayed = YES;
-            } else if (blocksafeSelf.isViewLoaded && blocksafeSelf.view.window) {
-                [blocksafeSelf lapResetButtonAction:nil];
-            }
-        }
-    };
-    [self.volumeButtons startUsingVolumeButtons];
 }
 
 - (IBAction)actionToggleLeftDrawer:(id)sender {

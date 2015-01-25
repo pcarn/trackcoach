@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VolumeButtons.h"
 
 @class JVFloatingDrawerViewController;
 @class JVFloatingDrawerSpringAnimator;
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) UITableViewController *leftDrawerViewController;
 @property (nonatomic, strong) UIViewController *trackCoachViewController;
 @property (nonatomic, strong) UIViewController *settingsViewController;
+
+@property (strong, nonatomic) VolumeButtons *volumeButtons;
 
 + (AppDelegate *)globalDelegate;
 
