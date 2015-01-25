@@ -63,7 +63,7 @@
                         <constraint firstAttribute="width" constant="126" id="Ruu-RE-iRn"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start/Stop ▷" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unP-CR-Kb3">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start/Stop ▷" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unP-CR-Kb3">
                     <rect key="frame" x="15" y="83" width="117" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,10 +105,10 @@
                     <exclude reference="nNb-po-aG1"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="cPH-2v-9eo"/>
-                    <exclude reference="ieh-PG-hHU"/>
                     <exclude reference="M6m-6a-sVL"/>
                     <exclude reference="TWC-WD-bsf"/>
+                    <exclude reference="cPH-2v-9eo"/>
+                    <exclude reference="ieh-PG-hHU"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
@@ -118,15 +118,15 @@
                     <include reference="nNb-po-aG1"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="M6m-6a-sVL"/>
+                    <include reference="TWC-WD-bsf"/>
                     <exclude reference="Kar-cd-5zY"/>
                     <exclude reference="seR-tw-3bn"/>
+                    <include reference="cPH-2v-9eo"/>
+                    <include reference="ieh-PG-hHU"/>
                     <exclude reference="jmU-KE-e4X"/>
                     <exclude reference="wNA-r9-OqP"/>
                     <exclude reference="WW9-0u-skk"/>
-                    <include reference="cPH-2v-9eo"/>
-                    <include reference="ieh-PG-hHU"/>
-                    <include reference="M6m-6a-sVL"/>
-                    <include reference="TWC-WD-bsf"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="223" y="256"/>
