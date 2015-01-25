@@ -29,7 +29,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-fW-wli">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◁ Lap/Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="116" translatesAutoresizingMaskIntoConstraints="NO" id="DSs-fW-wli">
                     <rect key="frame" x="15" y="146" width="116" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,7 +63,7 @@
                         <constraint firstAttribute="width" constant="126" id="Ruu-RE-iRn"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start/Stop ▷" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unP-CR-Kb3">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start/Stop ▷" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unP-CR-Kb3">
                     <rect key="frame" x="15" y="83" width="117" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,6 +80,7 @@
             <constraints>
                 <constraint firstItem="5Ib-wV-FQB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="0yg-zC-xyb"/>
                 <constraint firstAttribute="trailing" secondItem="5Ib-wV-FQB" secondAttribute="trailing" constant="30" id="2NW-LR-qIv"/>
+                <constraint firstItem="Vfq-5h-oIT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DSs-fW-wli" secondAttribute="trailing" constant="20" id="5Lw-1P-JKE"/>
                 <constraint firstAttribute="centerX" secondItem="nL3-Yy-hy4" secondAttribute="centerX" id="B5O-vh-iG6"/>
                 <constraint firstItem="5Ib-wV-FQB" firstAttribute="top" secondItem="nL3-Yy-hy4" secondAttribute="bottom" constant="25" id="D2x-fo-FuN"/>
                 <constraint firstItem="T5i-Gc-3tq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="75" id="Kar-cd-5zY"/>
@@ -88,13 +89,12 @@
                 <constraint firstItem="fiZ-6m-EFA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="30" id="Mgz-bd-aUt"/>
                 <constraint firstAttribute="bottom" secondItem="5Ib-wV-FQB" secondAttribute="bottom" id="OCC-JL-1c4"/>
                 <constraint firstItem="nNb-po-aG1" firstAttribute="top" secondItem="unP-CR-Kb3" secondAttribute="bottom" constant="39" id="TWC-WD-bsf"/>
-                <constraint firstItem="Vfq-5h-oIT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DSs-fW-wli" secondAttribute="trailing" constant="10" id="WW9-0u-skk"/>
                 <constraint firstAttribute="centerX" secondItem="5Ib-wV-FQB" secondAttribute="centerX" id="Y6G-MH-DEf"/>
                 <constraint firstItem="unP-CR-Kb3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="90" id="cPH-2v-9eo"/>
                 <constraint firstItem="Vfq-5h-oIT" firstAttribute="top" secondItem="fiZ-6m-EFA" secondAttribute="bottom" constant="-12" id="eMt-1r-ARW"/>
                 <constraint firstAttribute="trailing" secondItem="unP-CR-Kb3" secondAttribute="trailing" constant="15" id="ieh-PG-hHU"/>
                 <constraint firstItem="DSs-fW-wli" firstAttribute="top" secondItem="T5i-Gc-3tq" secondAttribute="bottom" constant="39" id="jmU-KE-e4X"/>
-                <constraint firstAttribute="centerX" secondItem="Vfq-5h-oIT" secondAttribute="centerX" priority="750" id="jqh-eG-K8t"/>
+                <constraint firstAttribute="centerX" secondItem="Vfq-5h-oIT" secondAttribute="centerX" priority="250" id="jqh-eG-K8t"/>
                 <constraint firstItem="nL3-Yy-hy4" firstAttribute="top" secondItem="Vfq-5h-oIT" secondAttribute="bottom" constant="60" id="pf4-gc-u1K"/>
                 <constraint firstItem="T5i-Gc-3tq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="seR-tw-3bn"/>
                 <constraint firstItem="DSs-fW-wli" firstAttribute="leading" secondItem="T5i-Gc-3tq" secondAttribute="leading" id="wNA-r9-OqP"/>
@@ -102,31 +102,32 @@
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
+                    <exclude reference="unP-CR-Kb3"/>
                     <exclude reference="nNb-po-aG1"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="M6m-6a-sVL"/>
-                    <exclude reference="TWC-WD-bsf"/>
                     <exclude reference="cPH-2v-9eo"/>
                     <exclude reference="ieh-PG-hHU"/>
+                    <exclude reference="M6m-6a-sVL"/>
+                    <exclude reference="TWC-WD-bsf"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
                     <exclude reference="T5i-Gc-3tq"/>
                     <exclude reference="DSs-fW-wli"/>
+                    <include reference="unP-CR-Kb3"/>
                     <include reference="nNb-po-aG1"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="cPH-2v-9eo"/>
+                    <include reference="ieh-PG-hHU"/>
                     <include reference="M6m-6a-sVL"/>
                     <include reference="TWC-WD-bsf"/>
                     <exclude reference="Kar-cd-5zY"/>
                     <exclude reference="seR-tw-3bn"/>
-                    <include reference="cPH-2v-9eo"/>
-                    <include reference="ieh-PG-hHU"/>
                     <exclude reference="jmU-KE-e4X"/>
                     <exclude reference="wNA-r9-OqP"/>
-                    <exclude reference="WW9-0u-skk"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="223" y="256"/>
