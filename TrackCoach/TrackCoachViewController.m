@@ -62,6 +62,10 @@
                                              selector:@selector(volumeUp)
                                                  name:@"volumeUp"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dismissTutorial)
+                                                 name:@"dismissTutorial"
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -245,83 +249,25 @@
 }
 
 #pragma mark Tutorial
-- (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
-            viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-    if ((index == 0) || (index == NSNotFound)) {
-        return nil;
-    } else {
-        index--;
-        return [self viewControllerAtIndex:index];
-    }
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = ((TutorialViewController *) viewController).pageIndex;
-
-    if (index == NSNotFound) {
-        return nil;
-    } else {
-        index++;
-        return [self viewControllerAtIndex:index];
-    }
-}
-
-- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
-    if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [[Tutorial1ViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
-        tutorial1ViewController.pageIndex = index;
-        return tutorial1ViewController;
-    } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [[Tutorial2ViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
-        tutorial2ViewController.pageIndex = index;
-        return tutorial2ViewController;
-    } else if (index == 2) {
-        TutorialViewController *tutorial3ViewController = [[Tutorial3ViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
-        tutorial3ViewController.pageIndex = index;
-        return tutorial3ViewController;
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        self.tutorialIsDisplayed = NO;
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TUTORIAL_RUN_STRING];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Dismissed tutorial");
-        return nil;
-    }
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return 3;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
-}
-
 - (void)runTutorialIfNeeded {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
-        // Doesn't exist, or false
-        NSLog(@"Running tutorial");
-        self.tutorialIsDisplayed = YES;
-        UIPageViewController *pageViewController =
-            [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                            navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                          options:nil];
-        pageViewController.dataSource = self;
-        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [pageViewController setViewControllers:@[startingViewController]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:NO completion:nil];
-        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.tutorial = [[Tutorial alloc] init];
+    UIPageViewController *pageViewController = [self.tutorial runTutorialIfNeeded];
+    if (pageViewController) {
         [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
+    } else {
+        self.tutorial = nil;
     }
+}
+
+- (void)dismissTutorial {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    self.tutorial = nil;
 }
 
 #pragma mark - Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed) {
-        if (self.tutorialIsDisplayed) {
+        if (self.tutorial) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
                                                             message:@"This button laps or resets the timer!"
                                                            delegate:self
@@ -337,7 +283,7 @@
 
 - (void)volumeUp {
     if (!self.alertIsDisplayed) {
-        if (self.tutorialIsDisplayed) {
+        if (self.tutorial) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
                                                             message:@"This button starts or stops the timer!"
                                                            delegate:self

@@ -10,6 +10,7 @@
 		1703257D18A478230026A4BC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* SettingsViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
+		170DB3241A74CF970088DC20 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DB3231A74CF970088DC20 /* Tutorial.m */; };
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
 		170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0B1A4E86C900393022 /* Tutorial2.xib */; };
 		170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0D1A4E893100393022 /* Tutorial3.xib */; };
@@ -88,6 +89,8 @@
 		17049E0F18A0C59400052FAD /* RaceTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTime.m; sourceTree = "<group>"; };
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		1704DFFD19096A9C000079C4 /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
+		170DB3221A74CF970088DC20 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		170DB3231A74CF970088DC20 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
 		170E7A031A4E7C9B00393022 /* Tutorial1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial1.xib; sourceTree = "<group>"; };
 		170E7A0B1A4E86C900393022 /* Tutorial2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial2.xib; sourceTree = "<group>"; };
 		170E7A0D1A4E893100393022 /* Tutorial3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial3.xib; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 		179A4FBF18F79879008994AA /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				170DB3221A74CF970088DC20 /* Tutorial.h */,
+				170DB3231A74CF970088DC20 /* Tutorial.m */,
 				179A4FB918F7985E008994AA /* TutorialViewController.h */,
 				179A4FBA18F7985E008994AA /* TutorialViewController.m */,
 				179A4FB318F7985E008994AA /* Tutorial1ViewController.h */,
@@ -593,6 +598,7 @@
 				179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */,
 				17E788E4186CD5A500AE6FED /* AppDelegate.m in Sources */,
 				1703257D18A478230026A4BC /* SettingsViewController.m in Sources */,
+				170DB3241A74CF970088DC20 /* Tutorial.m in Sources */,
 				1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,

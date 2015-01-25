@@ -9,17 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TrackCoachBrain.h"
 #import "SettingsViewController.h"
-#import "TutorialViewController.h"
-#import "Tutorial1ViewController.h"
-#import "Tutorial2ViewController.h"
-#import "Tutorial3ViewController.h"
 #import "Defines.h"
 #import "TrackCoachTableViewCell.h"
+#import "Tutorial.h"
 
-@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIPageViewControllerDataSource>
+@interface TrackCoachViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (assign) BOOL alertIsDisplayed;
-@property (assign) BOOL tutorialIsDisplayed;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
@@ -28,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
+@property (strong, nonatomic) Tutorial *tutorial;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;
