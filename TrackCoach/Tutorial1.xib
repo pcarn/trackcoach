@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Tutorial1ViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialViewController">
             <connections>
                 <outlet property="mainTextView" destination="5Ib-wV-FQB" id="Sjd-rQ-pf3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dmD-CI-Ibu"/>

@@ -8,9 +8,6 @@
 
 #import "Tutorial.h"
 #import "TutorialViewController.h"
-#import "Tutorial1ViewController.h"
-#import "Tutorial2ViewController.h"
-#import "Tutorial3ViewController.h"
 #import "Defines.h"
 
 @implementation Tutorial
@@ -59,15 +56,15 @@
 
 - (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index {
     if (index == 0) {
-        TutorialViewController *tutorial1ViewController = [[Tutorial1ViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
+        TutorialViewController *tutorial1ViewController = [[TutorialViewController alloc] initWithNibName:@"Tutorial1" bundle:nil];
         tutorial1ViewController.pageIndex = index;
         return tutorial1ViewController;
     } else if (index == 1) {
-        TutorialViewController *tutorial2ViewController = [[Tutorial2ViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
+        TutorialViewController *tutorial2ViewController = [[TutorialViewController alloc] initWithNibName:@"Tutorial2" bundle:nil];
         tutorial2ViewController.pageIndex = index;
         return tutorial2ViewController;
     } else if (index == 2) {
-        TutorialViewController *tutorial3ViewController = [[Tutorial3ViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
+        TutorialViewController *tutorial3ViewController = [[TutorialViewController alloc] initWithNibName:@"Tutorial3" bundle:nil];
         tutorial3ViewController.pageIndex = index;
         return tutorial3ViewController;
     } else {

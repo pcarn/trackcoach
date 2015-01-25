@@ -27,9 +27,6 @@
 		1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795B6331A69B46700926C16 /* VolumeButtonsTests.m */; };
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
-		179A4FBB18F7985E008994AA /* Tutorial1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB418F7985E008994AA /* Tutorial1ViewController.m */; };
-		179A4FBC18F7985E008994AA /* Tutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB618F7985E008994AA /* Tutorial2ViewController.m */; };
-		179A4FBD18F7985E008994AA /* Tutorial3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FB818F7985E008994AA /* Tutorial3ViewController.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
 		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -113,12 +110,6 @@
 		1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTableViewCell.m; sourceTree = "<group>"; };
 		179900F518F9027B00E626ED /* TrackCoachUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachUI.h; sourceTree = "<group>"; };
 		179900F618F9027B00E626ED /* TrackCoachUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUI.m; sourceTree = "<group>"; };
-		179A4FB318F7985E008994AA /* Tutorial1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial1ViewController.h; sourceTree = "<group>"; };
-		179A4FB418F7985E008994AA /* Tutorial1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial1ViewController.m; sourceTree = "<group>"; };
-		179A4FB518F7985E008994AA /* Tutorial2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial2ViewController.h; sourceTree = "<group>"; };
-		179A4FB618F7985E008994AA /* Tutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial2ViewController.m; sourceTree = "<group>"; };
-		179A4FB718F7985E008994AA /* Tutorial3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial3ViewController.h; sourceTree = "<group>"; };
-		179A4FB818F7985E008994AA /* Tutorial3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial3ViewController.m; sourceTree = "<group>"; };
 		179A4FB918F7985E008994AA /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		179A4FBA18F7985E008994AA /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
@@ -232,14 +223,8 @@
 				170DB3231A74CF970088DC20 /* Tutorial.m */,
 				179A4FB918F7985E008994AA /* TutorialViewController.h */,
 				179A4FBA18F7985E008994AA /* TutorialViewController.m */,
-				179A4FB318F7985E008994AA /* Tutorial1ViewController.h */,
-				179A4FB418F7985E008994AA /* Tutorial1ViewController.m */,
 				170E7A031A4E7C9B00393022 /* Tutorial1.xib */,
-				179A4FB518F7985E008994AA /* Tutorial2ViewController.h */,
-				179A4FB618F7985E008994AA /* Tutorial2ViewController.m */,
 				170E7A0B1A4E86C900393022 /* Tutorial2.xib */,
-				179A4FB718F7985E008994AA /* Tutorial3ViewController.h */,
-				179A4FB818F7985E008994AA /* Tutorial3ViewController.m */,
 				170E7A0D1A4E893100393022 /* Tutorial3.xib */,
 			);
 			name = Tutorial;
@@ -589,12 +574,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179A4FBD18F7985E008994AA /* Tutorial3ViewController.m in Sources */,
 				1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */,
 				179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */,
 				17261BF01A6F4277005925F4 /* JVLeftDrawerTableViewController.m in Sources */,
 				17261BEF1A6F4277005925F4 /* JVLeftDrawerTableViewCell.m in Sources */,
-				179A4FBB18F7985E008994AA /* Tutorial1ViewController.m in Sources */,
 				179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */,
 				17E788E4186CD5A500AE6FED /* AppDelegate.m in Sources */,
 				1703257D18A478230026A4BC /* SettingsViewController.m in Sources */,
@@ -604,7 +587,6 @@
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
 				17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */,
-				179A4FBC18F7985E008994AA /* Tutorial2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

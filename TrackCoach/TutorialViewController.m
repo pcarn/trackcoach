@@ -7,9 +7,7 @@
 //
 
 #import "TutorialViewController.h"
-#import "Tutorial1ViewController.h"
-#import "Tutorial2ViewController.h"
-#import "Tutorial3ViewController.h"
+#import "Defines.h"
 
 @interface TutorialViewController ()
 
@@ -29,6 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.mainTextView) {
+        self.mainTextView.selectable = YES; // for formatting
+        if (IS_IPAD) {
+            self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
+        }
+        self.mainTextView.selectable = NO; // for formatting
+    }
 }
 
 - (void)didReceiveMemoryWarning {
