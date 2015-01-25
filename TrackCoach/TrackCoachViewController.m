@@ -11,13 +11,6 @@
 #import "MediaPlayer/MediaPlayer.h"
 #import "AppDelegate.h"
 
-
-@interface TrackCoachViewController()
-
-@property BOOL timerSuspended;
-
-@end
-
 @implementation TrackCoachViewController
 
 - (TrackCoachBrain *)trackCoachBrain {
@@ -266,34 +259,14 @@
 
 #pragma mark - Volume Buttons
 - (void)volumeDown {
-    if (!self.alertIsDisplayed) {
-        if (self.tutorial) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
-                                                            message:@"This button laps or resets the timer!"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            self.alertIsDisplayed = YES;
-        } else if (self.isViewLoaded && self.view.window) {
-            [self lapResetButtonAction:nil];
-        }
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        [self lapResetButtonAction:nil];
     }
 }
 
 - (void)volumeUp {
-    if (!self.alertIsDisplayed) {
-        if (self.tutorial) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
-                                                            message:@"This button starts or stops the timer!"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            self.alertIsDisplayed = YES;
-        } else if (self.isViewLoaded && self.view.window) {
-            [self startStopButtonAction:nil];
-        }
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        [self startStopButtonAction:nil];
     }
 }
 

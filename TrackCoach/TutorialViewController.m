@@ -34,6 +34,44 @@
         }
         self.mainTextView.selectable = NO; // for formatting
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeDown)
+                                                 name:@"volumeDown"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeUp)
+                                                 name:@"volumeUp"
+                                               object:nil];
+}
+
+#pragma mark - Volume Buttons
+- (void)volumeDown {
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+                                                        message:@"This button laps or resets the timer!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.alertIsDisplayed = YES;
+    }
+}
+
+- (void)volumeUp {
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
+                                                        message:@"This button starts or stops the timer!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.alertIsDisplayed = YES;
+    }
+}
+
+#pragma mark AlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    self.alertIsDisplayed = NO;
 }
 
 - (void)didReceiveMemoryWarning {

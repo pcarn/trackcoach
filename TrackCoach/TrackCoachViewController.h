@@ -15,7 +15,8 @@
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
-@property (assign) BOOL alertIsDisplayed;
+@property BOOL alertIsDisplayed;
+@property BOOL timerSuspended;
 @property (weak, nonatomic) IBOutlet UIButton *lapResetButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
