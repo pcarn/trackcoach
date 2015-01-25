@@ -17,10 +17,14 @@
 - (void)setupForTimerStopped;
 - (void)reset;
 - (void)undoStop;
-- (TutorialViewController *)viewControllerAtIndex:(NSUInteger)index;
 - (void)runTutorialIfNeeded;
 - (void)setupEncodedRaceTime;
-- (void)setupVolumeButtons;
+- (void)startNSTimer;
+- (void)stopNSTimer;
+- (void)updateUI;
+- (void)saveSettings;
+- (void)startNSTimerIfSuspended;
+- (void)stopNSTimerIfRunning;
 
 @end
 
@@ -186,40 +190,10 @@
     XCTAssertEqual([[NSUserDefaults standardUserDefaults] boolForKey:@"timerIsRunning"], YES);
 }
 
-- (void)testTutorialOthers {
-    [viewController pageViewController:nil viewControllerAfterViewController:nil];
-
-    id mockVC = OCMClassMock([TutorialViewController class]);
-    OCMStub([mockVC pageIndex]).andReturn(NSNotFound);
-    [viewController pageViewController:nil viewControllerAfterViewController:mockVC];
-
-    [viewController pageViewController:nil viewControllerBeforeViewController:nil];
-
-    mockVC = OCMClassMock([TutorialViewController class]);
-    OCMStub([mockVC pageIndex]).andReturn(429);
-    [viewController pageViewController:nil viewControllerBeforeViewController:mockVC];
-
-    TutorialViewController *tutorial;
-    tutorial = [viewController viewControllerAtIndex:0];
-    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial1");
-
-    tutorial = [viewController viewControllerAtIndex:1];
-    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial2");
-
-    tutorial = [viewController viewControllerAtIndex:2];
-    XCTAssertEqualObjects(tutorial.nibName, @"Tutorial3");
-
-    tutorial = [viewController viewControllerAtIndex:3];
-    XCTAssertFalse(viewController.tutorialIsDisplayed);
-    XCTAssertTrue([[NSUserDefaults standardUserDefaults] boolForKey:TUTORIAL_RUN_STRING]);
-    [viewController presentationCountForPageViewController:nil];
-    [viewController presentationIndexForPageViewController:nil];
-}
-
 - (void)testTutorialIfNeeded {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:TUTORIAL_RUN_STRING];
     [viewController runTutorialIfNeeded];
-    XCTAssertTrue(viewController.tutorialIsDisplayed);
+    XCTAssertNotNil(viewController.tutorial);
 }
 
 - (void)testStartNSTimer {
@@ -251,8 +225,23 @@
 
 - (void)testSetupVolumeButtons {
     viewController.alertIsDisplayed = NO;
-    viewController.tutorialIsDisplayed = YES;
-    [viewController setupVolumeButtons];
+    viewController.tutorial = [[Tutorial alloc] init];
+}
+
+- (void)testStartNSTimerIfSuspended {
+    id mock = OCMPartialMock(viewController);
+    viewController.timerSuspended = YES;
+    [viewController startNSTimerIfSuspended];
+    XCTAssertFalse(viewController.timerSuspended);
+    OCMVerify([mock startNSTimer]);
+}
+
+- (void)testStopNSTimerIfRunning {
+    id mock = OCMPartialMock(viewController);
+    [viewController startNSTimer];
+    [viewController stopNSTimerIfRunning];
+    XCTAssertTrue(viewController.timerSuspended);
+    OCMVerify([mock stopNSTimer]);
 }
 
 - (void)testOthers {

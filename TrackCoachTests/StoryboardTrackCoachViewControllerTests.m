@@ -17,6 +17,7 @@
 - (void)reset;
 - (void)undoStop;
 - (void)setupEncodedRaceTime;
+- (void)saveSettings;
 
 @end
 
