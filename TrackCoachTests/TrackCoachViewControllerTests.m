@@ -149,7 +149,7 @@
 - (void)testAlertView_reset {
     id mock = OCMPartialMock(viewController);
     UIAlertView *testAlert = [[UIAlertView alloc] init];
-    testAlert.tag = RESET_ALERT;
+    testAlert.tag = resetAlert;
     viewController.trackCoachBrain.timerIsRunning = NO;
     viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
     [viewController alertView:testAlert clickedButtonAtIndex:1];
@@ -159,7 +159,7 @@
 - (void)testAlertView_undoStop {
     id mock = OCMPartialMock(viewController);
     UIAlertView *testAlert = [[UIAlertView alloc] init];
-    testAlert.tag = UNDO_STOP_ALERT;
+    testAlert.tag = undoStopAlert;
     viewController.trackCoachBrain.timerIsRunning = NO;
     viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
     [viewController alertView:testAlert clickedButtonAtIndex:1];

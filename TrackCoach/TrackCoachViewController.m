@@ -98,7 +98,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                                   otherButtonTitles:@"Undo Stop", nil];
-            alert.tag = UNDO_STOP_ALERT;
+            alert.tag = undoStopAlert;
             [alert show];
             self.alertIsDisplayed = YES;
         }
@@ -122,7 +122,7 @@
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                                   otherButtonTitles:@"Reset", nil];
-            alert.tag = RESET_ALERT;
+            alert.tag = resetAlert;
             [alert show];
             self.alertIsDisplayed = YES;
         } else {
@@ -214,11 +214,11 @@
 #pragma mark AlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-        if (alertView.tag == RESET_ALERT) {
+        if (alertView.tag == resetAlert) {
             if (buttonIndex == 1) {
                 [self reset];
             }
-        } else if (alertView.tag == UNDO_STOP_ALERT) {
+        } else if (alertView.tag == undoStopAlert) {
             if (buttonIndex == 1) {
                 [self undoStop];
             }
