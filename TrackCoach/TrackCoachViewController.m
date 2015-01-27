@@ -13,8 +13,6 @@
 
 @implementation TrackCoachViewController
 
-enum alertTypes {undoStopAlert, resetAlert};
-
 - (TrackCoachBrain *)trackCoachBrain {
     if (!_trackCoachBrain) {
         _trackCoachBrain = [[TrackCoachBrain alloc] init];
@@ -256,8 +254,6 @@ enum alertTypes {undoStopAlert, resetAlert};
     }
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-       viewControllerAfterViewController:(UIViewController *)viewController {
 - (void)dismissTutorial {
     [self dismissViewControllerAnimated:YES completion:nil];
     self.tutorial = nil;
@@ -278,7 +274,7 @@ enum alertTypes {undoStopAlert, resetAlert};
 
 #pragma mark Data Model
 - (void)saveData {
-    TrackCoachAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newTime;
     newTime = [NSEntityDescription insertNewObjectForEntityForName:@"Time" inManagedObjectContext:context];

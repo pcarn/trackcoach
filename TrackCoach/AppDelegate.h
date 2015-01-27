@@ -24,8 +24,15 @@
 
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
 
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 + (AppDelegate *)globalDelegate;
 
 - (void)toggleLeftDrawer:(id)sender animated:(BOOL)animated;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end
