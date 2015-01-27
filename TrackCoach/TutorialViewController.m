@@ -7,6 +7,7 @@
 //
 
 #import "TutorialViewController.h"
+#import "Defines.h"
 
 @interface TutorialViewController ()
 
@@ -14,8 +15,7 @@
 
 @implementation TutorialViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -24,14 +24,57 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.mainTextView) {
+        self.mainTextView.selectable = YES; // for formatting
+        if (IS_IPAD) {
+            self.mainTextView.text = [self.mainTextView.text stringByReplacingOccurrencesOfString:@"iPhone" withString:@"iPad"];
+        }
+        self.mainTextView.selectable = NO; // for formatting
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeDown)
+                                                 name:@"volumeDown"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeUp)
+                                                 name:@"volumeUp"
+                                               object:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
+#pragma mark - Volume Buttons
+- (void)volumeDown {
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+                                                        message:@"This button laps or resets the timer!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.alertIsDisplayed = YES;
+    }
+}
+
+- (void)volumeUp {
+    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
+                                                        message:@"This button starts or stops the timer!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.alertIsDisplayed = YES;
+    }
+}
+
+#pragma mark AlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    self.alertIsDisplayed = NO;
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

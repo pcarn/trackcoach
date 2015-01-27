@@ -18,6 +18,11 @@
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
+enum {
+    undoStopAlert,
+    resetAlert
+};
+
 enum raceEvents {m100, m200, m400, m800, m1500, m1600, m3200, m5000, m10000,
                  m100hurdles, m110hurdles, m300hurdles, m400hurdles, steepleChase, other};
 

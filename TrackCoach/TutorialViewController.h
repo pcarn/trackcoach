@@ -11,5 +11,7 @@
 @interface TutorialViewController : UIViewController
 
 @property NSUInteger pageIndex;
+@property (weak, nonatomic) IBOutlet UITextView *mainTextView;
+@property BOOL alertIsDisplayed;
 
 @end
