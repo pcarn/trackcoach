@@ -243,12 +243,15 @@
 
 #pragma mark Tutorial
 - (void)runTutorialIfNeeded {
-    self.tutorial = [[Tutorial alloc] init];
-    UIPageViewController *pageViewController = [self.tutorial runTutorialIfNeeded];
-    if (pageViewController) {
-        [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
-    } else {
-        self.tutorial = nil;
+    NSArray *hide = [TrackCoachUI getStringsFromSite:@"hide"];
+    if (!hide) {
+        self.tutorial = [[Tutorial alloc] init];
+        UIPageViewController *pageViewController = [self.tutorial runTutorialIfNeeded];
+        if (pageViewController) {
+            [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
+        } else {
+            self.tutorial = nil;
+        }
     }
 }
 

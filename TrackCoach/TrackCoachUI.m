@@ -10,6 +10,15 @@
 
 @implementation TrackCoachUI
 
++ (NSArray *)getStringsFromSite:(NSString *)filename {
+    NSURL *url = [NSURL URLWithString:[[@"http://trackcoachapp.com/appdata/" stringByAppendingString:filename] stringByAppendingString:@".pcarn"]];
+    NSString *data = [NSString stringWithContentsOfURL:url
+                                          usedEncoding:NULL
+                                                 error:NULL];
+
+    return [data componentsSeparatedByString:@"\n"];
+}
+
 + (NSString *)timeToString:(NSTimeInterval)time {
     int hours = (int)(time / 3600.0);
     time -= hours * 3600;
