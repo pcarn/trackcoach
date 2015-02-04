@@ -10,6 +10,6 @@
 
 @interface Tutorial : NSObject <UIPageViewControllerDataSource>
 
-- (UIPageViewController *)runTutorialIfNeeded;
+- (UIPageViewController *)runTutorial;
 
 @end

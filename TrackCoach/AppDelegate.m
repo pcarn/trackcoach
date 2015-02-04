@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TrackCoachUI.h"
 
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -43,9 +44,16 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
     [self.window makeKeyAndVisible];
 
-    [self setupVolumeButtons];
+    [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
 
     return YES;
+}
+
+- (void)setupVolumeButtonsIfNotHidden {
+    NSArray *hide = [TrackCoachUI getStringsFromSite:@"hide"];
+    if (!hide) {
+        [self setupVolumeButtons];
+    }
 }
 
 #pragma mark - Drawer View Controllers

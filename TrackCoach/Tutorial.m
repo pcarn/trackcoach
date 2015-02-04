@@ -9,27 +9,22 @@
 #import "Tutorial.h"
 #import "TutorialViewController.h"
 #import "Defines.h"
+#import "TrackCoachUI.h"
 
 @implementation Tutorial
 
 
-- (UIPageViewController *)runTutorialIfNeeded {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
-        // Doesn't exist, or false
-        NSLog(@"Running tutorial");
-        UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                                   navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
-                                                                                                 options:nil];
-        pageViewController.dataSource = self;
-        TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
-        [pageViewController setViewControllers:@[startingViewController]
-                                     direction:UIPageViewControllerNavigationDirectionForward
-                                      animated:NO completion:nil];
-        return pageViewController;
-    } else {
-        return nil;
-    }
+- (UIPageViewController *)runTutorial {
+    NSLog(@"Running tutorial");
+    UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                                               navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                                             options:nil];
+    pageViewController.dataSource = self;
+    TutorialViewController *startingViewController = [self viewControllerAtIndex:0];
+    [pageViewController setViewControllers:@[startingViewController]
+                                 direction:UIPageViewControllerNavigationDirectionForward
+                                  animated:NO completion:nil];
+    return pageViewController;
 }
 
 - (TutorialViewController *)pageViewController:(UIPageViewController *)pageViewController
