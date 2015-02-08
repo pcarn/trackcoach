@@ -26,6 +26,10 @@
     [super tearDown];
 }
 
+- (void)testGetStringsFromSite {
+    XCTAssertThrows([TrackCoachUI getStringsFromSite:nil]);
+}
+
 - (void)testTimeToString {
     XCTAssertEqualObjects(@"0:00.00", [TrackCoachUI timeToString:0]);
     XCTAssertEqualObjects(@"0:01.00", [TrackCoachUI timeToString:1]);
