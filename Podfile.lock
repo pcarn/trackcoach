@@ -3,8 +3,8 @@ PODS:
   - OCMock (3.1.2)
 
 DEPENDENCIES:
-  - JVFloatingDrawer
-  - OCMock
+  - JVFloatingDrawer (~> 0.1)
+  - OCMock (~> 3.1)
 
 SPEC CHECKSUMS:
   JVFloatingDrawer: 0fcbfed4abba0b6209c79fafaa35959f427cc821
