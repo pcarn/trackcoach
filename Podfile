@@ -3,7 +3,8 @@
 
 target 'TrackCoach' do
 pod 'JVFloatingDrawer', '~> 0.1'
-pod 'Parse-iOS-SDK', '~> 1.3'
+pod 'Parse', '~> 1.6'
+pod 'ParseCrashReporting', '~> 1.6'
 end
 
 target 'TrackCoachTests' do

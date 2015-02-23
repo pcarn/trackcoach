@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TrackCoachUI.h"
+#import <Parse/Parse.h>
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -45,6 +47,23 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [self.window makeKeyAndVisible];
 
     [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
+
+    [ParseCrashReporting enable];
+    [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
+                  clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
+//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+//    NSDictionary *dimensions = @{
+//                                 // What type of news is this?
+//                                 @"category": @"politics",
+//                                 // Is it a weekday or the weekend?
+//                                 @"dayType": @"weekday",
+//                                 };
+//    // Send the dimensions to Parse along with the 'read' event
+//    [PFAnalytics trackEvent:@"read" dimensions:dimensions];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [NSException raise:NSGenericException format:@"Everything is ok. This is just a test crash."];
+    });
 
     return YES;
 }
