@@ -33,8 +33,12 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+    [ParseCrashReporting enable];
+    [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
+                  clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
+    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
@@ -43,27 +47,9 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.drawerViewController;
     [self configureDrawerViewController];
-
     [self.window makeKeyAndVisible];
 
     [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
-
-    [ParseCrashReporting enable];
-    [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
-                  clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
-//    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-//    NSDictionary *dimensions = @{
-//                                 // What type of news is this?
-//                                 @"category": @"politics",
-//                                 // Is it a weekday or the weekend?
-//                                 @"dayType": @"weekday",
-//                                 };
-//    // Send the dimensions to Parse along with the 'read' event
-//    [PFAnalytics trackEvent:@"read" dimensions:dimensions];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [NSException raise:NSGenericException format:@"Everything is ok. This is just a test crash."];
-    });
 
     return YES;
 }
