@@ -49,6 +49,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [self configureDrawerViewController];
     [self.window makeKeyAndVisible];
 
+    // Having an MPVolumeView hides the volume overlay appwide.
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
     [[[UIApplication sharedApplication] windows][0] addSubview:volumeView];
 
