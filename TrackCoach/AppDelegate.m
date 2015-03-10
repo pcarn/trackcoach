@@ -49,6 +49,9 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [self configureDrawerViewController];
     [self.window makeKeyAndVisible];
 
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
+    [[[UIApplication sharedApplication] windows][0] addSubview:volumeView];
+
     [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
 
     return YES;
