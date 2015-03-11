@@ -10,6 +10,7 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation TrackCoachViewController
 
@@ -269,12 +270,14 @@
 #pragma mark - Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"down"}];
         [self lapResetButtonAction:nil];
     }
 }
 
 - (void)volumeUp {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
+        [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"up"}];
         [self startStopButtonAction:nil];
     }
 }

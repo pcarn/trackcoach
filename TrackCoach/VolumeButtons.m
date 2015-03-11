@@ -125,11 +125,6 @@ void volumeListenerCallback (
         self.initialVolume = 0.05;
     }
 
-    CGRect frame = CGRectMake(-1000, -1000, 0, 0);
-    self.volumeView = [[MPVolumeView alloc] initWithFrame:frame];
-    [self.volumeView sizeToFit];
-    [[[UIApplication sharedApplication] windows][0] addSubview:self.volumeView];
-
     [self initializeVolumeButtons];
 
     if (!self.paused) {
@@ -151,11 +146,11 @@ void volumeListenerCallback (
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
-    //    if (self.loweredVolume) {
-    //        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
-    //    } else if (self.raisedVolume) {
-    //        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
-    //    }
+    if (self.loweredVolume) {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
+    } else if (self.raisedVolume) {
+        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
+    }
 
     [self.volumeView removeFromSuperview];
     self.volumeView = nil;

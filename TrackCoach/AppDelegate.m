@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TrackCoachUI.h"
+#import <Parse/Parse.h>
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -31,8 +33,12 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+    [ParseCrashReporting enable];
+    [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
+                  clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
+    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
@@ -41,8 +47,11 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.drawerViewController;
     [self configureDrawerViewController];
-
     [self.window makeKeyAndVisible];
+
+    // Having an MPVolumeView hides the volume overlay appwide.
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
+    [[[UIApplication sharedApplication] windows][0] addSubview:volumeView];
 
     [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
 
