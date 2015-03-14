@@ -53,16 +53,19 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
     [[[UIApplication sharedApplication] windows][0] addSubview:volumeView];
 
-    [self performSelectorInBackground:@selector(setupVolumeButtonsIfNotHidden) withObject:nil];
-
+    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
+        if (!error) {
+            NSLog(@"Yay! Config was fetched from the server.");
+        } else {
+            NSLog(@"Failed to fetch. Using Cached Config.");
+            config = [PFConfig currentConfig];
+        }
+        self.hideVolumeButtons = [config[@"hideVolumeButtons"] boolValue];
+        if (!self.hideVolumeButtons) {
+            [self setupVolumeButtons];
+        }
+    }];
     return YES;
-}
-
-- (void)setupVolumeButtonsIfNotHidden {
-    NSArray *hide = [TrackCoachUI getStringsFromSite:@"hide"];
-    if (!hide) {
-        [self setupVolumeButtons];
-    }
 }
 
 #pragma mark - Drawer View Controllers

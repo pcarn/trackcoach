@@ -475,6 +475,7 @@
 						DevelopmentTeam = 4G9BHF8NH5;
 					};
 					17E788F0186CD5A500AE6FED = {
+						DevelopmentTeam = 4G9BHF8NH5;
 						TestTargetID = 17E788CF186CD5A400AE6FED;
 					};
 				};
