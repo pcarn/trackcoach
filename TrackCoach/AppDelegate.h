@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
 
+@property BOOL hideVolumeButtons;
+
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;

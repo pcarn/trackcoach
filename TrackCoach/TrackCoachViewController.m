@@ -249,8 +249,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
         // Doesn't exist, or false
-        NSArray *hide = [TrackCoachUI getStringsFromSite:@"hide"];
-        if (!hide) {
+        AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        if (!appDel.hideVolumeButtons) {
             self.tutorial = [[Tutorial alloc] init];
             UIPageViewController *pageViewController = [self.tutorial runTutorial];
             if (pageViewController) {

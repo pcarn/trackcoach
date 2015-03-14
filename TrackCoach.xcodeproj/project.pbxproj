@@ -488,6 +488,7 @@
 						DevelopmentTeam = 4G9BHF8NH5;
 					};
 					17E788F0186CD5A500AE6FED = {
+						DevelopmentTeam = 4G9BHF8NH5;
 						TestTargetID = 17E788CF186CD5A400AE6FED;
 					};
 				};
@@ -566,7 +567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=/usr/local/bin:$PATH\ncd /Users/pcarn/Dropbox/Developer/trackcoach/parse\nparse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  export PATH=/usr/local/bin:$PATH\n  cd /Users/pcarn/Dropbox/Developer/trackcoach/parse\n  parse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\nfi";
 		};
 		17D59ACC18E6841D002214BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -849,6 +850,8 @@
 			baseConfigurationReference = 3602E3D0E5558057385157CA /* Pods-TrackCoachTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -878,6 +881,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = TrackCoachTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -888,6 +892,8 @@
 			baseConfigurationReference = 0BFC511B5BF55237D00A70A9 /* Pods-TrackCoachTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -913,6 +919,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = TrackCoachTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
