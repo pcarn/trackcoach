@@ -146,11 +146,11 @@ void volumeListenerCallback (
         [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
-    if (self.loweredVolume) {
-        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
-    } else if (self.raisedVolume) {
-        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
-    }
+//    if (self.loweredVolume) {
+//        [[MPMusicPlayerController applicationMusicPlayer] setVolume:1.0];
+//    } else if (self.raisedVolume) {
+//        [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
+//    }
 
     [self.volumeView removeFromSuperview];
     self.volumeView = nil;
