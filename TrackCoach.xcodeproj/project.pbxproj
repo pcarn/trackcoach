@@ -836,6 +836,8 @@
 			baseConfigurationReference = 3602E3D0E5558057385157CA /* Pods-TrackCoachTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -865,6 +867,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = TrackCoachTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -875,6 +878,8 @@
 			baseConfigurationReference = 0BFC511B5BF55237D00A70A9 /* Pods-TrackCoachTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TrackCoach.app/TrackCoach";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -900,6 +905,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = TrackCoachTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
