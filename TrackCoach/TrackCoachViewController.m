@@ -282,7 +282,7 @@
 }
 
 #pragma mark Data Model
-- (void)saveData {
+- (IBAction)saveData:(id)sender {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSManagedObject *newTime;
