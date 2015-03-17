@@ -240,7 +240,7 @@
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
-    NSLog(@"Data saved");
+    NSLog(@"Saved to settings");
 }
 
 #pragma mark Tutorial
@@ -283,17 +283,26 @@
 
 #pragma mark Data Model
 - (IBAction)saveData:(id)sender {
+    if (self.trackCoachBrain.raceTime.startDate == nil) {
+        NSLog (@"Cannot save empty time");
+        return;
+    }
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newTime;
-    newTime = [NSEntityDescription insertNewObjectForEntityForName:@"Time" inManagedObjectContext:context];
+    NSManagedObject *newTime = [NSEntityDescription insertNewObjectForEntityForName:@"Time"
+                                                             inManagedObjectContext:context];
+
     [newTime setValue:self.trackCoachBrain.raceTime.startDate forKey:@"startDate"];
     
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime.lapTimes];
     [newTime setValue:arrayData forKey:@"lapTimes"];
     
     NSError *error;
-    [context save:&error];
+    if (![context save:&error]) {
+        NSLog(@"Could not save: %@", [error localizedDescription]);
+    } else {
+        NSLog(@"Saved successfully");
+    }
 }
 
 
