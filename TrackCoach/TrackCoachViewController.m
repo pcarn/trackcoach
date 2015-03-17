@@ -217,11 +217,11 @@
 #pragma mark AlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-    if (alertView.tag == resetAlert) {
+        if (alertView.tag == resetAlert) {
             if (buttonIndex == 1) {
                 [self reset];
             }
-    } else if (alertView.tag == undoStopAlert) {
+        } else if (alertView.tag == undoStopAlert) {
             if (buttonIndex == 1) {
                 [self undoStop];
             }
