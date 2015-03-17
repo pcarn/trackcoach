@@ -12,10 +12,9 @@
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
 		1705838F1A9A9FA700C931E1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705838E1A9A9FA700C931E1 /* AudioToolbox.framework */; };
 		170583911A9A9FB400C931E1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583901A9A9FB400C931E1 /* CFNetwork.framework */; };
-		170583921A9A9FBC00C931E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D5186CD5A500AE6FED /* CoreGraphics.framework */; };
+		170583921A9A9FBC00C931E1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		170583941A9A9FC300C931E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583931A9A9FC300C931E1 /* CoreLocation.framework */; };
 		170583961A9A9FCA00C931E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583951A9A9FCA00C931E1 /* MobileCoreServices.framework */; };
-		170583981A9A9FD400C931E1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583971A9A9FD400C931E1 /* QuartzCore.framework */; };
 		1705839A1A9A9FDB00C931E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583991A9A9FDB00C931E1 /* Security.framework */; };
 		1705839C1A9A9FE100C931E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705839B1A9A9FE100C931E1 /* StoreKit.framework */; };
 		1705839E1A9A9FE800C931E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705839D1A9A9FE800C931E1 /* SystemConfiguration.framework */; };
@@ -35,13 +34,12 @@
 		173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */; };
 		173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
 		175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175679F91A6A255D00DEFB8F /* Default-568h@2x.png */; };
+		175B5F9B19B8E0A5001F2A38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175B5F9A19B8E0A5001F2A38 /* CoreData.framework */; };
+		175B5F9E19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		176B2F4A1A70D51F00F52407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */; };
 		1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795B6331A69B46700926C16 /* VolumeButtonsTests.m */; };
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
-		1705E462187D21A30012C537 /* TrackCoachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1705E461187D21A30012C537 /* TrackCoachTests.m */; };
-		175B5F9B19B8E0A5001F2A38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175B5F9A19B8E0A5001F2A38 /* CoreData.framework */; };
-		175B5F9E19B8E0EA001F2A38 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
 		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
@@ -124,12 +122,12 @@
 		17261BEC1A6F4277005925F4 /* JVLeftDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVLeftDrawerTableViewCell.m; sourceTree = "<group>"; };
 		17261BED1A6F4277005925F4 /* JVLeftDrawerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVLeftDrawerTableViewController.h; sourceTree = "<group>"; };
 		17261BEE1A6F4277005925F4 /* JVLeftDrawerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVLeftDrawerTableViewController.m; sourceTree = "<group>"; };
-		175B5F9A19B8E0A5001F2A38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		173A7B081A6789AF00EFD155 /* TrackCoachBrainTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrainTests.m; sourceTree = "<group>"; };
 		173A7B0A1A6793BE00EFD155 /* TrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
 		173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
 		175679F91A6A255D00DEFB8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		175B5F9A19B8E0A5001F2A38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		175B5F9D19B8E0EA001F2A38 /* TrackCoach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackCoach.xcdatamodel; sourceTree = "<group>"; };
 		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
 		176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
@@ -198,7 +196,7 @@
 				1705839A1A9A9FDB00C931E1 /* Security.framework in Frameworks */,
 				170583961A9A9FCA00C931E1 /* MobileCoreServices.framework in Frameworks */,
 				170583941A9A9FC300C931E1 /* CoreLocation.framework in Frameworks */,
-				170583921A9A9FBC00C931E1 /* CoreGraphics.framework in Frameworks */,
+				170583921A9A9FBC00C931E1 /* (null) in Frameworks */,
 				170583911A9A9FB400C931E1 /* CFNetwork.framework in Frameworks */,
 				1705838F1A9A9FA700C931E1 /* AudioToolbox.framework in Frameworks */,
 				17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */,
@@ -222,6 +220,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17034D8519B8E1540099E030 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				175B5F9C19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		17261BEA1A6F426C005925F4 /* JVFloatingDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,14 +237,6 @@
 				17261BEE1A6F4277005925F4 /* JVLeftDrawerTableViewController.m */,
 			);
 			name = JVFloatingDrawer;
-			sourceTree = "<group>";
-		};
-		17034D8519B8E1540099E030 /* Data Model */ = {
-			isa = PBXGroup;
-			children = (
-				175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */,
-			);
-			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		17739AC11A4D25C300EEDF34 /* Models */ = {
@@ -335,7 +333,6 @@
 				1705838E1A9A9FA700C931E1 /* AudioToolbox.framework */,
 				17828B9B187A1C3D0063535E /* libz.dylib */,
 				17E788D3186CD5A400AE6FED /* Foundation.framework */,
-				17E788D5186CD5A500AE6FED /* CoreGraphics.framework */,
 				17E788D7186CD5A500AE6FED /* UIKit.framework */,
 				17E788F2186CD5A500AE6FED /* XCTest.framework */,
 				10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */,
@@ -661,7 +658,7 @@
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,
 				17E788EA186CD5A500AE6FED /* TrackCoachViewController.m in Sources */,
 				17049E1018A0C59400052FAD /* RaceTime.m in Sources */,
-				175B5F9E19B8E0EA001F2A38 /* Model.xcdatamodeld in Sources */,
+				175B5F9E19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld in Sources */,
 				17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,13 +955,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		175B5F9C19B8E0EA001F2A38 /* Model.xcdatamodeld */ = {
+		175B5F9C19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */,
+				175B5F9D19B8E0EA001F2A38 /* TrackCoach.xcdatamodel */,
 			);
-			currentVersion = 175B5F9D19B8E0EA001F2A38 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = 175B5F9D19B8E0EA001F2A38 /* TrackCoach.xcdatamodel */;
+			path = TrackCoach.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
