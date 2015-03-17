@@ -182,11 +182,21 @@
                                     <action selector="saveData:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vee-K3-1IY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-QF-QgF">
+                                <rect key="frame" x="192" y="357" width="39" height="30"/>
+                                <state key="normal" title="Fetch">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fetchData:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eDW-ts-AhR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="height" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.5" id="0XM-qy-akc"/>
                             <constraint firstAttribute="centerX" secondItem="fjv-yz-033" secondAttribute="centerX" id="2lQ-tg-bdG"/>
+                            <constraint firstItem="fe7-QF-QgF" firstAttribute="leading" secondItem="VBw-cW-1VC" secondAttribute="trailing" constant="15" id="EAv-Hu-xv3"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="10" id="Ej0-pX-t13"/>
                             <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GEb-98-Jw3"/>
                             <constraint firstItem="3MO-vs-ItQ" firstAttribute="leading" secondItem="fjv-yz-033" secondAttribute="trailing" constant="20" id="H7j-cd-Fxc"/>
@@ -211,6 +221,7 @@
                             <constraint firstAttribute="centerX" secondItem="VBw-cW-1VC" secondAttribute="centerX" id="qWk-QB-bkf"/>
                             <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="10" id="rHf-f7-el7"/>
                             <constraint firstItem="JLk-DV-xeV" firstAttribute="trailing" secondItem="YB0-fu-k6i" secondAttribute="trailing" id="ukH-uE-Zzi"/>
+                            <constraint firstItem="fe7-QF-QgF" firstAttribute="centerY" secondItem="VBw-cW-1VC" secondAttribute="centerY" id="z2c-nc-wfX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

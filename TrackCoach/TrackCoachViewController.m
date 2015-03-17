@@ -305,6 +305,17 @@
     }
 }
 
+- (IBAction)fetchData:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Time"
+                                              inManagedObjectContext:context];
+    NSError *error;
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    NSLog(@"%lu records found", (unsigned long)fetchedObjects.count);
+}
 
 #pragma mark Other/Utility methods
 - (void)startNSTimer {
