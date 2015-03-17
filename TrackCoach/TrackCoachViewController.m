@@ -118,7 +118,6 @@
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-	    [self saveData];
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
                                                             message:@"Are you sure you want to reset?"
