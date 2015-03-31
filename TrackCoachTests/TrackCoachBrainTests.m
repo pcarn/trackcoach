@@ -31,27 +31,28 @@
 }
 
 - (void)testStart {
-    brain.timerIsRunning = NO;
+    brain.raceTime.timerIsRunning = NO;
     [brain start];
-    XCTAssertTrue(brain.timerIsRunning);
+    XCTAssertTrue(brain.raceTime.timerIsRunning);
 }
 
 - (void)testStop {
-    brain.timerIsRunning = YES;
+    brain.raceTime.timerIsRunning = YES;
     [brain stop];
-    XCTAssertFalse(brain.timerIsRunning);
+    XCTAssertFalse(brain.raceTime.timerIsRunning);
 }
 
 - (void)testLap {
     id mockRaceTime = OCMClassMock([RaceTime class]);
+    
+    OCMStub([mockRaceTime timerIsRunning]).andReturn(YES);
     brain.raceTime = mockRaceTime;
-    brain.timerIsRunning = YES;
     [brain lap];
     OCMVerify([mockRaceTime addNewLapAtCurrentTime]);
 }
 
 - (void)testLap_whenStopped {
-    brain.timerIsRunning = NO;
+    brain.raceTime.timerIsRunning = NO;
     XCTAssertThrows([brain lap]);
 }
 
@@ -60,11 +61,11 @@
     [brain stop];
     [brain undoStop];
     XCTAssertTrue([brain lapsIsEmpty]);
-    XCTAssertTrue(brain.timerIsRunning);
+    XCTAssertTrue(brain.raceTime.timerIsRunning);
 }
 
 - (void)testUndoStop_whenRunning {
-    brain.timerIsRunning = YES;
+    brain.raceTime.timerIsRunning = YES;
     XCTAssertThrows([brain undoStop]);
 }
 

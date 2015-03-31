@@ -10,14 +10,6 @@
 
 @implementation TrackCoachBrain
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.timerIsRunning = NO;
-    }
-    return self;
-}
-
 - (RaceTime *)raceTime {
     if (!_raceTime) {
         _raceTime = [[RaceTime alloc] init];
@@ -28,17 +20,17 @@
 #pragma mark Timer
 - (void)start {
     self.raceTime.startDate = [NSDate date];
-    self.timerIsRunning = YES;
+    self.raceTime.timerIsRunning = YES;
 }
 
 - (void)stop {
     [self lap];
-    self.timerIsRunning = NO;
+    self.raceTime.timerIsRunning = NO;
 }
 
 - (void)lap {
     NSLog(@"Lap");
-    if (!self.timerIsRunning) {
+    if (!self.raceTime.timerIsRunning) {
         [NSException raise:@"Tried to lap while timer not running"
                     format:nil];
     }
@@ -46,16 +38,16 @@
 }
 
 - (void)undoStop {
-    if (self.timerIsRunning) {
+    if (self.raceTime.timerIsRunning) {
         [NSException raise:@"Tried to undo stop, when already started" format:nil];
     }
 
     [self.raceTime removeMostRecentLap];
-    self.timerIsRunning = YES;
+    self.raceTime.timerIsRunning = YES;
 }
 
 - (void)reset {
-    if (self.timerIsRunning) {
+    if (self.raceTime.timerIsRunning) {
         [NSException raise:@"Tried to reset while timer running"
                     format:nil];
     }

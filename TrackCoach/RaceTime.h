@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSMutableArray *lapTimes;
+@property BOOL timerIsRunning;
 
 - (NSTimeInterval)mostRecentLapTime;
 - (void)removeMostRecentLap;

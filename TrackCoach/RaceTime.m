@@ -16,6 +16,15 @@
     if (self) {
         _startDate = [decoder decodeObjectForKey:@"startDate"];
         _lapTimes = [decoder decodeObjectForKey:@"lapTimes"];
+        _timerIsRunning = [decoder decodeBoolForKey:@"timerIsRunning"];
+    }
+    return self;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.timerIsRunning = NO;
     }
     return self;
 }
@@ -40,10 +49,15 @@
 }
 
 - (NSTimeInterval)elapsed {
-    if (self.startDate == nil) {
-        return 0;
+    if (self.timerIsRunning) {
+        if (self.startDate == nil) {
+            return 0;
+        } else {
+            return [[NSDate date] timeIntervalSinceDate:self.startDate];
+        }
+    } else {
+        return [self totalOfAllLaps];
     }
-    return [[NSDate date] timeIntervalSinceDate:self.startDate];
 }
 
 - (NSTimeInterval)totalOfAllLaps {
@@ -70,6 +84,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.startDate forKey:@"startDate"];
     [encoder encodeObject:self.lapTimes forKey:@"lapTimes"];
+    [encoder encodeBool:self.timerIsRunning forKey:@"timerIsRunning"];
 }
 
 - (BOOL)isEqual:(id)object {
@@ -89,7 +104,9 @@
         return NO;
     } else {
         return (([self.startDate isEqualToDate:otherTime.startDate] || (!self.startDate && !otherTime.startDate))
-                && ([self.lapTimes isEqualToArray:otherTime.lapTimes] || (!self.lapTimes && !otherTime.lapTimes)));
+                && ([self.lapTimes isEqualToArray:otherTime.lapTimes] || (!self.lapTimes && !otherTime.lapTimes))
+                && (self.timerIsRunning == otherTime.timerIsRunning));
+
     }
 }
 

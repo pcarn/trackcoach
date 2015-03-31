@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="14A343f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Athlete" syncable="YES">
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="race" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Race" inverseName="athlete" inverseEntity="Race" syncable="YES"/>
@@ -18,12 +18,13 @@
     <entity name="Time" syncable="YES">
         <attribute name="lapTimes" attributeType="Binary" indexed="YES" syncable="YES"/>
         <attribute name="startDate" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="timerIsRunning" attributeType="Boolean" indexed="YES" syncable="YES"/>
         <relationship name="race" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Race" inverseName="time" inverseEntity="Race" syncable="YES"/>
     </entity>
     <elements>
         <element name="Athlete" positionX="-252" positionY="-226" width="128" height="73"/>
         <element name="Location" positionX="106" positionY="-72" width="128" height="73"/>
         <element name="Race" positionX="-63" positionY="-216" width="128" height="120"/>
-        <element name="Time" positionX="-272" positionY="-124" width="128" height="88"/>
+        <element name="Time" positionX="-272" positionY="-124" width="128" height="105"/>
     </elements>
 </model>

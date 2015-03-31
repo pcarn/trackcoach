@@ -89,7 +89,7 @@
 
 //sender is button either way
 - (IBAction)startStopButtonAction:(id)sender {
-    if (!self.trackCoachBrain.timerIsRunning) {
+    if (!self.trackCoachBrain.raceTime.timerIsRunning) {
         if (self.trackCoachBrain.raceTime.lapTimes.count == 0) { // Start
             [self.trackCoachBrain start];
             [self setupForTimerRunning];
@@ -115,7 +115,7 @@
 
 //sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
-    if (self.trackCoachBrain.timerIsRunning) { // Just lapped
+    if (self.trackCoachBrain.raceTime.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
@@ -174,7 +174,7 @@
 }
 
 - (void)updateUI {
-    if (self.trackCoachBrain.timerIsRunning) {
+    if (self.trackCoachBrain.raceTime.timerIsRunning) {
         NSTimeInterval totalElapsed = [self.trackCoachBrain.raceTime elapsed];
         self.timerLabel.text = [TrackCoachUI timeToString:totalElapsed];
         NSTimeInterval currentLapTime = totalElapsed - [self.trackCoachBrain.raceTime totalOfAllLaps];
@@ -215,7 +215,7 @@
 
 #pragma mark AlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
+    if (!self.trackCoachBrain.raceTime.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         if (alertView.tag == resetAlert) {
             if (buttonIndex == 1) {
                 [self reset];
@@ -237,7 +237,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedRaceTime = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime];
 
-    [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
     NSLog(@"Saved to settings");
@@ -352,8 +351,11 @@
     if (encodedRaceTime) {
         self.trackCoachBrain.raceTime = [NSKeyedUnarchiver unarchiveObjectWithData:encodedRaceTime];
     }
-    self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
-    if (self.trackCoachBrain.timerIsRunning) {
+    [self setupLoadedRaceTime];
+}
+
+- (void)setupLoadedRaceTime {
+    if (self.trackCoachBrain.raceTime.timerIsRunning) {
         [self setupForTimerRunning];
     } else if (self.trackCoachBrain.raceTime.startDate) {  // Stopped
         [self setupForTimerStopped];

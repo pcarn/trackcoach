@@ -13,7 +13,6 @@
 
 @interface TrackCoachBrain : NSObject
 
-@property (assign) BOOL timerIsRunning;
 @property (strong, nonatomic) RaceTime *raceTime;
 
 - (void)lap;
