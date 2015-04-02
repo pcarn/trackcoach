@@ -295,7 +295,9 @@
     
     NSData *arrayData = [NSKeyedArchiver archivedDataWithRootObject:self.trackCoachBrain.raceTime.lapTimes];
     [newTime setValue:arrayData forKey:@"lapTimes"];
-    
+    [newTime setValue:[NSNumber numberWithBool:self.trackCoachBrain.raceTime.timerIsRunning]
+               forKey:@"timerIsRunning"];
+
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Could not save: %@", [error localizedDescription]);
@@ -314,6 +316,34 @@
     [fetchRequest setEntity:entity];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     NSLog(@"%lu records found", (unsigned long)fetchedObjects.count);
+
+    NSManagedObject *object = [fetchedObjects lastObject];
+
+    if (object) {
+        self.trackCoachBrain.raceTime.startDate = [object valueForKey:@"startDate"];
+        NSMutableArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:[object valueForKey:@"lapTimes"]];
+        self.trackCoachBrain.raceTime.lapTimes = array;
+        self.trackCoachBrain.raceTime.timerIsRunning = [(NSNumber *)[object valueForKey:@"timerIsRunning"] boolValue];
+    }
+
+    [self setupLoadedRaceTime];
+    [self updateUI];
+}
+
+- (IBAction)clearData:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Time"
+                                              inManagedObjectContext:context];
+    NSError *error;
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+
+    for (NSManagedObject *object in fetchedObjects) {
+        [context deleteObject:object];
+    }
+
 }
 
 #pragma mark Other/Utility methods
