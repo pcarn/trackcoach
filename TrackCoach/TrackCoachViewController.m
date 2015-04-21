@@ -328,6 +328,7 @@
 
     [self setupLoadedRaceTime];
     [self updateUI];
+    [self.tableView reloadData];
 }
 
 - (IBAction)clearData:(id)sender {
