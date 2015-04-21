@@ -7,6 +7,7 @@
 //
 
 #import "TrackCoachUI.h"
+#import <sys/utsname.h>
 
 @implementation TrackCoachUI
 
@@ -24,6 +25,13 @@
     } else {
         return [NSString stringWithFormat:@"%u:%02u.%02u", minutes, seconds, decimal];
     }
+}
+
++ (NSString *)deviceName {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
 }
 
 @end
