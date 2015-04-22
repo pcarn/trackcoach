@@ -10,17 +10,6 @@
 		1703257D18A478230026A4BC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1703257C18A478230026A4BC /* SettingsViewController.m */; };
 		17049E1018A0C59400052FAD /* RaceTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 17049E0F18A0C59400052FAD /* RaceTime.m */; };
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
-		1705838F1A9A9FA700C931E1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705838E1A9A9FA700C931E1 /* AudioToolbox.framework */; };
-		170583911A9A9FB400C931E1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583901A9A9FB400C931E1 /* CFNetwork.framework */; };
-		170583921A9A9FBC00C931E1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		170583941A9A9FC300C931E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583931A9A9FC300C931E1 /* CoreLocation.framework */; };
-		170583961A9A9FCA00C931E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583951A9A9FCA00C931E1 /* MobileCoreServices.framework */; };
-		1705839A1A9A9FDB00C931E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583991A9A9FDB00C931E1 /* Security.framework */; };
-		1705839C1A9A9FE100C931E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705839B1A9A9FE100C931E1 /* StoreKit.framework */; };
-		1705839E1A9A9FE800C931E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1705839D1A9A9FE800C931E1 /* SystemConfiguration.framework */; };
-		1705839F1A9A9FF000C931E1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17828B9B187A1C3D0063535E /* libz.dylib */; };
-		170583A11A9A9FF800C931E1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583A01A9A9FF800C931E1 /* libsqlite3.dylib */; };
-		170583A31A9AA3F600C931E1 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 170583A21A9AA3F600C931E1 /* libstdc++.6.dylib */; };
 		170DB3241A74CF970088DC20 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DB3231A74CF970088DC20 /* Tutorial.m */; };
 		170DB3261A74DB9E0088DC20 /* TutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DB3251A74DB9E0088DC20 /* TutorialTests.m */; };
 		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
@@ -42,7 +31,6 @@
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
-		17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
@@ -60,7 +48,6 @@
 		17E11081189F602C0037E7A5 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11071189F602C0037E7A5 /* AppIcon76x76@2x.png */; };
 		17E11082189F602C0037E7A5 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11072189F602C0037E7A5 /* iTunesArtwork.png */; };
 		17E11083189F602C0037E7A5 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11073189F602C0037E7A5 /* iTunesArtwork@2x.png */; };
-		17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788DC186CD5A500AE6FED /* InfoPlist.strings */; };
 		17E788E0186CD5A500AE6FED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788DF186CD5A500AE6FED /* main.m */; };
 		17E788E4186CD5A500AE6FED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E788E3186CD5A500AE6FED /* AppDelegate.m */; };
@@ -188,21 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170583A31A9AA3F600C931E1 /* libstdc++.6.dylib in Frameworks */,
-				170583A11A9A9FF800C931E1 /* libsqlite3.dylib in Frameworks */,
-				1705839F1A9A9FF000C931E1 /* libz.dylib in Frameworks */,
-				1705839E1A9A9FE800C931E1 /* SystemConfiguration.framework in Frameworks */,
-				1705839C1A9A9FE100C931E1 /* StoreKit.framework in Frameworks */,
-				1705839A1A9A9FDB00C931E1 /* Security.framework in Frameworks */,
-				170583961A9A9FCA00C931E1 /* MobileCoreServices.framework in Frameworks */,
-				170583941A9A9FC300C931E1 /* CoreLocation.framework in Frameworks */,
-				170583921A9A9FBC00C931E1 /* (null) in Frameworks */,
-				170583911A9A9FB400C931E1 /* CFNetwork.framework in Frameworks */,
-				1705838F1A9A9FA700C931E1 /* AudioToolbox.framework in Frameworks */,
-				17AE477418E6811800AFE186 /* UIKit.framework in Frameworks */,
-				17E788D4186CD5A400AE6FED /* Foundation.framework in Frameworks */,
 				267E35580ED9B36F269682F8 /* libPods-TrackCoach.a in Frameworks */,
-				175B5F9B19B8E0A5001F2A38 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

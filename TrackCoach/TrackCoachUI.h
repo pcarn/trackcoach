@@ -11,5 +11,6 @@
 @interface TrackCoachUI : NSObject
 
 + (NSString *)timeToString:(NSTimeInterval)time;
++ (NSString *)deviceName;
 
 @end
