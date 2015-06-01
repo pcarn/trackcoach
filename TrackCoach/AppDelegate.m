@@ -234,6 +234,11 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"TrackCoach" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+
+    if (_managedObjectModel == nil) {
+        [NSException raise:@"Could not connect to database model." format:nil];
+    }
+
     return _managedObjectModel;
 }
 

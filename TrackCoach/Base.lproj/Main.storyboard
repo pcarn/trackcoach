@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="yRf-VG-vqX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="70"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -83,7 +83,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-DV-xeV">
                                 <rect key="frame" x="222" y="69" width="63" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
@@ -191,7 +191,7 @@
                                     <action selector="fetchData:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eDW-ts-AhR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEL-aT-AJC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEL-aT-AJC">
                                 <rect key="frame" x="96" y="357" width="37" height="30"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -205,6 +205,7 @@
                         <constraints>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="height" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.5" id="0XM-qy-akc"/>
                             <constraint firstAttribute="centerX" secondItem="fjv-yz-033" secondAttribute="centerX" id="2lQ-tg-bdG"/>
+                            <constraint firstItem="VBw-cW-1VC" firstAttribute="centerY" secondItem="OEL-aT-AJC" secondAttribute="centerY" id="6aa-O0-3pM"/>
                             <constraint firstItem="fe7-QF-QgF" firstAttribute="leading" secondItem="VBw-cW-1VC" secondAttribute="trailing" constant="15" id="EAv-Hu-xv3"/>
                             <constraint firstItem="F4f-hm-0qB" firstAttribute="top" secondItem="8In-eW-cgP" secondAttribute="bottom" constant="10" id="Ej0-pX-t13"/>
                             <constraint firstItem="fjv-yz-033" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GEb-98-Jw3"/>
@@ -230,6 +231,7 @@
                             <constraint firstAttribute="centerX" secondItem="VBw-cW-1VC" secondAttribute="centerX" id="qWk-QB-bkf"/>
                             <constraint firstItem="8In-eW-cgP" firstAttribute="top" secondItem="xqG-Av-2QV" secondAttribute="bottom" constant="10" id="rHf-f7-el7"/>
                             <constraint firstItem="JLk-DV-xeV" firstAttribute="trailing" secondItem="YB0-fu-k6i" secondAttribute="trailing" id="ukH-uE-Zzi"/>
+                            <constraint firstItem="VBw-cW-1VC" firstAttribute="leading" secondItem="OEL-aT-AJC" secondAttribute="trailing" constant="10" id="yW6-pj-UAn"/>
                             <constraint firstItem="fe7-QF-QgF" firstAttribute="centerY" secondItem="VBw-cW-1VC" secondAttribute="centerY" id="z2c-nc-wfX"/>
                         </constraints>
                         <variation key="default">
@@ -357,7 +359,7 @@ More features on the way!
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm before Reset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-0m-re5">
                                                         <rect key="frame" x="20" y="14" width="156" height="21"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
