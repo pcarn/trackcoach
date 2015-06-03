@@ -23,7 +23,6 @@
 		173A7B0D1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */; };
 		173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
 		175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175679F91A6A255D00DEFB8F /* Default-568h@2x.png */; };
-		175B5F9B19B8E0A5001F2A38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175B5F9A19B8E0A5001F2A38 /* CoreData.framework */; };
 		175B5F9E19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
 		176B2F4A1A70D51F00F52407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */; };
@@ -31,6 +30,7 @@
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
+		17AC0B1B1B1F96D00044495C /* SaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AC0B1A1B1F96D00044495C /* SaveViewController.m */; };
 		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
@@ -88,7 +88,6 @@
 		1704DFFC19096A9C000079C4 /* VolumeButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeButtons.h; sourceTree = "<group>"; };
 		1704DFFD19096A9C000079C4 /* VolumeButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtons.m; sourceTree = "<group>"; };
 		1705838E1A9A9FA700C931E1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		170583901A9A9FB400C931E1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		170583931A9A9FC300C931E1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		170583951A9A9FCA00C931E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		170583971A9A9FD400C931E1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -126,6 +125,8 @@
 		179900F618F9027B00E626ED /* TrackCoachUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUI.m; sourceTree = "<group>"; };
 		179A4FB918F7985E008994AA /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		179A4FBA18F7985E008994AA /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		17AC0B191B1F96D00044495C /* SaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveViewController.h; sourceTree = "<group>"; };
+		17AC0B1A1B1F96D00044495C /* SaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveViewController.m; sourceTree = "<group>"; };
 		17E11064189F602C0037E7A5 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		17E11066189F602C0037E7A5 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -322,6 +323,8 @@
 				176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */,
 				17E788E2186CD5A500AE6FED /* AppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* AppDelegate.m */,
+				17AC0B191B1F96D00044495C /* SaveViewController.h */,
+				17AC0B1A1B1F96D00044495C /* SaveViewController.m */,
 				1703257B18A478230026A4BC /* SettingsViewController.h */,
 				1703257C18A478230026A4BC /* SettingsViewController.m */,
 				1712333218F90E3A00DC58CD /* Defines.h */,
@@ -619,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AC0B1B1B1F96D00044495C /* SaveViewController.m in Sources */,
 				1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */,
 				179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */,
 				17261BF01A6F4277005925F4 /* JVLeftDrawerTableViewController.m in Sources */,
