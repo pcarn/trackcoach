@@ -56,7 +56,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
         if (!error) {
-            NSLog(@"Yay! Config was fetched from the server.");
+            NSLog(@"Config was fetched from the server.");
         } else {
             NSLog(@"Failed to fetch. Using Cached Config.");
             config = [PFConfig currentConfig];
