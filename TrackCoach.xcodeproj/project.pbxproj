@@ -213,6 +213,19 @@
 			name = JVFloatingDrawer;
 			sourceTree = "<group>";
 		};
+		176689571B2527DA00B1EC58 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				17AC0B191B1F96D00044495C /* SaveViewController.h */,
+				17AC0B1A1B1F96D00044495C /* SaveViewController.m */,
+				1703257B18A478230026A4BC /* SettingsViewController.h */,
+				1703257C18A478230026A4BC /* SettingsViewController.m */,
+				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
+				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		17739AC11A4D25C300EEDF34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,19 +332,14 @@
 		17E788D9186CD5A500AE6FED /* TrackCoach */ = {
 			isa = PBXGroup;
 			children = (
+				176689571B2527DA00B1EC58 /* View Controllers */,
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
 				176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */,
 				17E788E2186CD5A500AE6FED /* AppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* AppDelegate.m */,
-				17AC0B191B1F96D00044495C /* SaveViewController.h */,
-				17AC0B1A1B1F96D00044495C /* SaveViewController.m */,
-				1703257B18A478230026A4BC /* SettingsViewController.h */,
-				1703257C18A478230026A4BC /* SettingsViewController.m */,
 				1712333218F90E3A00DC58CD /* Defines.h */,
 				1798666D18CCF439002AD404 /* TrackCoachTableViewCell.h */,
 				1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */,
-				17E788E8186CD5A500AE6FED /* TrackCoachViewController.h */,
-				17E788E9186CD5A500AE6FED /* TrackCoachViewController.m */,
 				1704DFFC19096A9C000079C4 /* VolumeButtons.h */,
 				1704DFFD19096A9C000079C4 /* VolumeButtons.m */,
 				17261BEA1A6F426C005925F4 /* JVFloatingDrawer */,
