@@ -18,7 +18,7 @@ static NSString * const kJVStoryboardName = @"Main";
 
 static NSString * const kJVLeftDrawerStoryboardID = @"JVLeftDrawerViewControllerStoryboardID";
 static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewControllerStoryboardID";
-static NSString * const athleteViewControllerStoryboardID = @"athleteViewControllerStoryboardID";
+static NSString * const athleteViewControllerStoryboardID = @"AthleteViewControllerStoryboardID";
 static NSString * const settingsViewControllerStoryboardID = @"SettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()

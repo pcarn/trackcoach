@@ -7,7 +7,12 @@
 //
 
 #import "AthleteViewController.h"
+#import "AppDelegate.h"
 
 @implementation AthleteViewController
+
+- (IBAction)actionToggleLeftDrawer:(id)sender {
+    [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+}
 
 @end
