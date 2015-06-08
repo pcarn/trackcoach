@@ -20,6 +20,7 @@
 @property (nonatomic, strong) JVFloatingDrawerSpringAnimator *drawerAnimator;
 @property (nonatomic, strong) UITableViewController *leftDrawerViewController;
 @property (nonatomic, strong) UIViewController *trackCoachViewController;
+@property (nonatomic, strong) UIViewController *athleteViewController;
 @property (nonatomic, strong) UIViewController *settingsViewController;
 
 @property (strong, nonatomic) VolumeButtons *volumeButtons;

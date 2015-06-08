@@ -25,6 +25,7 @@
 		175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175679F91A6A255D00DEFB8F /* Default-568h@2x.png */; };
 		175B5F9E19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175B5F9C19B8E0EA001F2A38 /* TrackCoach.xcdatamodeld */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
+		1766895A1B252E6400B1EC58 /* AthleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176689591B252E6400B1EC58 /* AthleteViewController.m */; };
 		176B2F4A1A70D51F00F52407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */; };
 		1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795B6331A69B46700926C16 /* VolumeButtonsTests.m */; };
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
@@ -115,6 +116,8 @@
 		175B5F9A19B8E0A5001F2A38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		175B5F9D19B8E0EA001F2A38 /* TrackCoach.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrackCoach.xcdatamodel; sourceTree = "<group>"; };
 		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
+		176689581B252E6400B1EC58 /* AthleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AthleteViewController.h; sourceTree = "<group>"; };
+		176689591B252E6400B1EC58 /* AthleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AthleteViewController.m; sourceTree = "<group>"; };
 		176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -216,6 +219,8 @@
 		176689571B2527DA00B1EC58 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				176689581B252E6400B1EC58 /* AthleteViewController.h */,
+				176689591B252E6400B1EC58 /* AthleteViewController.m */,
 				17AC0B191B1F96D00044495C /* SaveViewController.h */,
 				17AC0B1A1B1F96D00044495C /* SaveViewController.m */,
 				1703257B18A478230026A4BC /* SettingsViewController.h */,
@@ -638,6 +643,7 @@
 				179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */,
 				17E788E4186CD5A500AE6FED /* AppDelegate.m in Sources */,
 				1703257D18A478230026A4BC /* SettingsViewController.m in Sources */,
+				1766895A1B252E6400B1EC58 /* AthleteViewController.m in Sources */,
 				170DB3241A74CF970088DC20 /* Tutorial.m in Sources */,
 				1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */,
 				17E788E0186CD5A500AE6FED /* main.m in Sources */,

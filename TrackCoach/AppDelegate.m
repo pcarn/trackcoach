@@ -18,6 +18,7 @@ static NSString * const kJVStoryboardName = @"Main";
 
 static NSString * const kJVLeftDrawerStoryboardID = @"JVLeftDrawerViewControllerStoryboardID";
 static NSString * const trackCoachViewControllerStoryboardID = @"TrackCoachViewControllerStoryboardID";
+static NSString * const athleteViewControllerStoryboardID = @"athleteViewControllerStoryboardID";
 static NSString * const settingsViewControllerStoryboardID = @"SettingsViewControllerStoryboardID";
 
 @interface AppDelegate ()
@@ -96,6 +97,14 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     }
 
     return _trackCoachViewController;
+}
+
+- (UIViewController *)athleteViewController {
+    if (!_athleteViewController) {
+        _athleteViewController = [self.storyboard instantiateViewControllerWithIdentifier:athleteViewControllerStoryboardID];
+    }
+
+    return _athleteViewController;
 }
 
 - (UIViewController *)settingsViewController {

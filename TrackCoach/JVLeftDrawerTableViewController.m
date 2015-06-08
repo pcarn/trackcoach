@@ -13,7 +13,9 @@
 
 enum {
     trackCoachViewControllerIndex = 0,
-    settingsIndex = 1
+    athleteIndex = 1,
+    settingsIndex = 2,
+    menuCount = 3
 };
 
 static const CGFloat kJVTableViewTopInset = 80.0;
@@ -45,7 +47,7 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return menuCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,6 +56,8 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
     if (indexPath.row == trackCoachViewControllerIndex) {
         cell.titleText = @"TrackCoach";
         cell.iconImage = [UIImage imageNamed:@"smallTransparent"];
+    } else if (indexPath.row == athleteIndex) {
+        cell.titleText = @"Athletes";
     } else {
         cell.titleText = @"Settings";
         cell.iconImage = [UIImage imageNamed:@"gear"];
@@ -66,8 +70,10 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIViewController *destinationViewController = nil;
 
-    if(indexPath.row == trackCoachViewControllerIndex) {
+    if (indexPath.row == trackCoachViewControllerIndex) {
         destinationViewController = [[AppDelegate globalDelegate] trackCoachViewController];
+    } else if (indexPath.row == athleteIndex) {
+        destinationViewController = [[AppDelegate globalDelegate] athleteViewController];
     } else {
         destinationViewController = [[AppDelegate globalDelegate] settingsViewController];
     }
