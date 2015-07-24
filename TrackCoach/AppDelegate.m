@@ -60,7 +60,9 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
             NSLog(@"Failed to fetch. Using Cached Config.");
             config = [PFConfig currentConfig];
         }
-        self.hideVolumeButtons = [config[@"hideVolumeButtons"] boolValue];
+        NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
+        NSString *volumeKey = [NSString stringWithFormat:@"hideVolumeButtons%@", build];
+        self.hideVolumeButtons = [config[volumeKey] boolValue];
         if (!self.hideVolumeButtons) {
             [self setupVolumeButtons];
         }

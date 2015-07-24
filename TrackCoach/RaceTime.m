@@ -58,7 +58,7 @@
     NSTimeInterval total = 0;
     NSUInteger numberOfLaps = self.lapTimes.count;
     if (count > numberOfLaps) {
-        [NSException raise:@"Tried to total more laps than were present" format:nil];
+        [NSException raise:@"OutOfRangeException" format:@"Tried to total more laps than were present"];
     }
     for (NSInteger i=count; i<numberOfLaps; i++) {
         total += [self.lapTimes[i] doubleValue];
