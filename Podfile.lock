@@ -1,12 +1,12 @@
 PODS:
-  - Bolts/Tasks (1.2.0)
+  - Bolts/Tasks (1.2.1)
   - JVFloatingDrawer (0.1.0)
-  - OCMock (3.1.2)
-  - Parse (1.7.5.3):
-    - Bolts/Tasks (>= 1.2.0)
-  - ParseCrashReporting (1.7.5.3):
-    - Bolts/Tasks (>= 1.2.0)
-    - Parse (~> 1.7.5.3)
+  - OCMock (3.1.5)
+  - Parse (1.8.2):
+    - Bolts/Tasks (>= 1.2.1)
+  - ParseCrashReporting (1.8.2):
+    - Bolts/Tasks (>= 1.2.1)
+    - Parse (~> 1.8.2)
 
 DEPENDENCIES:
   - JVFloatingDrawer
@@ -15,10 +15,10 @@ DEPENDENCIES:
   - ParseCrashReporting
 
 SPEC CHECKSUMS:
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Bolts: 7686a5cb204d1ac54cee26f12d9b7622db3f80d1
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
-  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
-  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
-  ParseCrashReporting: 36d2e2770d7502d943b81c013acd5193946ced46
+  OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
+  Parse: 188601c6cd91fae55906badd283b513104a3a8c9
+  ParseCrashReporting: 437b722377462faaeba60ffde23af95fcc486c28
 
-COCOAPODS: 0.38.0
+COCOAPODS: 0.38.2
