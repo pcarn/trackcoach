@@ -38,34 +38,4 @@
     [super tearDown];
 }
 
-- (void)testTutorialOthers {
-    [tutorial pageViewController:nil viewControllerAfterViewController:nil];
-
-    id mockVC = OCMClassMock([TutorialViewController class]);
-    OCMStub([mockVC pageIndex]).andReturn(NSNotFound);
-    [tutorial pageViewController:nil viewControllerAfterViewController:mockVC];
-
-    [tutorial pageViewController:nil viewControllerBeforeViewController:nil];
-
-    mockVC = OCMClassMock([TutorialViewController class]);
-    OCMStub([mockVC pageIndex]).andReturn(429);
-    [tutorial pageViewController:nil viewControllerBeforeViewController:mockVC];
-
-    TutorialViewController *tutorialVC;
-    tutorialVC = [tutorial viewControllerAtIndex:0];
-    XCTAssertEqualObjects(tutorialVC.nibName, @"Tutorial1");
-
-    tutorialVC = [tutorial viewControllerAtIndex:1];
-    XCTAssertEqualObjects(tutorialVC.nibName, @"Tutorial2");
-
-    tutorialVC = [tutorial viewControllerAtIndex:2];
-    XCTAssertEqualObjects(tutorialVC.nibName, @"Tutorial3");
-
-    tutorialVC = [tutorial viewControllerAtIndex:3];
-    XCTAssertTrue([[NSUserDefaults standardUserDefaults] boolForKey:TUTORIAL_RUN_STRING]);
-    [tutorial presentationCountForPageViewController:nil];
-    [tutorial presentationIndexForPageViewController:nil];
-}
-
-
 @end
