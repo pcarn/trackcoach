@@ -85,7 +85,7 @@
         activityVC.popoverPresentationController.barButtonItem = sender;
     }
     [self presentViewController:activityVC animated:YES completion:^{
-        [PFAnalytics trackEvent:@"Shared time" dimensions:@{@"numberOfLaps": [NSNumber numberWithInteger:self.trackCoachBrain.raceTime.lapTimes.count]}];
+        [PFAnalytics trackEvent:@"sharedTime" dimensions:@{@"numberOfLaps": [NSString stringWithFormat:@"%lu", (unsigned long)self.trackCoachBrain.raceTime.lapTimes.count]}];
     }];
 }
 
@@ -160,7 +160,7 @@
 }
 
 - (void)reset {
-    [PFAnalytics trackEvent:@"Reset" dimensions:@{@"numberOfLaps": [NSNumber numberWithInteger:self.trackCoachBrain.raceTime.lapTimes.count]}];
+    [PFAnalytics trackEvent:@"reset" dimensions:@{@"numberOfLaps": [NSString stringWithFormat:@"%lu", (unsigned long)self.trackCoachBrain.raceTime.lapTimes.count]}];
     [self.trackCoachBrain reset];
     [self updateUI];
     [self.tableView reloadData];
@@ -173,7 +173,7 @@
     [self.trackCoachBrain undoStop];
     [self setupForTimerRunning];
     [self.tableView reloadData];
-    [PFAnalytics trackEvent:@"Undo Stop"];
+    [PFAnalytics trackEvent:@"undoStop"];
 }
 
 - (void)updateUI {

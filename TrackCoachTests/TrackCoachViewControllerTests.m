@@ -59,7 +59,7 @@
     id mock = OCMPartialMock(viewController);
     [viewController.trackCoachBrain.raceTime.lapTimes insertObject:@60 atIndex:0];
     [viewController shareButtonAction:nil];
-    OCMVerify([mock presentViewController:[OCMArg any] animated:YES completion:nil]);
+    OCMVerify([mock presentViewController:[OCMArg any] animated:YES completion:[OCMArg any]]);
 }
 
 - (void)testStartStopButtonAction_start {
