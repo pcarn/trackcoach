@@ -37,6 +37,10 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
                   clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFAnalytics trackEvent:@"appOpened" dimensions:@{
+          @"systemVersion": [[UIDevice currentDevice] systemVersion],
+             @"appVersion": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+             @"deviceName": [TrackCoachUI deviceName]}];
 
     UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     UIPageControl *pageControl = [UIPageControl appearance];
@@ -51,7 +55,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
     // Having an MPVolumeView hides the volume overlay appwide.
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
-    [[[UIApplication sharedApplication] windows][0] addSubview:volumeView];
+    [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
 
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
         if (!error) {
