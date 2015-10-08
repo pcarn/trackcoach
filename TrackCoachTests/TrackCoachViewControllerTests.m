@@ -59,7 +59,7 @@
     id mock = OCMPartialMock(viewController);
     [viewController.trackCoachBrain.raceTime.lapTimes insertObject:@60 atIndex:0];
     [viewController shareButtonAction:nil];
-    OCMVerify([mock presentViewController:[OCMArg any] animated:YES completion:nil]);
+    OCMVerify([mock presentViewController:[OCMArg any] animated:YES completion:[OCMArg any]]);
 }
 
 //- (void)testStartStopButtonAction_start {
@@ -226,6 +226,7 @@
 - (void)testSetupVolumeButtons {
     viewController.alertIsDisplayed = NO;
     viewController.tutorial = [[Tutorial alloc] init];
+    //TODO: What's the test here
 }
 
 - (void)testStartNSTimerIfSuspended {
@@ -242,17 +243,6 @@
     [viewController stopNSTimerIfRunning];
     XCTAssertTrue(viewController.timerSuspended);
     OCMVerify([mock stopNSTimer]);
-}
-
-- (void)testOthers {
-    [viewController tableView:nil numberOfRowsInSection:0];
-    [viewController numberOfSectionsInTableView:nil];
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [viewController tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-
-//    id mockSegue = OCMClassMock([UIStoryboardSegue class]);
-//    OCMStub([mockSegue identifier]).andReturn(@"Settings");
-//    [viewController prepareForSegue:mockSegue sender:nil];
 }
 
 @end

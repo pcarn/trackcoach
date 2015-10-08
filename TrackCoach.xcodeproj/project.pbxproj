@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,8 +64,8 @@
 		17F6E2B81A50B8B900B8EF7F /* SettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */; };
 		17F6E2BA1A510E0100B8EF7F /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
-		267E35580ED9B36F269682F8 /* libPods-TrackCoach.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */; };
-		57EA6E14DF9A3D44DE5C00C0 /* libPods-TrackCoachTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5C70538A595D27F2E4842A /* libPods-TrackCoachTests.a */; };
+		A2629904ABF6C7AA1B191847 /* Pods_TrackCoachTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E515DF16A9A6A0BF0EC913D8 /* Pods_TrackCoachTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C4BEC7ADC2CBE824F53E79B0 /* Pods_TrackCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A4DBC8955D5C51C7C358B0 /* Pods_TrackCoach.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +80,6 @@
 
 /* Begin PBXFileReference section */
 		0BFC511B5BF55237D00A70A9 /* Pods-TrackCoachTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackCoachTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests.release.xcconfig"; sourceTree = "<group>"; };
-		0D5C70538A595D27F2E4842A /* libPods-TrackCoachTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackCoachTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrackCoach.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1703257B18A478230026A4BC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		1703257C18A478230026A4BC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		17049E0E18A0C59400052FAD /* RaceTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceTime.h; sourceTree = "<group>"; };
@@ -169,9 +167,11 @@
 		17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTests.m; sourceTree = "<group>"; };
 		17FAD50718A1E24600DC136A /* TrackCoachBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackCoachBrain.h; sourceTree = "<group>"; };
 		17FAD50818A1E24600DC136A /* TrackCoachBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachBrain.m; sourceTree = "<group>"; };
+		34A4DBC8955D5C51C7C358B0 /* Pods_TrackCoach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackCoach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3602E3D0E5558057385157CA /* Pods-TrackCoachTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackCoachTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E2D541A9DE6DE25215B1752 /* Pods-TrackCoach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackCoach.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach.release.xcconfig"; sourceTree = "<group>"; };
 		B442A63906C994A57F5CAAD4 /* Pods-TrackCoach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackCoach.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach.debug.xcconfig"; sourceTree = "<group>"; };
+		E515DF16A9A6A0BF0EC913D8 /* Pods_TrackCoachTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackCoachTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				267E35580ED9B36F269682F8 /* libPods-TrackCoach.a in Frameworks */,
+				C4BEC7ADC2CBE824F53E79B0 /* Pods_TrackCoach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +190,7 @@
 				17E788F3186CD5A500AE6FED /* XCTest.framework in Frameworks */,
 				17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */,
 				17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */,
-				57EA6E14DF9A3D44DE5C00C0 /* libPods-TrackCoachTests.a in Frameworks */,
+				A2629904ABF6C7AA1B191847 /* Pods_TrackCoachTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,8 +327,8 @@
 				17E788D3186CD5A400AE6FED /* Foundation.framework */,
 				17E788D7186CD5A500AE6FED /* UIKit.framework */,
 				17E788F2186CD5A500AE6FED /* XCTest.framework */,
-				10FD68EE1C4ED54F0C370A20 /* libPods-TrackCoach.a */,
-				0D5C70538A595D27F2E4842A /* libPods-TrackCoachTests.a */,
+				34A4DBC8955D5C51C7C358B0 /* Pods_TrackCoach.framework */,
+				E515DF16A9A6A0BF0EC913D8 /* Pods_TrackCoachTests.framework */,
 				175B5F9A19B8E0A5001F2A38 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -430,6 +430,7 @@
 				17E788CE186CD5A400AE6FED /* Resources */,
 				8261BB5072F524D36B0248AC /* Copy Pods Resources */,
 				170583A41A9AA5D100C931E1 /* ShellScript */,
+				A788E80D35D04BEFE97B6F4B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +450,7 @@
 				17E788EE186CD5A500AE6FED /* Frameworks */,
 				17E788EF186CD5A500AE6FED /* Resources */,
 				F7B7ABEE9A56CDAF19335D5D /* Copy Pods Resources */,
+				6C2F10FD0A0B3D18F1ED6369 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,7 +469,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TrackCoach;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Peter Carnesciali";
 				TargetAttributes = {
 					17E788CF186CD5A400AE6FED = {
@@ -480,7 +482,7 @@
 				};
 			};
 			buildConfigurationList = 17E788CB186CD5A400AE6FED /* Build configuration list for PBXProject "TrackCoach" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -553,7 +555,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  export PATH=/usr/local/bin:$PATH\n  cd /Users/pcarn/Dropbox/Developer/trackcoach/parse\n  parse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\nfi";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  export PATH=/usr/local/bin:$PATH\n  cd /Users/pcarn/Trackcoach/parse\n  parse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\nfi";
 		};
 		17D59ACC18E6841D002214BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -598,6 +600,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6C2F10FD0A0B3D18F1ED6369 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8261BB5072F524D36B0248AC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -611,6 +628,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A788E80D35D04BEFE97B6F4B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F7B7ABEE9A56CDAF19335D5D /* Copy Pods Resources */ = {
@@ -730,10 +762,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -746,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "bf0373ae-5e01-4091-82c9-d51668515abf";
 				SDKROOT = iphoneos;
@@ -772,6 +806,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -780,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PROVISIONING_PROFILE = "bf0373ae-5e01-4091-82c9-d51668515abf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -795,6 +830,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
@@ -803,6 +839,34 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"stdc++.6\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pcarn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TrackCoach;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -818,6 +882,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = "";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
@@ -826,6 +891,34 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"stdc++.6\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pcarn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TrackCoach;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -841,7 +934,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
@@ -868,6 +960,7 @@
 					XCTest,
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pcarn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TrackCoachTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -883,7 +976,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
@@ -906,6 +998,7 @@
 					XCTest,
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pcarn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TrackCoachTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";

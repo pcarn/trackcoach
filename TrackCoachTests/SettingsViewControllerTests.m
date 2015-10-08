@@ -60,12 +60,6 @@
     OCMVerify([mockcontroller presentViewController:[OCMArg any] animated:YES completion:nil]);
 }
 
-- (void)testMailComposeController_dismisses {
-    id mockcontroller = OCMPartialMock(viewController);
-    [viewController mailComposeController:nil didFinishWithResult:MFMailComposeResultSent error:nil];
-    OCMVerify([mockcontroller dismissViewControllerAnimated:YES completion:nil]);
-}
-
 - (void)testOthers {
     [viewController viewDidAppear:NO];
     [viewController didReceiveMemoryWarning];

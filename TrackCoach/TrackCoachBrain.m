@@ -31,15 +31,16 @@
 - (void)lap {
     NSLog(@"Lap");
     if (!self.raceTime.timerIsRunning) {
-        [NSException raise:@"Tried to lap while timer not running"
-                    format:nil];
+        [NSException raise:@"InvalidMethodException"
+                    format:@"Tried to lap while timer not running"];
     }
     [self.raceTime addNewLapAtCurrentTime];
 }
 
 - (void)undoStop {
     if (self.raceTime.timerIsRunning) {
-        [NSException raise:@"Tried to undo stop, when already started" format:nil];
+        [NSException raise:@"InvalidMethodException"
+		            format:@"Tried to undo stop, when already started"];
     }
 
     [self.raceTime removeMostRecentLap];
@@ -48,8 +49,8 @@
 
 - (void)reset {
     if (self.raceTime.timerIsRunning) {
-        [NSException raise:@"Tried to reset while timer running"
-                    format:nil];
+        [NSException raise:@"InvalidMethodException"
+                    format:@"Tried to reset while timer running"];
     }
     NSLog(@"Reset");
     self.raceTime = nil;
