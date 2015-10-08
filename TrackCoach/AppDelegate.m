@@ -251,7 +251,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
 
     if (_managedObjectModel == nil) {
-        [NSException raise:@"Could not connect to database model." format:nil];
+        [NSException raise:@"DatabaseErrorException" format:@"Could not connect to database model."];
     }
 
     return _managedObjectModel;
