@@ -5,8 +5,8 @@ use_frameworks!
 
 target 'TrackCoach' do
 pod 'JVFloatingDrawer'
-pod 'Parse', '~> 1.8.5'
-pod 'ParseCrashReporting', '~> 1.8.5'
+pod 'Parse', '~> 1.8'
+pod 'ParseCrashReporting', '~> 1.8'
 end
 
 target 'TrackCoachTests' do
