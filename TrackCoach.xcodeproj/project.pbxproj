@@ -61,8 +61,8 @@
 		17F6E2B81A50B8B900B8EF7F /* SettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */; };
 		17F6E2BA1A510E0100B8EF7F /* AppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B91A510E0000B8EF7F /* AppDelegateTests.m */; };
 		17FAD50918A1E24600DC136A /* TrackCoachBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAD50818A1E24600DC136A /* TrackCoachBrain.m */; };
-		A2629904ABF6C7AA1B191847 /* Pods_TrackCoachTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E515DF16A9A6A0BF0EC913D8 /* Pods_TrackCoachTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		C4BEC7ADC2CBE824F53E79B0 /* Pods_TrackCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A4DBC8955D5C51C7C358B0 /* Pods_TrackCoach.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A2629904ABF6C7AA1B191847 /* Pods_TrackCoachTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E515DF16A9A6A0BF0EC913D8 /* Pods_TrackCoachTests.framework */; };
+		C4BEC7ADC2CBE824F53E79B0 /* Pods_TrackCoach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A4DBC8955D5C51C7C358B0 /* Pods_TrackCoach.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
