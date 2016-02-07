@@ -71,7 +71,10 @@
     NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
     for (NSNumber *lap in laps) {
-        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@", (unsigned long)[laps indexOfObject:lap]+1, [TrackCoachUI timeToString:[lap doubleValue]]]];
+        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@ Total: %@",
+                                   (unsigned long)[laps indexOfObject:lap]+1,
+                                   [TrackCoachUI timeToString:[lap doubleValue]],
+                                   [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:([laps count] - [laps indexOfObject:lap] - 1)]]]];
     }
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed with TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
     //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
