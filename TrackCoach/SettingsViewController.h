@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *copyrightNoticeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *confirmResetSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *disableButtonsSwitch;
 
 - (IBAction)contactButtonAction:(id)sender;
 @end

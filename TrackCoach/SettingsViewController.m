@@ -43,8 +43,10 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.confirmResetSwitch.on = [defaults boolForKey:@"confirmReset"];
+    self.disableButtonsSwitch.on = ![defaults boolForKey:@"enableOnscreenButtons"];
 
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];
+    [self.disableButtonsSwitch addTarget:self action:@selector(changeOnscreenButtonsState:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,6 +58,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:[sender isOn] forKey:@"confirmReset"];
     [defaults synchronize];
+}
+
+#pragma mark On-Screen Buttons
+- (void)changeOnscreenButtonsState:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:![sender isOn] forKey:@"enableOnscreenButtons"];
+    [defaults synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeOnscreenButtonsState" object:nil];
+
 }
 
 #pragma mark Other

@@ -30,10 +30,14 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"confirmReset"]) {
         [defaults setBool:YES forKey:@"confirmReset"];
-        [defaults synchronize];
     }
+    if (![defaults objectForKey:@"enableOnscreenButtons"]) {
+        [defaults setBool:NO forKey:@"enableOnscreenButtons"];
+    }
+    [defaults synchronize];
 
     [self updateUI];
+    [self changeOnscreenButtonsState];
     [self.tableView reloadData];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -59,6 +63,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(dismissTutorial)
                                                  name:@"dismissTutorial"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeOnscreenButtonsState)
+                                                 name:@"changeOnscreenButtonsState"
                                                object:nil];
 }
 
@@ -272,7 +280,7 @@
     self.tutorial = nil;
 }
 
-#pragma mark - Volume Buttons
+#pragma mark Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
         [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"down"}];
@@ -285,6 +293,16 @@
         [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"up"}];
         [self startStopButtonAction:nil];
     }
+}
+
+#pragma mark On-Screen Buttons
+- (void)changeOnscreenButtonsState {
+    BOOL enabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"enableOnscreenButtons"];
+    self.lapResetButton.enabled = enabled;
+    self.lapResetButton.alpha = enabled ? 1.0 : 0.2;
+    self.startStopButton.enabled = enabled;
+    self.startStopButton.alpha = enabled ? 1.0 : 0.2;
+    self.buttonsDisabledLabel.hidden = enabled;
 }
 
 #pragma mark Other/Utility methods
