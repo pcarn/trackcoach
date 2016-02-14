@@ -1,0 +1,72 @@
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "1XP-Fe-ht0"; */
+"1XP-Fe-ht0.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "3MO-vs-ItQ"; */
+"3MO-vs-ItQ.normalTitle" = "Reset";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "3wz-Mz-ko6"; */
+"3wz-Mz-ko6.title" = "Share";
+
+/* Class = "UILabel"; text = "0:00.00"; ObjectID = "8In-eW-cgP"; */
+"8In-eW-cgP.text" = "0:00.00";
+
+/* Class = "UILabel"; text = "v"; ObjectID = "A0B-hu-eQ1"; */
+"A0B-hu-eQ1.text" = "v";
+
+/* Class = "UINavigationItem"; title = "About TrackCoach"; ObjectID = "HIE-KG-TPd"; */
+"HIE-KG-TPd.title" = "About TrackCoach";
+
+/* Class = "UILabel"; text = "0:00.00"; ObjectID = "JLk-DV-xeV"; */
+"JLk-DV-xeV.text" = "0:00.00";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "Jk8-gB-PYw"; */
+"Jk8-gB-PYw.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Contact Me"; ObjectID = "PbV-SZ-Ayb"; */
+"PbV-SZ-Ayb.normalTitle" = "Contact Me";
+
+/* Class = "UILabel"; text = "On-Screen Buttons Disabled in Settings"; ObjectID = "S7q-bL-FED"; */
+"S7q-bL-FED.text" = "On-Screen Buttons Disabled in Settings";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "YB0-fu-k6i"; */
+"YB0-fu-k6i.text" = "Total";
+
+/* Class = "UILabel"; text = "0:00.00"; ObjectID = "Z2M-Yy-875"; */
+"Z2M-Yy-875.text" = "0:00.00";
+
+/* Class = "UILabel"; text = "0:00.00"; ObjectID = "ZKv-w0-9fo"; */
+"ZKv-w0-9fo.text" = "0:00.00";
+
+/* Class = "UILabel"; text = "Disable On-Screen Buttons"; ObjectID = "ZM2-xZ-Smc"; */
+"ZM2-xZ-Smc.text" = "Disable On-Screen Buttons";
+
+/* Class = "UINavigationItem"; title = "TrackCoach"; ObjectID = "ZhP-ZE-bxd"; */
+"ZhP-ZE-bxd.title" = "TrackCoach";
+
+/* Class = "UILabel"; text = "Split"; ObjectID = "c5K-ma-JlF"; */
+"c5K-ma-JlF.text" = "Split";
+
+/* Class = "UILabel"; text = "Lap 1"; ObjectID = "cfg-jx-4ug"; */
+"cfg-jx-4ug.text" = "Lap 1";
+
+/* Class = "UITextView"; text = "With TrackCoach, you can keep your eyes on the race. Press the volume buttons on your iPhone to Start, Stop, or Lap the timer."; ObjectID = "eai-uI-LuV"; */
+"eai-uI-LuV.text" = "With TrackCoach, you can keep your eyes on the race. Press the volume buttons on your iPhone to Start, Stop, or Lap the timer.";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "fjv-yz-033"; */
+"fjv-yz-033.normalTitle" = "Start";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "g1X-Ot-rDN"; */
+"g1X-Ot-rDN.title" = " ";
+
+/* Class = "UILabel"; text = "Copyright Notice"; ObjectID = "hsx-3j-I5c"; */
+"hsx-3j-I5c.text" = "Copyright Notice";
+
+/* Class = "UILabel"; text = "Confirm Before Reset"; ObjectID = "sJn-0m-re5"; */
+"sJn-0m-re5.text" = "Confirm Before Reset";
+
+/* Class = "UITextView"; text = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.\n\nPlease let me know if you have any questions or feedback!\n\nMore features on the way!\n\n - Peter Carnesciali"; ObjectID = "vPF-60-vEQ"; */
+"vPF-60-vEQ.text" = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.\n\nPlease let me know if you have any questions or feedback!\n\nMore features on the way!\n\n - Peter Carnesciali";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yD2-uU-ZA7"; */
+"yD2-uU-ZA7.text" = "Label";

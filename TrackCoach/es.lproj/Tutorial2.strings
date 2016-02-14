@@ -1,0 +1,9 @@
+
+/* Class = "UITextView"; text = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped."; ObjectID = "Rp9-Ib-KWY"; */
+"Rp9-Ib-KWY.text" = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.";
+
+/* Class = "UILabel"; text = "Undo Stop"; ObjectID = "ZTv-5G-w1Y"; */
+"ZTv-5G-w1Y.text" = "Undo Stop";
+
+/* Class = "UILabel"; text = "TrackCoach"; ObjectID = "xND-Gt-WRr"; */
+"xND-Gt-WRr.text" = "TrackCoach";

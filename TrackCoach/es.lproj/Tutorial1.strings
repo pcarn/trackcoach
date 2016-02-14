@@ -1,0 +1,21 @@
+
+/* Class = "UITextView"; text = "Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!"; ObjectID = "5Ib-wV-FQB"; */
+"5Ib-wV-FQB.text" = "Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!";
+
+/* Class = "UILabel"; text = "◁ Lap/Reset"; ObjectID = "DSs-fW-wli"; */
+"DSs-fW-wli.text" = "◁ Lap/Reset";
+
+/* Class = "UILabel"; text = "◁ Start/Stop"; ObjectID = "T5i-Gc-3tq"; */
+"T5i-Gc-3tq.text" = "◁ Start/Stop";
+
+/* Class = "UILabel"; text = "TrackCoach"; ObjectID = "fiZ-6m-EFA"; */
+"fiZ-6m-EFA.text" = "TrackCoach";
+
+/* Class = "UILabel"; text = "Control With Volume Buttons"; ObjectID = "nL3-Yy-hy4"; */
+"nL3-Yy-hy4.text" = "Control With Volume Buttons";
+
+/* Class = "UILabel"; text = "Lap/Reset ▷"; ObjectID = "nNb-po-aG1"; */
+"nNb-po-aG1.text" = "Lap/Reset ▷";
+
+/* Class = "UILabel"; text = "Start/Stop ▷"; ObjectID = "unP-CR-Kb3"; */
+"unP-CR-Kb3.text" = "Start/Stop ▷";

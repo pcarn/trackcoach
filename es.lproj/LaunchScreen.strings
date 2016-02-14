@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "ARw-B3-Ghh"; */
+"ARw-B3-Ghh.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "GvE-mc-MNi"; */
+"GvE-mc-MNi.text" = "Total";
+
+/* Class = "UINavigationItem"; title = "TrackCoach"; ObjectID = "WGX-AF-JlY"; */
+"WGX-AF-JlY.title" = "TrackCoach";
+
+/* Class = "UILabel"; text = "0:00.00"; ObjectID = "alU-9z-tVx"; */
+"alU-9z-tVx.text" = "0:00.00";
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "jyg-na-Fz4"; */
+"jyg-na-Fz4.title" = "Share";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "pMN-Xv-ZfU"; */
+"pMN-Xv-ZfU.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "Split"; ObjectID = "ssn-6o-pNa"; */
+"ssn-6o-pNa.text" = "Split";
