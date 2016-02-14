@@ -81,7 +81,7 @@
 // From ViewController
 - (void)testSetupEncodedRaceTime_clear {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"timerIsRunning"];
-    viewController.trackCoachBrain.raceTime.startDate = nil;
+    viewController.trackCoachBrain.raceTime.startTime = 0;
     [viewController saveSettings];
     [viewController setupEncodedRaceTime];
 

@@ -217,7 +217,7 @@
 - (void)testSetupEncodedRaceTime_stopped {
     id mock = OCMPartialMock(viewController);
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"timerIsRunning"];
-    viewController.trackCoachBrain.raceTime.startDate = [NSDate date];
+    viewController.trackCoachBrain.raceTime.startTime = mach_absolute_time();
     [viewController saveSettings];
     [viewController setupEncodedRaceTime];
     OCMVerify([mock setupForTimerStopped]);

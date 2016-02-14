@@ -340,7 +340,7 @@
     self.trackCoachBrain.timerIsRunning = [defaults boolForKey:@"timerIsRunning"];
     if (self.trackCoachBrain.timerIsRunning) {
         [self setupForTimerRunning];
-    } else if (self.trackCoachBrain.raceTime.startDate) {  // Stopped
+    } else if (self.trackCoachBrain.raceTime.startTime != 0) {  // Stopped
         [self setupForTimerStopped];
     } else {    // Clear
         [self.shareButton setEnabled:NO];

@@ -43,21 +43,10 @@
     XCTAssertEqual(2, [time.lapTimes count]);
 }
 
-- (void)testAddNewLapAtCurrentTime {
-    time.startDate = [[NSDate date] dateByAddingTimeInterval:-30];
-    time.lapTimes = nil;
-    [time addNewLapAtCurrentTime];
-    XCTAssertEqualWithAccuracy(30, [time mostRecentLapTime], 0.01);
-    XCTAssertEqual(1, [time.lapTimes count]);
-}
-
-- (void)testElapsed {
-    time.startDate = nil;
-    XCTAssertEqual(0, [time elapsed]);
-    
-    time.startDate = [[NSDate date] dateByAddingTimeInterval:-5];
-    XCTAssertEqualWithAccuracy(5, [time elapsed], 0.01);
-}
+//- (void)testElapsed {
+//    time.startTime = 0;
+//    XCTAssertEqual(0, [time elapsed]);
+//}
 
 - (void)testTotalOfAllLaps {
     XCTAssertEqual(270, [time totalOfAllLaps]);
@@ -90,7 +79,7 @@
     [other.lapTimes insertObject:@60 atIndex:0];
     [other.lapTimes insertObject:@90 atIndex:0];
     [other.lapTimes insertObject:@120 atIndex:0];
-    other.startDate = time.startDate = [NSDate date];
+    other.startTime = time.startTime = mach_absolute_time();
     [time isEqualToRaceTime:other];
     OCMVerify([mock isEqualToRaceTime:other]);
 }
@@ -108,7 +97,7 @@
     [other.lapTimes insertObject:@60 atIndex:0];
     [other.lapTimes insertObject:@90 atIndex:0];
     [other.lapTimes insertObject:@120 atIndex:0];
-    other.startDate = time.startDate = [NSDate date];
+    other.startTime = time.startTime = mach_absolute_time();
     XCTAssertTrue([time isEqualToRaceTime:other]);
 }
 

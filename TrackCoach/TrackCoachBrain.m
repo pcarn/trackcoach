@@ -7,6 +7,7 @@
 //
 
 #import "TrackCoachBrain.h"
+#include <mach/mach_time.h>
 
 @implementation TrackCoachBrain
 
@@ -27,7 +28,7 @@
 
 #pragma mark Timer
 - (void)start {
-    self.raceTime.startDate = [NSDate date];
+    self.raceTime.startTime = mach_absolute_time();
     self.timerIsRunning = YES;
 }
 

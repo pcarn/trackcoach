@@ -14,8 +14,10 @@
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if (self) {
-        _startDate = [decoder decodeObjectForKey:@"startDate"];
+        _startTime = [decoder decodeInt64ForKey:@"startTime"];
         _lapTimes = [decoder decodeObjectForKey:@"lapTimes"];
+    } else {
+        [NSException raise:@"ClassInitException" format: @"RaceTime super init failed"];
     }
     return self;
 }
@@ -40,10 +42,15 @@
 }
 
 - (NSTimeInterval)elapsed {
-    if (self.startDate == nil) {
+    uint64_t end = mach_absolute_time();
+    if (self.startTime == 0) {
         return 0;
     }
-    return [[NSDate date] timeIntervalSinceDate:self.startDate];
+    mach_timebase_info_data_t info;
+    if (mach_timebase_info(&info) != KERN_SUCCESS) {
+        [NSException raise:@"TimeException" format: @"mach_timebase_info failed"];
+    }
+    return (end-self.startTime) * info.numer / info.denom / 1000000000.0;
 }
 
 - (NSTimeInterval)totalOfAllLaps {
@@ -68,7 +75,7 @@
 
 #pragma mark coder
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self.startDate forKey:@"startDate"];
+    [encoder encodeInt64:self.startTime forKey:@"startTime"];
     [encoder encodeObject:self.lapTimes forKey:@"lapTimes"];
 }
 
@@ -88,7 +95,7 @@
     } else if (!otherTime || ![otherTime isKindOfClass:[self class]]) {
         return NO;
     } else {
-        return (([self.startDate isEqualToDate:otherTime.startDate] || (!self.startDate && !otherTime.startDate))
+        return ((self.startTime == otherTime.startTime )
                 && ([self.lapTimes isEqualToArray:otherTime.lapTimes] || (!self.lapTimes && !otherTime.lapTimes)));
     }
 }

@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <mach/mach_time.h>
 
 @interface RaceTime : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSDate *startDate;
+@property (assign) uint64_t startTime;
 @property (strong, nonatomic) NSMutableArray *lapTimes;
 
 - (NSTimeInterval)mostRecentLapTime;
