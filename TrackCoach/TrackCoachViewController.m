@@ -76,15 +76,16 @@
 
 #pragma mark Button Actions
 - (IBAction)shareButtonAction:(id)sender {
-    NSMutableString *textToShare = [NSMutableString stringWithFormat:@"Total Time: %@", self.timerLabel.text];
+    NSMutableString *textToShare = [NSMutableString stringWithFormat:NSLocalizedString(@"Total Time: %@", @"title in message"), self.timerLabel.text];
     NSArray *laps = [[[self.trackCoachBrain.raceTime.lapTimes copy] reverseObjectEnumerator] allObjects];
     for (NSNumber *lap in laps) {
-        [textToShare appendString:[NSString stringWithFormat:@"\nLap %lu: %@ Total: %@",
+        [textToShare appendString:[NSString stringWithFormat:NSLocalizedString(@"\nLap %lu: %@ Total: %@", @"each row in message"),
                                    (unsigned long)[laps indexOfObject:lap]+1,
                                    [TrackCoachUI timeToString:[lap doubleValue]],
                                    [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:([laps count] - [laps indexOfObject:lap] - 1)]]]];
     }
-    [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed with TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
+    [textToShare appendString:[NSString stringWithFormat:NSLocalizedString(@"\n\nTimed with TrackCoach for %@", @"footer in message"),
+                               ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
     //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
 
 
@@ -107,11 +108,11 @@
             [self.trackCoachBrain start];
             [self setupForTimerRunning];
         } else { // Undo Stop
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
-                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Undo Stop?", @"Alert title")
+                                                            message:NSLocalizedString(@"Are you sure you want to undo? The time will resume as though you did not stop.", @"Alert message")
                                                            delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Undo Stop", nil];
+                                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Alert Button action")
+                                                  otherButtonTitles:NSLocalizedString(@"Undo Stop", @"Alert Button action"), nil];
             alert.tag = undoStopAlert;
             [alert show];
             self.alertIsDisplayed = YES;
@@ -131,11 +132,11 @@
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                            message:@"Are you sure you want to reset?"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Reset", @"Alert Title")
+                                                            message:NSLocalizedString(@"Are you sure you want to reset?", @"Alert message")
                                                            delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Reset", nil];
+                                                  cancelButtonTitle:NSLocalizedString(@"Cancel", @"Alert Button action")
+                                                  otherButtonTitles:NSLocalizedString(@"Reset", @"Alert Button action"), nil];
             alert.tag = resetAlert;
             [alert show];
             self.alertIsDisplayed = YES;
@@ -152,9 +153,9 @@
 #pragma mark UI Setup for Timer
 - (void)setupForTimerRunning {
     [self startNSTimer];
-    [self.startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
+    [self.startStopButton setTitle:NSLocalizedString(@"Stop", @"Button title") forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor redColor]];
-    [self.lapResetButton setTitle:@"Lap" forState:UIControlStateNormal];
+    [self.lapResetButton setTitle:NSLocalizedString(@"Lap", @"Button title") forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     [self.shareButton setEnabled:NO];
 }
@@ -162,9 +163,9 @@
 - (void)setupForTimerStopped {
     self.timerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfAllLaps]];
     self.lapTimerLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime mostRecentLapTime]];
-    [self.startStopButton setTitle:@"Undo Stop" forState:UIControlStateNormal];
+    [self.startStopButton setTitle:NSLocalizedString(@"Undo Stop", @"Button title") forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0]];
-    [self.lapResetButton setTitle:@"Reset" forState:UIControlStateNormal];
+    [self.lapResetButton setTitle:NSLocalizedString(@"Reset", @"Button title") forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     [self.shareButton setEnabled:YES];
     [self stopNSTimer];
@@ -175,7 +176,7 @@
     [self.trackCoachBrain reset];
     [self updateUI];
     [self.tableView reloadData];
-    [self.startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startStopButton setTitle:NSLocalizedString(@"Start", @"Button title") forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor greenColor]];
     [self.shareButton setEnabled:NO];
 }
@@ -218,7 +219,7 @@
 
     NSNumber *lapTime = self.trackCoachBrain.raceTime.lapTimes[indexPath.row];
     cell.splitLabel.text = [TrackCoachUI timeToString:[lapTime doubleValue]];
-    cell.titleLabel.text = [NSString stringWithFormat:@"Lap %lu", (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
+    cell.titleLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Lap %lu", @"Row number"), (unsigned long)(self.trackCoachBrain.raceTime.lapTimes.count - indexPath.row)];
     cell.totalLabel.text = [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:indexPath.row]];
     return cell;
 }

@@ -12,9 +12,6 @@
 		1704DFFE19096A9C000079C4 /* VolumeButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1704DFFD19096A9C000079C4 /* VolumeButtons.m */; };
 		170DB3241A74CF970088DC20 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DB3231A74CF970088DC20 /* Tutorial.m */; };
 		170DB3261A74DB9E0088DC20 /* TutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170DB3251A74DB9E0088DC20 /* TutorialTests.m */; };
-		170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A031A4E7C9B00393022 /* Tutorial1.xib */; };
-		170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0B1A4E86C900393022 /* Tutorial2.xib */; };
-		170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170E7A0D1A4E893100393022 /* Tutorial3.xib */; };
 		170E7A111A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */; };
 		17261BEF1A6F4277005925F4 /* JVLeftDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17261BEC1A6F4277005925F4 /* JVLeftDrawerTableViewCell.m */; };
 		17261BF01A6F4277005925F4 /* JVLeftDrawerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17261BEE1A6F4277005925F4 /* JVLeftDrawerTableViewController.m */; };
@@ -24,7 +21,6 @@
 		173A7B0E1A679A8900EFD155 /* TrackCoachUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */; };
 		175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 175679F91A6A255D00DEFB8F /* Default-568h@2x.png */; };
 		1762BA3B1A4DE324006F08FE /* RaceTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */; };
-		176B2F4A1A70D51F00F52407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */; };
 		1795B6341A69B46700926C16 /* VolumeButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1795B6331A69B46700926C16 /* VolumeButtonsTests.m */; };
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
@@ -56,6 +52,10 @@
 		17E788F4186CD5A500AE6FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D3186CD5A400AE6FED /* Foundation.framework */; };
 		17E788F5186CD5A500AE6FED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E788D7186CD5A500AE6FED /* UIKit.framework */; };
 		17E788FD186CD5A500AE6FED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17E788FB186CD5A500AE6FED /* InfoPlist.strings */; };
+		17E937271C71178A001CB963 /* Tutorial1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E937291C71178A001CB963 /* Tutorial1.xib */; };
+		17E9372A1C711795001CB963 /* Tutorial2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E9372C1C711795001CB963 /* Tutorial2.xib */; };
+		17E9372D1C7117AF001CB963 /* Tutorial3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E9372F1C7117AF001CB963 /* Tutorial3.xib */; };
+		17E937301C711837001CB963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E937321C711837001CB963 /* LaunchScreen.storyboard */; };
 		17F6E2B31A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B21A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m */; };
 		17F6E2B61A50B06C00B8EF7F /* TrackCoachViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */; };
 		17F6E2B81A50B8B900B8EF7F /* SettingsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */; };
@@ -96,9 +96,6 @@
 		170DB3221A74CF970088DC20 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
 		170DB3231A74CF970088DC20 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
 		170DB3251A74DB9E0088DC20 /* TutorialTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialTests.m; sourceTree = "<group>"; };
-		170E7A031A4E7C9B00393022 /* Tutorial1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial1.xib; sourceTree = "<group>"; };
-		170E7A0B1A4E86C900393022 /* Tutorial2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial2.xib; sourceTree = "<group>"; };
-		170E7A0D1A4E893100393022 /* Tutorial3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tutorial3.xib; sourceTree = "<group>"; };
 		170E7A101A4F060900393022 /* StoryboardTrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachViewControllerTests.m; sourceTree = "<group>"; };
 		1712333218F90E3A00DC58CD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		17261BEB1A6F4277005925F4 /* JVLeftDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVLeftDrawerTableViewCell.h; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		173A7B0C1A67958D00EFD155 /* StoryboardTrackCoachTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardTrackCoachTableViewCellTests.m; sourceTree = "<group>"; };
 		175679F91A6A255D00DEFB8F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		1762BA3A1A4DE324006F08FE /* RaceTimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceTimeTests.m; sourceTree = "<group>"; };
-		176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17739AC31A4D29A000EEDF34 /* TrackCoachUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachUITests.m; sourceTree = "<group>"; };
 		17828B9B187A1C3D0063535E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1795B6331A69B46700926C16 /* VolumeButtonsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeButtonsTests.m; sourceTree = "<group>"; };
@@ -154,6 +150,10 @@
 		17E788F2186CD5A500AE6FED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		17E788FA186CD5A500AE6FED /* TrackCoachTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrackCoachTests-Info.plist"; sourceTree = "<group>"; };
 		17E788FC186CD5A500AE6FED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17E937281C71178A001CB963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Tutorial1.xib; sourceTree = "<group>"; };
+		17E9372B1C711795001CB963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Tutorial2.xib; sourceTree = "<group>"; };
+		17E9372E1C7117AF001CB963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Tutorial3.xib; sourceTree = "<group>"; };
+		17E937311C711837001CB963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F6E2B21A509DB600B8EF7F /* StoryboardSettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardSettingsViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B51A50B06C00B8EF7F /* TrackCoachViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackCoachViewControllerTests.m; sourceTree = "<group>"; };
 		17F6E2B71A50B8B900B8EF7F /* SettingsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewControllerTests.m; sourceTree = "<group>"; };
@@ -231,9 +231,9 @@
 				170DB3231A74CF970088DC20 /* Tutorial.m */,
 				179A4FB918F7985E008994AA /* TutorialViewController.h */,
 				179A4FBA18F7985E008994AA /* TutorialViewController.m */,
-				170E7A031A4E7C9B00393022 /* Tutorial1.xib */,
-				170E7A0B1A4E86C900393022 /* Tutorial2.xib */,
-				170E7A0D1A4E893100393022 /* Tutorial3.xib */,
+				17E937291C71178A001CB963 /* Tutorial1.xib */,
+				17E9372C1C711795001CB963 /* Tutorial2.xib */,
+				17E9372F1C7117AF001CB963 /* Tutorial3.xib */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				17E788E5186CD5A500AE6FED /* Main.storyboard */,
-				176B2F491A70D51F00F52407 /* LaunchScreen.storyboard */,
+				17E937321C711837001CB963 /* LaunchScreen.storyboard */,
 				17E788E2186CD5A500AE6FED /* AppDelegate.h */,
 				17E788E3186CD5A500AE6FED /* AppDelegate.m */,
 				1703257B18A478230026A4BC /* SettingsViewController.h */,
@@ -478,14 +478,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				176B2F4A1A70D51F00F52407 /* LaunchScreen.storyboard in Resources */,
+				17E937301C711837001CB963 /* LaunchScreen.storyboard in Resources */,
 				17E788EC186CD5A500AE6FED /* Images.xcassets in Resources */,
 				17E788DE186CD5A500AE6FED /* InfoPlist.strings in Resources */,
-				170E7A041A4E7C9B00393022 /* Tutorial1.xib in Resources */,
-				170E7A0E1A4E893100393022 /* Tutorial3.xib in Resources */,
+				17E937271C71178A001CB963 /* Tutorial1.xib in Resources */,
+				17E9372D1C7117AF001CB963 /* Tutorial3.xib in Resources */,
 				175679FA1A6A255D00DEFB8F /* Default-568h@2x.png in Resources */,
 				17E788E7186CD5A500AE6FED /* Main.storyboard in Resources */,
-				170E7A0C1A4E86C900393022 /* Tutorial2.xib in Resources */,
+				17E9372A1C711795001CB963 /* Tutorial2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +708,39 @@
 				17E788FC186CD5A500AE6FED /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		17E937291C71178A001CB963 /* Tutorial1.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17E937281C71178A001CB963 /* Base */,
+			);
+			name = Tutorial1.xib;
+			sourceTree = "<group>";
+		};
+		17E9372C1C711795001CB963 /* Tutorial2.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17E9372B1C711795001CB963 /* Base */,
+			);
+			name = Tutorial2.xib;
+			sourceTree = "<group>";
+		};
+		17E9372F1C7117AF001CB963 /* Tutorial3.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17E9372E1C7117AF001CB963 /* Base */,
+			);
+			name = Tutorial3.xib;
+			sourceTree = "<group>";
+		};
+		17E937321C711837001CB963 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17E937311C711837001CB963 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

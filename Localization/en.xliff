@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+    <file original="Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="ARw-B3-Ghh.normalTitle">
+                <source>Start</source>
+                <note>Class = "UIButton"; normalTitle = "Start"; ObjectID = "ARw-B3-Ghh";</note>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="GvE-mc-MNi.text">
+                <source>Total</source>
+                <note>Class = "UILabel"; text = "Total"; ObjectID = "GvE-mc-MNi";</note>
+            </trans-unit>
+            <trans-unit id="WGX-AF-JlY.title">
+                <source>TrackCoach</source>
+                <note>Class = "UINavigationItem"; title = "TrackCoach"; ObjectID = "WGX-AF-JlY";</note>
+            </trans-unit>
+            <trans-unit id="alU-9z-tVx.text">
+                <source>0:00.00</source>
+                <note>Class = "UILabel"; text = "0:00.00"; ObjectID = "alU-9z-tVx";</note>
+            </trans-unit>
+            <trans-unit id="jyg-na-Fz4.title">
+                <source>Share</source>
+                <note>Class = "UIBarButtonItem"; title = "Share"; ObjectID = "jyg-na-Fz4";</note>
+            </trans-unit>
+            <trans-unit id="pMN-Xv-ZfU.normalTitle">
+                <source>Reset</source>
+                <note>Class = "UIButton"; normalTitle = "Reset"; ObjectID = "pMN-Xv-ZfU";</note>
+            </trans-unit>
+            <trans-unit id="ssn-6o-pNa.text">
+                <source>Split</source>
+                <note>Class = "UILabel"; text = "Split"; ObjectID = "ssn-6o-pNa";</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="1XP-Fe-ht0.title">
+                <source>Settings</source>
+                <note>Class = "UIViewController"; title = "Settings"; ObjectID = "1XP-Fe-ht0";</note>
+            </trans-unit>
+            <trans-unit id="3MO-vs-ItQ.normalTitle">
+                <source>Reset</source>
+                <note>Class = "UIButton"; normalTitle = "Reset"; ObjectID = "3MO-vs-ItQ";</note>
+            </trans-unit>
+            <trans-unit id="3wz-Mz-ko6.title">
+                <source>Share</source>
+                <note>Class = "UIBarButtonItem"; title = "Share"; ObjectID = "3wz-Mz-ko6";</note>
+            </trans-unit>
+            <trans-unit id="8In-eW-cgP.text">
+                <source>0:00.00</source>
+                <note>Class = "UILabel"; text = "0:00.00"; ObjectID = "8In-eW-cgP";</note>
+            </trans-unit>
+            <trans-unit id="A0B-hu-eQ1.text">
+                <source>v</source>
+                <note>Class = "UILabel"; text = "v"; ObjectID = "A0B-hu-eQ1";</note>
+            </trans-unit>
+            <trans-unit id="HIE-KG-TPd.title">
+                <source>About TrackCoach</source>
+                <note>Class = "UINavigationItem"; title = "About TrackCoach"; ObjectID = "HIE-KG-TPd";</note>
+            </trans-unit>
+            <trans-unit id="JLk-DV-xeV.text">
+                <source>0:00.00</source>
+                <note>Class = "UILabel"; text = "0:00.00"; ObjectID = "JLk-DV-xeV";</note>
+            </trans-unit>
+            <trans-unit id="Jk8-gB-PYw.text">
+                <source>Settings</source>
+                <note>Class = "UILabel"; text = "Settings"; ObjectID = "Jk8-gB-PYw";</note>
+            </trans-unit>
+            <trans-unit id="PbV-SZ-Ayb.normalTitle">
+                <source>Contact Me</source>
+                <note>Class = "UIButton"; normalTitle = "Contact Me"; ObjectID = "PbV-SZ-Ayb";</note>
+            </trans-unit>
+            <trans-unit id="S7q-bL-FED.text">
+                <source>On-Screen Buttons Disabled in Settings</source>
+                <note>Class = "UILabel"; text = "On-Screen Buttons Disabled in Settings"; ObjectID = "S7q-bL-FED";</note>
+            </trans-unit>
+            <trans-unit id="YB0-fu-k6i.text">
+                <source>Total</source>
+                <note>Class = "UILabel"; text = "Total"; ObjectID = "YB0-fu-k6i";</note>
+            </trans-unit>
+            <trans-unit id="Z2M-Yy-875.text">
+                <source>0:00.00</source>
+                <note>Class = "UILabel"; text = "0:00.00"; ObjectID = "Z2M-Yy-875";</note>
+            </trans-unit>
+            <trans-unit id="ZKv-w0-9fo.text">
+                <source>0:00.00</source>
+                <note>Class = "UILabel"; text = "0:00.00"; ObjectID = "ZKv-w0-9fo";</note>
+            </trans-unit>
+            <trans-unit id="ZM2-xZ-Smc.text">
+                <source>Disable On-Screen Buttons</source>
+                <note>Class = "UILabel"; text = "Disable On-Screen Buttons"; ObjectID = "ZM2-xZ-Smc";</note>
+            </trans-unit>
+            <trans-unit id="ZhP-ZE-bxd.title">
+                <source>TrackCoach</source>
+                <note>Class = "UINavigationItem"; title = "TrackCoach"; ObjectID = "ZhP-ZE-bxd";</note>
+            </trans-unit>
+            <trans-unit id="c5K-ma-JlF.text">
+                <source>Split</source>
+                <note>Class = "UILabel"; text = "Split"; ObjectID = "c5K-ma-JlF";</note>
+            </trans-unit>
+            <trans-unit id="cfg-jx-4ug.text">
+                <source>Lap 1</source>
+                <note>Class = "UILabel"; text = "Lap 1"; ObjectID = "cfg-jx-4ug";</note>
+            </trans-unit>
+            <trans-unit id="eai-uI-LuV.text">
+                <source>With TrackCoach, you can keep your eyes on the race. Press the volume buttons on your iPhone to Start, Stop, or Lap the timer.</source>
+                <note>Class = "UITextView"; text = "With TrackCoach, you can keep your eyes on the race. Press the volume buttons on your iPhone to Start, Stop, or Lap the timer."; ObjectID = "eai-uI-LuV";</note>
+            </trans-unit>
+            <trans-unit id="fjv-yz-033.normalTitle">
+                <source>Start</source>
+                <note>Class = "UIButton"; normalTitle = "Start"; ObjectID = "fjv-yz-033";</note>
+            </trans-unit>
+            <trans-unit id="g1X-Ot-rDN.title">
+                <source></source>
+                <note>Class = "UIBarButtonItem"; title = " "; ObjectID = "g1X-Ot-rDN";</note>
+            </trans-unit>
+            <trans-unit id="hsx-3j-I5c.text">
+                <source>Copyright Notice</source>
+                <note>Class = "UILabel"; text = "Copyright Notice"; ObjectID = "hsx-3j-I5c";</note>
+            </trans-unit>
+            <trans-unit id="sJn-0m-re5.text">
+                <source>Confirm Before Reset</source>
+                <note>Class = "UILabel"; text = "Confirm Before Reset"; ObjectID = "sJn-0m-re5";</note>
+            </trans-unit>
+            <trans-unit id="vPF-60-vEQ.text">
+                <source>If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.
+
+Please let me know if you have any questions or feedback!
+
+More features on the way!
+
+ - Peter Carnesciali</source>
+                <note>Class = "UITextView"; text = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.\n\nPlease let me know if you have any questions or feedback!\n\nMore features on the way!\n\n - Peter Carnesciali"; ObjectID = "vPF-60-vEQ";</note>
+            </trans-unit>
+            <trans-unit id="yD2-uU-ZA7.text">
+                <source>Label</source>
+                <note>Class = "UILabel"; text = "Label"; ObjectID = "yD2-uU-ZA7";</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/Base.lproj/Tutorial1.xib" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="5Ib-wV-FQB.text">
+                <source>Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!</source>
+                <note>Class = "UITextView"; text = "Keep your eyes on the race! When using TrackCoach, you can use your iPhone's volume buttons to control the stopwatch!"; ObjectID = "5Ib-wV-FQB";</note>
+            </trans-unit>
+            <trans-unit id="DSs-fW-wli.text">
+                <source>◁ Lap/Reset</source>
+                <note>Class = "UILabel"; text = "◁ Lap/Reset"; ObjectID = "DSs-fW-wli";</note>
+            </trans-unit>
+            <trans-unit id="T5i-Gc-3tq.text">
+                <source>◁ Start/Stop</source>
+                <note>Class = "UILabel"; text = "◁ Start/Stop"; ObjectID = "T5i-Gc-3tq";</note>
+            </trans-unit>
+            <trans-unit id="fiZ-6m-EFA.text">
+                <source>TrackCoach</source>
+                <note>Class = "UILabel"; text = "TrackCoach"; ObjectID = "fiZ-6m-EFA";</note>
+            </trans-unit>
+            <trans-unit id="nL3-Yy-hy4.text">
+                <source>Control With Volume Buttons</source>
+                <note>Class = "UILabel"; text = "Control With Volume Buttons"; ObjectID = "nL3-Yy-hy4";</note>
+            </trans-unit>
+            <trans-unit id="nNb-po-aG1.text">
+                <source>Lap/Reset ▷</source>
+                <note>Class = "UILabel"; text = "Lap/Reset ▷"; ObjectID = "nNb-po-aG1";</note>
+            </trans-unit>
+            <trans-unit id="unP-CR-Kb3.text">
+                <source>Start/Stop ▷</source>
+                <note>Class = "UILabel"; text = "Start/Stop ▷"; ObjectID = "unP-CR-Kb3";</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/Base.lproj/Tutorial2.xib" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="Rp9-Ib-KWY.text">
+                <source>If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped.</source>
+                <note>Class = "UITextView"; text = "If you accidentally press stop during a race, don't worry! With the Undo Stop feature, TrackCoach will continue with no lost time, as if you had never stopped."; ObjectID = "Rp9-Ib-KWY";</note>
+            </trans-unit>
+            <trans-unit id="ZTv-5G-w1Y.text">
+                <source>Undo Stop</source>
+                <note>Class = "UILabel"; text = "Undo Stop"; ObjectID = "ZTv-5G-w1Y";</note>
+            </trans-unit>
+            <trans-unit id="xND-Gt-WRr.text">
+                <source>TrackCoach</source>
+                <note>Class = "UILabel"; text = "TrackCoach"; ObjectID = "xND-Gt-WRr";</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/Base.lproj/Tutorial3.xib" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="78e-xH-kj0.text">
+                <source>Start 
+using
+TrackCoach!</source>
+                <note>Class = "UITextView"; text = "Start \nusing\nTrackCoach!"; ObjectID = "78e-xH-kj0";</note>
+            </trans-unit>
+            <trans-unit id="bx2-hm-Lis.text">
+                <source>⇨</source>
+                <note>Class = "UILabel"; text = "⇨"; ObjectID = "bx2-hm-Lis";</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/Localizable.strings" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="Are you sure you want to reset?">
+                <source>Are you sure you want to reset?</source>
+                <note>Alert message</note>
+            </trans-unit>
+            <trans-unit id="Are you sure you want to undo? The time will resume as though you did not stop.">
+                <source>Are you sure you want to undo? The time will resume as though you did not stop.</source>
+                <note>Alert message</note>
+            </trans-unit>
+            <trans-unit id="Cancel">
+                <source>Cancel</source>
+                <note>Alert Button action</note>
+            </trans-unit>
+            <trans-unit id="Lap">
+                <source>Lap</source>
+                <note>Button title</note>
+            </trans-unit>
+            <trans-unit id="Lap %lu">
+                <source>Lap %lu</source>
+                <note>Row number</note>
+            </trans-unit>
+            <trans-unit id="Lap/Reset">
+                <source>Lap/Reset</source>
+                <note>Two options for button title</note>
+            </trans-unit>
+            <trans-unit id="OK">
+                <source>OK</source>
+                <note>Alert button action</note>
+            </trans-unit>
+            <trans-unit id="Reset">
+                <source>Reset</source>
+                <note>Alert Button action
+   Alert Title
+   Button title</note>
+            </trans-unit>
+            <trans-unit id="Start">
+                <source>Start</source>
+                <note>Button title</note>
+            </trans-unit>
+            <trans-unit id="Start/Stop">
+                <source>Start/Stop</source>
+                <note>Two options for button title</note>
+            </trans-unit>
+            <trans-unit id="Stop">
+                <source>Stop</source>
+                <note>Button title</note>
+            </trans-unit>
+            <trans-unit id="This button laps or resets the timer!">
+                <source>This button laps or resets the timer!</source>
+                <note>alert message</note>
+            </trans-unit>
+            <trans-unit id="This button starts or stops the timer!">
+                <source>This button starts or stops the timer!</source>
+                <note>alert message</note>
+            </trans-unit>
+            <trans-unit id="Total Time: %@">
+                <source>Total Time: %@</source>
+                <note>title in message</note>
+            </trans-unit>
+            <trans-unit id="TrackCoach Feedback">
+                <source>TrackCoach Feedback</source>
+                <note>Email subject</note>
+            </trans-unit>
+            <trans-unit id="Undo Stop">
+                <source>Undo Stop</source>
+                <note>Alert Button action
+   Button title</note>
+            </trans-unit>
+            <trans-unit id="Undo Stop?">
+                <source>Undo Stop?</source>
+                <note>Alert title</note>
+            </trans-unit>
+            <trans-unit id="\nLap %lu: %@ Total: %@">
+                <source>
+Lap %1$lu: %2$@ Total: %3$@</source>
+                <note>each row in message</note>
+            </trans-unit>
+            <trans-unit id="\n\nTimed with TrackCoach for %@">
+                <source>
+
+Timed with TrackCoach for %@</source>
+                <note>footer in message</note>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoach/TrackCoach-Info.plist" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="CFBundleDisplayName">
+                <source>${PRODUCT_NAME}</source>
+            </trans-unit>
+            <trans-unit id="CFBundleName">
+                <source>${PRODUCT_NAME}</source>
+            </trans-unit>
+            <trans-unit id="CFBundleShortVersionString">
+                <source>1.1.3</source>
+            </trans-unit>
+            <trans-unit id="NSHumanReadableCopyright">
+                <source>Copyright © 2015 Peter Carnesciali</source>
+            </trans-unit>
+        </body>
+    </file>
+    <file original="TrackCoachTests/TrackCoachTests-Info.plist" source-language="en" datatype="plaintext" target-language="es_MX">
+        <header>
+            <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.0" build-num="7A218"></tool>
+        </header>
+        <body>
+            <trans-unit id="CFBundleShortVersionString">
+                <source>1.0</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -47,10 +47,10 @@
 #pragma mark - Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
-                                                        message:@"This button laps or resets the timer!"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Lap/Reset", @"Two options for button title")
+                                                        message:NSLocalizedString(@"This button laps or resets the timer!", @"alert message")
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Alert button action")
                                               otherButtonTitles:nil];
         [alert show];
         self.alertIsDisplayed = YES;
@@ -59,10 +59,10 @@
 
 - (void)volumeUp {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
-                                                        message:@"This button starts or stops the timer!"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Start/Stop", @"Two options for button title")
+                                                        message:NSLocalizedString(@"This button starts or stops the timer!", @"alert message")
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:NSLocalizedString(@"OK", @"Alert button action")
                                               otherButtonTitles:nil];
         [alert show];
         self.alertIsDisplayed = YES;

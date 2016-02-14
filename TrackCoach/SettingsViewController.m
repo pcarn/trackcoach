@@ -74,7 +74,7 @@
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
     [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
-    [mailController setSubject:@"TrackCoach Feedback"];
+    [mailController setSubject:NSLocalizedString(@"TrackCoach Feedback", @"Email subject")];
 
     NSString *message = [NSString stringWithFormat:@"\n\n\n\niOS Version: %@\nTrackCoach Version: %@\nDevice: %@",
                          [[UIDevice currentDevice] systemVersion],
