@@ -238,8 +238,6 @@
             if (buttonIndex == 1) {
                 [self undoStop];
             }
-        } else {
-            NSLog(@"Other alert clicked.");
         }
     }
     self.alertIsDisplayed = NO;
@@ -254,7 +252,6 @@
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
-    NSLog(@"Data saved");
 }
 
 #pragma mark Tutorial

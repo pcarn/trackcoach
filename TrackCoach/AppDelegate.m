@@ -58,10 +58,8 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
 
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if (!error) {
-            NSLog(@"Config was fetched from the server.");
-        } else {
-            NSLog(@"Failed to fetch. Using Cached Config.");
+        if (error) {
+            NSLog(@"Failed to fetch config. Using Cached Config.");
             config = [PFConfig currentConfig];
         }
         NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
@@ -147,12 +145,10 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 - (void)setupVolumeButtons {
     self.volumeButtons = [[VolumeButtons alloc] init];
     self.volumeButtons.volumeDownBlock = ^{
-        NSLog(@"Volume Down");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeDown"
                                                             object:nil];
     };
     self.volumeButtons.volumeUpBlock = ^{
-        NSLog(@"Volume Up");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeUp"
                                                             object:nil];
     };

@@ -15,7 +15,6 @@
 
 
 - (UIPageViewController *)runTutorial {
-    NSLog(@"Running tutorial");
     UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                                navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
                                                                                              options:nil];
@@ -65,7 +64,6 @@
     } else {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:TUTORIAL_RUN_STRING];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Dismissed tutorial");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"dismissTutorial" object:nil];
         return nil;
     }

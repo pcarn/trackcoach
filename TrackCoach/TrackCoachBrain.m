@@ -37,7 +37,6 @@
 }
 
 - (void)lap {
-    NSLog(@"Lap");
     if (!self.timerIsRunning) {
         [NSException raise:@"InvalidMethodException"
                     format:@"Tried to lap while timer not running"];
@@ -59,7 +58,6 @@
         [NSException raise:@"InvalidMethodException"
                     format:@"Tried to reset while timer running"];
     }
-    NSLog(@"Reset");
     self.raceTime = nil;
 }
 
