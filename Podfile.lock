@@ -9,10 +9,19 @@ PODS:
     - Parse (~> 1.9)
 
 DEPENDENCIES:
-  - JVFloatingDrawer
+  - JVFloatingDrawer (from `https://github.com/pcarn/JVFloatingDrawer.git`)
   - OCMock
   - Parse (~> 1.8)
   - ParseCrashReporting (~> 1.8)
+
+EXTERNAL SOURCES:
+  JVFloatingDrawer:
+    :git: https://github.com/pcarn/JVFloatingDrawer.git
+
+CHECKOUT OPTIONS:
+  JVFloatingDrawer:
+    :commit: 899514e638f8a61e8eb9d505a266add7b8275190
+    :git: https://github.com/pcarn/JVFloatingDrawer.git
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4

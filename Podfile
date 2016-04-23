@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'TrackCoach' do
-pod 'JVFloatingDrawer'
+pod 'JVFloatingDrawer', git: 'https://github.com/pcarn/JVFloatingDrawer.git'
 pod 'Parse', '~> 1.8'
 pod 'ParseCrashReporting', '~> 1.8'
 end
