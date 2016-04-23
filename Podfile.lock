@@ -1,9 +1,9 @@
 PODS:
-  - Bolts/Tasks (1.6.0)
+  - Bolts/Tasks (1.7.0)
   - JVFloatingDrawer (0.1.0)
-  - OCMock (3.2.2)
-  - Parse (1.12.0):
-    - Bolts/Tasks (~> 1.5)
+  - OCMock (3.3)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
   - ParseCrashReporting (1.9.2):
     - Bolts/Tasks (~> 1.5)
     - Parse (~> 1.9)
@@ -15,10 +15,10 @@ DEPENDENCIES:
   - ParseCrashReporting (~> 1.8)
 
 SPEC CHECKSUMS:
-  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
-  OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
-  Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
+  OCMock: d68685bde31f69cb61d518dcb39269080c78b5ed
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
 
 COCOAPODS: 0.39.0
