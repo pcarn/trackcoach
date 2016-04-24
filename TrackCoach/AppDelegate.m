@@ -42,6 +42,8 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
              @"appVersion": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
              @"deviceName": [TrackCoachUI deviceName]}];
 
+    [self loadConfig];
+    
     UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
@@ -56,7 +58,10 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     // Having an MPVolumeView hides the volume overlay appwide.
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
     [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
+    return YES;
+}
 
+- (void)loadConfig {
     [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
         if (error) {
             NSLog(@"Failed to fetch config. Using Cached Config.");
@@ -64,12 +69,12 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
         }
         NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
         NSString *volumeKey = [NSString stringWithFormat:@"hideVolumeButtons%@", build];
-        self.hideVolumeButtons = [config[volumeKey] boolValue];
-        if (!self.hideVolumeButtons) {
+        if ([config[volumeKey] boolValue] == NO) {
             [self setupVolumeButtons];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeButtonsEnabled"
+                                                                object:nil];
         }
     }];
-    return YES;
 }
 
 #pragma mark - Drawer View Controllers

@@ -24,8 +24,6 @@
 
 @property (strong, nonatomic) VolumeButtons *volumeButtons;
 
-@property BOOL hideVolumeButtons;
-
 + (AppDelegate *)globalDelegate;
 
 - (void)toggleLeftDrawer:(id)sender animated:(BOOL)animated;

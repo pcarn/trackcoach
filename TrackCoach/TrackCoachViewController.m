@@ -27,15 +27,6 @@
     [self setupEncodedRaceTime];
     [self.timerLabel setAdjustsFontSizeToFitWidth:YES];
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:@"confirmReset"]) {
-        [defaults setBool:YES forKey:@"confirmReset"];
-    }
-    if (![defaults objectForKey:@"enableOnscreenButtons"]) {
-        [defaults setBool:NO forKey:@"enableOnscreenButtons"];
-    }
-    [defaults synchronize];
-
     [self updateUI];
     [self changeOnscreenButtonsState];
     [self.tableView reloadData];
@@ -61,6 +52,10 @@
                                                  name:@"volumeUp"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(runTutorialIfNeeded)
+                                                 name:@"volumeButtonsEnabled"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(dismissTutorial)
                                                  name:@"dismissTutorial"
                                                object:nil];
@@ -71,7 +66,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self runTutorialIfNeeded];
+    
 }
 
 #pragma mark Button Actions
@@ -142,7 +137,6 @@
         } else {
             [self reset];
         }
-
     }
     [self.tableView reloadData];
     [self saveSettings];
@@ -257,17 +251,13 @@
 #pragma mark Tutorial
 - (void)runTutorialIfNeeded {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:TUTORIAL_RUN_STRING] || ![defaults boolForKey:TUTORIAL_RUN_STRING]) {
-        // Doesn't exist, or false
-        AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        if (!appDel.hideVolumeButtons) {
-            self.tutorial = [[Tutorial alloc] init];
-            UIPageViewController *pageViewController = [self.tutorial runTutorial];
-            if (pageViewController) {
-                [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
-            } else {
-                self.tutorial = nil;
-            }
+    if (![defaults boolForKey:TUTORIAL_RUN_STRING]) {
+        self.tutorial = [[Tutorial alloc] init];
+        UIPageViewController *pageViewController = [self.tutorial runTutorial];
+        if (pageViewController) {
+            [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
+        } else {
+            self.tutorial = nil;
         }
     }
 }
