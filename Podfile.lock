@@ -30,4 +30,6 @@ SPEC CHECKSUMS:
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f57f8d56aecb4e7b7aea7d4ce50d9c4df5cc69ca
+
+COCOAPODS: 1.0.1
