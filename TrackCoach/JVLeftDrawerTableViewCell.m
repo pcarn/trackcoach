@@ -18,6 +18,7 @@
 @implementation JVLeftDrawerTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
