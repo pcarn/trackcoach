@@ -10,6 +10,6 @@ pod 'ParseCrashReporting', '~> 1.8'
 end
 
 target 'TrackCoachTests' do
-pod 'OCMock'
+pod 'OCMock', '~> 3.3.1'
 end
 
