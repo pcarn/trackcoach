@@ -5,8 +5,6 @@ use_frameworks!
 
 target 'TrackCoach' do
 pod 'JVFloatingDrawer', git: 'https://github.com/pcarn/JVFloatingDrawer.git'
-pod 'Parse', '~> 1.8'
-pod 'ParseCrashReporting', '~> 1.8'
 end
 
 target 'TrackCoachTests' do

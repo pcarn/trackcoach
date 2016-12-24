@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "TrackCoachUI.h"
-#import <Parse/Parse.h>
-#import <ParseCrashReporting/ParseCrashReporting.h>
 
 #import "JVFloatingDrawerViewController.h"
 #import "JVFloatingDrawerSpringAnimator.h"
@@ -37,15 +35,6 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
 
-    [ParseCrashReporting enable];
-    [Parse setApplicationId:@"XvKgdBAVEUAlxwyVXQ4qXv6K99jnurNcuwI9Zdho"
-                  clientKey:@"guxvJO4V9seJJR4m9okkC5il8p8n69GOeFBvLGPS"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    [PFAnalytics trackEvent:@"appOpened" dimensions:@{
-          @"systemVersion": [[UIDevice currentDevice] systemVersion],
-             @"appVersion": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-             @"deviceName": [TrackCoachUI deviceName]}];
-
     [self loadConfig];
     
     UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
@@ -66,19 +55,19 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 }
 
 - (void)loadConfig {
-    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
-        if (error) {
-            NSLog(@"Failed to fetch config. Using Cached Config.");
-            config = [PFConfig currentConfig];
-        }
-        NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
-        NSString *volumeKey = [NSString stringWithFormat:@"hideVolumeButtons%@", build];
-        if ([config[volumeKey] boolValue] == NO) {
-            [self setupVolumeButtons];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeButtonsEnabled"
-                                                                object:nil];
-        }
-    }];
+    NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
+    NSString *volumeKey = [NSString stringWithFormat:@"hideVolumeButtons%@", build];
+    NSURL *url = [NSURL URLWithString:[[@"http://trackcoachapp.com/appdata/" stringByAppendingString:volumeKey] stringByAppendingString:@".pcarn"]];
+    NSError *error = nil;
+    NSString *data = [NSString stringWithContentsOfURL:url
+                                              encoding:NSUTF8StringEncoding
+                                                 error:&error];
+
+    if (![data isEqualToString:@"true"]) {
+        [self setupVolumeButtons];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeButtonsEnabled"
+                                                            object:nil];
+    }
 }
 
 #pragma mark - Drawer View Controllers

@@ -1,18 +1,10 @@
 PODS:
-  - Bolts/Tasks (1.8.4)
   - JVFloatingDrawer (0.1.0)
   - OCMock (3.3.1)
-  - Parse (1.14.2):
-    - Bolts/Tasks (~> 1.8)
-  - ParseCrashReporting (1.9.2):
-    - Bolts/Tasks (~> 1.5)
-    - Parse (~> 1.9)
 
 DEPENDENCIES:
   - JVFloatingDrawer (from `https://github.com/pcarn/JVFloatingDrawer.git`)
   - OCMock (~> 3.3.1)
-  - Parse (~> 1.8)
-  - ParseCrashReporting (~> 1.8)
 
 EXTERNAL SOURCES:
   JVFloatingDrawer:
@@ -24,12 +16,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/pcarn/JVFloatingDrawer.git
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
-  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
-  ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
 
-PODFILE CHECKSUM: 69889f18c49e41385b2720439f88cc8975fca072
+PODFILE CHECKSUM: 5ae8bb7f6823e8473233a8234a04af51038b3ebd
 
 COCOAPODS: 1.1.1

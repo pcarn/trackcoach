@@ -10,7 +10,6 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
 #import "AppDelegate.h"
-#import <Parse/Parse.h>
 
 @implementation TrackCoachViewController
 
@@ -90,9 +89,7 @@
     if ([activityVC respondsToSelector:@selector(popoverPresentationController)]) {
         activityVC.popoverPresentationController.barButtonItem = sender;
     }
-    [self presentViewController:activityVC animated:YES completion:^{
-        [PFAnalytics trackEvent:@"sharedTime" dimensions:@{@"numberOfLaps": [NSString stringWithFormat:@"%lu", (unsigned long)self.trackCoachBrain.raceTime.lapTimes.count]}];
-    }];
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 //sender is button either way
@@ -165,7 +162,6 @@
 }
 
 - (void)reset {
-    [PFAnalytics trackEvent:@"reset" dimensions:@{@"numberOfLaps": [NSString stringWithFormat:@"%lu", (unsigned long)self.trackCoachBrain.raceTime.lapTimes.count]}];
     [self.trackCoachBrain reset];
     [self updateUI];
     [self.tableView reloadData];
@@ -178,7 +174,6 @@
     [self.trackCoachBrain undoStop];
     [self setupForTimerRunning];
     [self.tableView reloadData];
-    [PFAnalytics trackEvent:@"undoStop"];
 }
 
 - (void)updateUI {
@@ -270,14 +265,12 @@
 #pragma mark Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"down"}];
         [self lapResetButtonAction:nil];
     }
 }
 
 - (void)volumeUp {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        [PFAnalytics trackEvent:@"volumeButtonUsed" dimensions:@{@"direction": @"up"}];
         [self startStopButtonAction:nil];
     }
 }
