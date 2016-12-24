@@ -10,7 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - JVFloatingDrawer (from `https://github.com/pcarn/JVFloatingDrawer.git`)
-  - OCMock
+  - OCMock (~> 3.3.1)
   - Parse (~> 1.8)
   - ParseCrashReporting (~> 1.8)
 
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
 
-PODFILE CHECKSUM: f57f8d56aecb4e7b7aea7d4ce50d9c4df5cc69ca
+PODFILE CHECKSUM: 69889f18c49e41385b2720439f88cc8975fca072
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
