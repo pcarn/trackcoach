@@ -404,7 +404,6 @@
 				17E788CD186CD5A400AE6FED /* Frameworks */,
 				17D59ACC18E6841D002214BC /* ShellScript */,
 				17E788CE186CD5A400AE6FED /* Resources */,
-				170583A41A9AA5D100C931E1 /* ShellScript */,
 				43D7F3AE2784EBA96B4C5834 /* [CP] Embed Pods Frameworks */,
 				CC360A4F8F71401B78B9DB99 /* [CP] Copy Pods Resources */,
 			);
@@ -536,19 +535,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		170583A41A9AA5D100C931E1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  export PATH=/usr/local/bin:$PATH\n  cd /Users/pcarn/Trackcoach/parse\n  parse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\nfi";
 		};
 		17D59ACC18E6841D002214BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
