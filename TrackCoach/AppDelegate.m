@@ -35,13 +35,18 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
 
-    [self loadConfig];
-    
-    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    pageControl.backgroundColor = myOrange;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadConfig)
+                                                 name:@"loadConfig"
+                                               object:nil];
+
+
+
+//    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+//    UIPageControl *pageControl = [UIPageControl appearance];
+//    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+//    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+//    pageControl.backgroundColor = myOrange;
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.drawerViewController;
@@ -51,6 +56,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     // Having an MPVolumeView hides the volume overlay appwide.
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
     [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
+//    [self loadConfig];
     return YES;
 }
 

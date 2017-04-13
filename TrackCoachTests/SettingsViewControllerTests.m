@@ -54,12 +54,6 @@
     OCMVerify([mockSwitch isOn]);
 }
 
-- (void)testContactButtonAction {
-    id mockcontroller = OCMPartialMock(viewController);
-    [viewController contactButtonAction:nil];
-    OCMVerify([mockcontroller presentViewController:[OCMArg any] animated:YES completion:nil]);
-}
-
 - (void)testOthers {
     [viewController viewDidAppear:NO];
     [viewController didReceiveMemoryWarning];

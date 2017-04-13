@@ -70,13 +70,6 @@
     OCMVerify([(TrackCoachBrain *)mockBrain start]);
 }
 
-- (void)testStartStopButtonAction_undoStop {
-    viewController.trackCoachBrain.timerIsRunning = NO;
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [viewController startStopButtonAction:nil];
-    XCTAssertTrue(viewController.alertIsDisplayed);
-}
-
 - (void)testStartStopButtonAction_stop {
     id mockBrain = OCMClassMock([TrackCoachBrain class]);
     viewController.trackCoachBrain = mockBrain;
@@ -91,13 +84,6 @@
     OCMStub([mockBrain timerIsRunning]).andReturn(YES);
     [viewController lapResetButtonAction:nil];
     OCMVerify([mockBrain lap]);
-}
-
-- (void)testLapResetButtonAction_showResetAlert {
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"confirmReset"];
-    [viewController lapResetButtonAction:nil];
-    XCTAssertTrue(viewController.alertIsDisplayed);
 }
 
 - (void)testLapResetButtonAction_reset {
@@ -144,34 +130,6 @@
     OCMStub([mockBrain timerIsRunning]).andReturn(NO);
     [viewController updateUI];
     // Nothing easy to test here
-}
-
-- (void)testAlertView_reset {
-    id mock = OCMPartialMock(viewController);
-    UIAlertView *testAlert = [[UIAlertView alloc] init];
-    testAlert.tag = resetAlert;
-    viewController.trackCoachBrain.timerIsRunning = NO;
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [viewController alertView:testAlert clickedButtonAtIndex:1];
-    OCMVerify([mock reset]);
-}
-
-- (void)testAlertView_undoStop {
-    id mock = OCMPartialMock(viewController);
-    UIAlertView *testAlert = [[UIAlertView alloc] init];
-    testAlert.tag = undoStopAlert;
-    viewController.trackCoachBrain.timerIsRunning = NO;
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [viewController alertView:testAlert clickedButtonAtIndex:1];
-    OCMVerify([mock undoStop]);
-}
-
-- (void)testAlertView_other {
-    UIAlertView *testAlert = [[UIAlertView alloc] init];
-    testAlert.tag = 429;
-    viewController.trackCoachBrain.timerIsRunning = NO;
-    viewController.trackCoachBrain.raceTime.lapTimes = [NSMutableArray arrayWithObject:@5];
-    [viewController alertView:testAlert clickedButtonAtIndex:1];
 }
 
 - (void)testSaveSettings_notRunning {

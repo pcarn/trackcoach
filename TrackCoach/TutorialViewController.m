@@ -47,31 +47,36 @@
 #pragma mark - Volume Buttons
 - (void)volumeDown {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lap/Reset"
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Lap/Reset"
                                                         message:@"This button laps or resets the timer!"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        self.alertIsDisplayed = YES;
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle: @"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  self.alertIsDisplayed = NO;
+                                                              }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:^(void) {
+            self.alertIsDisplayed = YES;
+        }];
     }
 }
 
 - (void)volumeUp {
     if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Start/Stop"
-                                                        message:@"This button starts or stops the timer!"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        self.alertIsDisplayed = YES;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Start/Stop"
+                                                                       message:@"This button starts or stops the timer!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  self.alertIsDisplayed = NO;
+                                                              }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:^(void) {
+            self.alertIsDisplayed = YES;
+        }];
     }
-}
-
-#pragma mark AlertView
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    self.alertIsDisplayed = NO;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -62,6 +62,9 @@
                                              selector:@selector(changeOnscreenButtonsState)
                                                  name:@"changeOnscreenButtonsState"
                                                object:nil];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadConfig"
+                                                        object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -99,14 +102,28 @@
             [self.trackCoachBrain start];
             [self setupForTimerRunning];
         } else { // Undo Stop
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Undo Stop?"
-                                                            message:@"Are you sure you want to undo? The time will resume as though you did not stop."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Undo Stop", nil];
-            alert.tag = undoStopAlert;
-            [alert show];
-            self.alertIsDisplayed = YES;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Undo Stop?"
+                                                                           message:@"Are you sure you want to undo? The time will resume as though you did not stop."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {
+                                                                     self.alertIsDisplayed = NO;
+                                                                 }];
+            UIAlertAction *undoStopAction = [UIAlertAction actionWithTitle:@"Undo Stop"
+                                                                     style:UIAlertActionStyleDestructive
+                                                                   handler:^(UIAlertAction * action) {
+                                                                       self.alertIsDisplayed = NO;
+                                                                       [self undoStop];
+                                                                       [self saveSettings];
+                                                                   }];
+            [alert addAction:cancelAction];
+            [alert addAction:undoStopAction];
+            [self presentViewController:alert
+                               animated:YES
+                             completion:^(void) {
+                 self.alertIsDisplayed = YES;
+             }];
         }
     } else { // Stop
         [self.trackCoachBrain stop];
@@ -123,14 +140,28 @@
         [self.trackCoachBrain lap];
     } else if (self.trackCoachBrain.raceTime.lapTimes.count > 0) {
         if ([[NSUserDefaults standardUserDefaults] boolForKey:@"confirmReset"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset"
-                                                            message:@"Are you sure you want to reset?"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:@"Reset", nil];
-            alert.tag = resetAlert;
-            [alert show];
-            self.alertIsDisplayed = YES;
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Reset"
+                                                                           message:@"Are you sure you want to reset?"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {
+                                                                     self.alertIsDisplayed = NO;
+                                                                 }];
+            UIAlertAction *resetAction = [UIAlertAction actionWithTitle:@"Reset"
+                                                                  style:UIAlertActionStyleDestructive
+                                                                handler:^(UIAlertAction * action) {
+                                                                    self.alertIsDisplayed = NO;
+                                                                    [self reset];
+                                                                    [self saveSettings];
+                                                                }];
+            [alert addAction:cancelAction];
+            [alert addAction:resetAction];
+            [self presentViewController:alert
+                               animated:YES
+                             completion:^(void) {
+                                 self.alertIsDisplayed = YES;
+                             }];
         } else {
             [self reset];
         }
@@ -214,23 +245,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 42;
-}
-
-#pragma mark AlertView
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (!self.trackCoachBrain.timerIsRunning && self.trackCoachBrain.raceTime.lapTimes.count > 0) {
-        if (alertView.tag == resetAlert) {
-            if (buttonIndex == 1) {
-                [self reset];
-            }
-        } else if (alertView.tag == undoStopAlert) {
-            if (buttonIndex == 1) {
-                [self undoStop];
-            }
-        }
-    }
-    self.alertIsDisplayed = NO;
-    [self saveSettings];
 }
 
 #pragma mark UserDefaults
