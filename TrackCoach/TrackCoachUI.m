@@ -34,13 +34,15 @@
                               encoding:NSUTF8StringEncoding];
 
     NSDictionary* deviceNamesByCode =
-                        @{@"i386"      :@"Simulator",    // Wikipedia List of iOS Devices
+                        @{
+                          @"i386"      :@"Simulator",    // Wikipedia List of iOS Devices
                           @"x86_64"    :@"Simulator",
                           @"iPod1,1"   :@"iPod Touch 1",
                           @"iPod2,1"   :@"iPod Touch 2",
                           @"iPod3,1"   :@"iPod Touch 3",
                           @"iPod4,1"   :@"iPod Touch 4",
                           @"iPod5,1"   :@"iPod Touch 5",
+                          @"iPod7,1"   :@"iPod Touch 6",
                           @"iPhone1,1" :@"iPhone 2G",
                           @"iPhone1,2" :@"iPhone 3G",
                           @"iPhone2,1" :@"iPhone 3GS",
@@ -56,6 +58,13 @@
                           @"iPhone6,2" :@"iPhone 5s",
                           @"iPhone7,1" :@"iPhone 6 Plus",
                           @"iPhone7,2" :@"iPhone 6",
+                          @"iPhone8,1" :@"iPhone 6s",
+                          @"iPhone8,2" :@"iPhone 6s Plus",
+                          @"iPhone8,4" :@"iPhone SE",
+                          @"iPhone9,1" :@"iPhone 7",
+                          @"iPhone9,3" :@"iPhone 7",
+                          @"iPhone9,2" :@"iPhone 7 Plus",
+                          @"iPhone9,4" :@"iPhone 7 Plus",
                           @"iPad1,1"   :@"iPad Original",
                           @"iPad2,1"   :@"iPad 2",
                           @"iPad2,2"   :@"iPad 2",
@@ -79,9 +88,17 @@
                           @"iPad4,7"   :@"iPad Mini 3",
                           @"iPad4,8"   :@"iPad Mini 3",
                           @"iPad4,9"   :@"iPad Mini 3",
+                          @"iPad5,1"   :@"iPad Mini 4",
+                          @"iPad5,2"   :@"iPad Mini 4",
                           @"iPad5,3"   :@"iPad Air 2",
-                          @"iPad5,4"   :@"iPad Air 2"
-                          };
+                          @"iPad5,4"   :@"iPad Air 2",
+                          @"iPad6,3"   :@"iPad Pro (9.7-inch)",
+                          @"iPad6,4"   :@"iPad Pro (9.7-inch)",
+                          @"iPad6,7"   :@"iPad Pro (12.9-inch)",
+                          @"iPad6,8"   :@"iPad Pro (12.9-inch)",
+                          @"iPad6,11"  :@"iPad (5th generation)",
+                          @"iPad6,12"  :@"iPad (5th generation)",
+                        };
 
     NSString* deviceName = [deviceNamesByCode objectForKey:code];
 
