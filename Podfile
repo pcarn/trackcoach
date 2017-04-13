@@ -4,10 +4,10 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'TrackCoach' do
-pod 'JVFloatingDrawer', git: 'https://github.com/pcarn/JVFloatingDrawer.git'
+  pod 'JVFloatingDrawer', git: 'https://github.com/pcarn/JVFloatingDrawer.git'
 end
 
 target 'TrackCoachTests' do
-pod 'OCMock', '~> 3.3.1'
+  pod 'OCMock', '~> 3.3.1'
 end
 
