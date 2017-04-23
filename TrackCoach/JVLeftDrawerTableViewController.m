@@ -66,7 +66,7 @@ static NSString * const kJVDrawerCellReuseIdentifier = @"JVDrawerCellReuseIdenti
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIViewController *destinationViewController = nil;
 
-    if(indexPath.row == trackCoachViewControllerIndex) {
+    if (indexPath.row == trackCoachViewControllerIndex) {
         destinationViewController = [[AppDelegate globalDelegate] trackCoachViewController];
     } else {
         destinationViewController = [[AppDelegate globalDelegate] settingsViewController];

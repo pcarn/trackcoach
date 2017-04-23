@@ -10,6 +10,10 @@
 #import "AVFoundation/AVFoundation.h"
 #import "MediaPlayer/MediaPlayer.h"
 #import "AppDelegate.h"
+#import "JVFloatingDrawerViewController.h"
+
+@interface TrackCoachViewController () <JVFloatingDrawerCenterViewController>
+@end
 
 @implementation TrackCoachViewController
 
@@ -350,6 +354,12 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - JVFloatingDrawerCenterViewController
+
+- (BOOL)shouldOpenDrawerWithSide:(JVFloatingDrawerSide)drawerSide {
+    return YES;
 }
 
 @end

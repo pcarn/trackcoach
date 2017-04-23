@@ -3,22 +3,22 @@ PODS:
   - OCMock (3.3.1)
 
 DEPENDENCIES:
-  - JVFloatingDrawer (from `https://github.com/pcarn/JVFloatingDrawer.git`)
+  - JVFloatingDrawer (from `https://github.com/Lessica/JVFloatingDrawer.git`)
   - OCMock (~> 3.3.1)
 
 EXTERNAL SOURCES:
   JVFloatingDrawer:
-    :git: https://github.com/pcarn/JVFloatingDrawer.git
+    :git: https://github.com/Lessica/JVFloatingDrawer.git
 
 CHECKOUT OPTIONS:
   JVFloatingDrawer:
-    :commit: 899514e638f8a61e8eb9d505a266add7b8275190
-    :git: https://github.com/pcarn/JVFloatingDrawer.git
+    :commit: 3133fd427b71bfe71e85526f67375afcb229addf
+    :git: https://github.com/Lessica/JVFloatingDrawer.git
 
 SPEC CHECKSUMS:
   JVFloatingDrawer: 4782b1df21411aef2c1818f3b346cace02cc2e24
   OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
 
-PODFILE CHECKSUM: 52bed6c32667ba78a87f8f11bedddb78d58b29fe
+PODFILE CHECKSUM: 734575cb4756302a94a7780737faec895a8054e6
 
 COCOAPODS: 1.1.1

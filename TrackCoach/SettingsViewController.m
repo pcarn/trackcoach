@@ -8,8 +8,9 @@
 
 #import "SettingsViewController.h"
 #import "AppDelegate.h"
+#import "JVFloatingDrawerViewController.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <JVFloatingDrawerCenterViewController>
 
 @end
 
@@ -109,6 +110,12 @@
 
 - (IBAction)actionToggleLeftDrawer:(id)sender {
     [[AppDelegate globalDelegate] toggleLeftDrawer:self animated:YES];
+}
+
+#pragma mark - JVFloatingDrawerCenterViewController
+
+- (BOOL)shouldOpenDrawerWithSide:(JVFloatingDrawerSide)drawerSide {
+    return YES;
 }
 
 @end
