@@ -3,7 +3,7 @@
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/16/13.
-//  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
+//  Copyright (c) 2017 Peter Carnesciali. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -42,20 +42,17 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
 
 
-//    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
-//    UIPageControl *pageControl = [UIPageControl appearance];
-//    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-//    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-//    pageControl.backgroundColor = myOrange;
+    UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+    pageControl.backgroundColor = myOrange;
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.drawerViewController;
     [self configureDrawerViewController];
     [self.window makeKeyAndVisible];
 
-    // Having an MPVolumeView hides the volume overlay appwide.
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(-100, -100, 0, 0)];
-    [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
 //    [self loadConfig];
     return YES;
 }

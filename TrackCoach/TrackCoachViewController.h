@@ -3,7 +3,7 @@
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/12/13.
-//  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
+//  Copyright (c) 2017 Peter Carnesciali. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

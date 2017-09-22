@@ -7,21 +7,10 @@
 		<key>TrackCoach.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>17E788CF186CD5A400AE6FED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>17E788F0186CD5A500AE6FED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

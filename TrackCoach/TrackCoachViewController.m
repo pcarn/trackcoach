@@ -3,7 +3,7 @@
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/12/13.
-//  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
+//  Copyright (c) 2017 Peter Carnesciali. All rights reserved.
 //
 
 #import "TrackCoachViewController.h"
@@ -59,6 +59,10 @@
                                                  name:@"volumeButtonsEnabled"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(disableVolumeOverlay)
+                                                 name:@"volumeButtonsEnabled"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(dismissTutorial)
                                                  name:@"dismissTutorial"
                                                object:nil];
@@ -72,7 +76,12 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
+
+}
+
+- (void)disableVolumeOverlay {
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview: volumeView];
 }
 
 #pragma mark Button Actions
@@ -263,16 +272,19 @@
 
 #pragma mark Tutorial
 - (void)runTutorialIfNeeded {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults boolForKey:TUTORIAL_RUN_STRING]) {
-        self.tutorial = [[Tutorial alloc] init];
-        UIPageViewController *pageViewController = [self.tutorial runTutorial];
-        if (pageViewController) {
-            [self.navigationController presentViewController:pageViewController animated:YES completion:nil];
-        } else {
-            self.tutorial = nil;
-        }
-    }
+    dispatch_async(dispatch_get_main_queue(),
+                   ^{
+                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                       if (![defaults boolForKey:TUTORIAL_RUN_STRING]) {
+                           self.tutorial = [[Tutorial alloc] init];
+                           UIPageViewController *pageViewController = [self.tutorial runTutorial];
+                           if (pageViewController) {
+                               [self presentViewController:pageViewController animated:YES completion:nil];
+                           } else {
+                               self.tutorial = nil;
+                           }
+                       }
+                   });
 }
 
 - (void)dismissTutorial {

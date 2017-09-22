@@ -3,7 +3,7 @@
 //  TrackCoach
 //
 //  Created by Peter Carnesciali on 10/15/13.
-//  Copyright (c) 2013 Peter Carnesciali. All rights reserved.
+//  Copyright (c) 2017 Peter Carnesciali. All rights reserved.
 //
 
 #define VOLUME_UP 4
@@ -13,7 +13,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-typedef void (^volumeBlock)();
+typedef void (^volumeBlock)(void);
 
 extern const double AUTO_VOLUME_INTERVAL_1;
 extern const double AUTO_VOLUME_INTERVAL_2;
