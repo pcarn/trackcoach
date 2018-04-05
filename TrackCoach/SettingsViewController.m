@@ -20,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -39,7 +38,8 @@
     [self.contactButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [self.topTextView sizeToFit];
     [self.mainTextView sizeToFit];
-    self.copyrightNoticeLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"NSHumanReadableCopyright"];
+    long year = [[NSCalendar currentCalendar] component:NSCalendarUnitYear fromDate:[NSDate date]];
+    self.copyrightNoticeLabel.text = [NSString stringWithFormat:@"Copyright © %ld Peter Carnesciali", year];
     self.versionLabel.text = [NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -48,6 +48,7 @@
 
     [self.confirmResetSwitch addTarget:self action:@selector(setConfirmResetState:) forControlEvents:UIControlEventValueChanged];
     [self.enableButtonsSwitch addTarget:self action:@selector(changeOnscreenButtonsState:) forControlEvents:UIControlEventValueChanged];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
