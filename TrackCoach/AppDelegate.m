@@ -59,14 +59,14 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 
 - (void)loadConfig {
     NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
-    NSString *volumeKey = [NSString stringWithFormat:@"hideVolumeButtons%@", build];
+    NSString *volumeKey = [NSString stringWithFormat:@"safeMode%@", build];
     NSURL *url = [NSURL URLWithString:[[@"http://trackcoachapp.com/appdata/" stringByAppendingString:volumeKey] stringByAppendingString:@".pcarn"]];
     NSError *error = nil;
     NSString *data = [NSString stringWithContentsOfURL:url
                                               encoding:NSUTF8StringEncoding
                                                  error:&error];
 
-    if (![data isEqualToString:@"true"]) {
+    if ([data isEqualToString:@"false"]) {
         [self setupVolumeButtons];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeButtonsEnabled"
                                                             object:nil];
