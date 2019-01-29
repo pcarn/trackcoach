@@ -405,7 +405,6 @@
 				17D59ACC18E6841D002214BC /* ShellScript */,
 				17E788CE186CD5A400AE6FED /* Resources */,
 				43D7F3AE2784EBA96B4C5834 /* [CP] Embed Pods Frameworks */,
-				CC360A4F8F71401B78B9DB99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,7 +424,6 @@
 				17E788EE186CD5A500AE6FED /* Frameworks */,
 				17E788EF186CD5A500AE6FED /* Resources */,
 				5E84EF6F8362959D10F26909 /* [CP] Embed Pods Frameworks */,
-				027E9AAC7A48819CE9DBB50D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -521,21 +519,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		027E9AAC7A48819CE9DBB50D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		17D59ACC18E6841D002214BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,21 +602,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC360A4F8F71401B78B9DB99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -834,7 +802,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
@@ -843,7 +811,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"sqlite3\"",
-					"-l\"stdc++.6\"",
 					"-l\"z\"",
 					"-framework",
 					"\"AudioToolbox\"",
@@ -887,7 +854,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrackCoach/TrackCoach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/TrackCoach/TrackCoach-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrackCoach",
@@ -896,7 +863,6 @@
 					"$(inherited)",
 					"-ObjC",
 					"-l\"sqlite3\"",
-					"-l\"stdc++.6\"",
 					"-l\"z\"",
 					"-framework",
 					"\"AudioToolbox\"",

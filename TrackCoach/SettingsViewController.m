@@ -75,7 +75,7 @@
 - (IBAction)contactButtonAction:(id)sender {
     MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
     mailController.mailComposeDelegate = self;
-    [mailController setToRecipients:@[@"developer@trackcoachapp.com"]];
+    [mailController setToRecipients:@[@"peter@pcarn.com"]];
     [mailController setSubject:@"TrackCoach Feedback"];
 
     NSString *message = [NSString stringWithFormat:@"\n\n\n\niOS Version: %@\nTrackCoach Version: %@\nDevice: %@",

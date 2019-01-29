@@ -95,7 +95,6 @@
                                    [TrackCoachUI timeToString:[self.trackCoachBrain.raceTime totalOfLapAndBelow:([laps count] - [laps indexOfObject:lap] - 1)]]]];
     }
     [textToShare appendString:[NSString stringWithFormat:@"\n\nTimed with TrackCoach for %@", ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad ? @"iPad" : @"iPhone")]];
-    //    [textToShare appendString:@"\nwww.trackcoachapp.com"];
 
 
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare] applicationActivities:nil];

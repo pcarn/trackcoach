@@ -60,7 +60,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
 - (void)loadConfig {
     NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
     NSString *volumeKey = [NSString stringWithFormat:@"safeMode%@", build];
-    NSURL *url = [NSURL URLWithString:[[@"http://trackcoachapp.com/appdata/" stringByAppendingString:volumeKey] stringByAppendingString:@".pcarn"]];
+    NSURL *url = [NSURL URLWithString:[[@"http://pcarn.com/trackcoach/appdata/" stringByAppendingString:volumeKey] stringByAppendingString:@".pcarn"]];
     NSError *error = nil;
     NSString *data = [NSString stringWithContentsOfURL:url
                                               encoding:NSUTF8StringEncoding
