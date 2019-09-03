@@ -22,5 +22,3 @@ enum {
     undoStopAlert,
     resetAlert
 };
-
-#define TUTORIAL_RUN_STRING @"1_0_3_TutorialRun"

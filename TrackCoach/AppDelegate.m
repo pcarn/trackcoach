@@ -35,13 +35,6 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     NSDictionary *defaultPrefs = [NSDictionary dictionaryWithContentsOfURL:defaultPrefsFile];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadConfig)
-                                                 name:@"loadConfig"
-                                               object:nil];
-
-
-
     UIColor *myOrange = [UIColor colorWithRed:(255.0/255.0) green:(122.0/255.0) blue:(28.0/255.0) alpha:1.0];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
@@ -53,24 +46,7 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     [self configureDrawerViewController];
     [self.window makeKeyAndVisible];
 
-//    [self loadConfig];
     return YES;
-}
-
-- (void)loadConfig {
-    NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
-    NSString *volumeKey = [NSString stringWithFormat:@"safeMode%@", build];
-    NSURL *url = [NSURL URLWithString:[[@"http://pcarn.com/trackcoach/appdata/" stringByAppendingString:volumeKey] stringByAppendingString:@".pcarn"]];
-    NSError *error = nil;
-    NSString *data = [NSString stringWithContentsOfURL:url
-                                              encoding:NSUTF8StringEncoding
-                                                 error:&error];
-
-    if ([data isEqualToString:@"false"]) {
-        [self setupVolumeButtons];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeButtonsEnabled"
-                                                            object:nil];
-    }
 }
 
 #pragma mark - Drawer View Controllers
@@ -139,21 +115,6 @@ static NSString * const settingsViewControllerStoryboardID = @"SettingsViewContr
     self.drawerAnimator.animationDelay = 0.0;
     self.drawerAnimator.initialSpringVelocity = 9.0;
     self.drawerAnimator.springDamping = 1.0;
-}
-
-#pragma mark - Volume Buttons
-
-- (void)setupVolumeButtons {
-    self.volumeButtons = [[VolumeButtons alloc] init];
-    self.volumeButtons.volumeDownBlock = ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeDown"
-                                                            object:nil];
-    };
-    self.volumeButtons.volumeUpBlock = ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"volumeUp"
-                                                            object:nil];
-    };
-    [self.volumeButtons startUsingVolumeButtons];
 }
 
 #pragma mark - Global Access Helper

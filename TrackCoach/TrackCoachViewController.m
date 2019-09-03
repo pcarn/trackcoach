@@ -47,26 +47,6 @@
                                                  name:@"saveSettings"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(volumeDown)
-                                                 name:@"volumeDown"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(volumeUp)
-                                                 name:@"volumeUp"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(runTutorialIfNeeded)
-                                                 name:@"volumeButtonsEnabled"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(disableVolumeOverlay)
-                                                 name:@"volumeButtonsEnabled"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dismissTutorial)
-                                                 name:@"dismissTutorial"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(changeOnscreenButtonsState)
                                                  name:@"changeOnscreenButtonsState"
                                                object:nil];
@@ -77,11 +57,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 
-}
-
-- (void)disableVolumeOverlay {
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview: volumeView];
 }
 
 #pragma mark Button Actions
@@ -146,7 +121,6 @@
     [self saveSettings];
 }
 
-//sender is nil if triggered by volume button
 - (IBAction)lapResetButtonAction:(id)sender {
     if (self.trackCoachBrain.timerIsRunning) { // Just lapped
         [self.trackCoachBrain lap];
@@ -267,41 +241,6 @@
     [defaults setBool:self.trackCoachBrain.timerIsRunning forKey:@"timerIsRunning"];
     [defaults setObject:encodedRaceTime forKey:@"encodedRaceTime"];
     [defaults synchronize];
-}
-
-#pragma mark Tutorial
-- (void)runTutorialIfNeeded {
-    dispatch_async(dispatch_get_main_queue(),
-                   ^{
-                       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                       if (![defaults boolForKey:TUTORIAL_RUN_STRING]) {
-                           self.tutorial = [[Tutorial alloc] init];
-                           UIPageViewController *pageViewController = [self.tutorial runTutorial];
-                           if (pageViewController) {
-                               [self presentViewController:pageViewController animated:YES completion:nil];
-                           } else {
-                               self.tutorial = nil;
-                           }
-                       }
-                   });
-}
-
-- (void)dismissTutorial {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    self.tutorial = nil;
-}
-
-#pragma mark Volume Buttons
-- (void)volumeDown {
-    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        [self lapResetButtonAction:nil];
-    }
-}
-
-- (void)volumeUp {
-    if (!self.alertIsDisplayed && self.isViewLoaded && self.view.window) {
-        [self startStopButtonAction:nil];
-    }
 }
 
 #pragma mark On-Screen Buttons

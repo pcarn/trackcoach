@@ -11,7 +11,6 @@
 #import "SettingsViewController.h"
 #import "Defines.h"
 #import "TrackCoachTableViewCell.h"
-#import "Tutorial.h"
 
 @interface TrackCoachViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -26,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *buttonsDisabledLabel;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) TrackCoachBrain *trackCoachBrain;
-@property (strong, nonatomic) Tutorial *tutorial;
 
 - (IBAction)lapResetButtonAction:(id)sender;
 - (IBAction)startStopButtonAction:(id)sender;
