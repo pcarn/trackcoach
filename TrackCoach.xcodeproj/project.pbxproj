@@ -30,7 +30,7 @@
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
-		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		17E11062189F571C0037E7A5 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
 		17E11076189F602C0037E7A5 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11066189F602C0037E7A5 /* AppIcon40x40.png */; };
@@ -500,7 +500,7 @@
 				17E11077189F602C0037E7A5 /* AppIcon40x40@2x.png in Resources */,
 				17E1107A189F602C0037E7A5 /* AppIcon57x57.png in Resources */,
 				17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */,
-				17E11062189F571C0037E7A5 /* (null) in Resources */,
+				17E11062189F571C0037E7A5 /* BuildFile in Resources */,
 				17E11078189F602C0037E7A5 /* AppIcon50x50.png in Resources */,
 				17E11079189F602C0037E7A5 /* AppIcon50x50@2x.png in Resources */,
 				17E1107B189F602C0037E7A5 /* AppIcon57x57@2x.png in Resources */,
@@ -556,7 +556,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JVFloatingDrawer/JVFloatingDrawer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -565,7 +565,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackCoach/Pods-TrackCoach-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5E84EF6F8362959D10F26909 /* [CP] Embed Pods Frameworks */ = {
@@ -574,7 +574,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -583,7 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackCoachTests/Pods-TrackCoachTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9EE4B2F80ED39688E8ED536B /* [CP] Check Pods Manifest.lock */ = {
