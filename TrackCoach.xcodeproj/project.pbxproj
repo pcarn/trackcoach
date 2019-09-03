@@ -30,7 +30,7 @@
 		1798666F18CCF439002AD404 /* TrackCoachTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1798666E18CCF439002AD404 /* TrackCoachTableViewCell.m */; };
 		179900F718F9027B00E626ED /* TrackCoachUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 179900F618F9027B00E626ED /* TrackCoachUI.m */; };
 		179A4FBE18F7985E008994AA /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179A4FBA18F7985E008994AA /* TutorialViewController.m */; };
-		17E11062189F571C0037E7A5 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		17E11062189F571C0037E7A5 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		17E11074189F602C0037E7A5 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11064189F602C0037E7A5 /* AppIcon29x29.png */; };
 		17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11065189F602C0037E7A5 /* AppIcon29x29@2x.png */; };
 		17E11076189F602C0037E7A5 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E11066189F602C0037E7A5 /* AppIcon40x40.png */; };
@@ -442,7 +442,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TrackCoach;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Peter Carnesciali";
 				TargetAttributes = {
 					17E788CF186CD5A400AE6FED = {
@@ -460,6 +460,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -500,7 +501,7 @@
 				17E11077189F602C0037E7A5 /* AppIcon40x40@2x.png in Resources */,
 				17E1107A189F602C0037E7A5 /* AppIcon57x57.png in Resources */,
 				17E11075189F602C0037E7A5 /* AppIcon29x29@2x.png in Resources */,
-				17E11062189F571C0037E7A5 /* BuildFile in Resources */,
+				17E11062189F571C0037E7A5 /* (null) in Resources */,
 				17E11078189F602C0037E7A5 /* AppIcon50x50.png in Resources */,
 				17E11079189F602C0037E7A5 /* AppIcon50x50@2x.png in Resources */,
 				17E1107B189F602C0037E7A5 /* AppIcon57x57@2x.png in Resources */,
@@ -688,6 +689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -743,6 +745,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
