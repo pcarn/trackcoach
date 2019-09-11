@@ -43,6 +43,7 @@
                           @"iPod4,1"    :@"iPod Touch 4",
                           @"iPod5,1"    :@"iPod Touch 5",
                           @"iPod7,1"    :@"iPod Touch 6",
+                          @"iPod9,1"    :@"iPod Touch 7",
                           @"iPhone1,1"  :@"iPhone 2G",
                           @"iPhone1,2"  :@"iPhone 3G",
                           @"iPhone2,1"  :@"iPhone 3GS",
@@ -71,6 +72,10 @@
                           @"iPhone10,4" :@"iPhone 8",
                           @"iPhone10,5" :@"iPhone 8 Plus",
                           @"iPhone10,6" :@"iPhone X",
+                          @"iPhone11,2" :@"iPhone XS",
+                          @"iPhone11,4" :@"iPhone XS Max",
+                          @"iPhone11,6" :@"iPhone XS Max Global",
+                          @"iPhone11,8" :@"iPhone XR",
                           @"iPad1,1"    :@"iPad Original",
                           @"iPad2,1"    :@"iPad 2",
                           @"iPad2,2"    :@"iPad 2",
@@ -110,6 +115,18 @@
                           @"iPad7,4"    :@"iPad Pro (10.5-inch)",
                           @"iPad7,5"    :@"iPad (6th generation)",
                           @"iPad7,6"    :@"iPad (6th generation)",
+                          @"iPad8,1"    :@"iPad Pro 3rd Gen (11 inch, WiFi)",
+                          @"iPad8,2"    :@"iPad Pro 3rd Gen (11 inch, 1TB, WiFi)",
+                          @"iPad8,3"    :@"iPad Pro 3rd Gen (11 inch, WiFi+Cellular)",
+                          @"iPad8,4"    :@"iPad Pro 3rd Gen (11 inch, 1TB, WiFi+Cellular)",
+                          @"iPad8,5"    :@"iPad Pro 3rd Gen (12.9 inch, WiFi)",
+                          @"iPad8,6"    :@"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi)",
+                          @"iPad8,7"    :@"iPad Pro 3rd Gen (12.9 inch, WiFi+Cellular)",
+                          @"iPad8,8"    :@"iPad Pro 3rd Gen (12.9 inch, 1TB, WiFi+Cellular)",
+                          @"iPad11,1"   :@"iPad mini 5th Gen (WiFi)",
+                          @"iPad11,2"   :@"iPad mini 5th Gen",
+                          @"iPad11,3"   :@"iPad Air 3rd Gen (WiFi)",
+                          @"iPad11,4"   :@"iPad Air 3rd Gen"
                         };
 
     NSString* deviceName = [deviceNamesByCode objectForKey:code];
