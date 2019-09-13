@@ -134,15 +134,7 @@
     if (!deviceName) {
         // Not found on database. At least guess main device type from string contents:
 
-        if ([code rangeOfString:@"iPod"].location != NSNotFound) {
-            deviceName = @"iPod Touch";
-        }
-        else if([code rangeOfString:@"iPad"].location != NSNotFound) {
-            deviceName = @"iPad";
-        }
-        else if([code rangeOfString:@"iPhone"].location != NSNotFound){
-            deviceName = @"iPhone";
-        }
+        deviceName = code;
     }
     
     return deviceName;
